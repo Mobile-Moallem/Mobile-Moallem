@@ -14,6 +14,7 @@ BACKUP = os.path.join(ROOT, 'live-backup')
 CATALOG = os.path.join(ROOT, 'application/dist/client/catalog')
 OUT = os.path.join(ROOT, 'alignment-lab/data')
 RATE = 22050
+EXTERNAL_DIRS = ['/mnt/user-data/uploads/Downloads']
 
 
 class HazzatText(HTMLParser):
@@ -103,12 +104,25 @@ def main():
                for r in json.load(open(os.path.join(BACKUP, 'tables/hymn_repeat_sections.json')))}
     clips = {(c['hymn_id'], c['section']): c for c in json.load(open(os.path.join(BACKUP, 'tables/hymn_recording_clips.json')))}
     local = os.path.join(BACKUP, 'media/recordings')
+    # Downloaded copies of externally hosted recordings (Tasbeha), named mobile-moallem-<file>.
+    external = {}
+    for d in EXTERNAL_DIRS:
+        if os.path.isdir(d):
+            for f in os.listdir(d):
+                if f.startswith('mobile-moallem-') and f.endswith('.mp3'):
+                    external[f[len('mobile-moallem-'):]] = os.path.join(d, f)
     seen = {}
     for p in projects:
         times = json.loads(p['hazzat_timings_json'] or '[]')
         key = (p['recording_key'] or '').split('/')[-1]
-        if not times or not key or not os.path.exists(os.path.join(local, key)):
+        if key and os.path.exists(os.path.join(local, key)):
+            src = os.path.join(local, key)
+        else:
+            src = external.get((p['recording_url'] or '').split('/')[-1])
+            key = p['recording_url'] if src else ''
+        if not times or not key or not src:
             continue
+        p = dict(p, _src=src)
         timed = sum(t is not None for t in times)
         if key in seen and seen[key][0] >= timed:
             continue
@@ -140,7 +154,7 @@ def main():
         # Reconstruct performance order: sort by time; untimed slots stay out of scoring.
         pcm = os.path.join(OUT, name + '.f32')
         if not os.path.exists(pcm):
-            subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(local, key), '-ac', '1', '-ar', str(RATE), '-f', 'f32le', pcm], check=True)
+            subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', p['_src'], '-ac', '1', '-ar', str(RATE), '-f', 'f32le', pcm], check=True)
         dur = os.path.getsize(pcm) / 4 / RATE
         clip = clips.get((hid, 'hazzat'))
         rec = {'hymn_id': hid, 'tokens': toks, 'line_start': newline, 'times': times, 'sung': sung, 'performance': timed_sung,

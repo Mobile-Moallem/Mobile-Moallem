@@ -695,3 +695,34 @@ class LearnedKey(HazzatKey):
             return HazzatKey.units(self, g)
         u = sum(n * self.vals.get(s, self.prior(s)) for s, n in self.feats(g).items())
         return max(u, 0.25)
+
+
+# ---------- repeats written in the Hazzat: ( ... )N ----------
+def notation_repeats(words):
+    """[(first_word, last_word, times_sung)] from '(' ... ')N' marks. A ')N' at the start of a
+    word closes the group before that word; elsewhere it closes it after that word."""
+    out, stack = [], []
+    for i, w in enumerate(words):
+        if '(' in w:
+            stack.append(i)
+        m = _re.search(r"\)(\d+)", w)
+        if m and stack:
+            a = stack.pop()
+            last = i - 1 if w.lstrip().startswith(')') else i
+            if last >= a:
+                out.append((a, last, int(m.group(1))))
+    return sorted(out)
+
+
+def sung_order(words):
+    """Word indices in the order a cantor sings them (repeat groups expanded),
+    with the pass number (0 = first time) for each."""
+    reps = {b: (a, n) for a, b, n in notation_repeats(words)}
+    seq = []
+    for i in range(len(words)):
+        seq.append((i, 0))
+        if i in reps:
+            a, n = reps[i]
+            for k in range(1, n):
+                seq.extend((j, k) for j in range(a, i + 1))
+    return seq
