@@ -9,7 +9,7 @@ Modes:
 """
 import glob, json, os, sys, time
 import numpy as np
-from align import align_pieces, find_end_pieces, find_start_pieces, DurationModel, HazzatKey, BreathModel, align, align_lines, find_end, singing_span, HOP
+from align import LearnedKey, align_pieces, find_end_pieces, find_start_pieces, DurationModel, HazzatKey, BreathModel, align, align_lines, find_end, singing_span, HOP
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -33,7 +33,7 @@ def score(pred, truth):
 def run(hymns, mode, **kw):
     out = {}
     for k, h in enumerate(hymns):
-        model = (HazzatKey() if os.environ.get('KEY') else DurationModel()).fit([x for j, x in enumerate(hymns) if j != k])
+        model = (LearnedKey(ridge=float(os.environ.get('RIDGE', 6))) if os.environ.get('LKEY') else HazzatKey() if os.environ.get('KEY') else DurationModel()).fit([x for j, x in enumerate(hymns) if j != k])
         timed = [t for t in h['times'] if t is not None]
         start = end = None
         if mode == 'anchored':

@@ -638,3 +638,60 @@ def find_start_pieces(words, line_start, F, model, end, search=40.0, sigma=0.45,
         _, cost = dp_align(exp_, c, ef, onset, sigma, alpha, bonus=bonus, is_line=bw, gamma=gamma, return_cost=True)
         scored.append((cost / len(pieces), c))
     return min(scored)[1] * HOP
+
+
+class LearnedKey(HazzatKey):
+    """Hazzat key as the starting point, with each symbol's length corrected from hand-timed
+    hymns (ridge regression pulled toward the key). Durations are measured in full-note units
+    using each hymn's own pace, so different cantors and tempos compare fairly."""
+    def __init__(self, ridge=6.0, **kw):
+        super().__init__(**kw)
+        self.ridge = ridge
+        self.vals = None
+
+    @staticmethod
+    def feats(g):
+        f = collections.Counter()
+        if g == '.':
+            f['STANDALONE_BREATH'] += 1
+            return f
+        for c in g:
+            f['dot' if c == '.' else c] += 1
+        return f
+
+    def prior(self, sym):
+        if sym == 'STANDALONE_BREATH': return 1.0
+        if sym == 'dot': return self.breath
+        if sym == 'A': return 1.0
+        return HazzatKey.units(self, sym) if sym not in '+-' else 0.0
+
+    def fit(self, hymns):
+        rows, y = [], []
+        for h in hymns:
+            t, T = h['times'], h['tokens']
+            plain = [(t[i + 1] - t[i]) / HazzatKey.units(self, T[i]) for i in range(len(t) - 1)
+                     if t[i] is not None and t[i + 1] is not None and set(T[i]) <= set('zxcv')]
+            if len(plain) < 5:
+                continue
+            spu = float(np.median(plain))
+            for i in range(len(t) - 1):
+                if t[i] is None or t[i + 1] is None:
+                    continue
+                rows.append(self.feats(T[i])); y.append((t[i + 1] - t[i]) / spu)
+        syms = sorted({s for r in rows for s in r})
+        X = np.array([[r.get(s, 0) for s in syms] for r in rows], float)
+        y = np.array(y)
+        p = np.array([self.prior(s) for s in syms])
+        # minimise |Xv - y|^2 + ridge*|v - prior|^2, with long words down-weighted (they are noisier)
+        w = 1 / np.maximum(X @ np.maximum(p, .25), 1)
+        A = X.T @ (X * w[:, None]) + self.ridge * np.eye(len(syms))
+        b = X.T @ (y * w) + self.ridge * p
+        v = np.linalg.solve(A, b)
+        self.vals = dict(zip(syms, v))
+        return self
+
+    def units(self, g):
+        if self.vals is None:
+            return HazzatKey.units(self, g)
+        u = sum(n * self.vals.get(s, self.prior(s)) for s, n in self.feats(g).items())
+        return max(u, 0.25)

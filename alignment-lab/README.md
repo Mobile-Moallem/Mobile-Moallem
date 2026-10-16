@@ -43,6 +43,20 @@ See `results.txt` for per-hymn numbers.
 
 ## Findings
 
+Round 4 (toward 99% within 0.25 s):
+- Measured symbol lengths in key units from hand timings (`LearnedKey`): z=1.08 x=1.94 c=2.95
+  v=4.5 confirm the key; 'A' is about one full note (not a fast transition); a breath mark
+  inside a word adds ~0.3 note; s~0.8, d~1.1, e~1.3. Accuracy unchanged (67% within 0.3 s):
+  note lengths are no longer the bottleneck.
+- Remaining misses are mostly 0.1-0.6 s early/late: right note, wrong exact moment.
+- Fine 10 ms snapping with a learned "tap moment" model (`refine.py`, `eval_refine.py`) does not
+  help: a tapped moment is barely distinguishable from moments 0.1-0.6 s away (AUC 0.55-0.77).
+  (Fixed a drift bug: frames must sit on an exact 10 ms time grid.)
+- Label precision ceiling: only 75-92% of hand taps sit within 0.25 s of an audible note attack
+  (Shere Maria and the Censer hymn are the most precise). Against these timings 99% within
+  0.25 s cannot be measured; a small, carefully timed reference set is needed.
+- A confidence flag built from pause/onset/tempo evidence could not isolate a 95%-precise subset.
+
 Round 3 (reading the notation):
 - The Hazzat font key (copticcantor.com/font): bottom row z x c v b n m = full notes of length
   1..7, top row q w e r ... = half notes, a = fast transition, s d f ... = extensions, '.' = breath
