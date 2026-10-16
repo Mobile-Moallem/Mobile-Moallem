@@ -9,7 +9,7 @@ Modes:
 """
 import glob, json, os, sys, time
 import numpy as np
-from align import DurationModel, align, align_lines, find_end, singing_span, HOP
+from align import align_pieces, find_end_pieces, find_start_pieces, DurationModel, HazzatKey, BreathModel, align, align_lines, find_end, singing_span, HOP
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -33,7 +33,7 @@ def score(pred, truth):
 def run(hymns, mode, **kw):
     out = {}
     for k, h in enumerate(hymns):
-        model = DurationModel().fit([x for j, x in enumerate(hymns) if j != k])
+        model = (HazzatKey() if os.environ.get('KEY') else DurationModel()).fit([x for j, x in enumerate(hymns) if j != k])
         timed = [t for t in h['times'] if t is not None]
         start = end = None
         if mode == 'anchored':
@@ -46,7 +46,15 @@ def run(hymns, mode, **kw):
             # Start: first sustained singing (inside the clip if one is set).
             s0, _ = singing_span(h['F'])
             start = max(start or 0, s0 * HOP)
-            if os.environ.get('FINDEND'):
+            if os.environ.get('FINDEND2'):
+                end = find_end_pieces(h['tokens'], h['line_start'], h['F'], model, start, sigma=kw['sigma'], alpha=kw['alpha'],
+                                      gamma=float(os.environ.get('GAMMA', 1.0)))
+                if h['clip']:
+                    end = min(end, h['clip'][1])
+                if os.environ.get('FINDSTART'):
+                    start = max(start, find_start_pieces(h['tokens'], h['line_start'], h['F'], model, end,
+                                                         sigma=kw['sigma'], alpha=kw['alpha']))
+            elif os.environ.get('FINDEND'):
                 end = find_end(h['tokens'], h['F'], model, start, line_start=h['line_start'] if os.environ.get('SOFT') else None,
                                sigma=kw['sigma'], alpha=kw['alpha'], gamma=float(os.environ.get('GAMMA', 3.0)))
                 if h['clip']:
@@ -64,8 +72,13 @@ def run(hymns, mode, **kw):
             tt = np.array([np.nan if x is None else x for x in h['times']]); ok = np.isfinite(tt)
             orc = np.interp(np.arange(len(tt)), np.flatnonzero(ok), tt[ok])
         if os.environ.get('SOFT'):
-            pred = align(h['tokens'], h['F'], model, start=start, end=end, line_start=h['line_start'],
-                         gamma=float(os.environ.get('GAMMA', 2.0)), **kw)
+            br = 'key' if os.environ.get('KEYBREATH') else (BreathModel().fit([x for j, x in enumerate(hymns) if j != k]) if os.environ.get('BREATH') else None)
+            if os.environ.get('PIECES'):
+                pred, _, _ = align_pieces(h['tokens'], h['line_start'], h['F'], model, start=start, end=end,
+                                          gamma=float(os.environ.get('GAMMA', 1.0)), breath=br, **kw)
+            else:
+                pred = align(h['tokens'], h['F'], model, start=start, end=end, line_start=h['line_start'],
+                             gamma=float(os.environ.get('GAMMA', 1.0)), breath=br, **kw)
         elif os.environ.get('LINES'):
             pred = align_lines(h['tokens'], h['line_start'], h['F'], model, start=start, end=end,
                                gamma=float(os.environ.get('GAMMA', 2.0)), **kw)
@@ -93,7 +106,7 @@ def report(title, res):
 
 if __name__ == '__main__':
     hymns = load_all()
-    kw = dict(sigma=float(os.environ.get('SIGMA', 0.6)), alpha=float(os.environ.get('ALPHA', 0.3)), learn_hymn=int(os.environ.get('LEARN', 3)), passes=int(os.environ.get('PASSES', 2)), beta=float(os.environ.get('BETA', 0)), pitch_iters=int(os.environ.get('PITER', 0)))
+    kw = dict(sigma=float(os.environ.get('SIGMA', 0.45)), alpha=float(os.environ.get('ALPHA', 0.3)), learn_hymn=int(os.environ.get('LEARN', 3)), passes=int(os.environ.get('PASSES', 2)), beta=float(os.environ.get('BETA', 0)), pitch_iters=int(os.environ.get('PITER', 0)))
     for mode in sys.argv[1:] or ['auto', 'anchored']:
         t0 = time.time()
         res = run(hymns, mode, **kw)

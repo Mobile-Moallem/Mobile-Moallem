@@ -9,7 +9,8 @@ APIs are used.
 ```
 python3 build_dataset.py          # decode backup recordings, build data/ (not committed)
 node eval-baseline.mjs --trim     # score the current in-app engine
-SOFT=1 GAMMA=3 python3 eval_matcher.py anchored   # best matcher (leave-one-hymn-out)
+PIECES=1 SOFT=1 KEY=1 KEYBREATH=1 python3 eval_matcher.py anchored            # best, editor marks start/end
+FINDSTART=1 FINDEND2=1 PIECES=1 SOFT=1 KEY=1 KEYBREATH=1 python3 eval_matcher.py auto   # best, fully automatic
 ```
 
 Feature caches (`data/*.feat.npz`) are produced by computing `features.features()`
@@ -27,11 +28,28 @@ Stored Hazzat timings are still one slot per whitespace word (pre-v2 format).
 | Current `alignment-worker.js` | 3% | 6% |
 | Proportional by glyph length (naive) | n/a | 14% |
 | `align.py` matcher (round 1) | 8% | 24% (37% within 2 s) |
-| `align.py` + notation lines anchored to breaths (round 2) | 28% | **43% (60% within 2 s)** |
+| `align.py` + notation lines anchored to breaths (round 2) | 28% | 43% (60% within 2 s) |
+| Round 3: reads the Hazzat key, aligns every piece, breaths as anchors | **88% (95% within 2 s)** | **90% (97% within 2 s)** |
 
 See `results.txt` for per-hymn numbers.
 
 ## Findings
+
+Round 3 (reading the notation):
+- The Hazzat font key (copticcantor.com/font): bottom row z x c v b n m = full notes of length
+  1..7, top row q w e r ... = half notes, a = fast transition, s d f ... = extensions, '.' = breath
+  of about one full note. Durations straight from this key (no training) correlate 0.88 with hand
+  timings, better than the learned model (0.85). See `HazzatKey`.
+- A breath mark '.' means the next piece starts after a pause, like a new notation line.
+- New words start with a loudness dip and voicing break (the consonant); pitch changes mostly
+  happen *inside* words (new note, same syllable), so pitch steps are no longer rewarded.
+- Aligning at the piece level (split at '.', same as the site's hit boxes) turns breaths inside
+  long melismas into anchors instead of traps: biggest single gain.
+- Fully automatic start/end: try plausible starts/ends at pauses, keep the best notation fit.
+- Remaining weak spots: The Creed (intro audio) and the 3rd Canticle in auto mode.
+- Still only 9 hymns. Validation on the ~50 Tasbeha-linked timed hymns is pending
+  (media.tasbeha.org is blocked from this workspace).
+
 
 Round 2:
 - Notation lines (`<br>` in the Hazzat) start right after a breath: half of line starts are

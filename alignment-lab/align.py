@@ -12,6 +12,10 @@ import numpy as np
 
 HOP = 0.02
 MIN_COUNT = 15
+import os as _os
+ONSET_MODE = _os.environ.get('ONSET', 'syllable')
+ONSET_PITCH = float(_os.environ.get('OPITCH', 0.0))
+UNV_W = float(_os.environ.get('UNVW', 0.3))
 
 
 # ---------- duration model ----------
@@ -56,6 +60,43 @@ class DurationModel:
         return {'vocab': self.vocab, 'weights': [round(float(x), 5) for x in self.w]}
 
 
+class HazzatKey:
+    """Duration from the Hazzat font key (copticcantor.com/font, same letters as hazzat.com):
+    bottom row z x c v b n m = full notes of length 1..7, top row q w e r ... = half notes,
+    'a' = fast transition, s d f ... = extensions, '.' = breath of about one full note."""
+    FULL, HALF, EXT = 'zxcvbnm', 'qwertyuiop', 'sdfghjkl'
+
+    def __init__(self, full=1.0, half=0.5, fast=0.25, ext=0.5, breath=1.0):
+        self.full, self.half, self.fast, self.ext, self.breath = full, half, fast, ext, breath
+
+    def units(self, g):
+        u = 0.0
+        for c in g:
+            if c in self.FULL: u += self.full * (self.FULL.index(c) + 1)
+            elif c in self.HALF: u += self.half * (self.HALF.index(c) + 1)
+            elif c == 'a': u += self.fast
+            elif c in self.EXT: u += self.ext * (self.EXT.index(c) + 1)
+            elif c == '.': u += self.breath
+        return max(u, 0.25)
+
+    def fit(self, hymns):
+        return self
+
+    def predict(self, tokens):
+        return np.array([self.units(g) for g in tokens])
+
+    @staticmethod
+    def breath_weights(tokens, line_start):
+        """+1 where the notation implies a breath just before the word (new line, or the
+        previous word ends with a breath mark '.'); a mild negative elsewhere."""
+        w = np.full(len(tokens), -0.25)
+        w[0] = 0
+        for i in range(1, len(tokens)):
+            if (line_start is not None and line_start[i]) or tokens[i - 1].endswith('.'):
+                w[i] = 1.0
+        return w
+
+
 # ---------- boundary evidence ----------
 def z(a):
     med = np.median(a)
@@ -89,7 +130,12 @@ def onset_score(F, before=5, after=5):
     mb = (cf[b1] - cf[b0]) / np.maximum(nb, 1)
     ok = (na >= 3) & (nb >= 3)
     pch[ok] = np.minimum(np.abs(mb - ma)[ok] * 12, 4)  # semitones, capped
-    return 0.5 * dip + 0.5 * burst + 0.25 * pch
+    if ONSET_MODE == 'legacy':
+        return 0.5 * dip + 0.5 * burst + 0.25 * pch
+    # Words start on a syllable: a short loudness dip and a voicing break (the consonant).
+    # Pitch changes mostly happen *inside* a word (new note, same syllable), so they count against.
+    unv = 1 - (cv[b1] - cv[(i - 4).clip(0)]) / np.maximum(b1 - (i - 4).clip(0), 1)
+    return 0.5 * dip + 0.5 * burst + UNV_W * (unv - unv.mean()) - ONSET_PITCH * pch
 
 
 def singing_span(F):
@@ -179,7 +225,9 @@ def dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.08, min_band
         if i < n:
             best = best - alpha * onset[cand]
             if bonus is not None and gamma > 0:
-                if is_line[i]:
+                if is_line.dtype != bool:
+                    best = best - gamma * is_line[i] * bonus[cand]   # learned breath weights
+                elif is_line[i]:
                     best = best - gamma * bonus[cand]
                 else:
                     best = best + 0.25 * gamma * bonus[cand]  # mid-line words rarely start after a breath
@@ -217,7 +265,7 @@ def _anchor_expected(expected, start, end, fixed, clock=None):
 
 
 def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_window=12,
-          passes=2, learn_hymn=3, shrink=2.0, known=None, use_activity=False, beta=0.0, pitch_iters=0, oracle_starts=None, line_start=None, gamma=0.0):
+          passes=2, learn_hymn=3, shrink=2.0, known=None, use_activity=False, beta=0.0, pitch_iters=0, oracle_starts=None, line_start=None, gamma=0.0, breath=None):
     """known: {word_index: seconds} hand timings to honour (e.g. the first verse)."""
     onset = onset_score(F)
     act = activity(F) if use_activity else None
@@ -255,7 +303,12 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
     bonus = is_line = None
     if line_start is not None and gamma > 0:
         bonus = pause_bonus(F)
-        is_line = np.array(line_start, bool)
+        if breath == 'key':
+            is_line = HazzatKey.breath_weights(tokens, line_start)
+        elif breath is not None:
+            is_line = breath.weights(tokens, line_start)
+        else:
+            is_line = np.array(line_start, bool)
     rel = model.predict(tokens)
     groups = {}
     for i, g in enumerate(tokens):
@@ -460,3 +513,128 @@ def find_end(tokens, F, model, start, line_start=None, sec_per_unit=2.0, tempo_s
         if total < best:
             best, best_end = total, c
     return best_end * HOP
+
+
+# ---------- breath model: which words usually start right after a pause ----------
+def breath_category(tokens, line_start, i):
+    if i == 0:
+        return 'first'
+    if line_start is not None and line_start[i]:
+        return 'line'
+    prev = tokens[i - 1]
+    return 'after_' + prev[-1] if prev else 'other'
+
+
+class BreathModel:
+    """P(word starts within a breath) per notation context, learned from timed hymns."""
+    def __init__(self, prior_n=8):
+        self.prior_n = prior_n
+        self.rate = {}
+        self.base = 0.2
+
+    def fit(self, hymns):
+        hits = collections.Counter(); tot = collections.Counter()
+        for h in hymns:
+            C = np.array([c for c, _ in pause_candidates(h['F'])]) * HOP
+            for i in range(1, len(h['tokens'])):
+                t = h['times'][i]
+                if t is None:
+                    continue
+                k = breath_category(h['tokens'], h.get('line_start'), i)
+                tot[k] += 1
+                hits[k] += bool(np.any((t - C > -0.35) & (t - C < 0.25)))
+        self.base = sum(hits.values()) / max(sum(tot.values()), 1)
+        self.rate = {k: (hits[k] + self.prior_n * self.base) / (tot[k] + self.prior_n) for k in tot}
+        return self
+
+    def weights(self, tokens, line_start):
+        """+1 = expect a breath before this word, 0 = neutral, negative = expect none."""
+        top = max(self.rate.get('line', 0.7), self.base + 0.1)
+        w = np.zeros(len(tokens))
+        for i in range(1, len(tokens)):
+            p = self.rate.get(breath_category(tokens, line_start, i), self.base)
+            w[i] = np.clip((p - self.base) / (top - self.base), -0.5, 1.2)
+        return w
+
+
+# ---------- piece-level alignment (the site's v2 hit boxes) ----------
+import re as _re
+
+
+def hit_pieces(word):
+    """Same split as site.js hazzatHitTokens: a breath mark '.' ends a piece."""
+    return [p for p in _re.split(r'(?<=\.)(?=[^\s).])', word) if p]
+
+
+def align_pieces(words, line_start, F, model, start=None, end=None, **kw):
+    """Align every Hazzat piece; returns (word_times, piece_times, piece_word_index)."""
+    pieces, owner, pline = [], [], []
+    for wi, w in enumerate(words):
+        for k, p in enumerate(hit_pieces(w)):
+            pieces.append(p); owner.append(wi)
+            pline.append(bool(line_start[wi]) and k == 0)
+    pt = align(pieces, F, model, start=start, end=end, line_start=pline, **kw)
+    owner = np.array(owner)
+    first = np.searchsorted(owner, np.arange(len(words)))
+    return pt[first], pt, owner
+
+
+def find_end_pieces(words, line_start, F, model, start, sigma=0.45, alpha=0.3, gamma=1.0,
+                    tempo_sd=0.25, max_cands=16):
+    """Choose where the hymn ends (recordings may continue after it). For each plausible
+    end (start of a pause), measure how well the notation fits; keep the best."""
+    pieces, pline = [], []
+    for wi, w in enumerate(words):
+        for k, p in enumerate(hit_pieces(w)):
+            pieces.append(p); pline.append(bool(line_start[wi]) and k == 0)
+    s0, e0 = singing_span(F)
+    sf = int(round(start / HOP))
+    rel = model.predict(pieces)
+    units = rel.sum()
+    onset = onset_score(F)
+    bonus = pause_bonus(F)
+    bw = HazzatKey.breath_weights(pieces, pline)
+    db = F['rms_db']
+    lo, hi = np.percentile(db, 10), np.percentile(db, 90)
+    quiet = (db - lo) / max(hi - lo, 1e-6) < 0.15
+    k = int(0.4 / HOP)
+    pause_starts = [i for i in range(sf + 1, e0 - k) if quiet[i] and not quiet[i - 1] and quiet[i:i + k].all()]
+    # Tempo range seen in sung Coptic hymns: roughly 0.45-1.1 s per full-note unit.
+    lo_end, hi_end = sf + 0.45 * units / HOP, min(e0, sf + 1.1 * units / HOP)
+    cands = sorted(set([c for c in pause_starts if lo_end <= c <= hi_end] + [e0]))
+    if len(cands) > max_cands:
+        cands = [cands[i] for i in np.linspace(0, len(cands) - 1, max_cands).round().astype(int)]
+    scored = []
+    for c in cands:
+        if c - sf < len(pieces) * 3:
+            continue
+        exp_ = rel / units * (c - sf)
+        _, cost = dp_align(exp_, sf, c, onset, sigma, alpha, bonus=bonus, is_line=bw, gamma=gamma, return_cost=True)
+        scored.append((cost / len(pieces), c))
+    if not scored:
+        return e0 * HOP
+    return min(scored)[1] * HOP
+
+
+def find_start_pieces(words, line_start, F, model, end, search=40.0, sigma=0.45, alpha=0.3,
+                      gamma=1.0, max_cands=12):
+    """Choose where the hymn starts when the recording has speech/intro before it."""
+    pieces, pline = [], []
+    for wi, w in enumerate(words):
+        for k, p in enumerate(hit_pieces(w)):
+            pieces.append(p); pline.append(bool(line_start[wi]) and k == 0)
+    s0, _ = singing_span(F)
+    ef = int(round(end / HOP))
+    rel = model.predict(pieces)
+    onset = onset_score(F)
+    bonus = pause_bonus(F)
+    bw = HazzatKey.breath_weights(pieces, pline)
+    cands = [s0] + [c for c, _ in pause_candidates(F) if s0 < c < s0 + search / HOP and c < ef - len(pieces) * 3]
+    if len(cands) > max_cands:
+        cands = [cands[i] for i in np.linspace(0, len(cands) - 1, max_cands).round().astype(int)]
+    scored = []
+    for c in cands:
+        exp_ = rel / rel.sum() * (ef - c)
+        _, cost = dp_align(exp_, c, ef, onset, sigma, alpha, bonus=bonus, is_line=bw, gamma=gamma, return_cost=True)
+        scored.append((cost / len(pieces), c))
+    return min(scored)[1] * HOP
