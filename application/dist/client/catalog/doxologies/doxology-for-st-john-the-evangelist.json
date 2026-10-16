@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-john-the-evangelist",
+  "name": "Doxology for St. John the Evangelist",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-john-the-evangelist.json",
+  "folderOrder": 8,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. John the Evangelist",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. John the Evangelist:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "John the celibate, the Son of Zebedee, a native of Bethsaida, from the children of Israel.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲓⲱⲁⲛⲛⲏⲥ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ: ⲡ̀ϣⲏⲣⲓ ⲛ̀Ⲍⲉⲃⲉⲇⲉⲟⲥ: ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲛⲓⲣⲉⲙ ⲙ̀Ⲃⲏⲇⲥⲁⲓⲇⲉ: ⲉⲃⲟⲗϧⲉⲛ ⲛⲉⲛϣⲏⲣⲓ ⲙ̀Ⲡⲓⲥ︦ⲗ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Christ has chosen him, and made him a disciple for Himself, and also an apostle, he loved Him very much.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥⲥⲱⲧⲡ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ Ⲡⲭ︦ⲥ︦: ⲁϥⲉ̀ⲣⲟⲩⲙⲁⲑⲏⲧⲏⲥ ⲛⲁϥ: ⲟⲩⲟϩ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛⲁϥⲙⲉⲓ ⲙ̀ⲙⲟϥ ⲉ̀ⲙⲁϣⲱ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He also after dinner, rested upon the shoulder, of our Savior and said to him, \"Who will betray You?\"",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲑⲟϥ ⲟⲛ ⲙⲉⲛⲉⲛⲥⲁ ⲡⲓⲇⲏⲡⲛⲟⲛ: ⲁϥⲣⲱⲧⲉⲃ ⲙ̀ⲙⲟϥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲉⲛ: ⲑ̀ⲙⲉⲥⲧⲉⲛϩⲏⲧ ⲙ̀ⲡⲉⲛⲥⲱⲧⲏⲣ: ⲟⲩⲟϩ ⲁϥϫⲟⲥ ⲛⲓⲙ ⲫⲏⲉⲑⲛⲁⲧⲏⲓⲕ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Christ has spoken of you, through His holy mouth, \"If I will that he remain till I come, what is that to you?\"",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲑⲟϥ ⲟⲛ ⲉ̀ⲧⲁϥⲥⲁϫⲓ ⲉⲑⲃⲏⲧϥ: ⲛ̀ϫⲉ Ⲡⲭ︦ⲥ︦ ϧⲉⲛ ⲣⲱϥ ⲉ︦ⲑ︦ⲩ︦: ϫⲉ ⲉ̀ϣⲱⲡ ⲁⲓϣⲁⲛⲟⲩⲱϣ ⲉ̀ⲭⲁϥ: ⲉ̀ⲫⲁⲓ ϣⲁϯⲓ̀ ⲁ̀ϧⲟⲕ ⲛ̀ⲑⲱⲕ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "And after sixty years, from the Holy Resurrection, he wrote his Gospel, and preached to the world.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲟϩ ⲙⲉⲛⲉⲛⲥⲁ ⲥⲉ ⲛ̀ⲣⲟⲙⲡⲓ: ⲉ̀ϯⲁ̀ⲛⲁⲥⲧⲁⲥⲓⲥ ⲉ︦ⲑ︦ⲩ︦: ⲁϥⲥ̀ϧⲁⲓ ⲙ̀ⲡⲉϥⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ: ⲁϥϩⲓⲱⲓϣ ⲙ̀ⲙⲟϥ ϧⲉⲛ ⲡⲓⲕⲟⲥⲙⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you O celibate, hail to the Evangelist, hail to the apostle, and disciple of Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: ⲭⲉⲣⲉ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦ ⲟⲩⲟϩ ⲙⲁⲑⲏⲧⲏⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Blessed are you indeed, O beloved of Christ, John the truly chosen one, the Son of Zebedee.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱⲟⲩⲛⲓⲁⲧⲕ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲱ̀ ⲡⲓⲙⲉⲛⲣⲓⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: Ⲓⲱⲁⲛⲛⲏⲥ ⲡⲓⲥⲱⲧⲡ ⲙ̀ⲙⲏⲓ: ⲡ̀ϣⲏⲣⲓ ⲛ̀Ⲍⲉⲃⲉⲇⲉⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O celibate and the Evangelist, John the Apostle, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: Ⲓⲱⲁⲛⲛⲏⲥ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StJohnTheEvangelist.cr",
+    "incipit": "Ⲓⲱⲁⲛⲛⲏⲥ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ",
+    "rowIds": [
+      "R33f",
+      "R340",
+      "R341",
+      "R342",
+      "R343",
+      "R344",
+      "R345",
+      "R346",
+      "R348"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. John the Evangelist:\nJohn the celibate, the Son of Zebedee, a native of Bethsaida, from the children of Israel.\nChrist has chosen him, and made him a disciple for Himself, and also an apostle, he loved Him very much.\nHe also after dinner, rested upon the shoulder, of our Savior and said to him, \"Who will betray You?\"\nChrist has spoken of you, through His holy mouth, \"If I will that he remain till I come, what is that to you?\"\nAnd after sixty years, from the Holy Resurrection, he wrote his Gospel, and preached to the world.\nHail to you O celibate, hail to the Evangelist, hail to the apostle, and disciple of Christ.\nBlessed are you indeed, O beloved of Christ, John the truly chosen one, the Son of Zebedee.\nPray to the Lord on our behalf, O celibate and the Evangelist, John the Apostle, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲒⲱⲁⲛⲛⲏⲥ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ: ⲡ̀ϣⲏⲣⲓ ⲛ̀Ⲍⲉⲃⲉⲇⲉⲟⲥ: ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲛⲓⲣⲉⲙ ⲙ̀Ⲃⲏⲇⲥⲁⲓⲇⲉ: ⲉⲃⲟⲗϧⲉⲛ ⲛⲉⲛϣⲏⲣⲓ ⲙ̀Ⲡⲓⲥ︦ⲗ︦.\nⲀϥⲥⲱⲧⲡ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ Ⲡⲭ︦ⲥ︦: ⲁϥⲉ̀ⲣⲟⲩⲙⲁⲑⲏⲧⲏⲥ ⲛⲁϥ: ⲟⲩⲟϩ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛⲁϥⲙⲉⲓ ⲙ̀ⲙⲟϥ ⲉ̀ⲙⲁϣⲱ.\nⲚⲑⲟϥ ⲟⲛ ⲙⲉⲛⲉⲛⲥⲁ ⲡⲓⲇⲏⲡⲛⲟⲛ: ⲁϥⲣⲱⲧⲉⲃ ⲙ̀ⲙⲟϥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲉⲛ: ⲑ̀ⲙⲉⲥⲧⲉⲛϩⲏⲧ ⲙ̀ⲡⲉⲛⲥⲱⲧⲏⲣ: ⲟⲩⲟϩ ⲁϥϫⲟⲥ ⲛⲓⲙ ⲫⲏⲉⲑⲛⲁⲧⲏⲓⲕ.\nⲚⲑⲟϥ ⲟⲛ ⲉ̀ⲧⲁϥⲥⲁϫⲓ ⲉⲑⲃⲏⲧϥ: ⲛ̀ϫⲉ Ⲡⲭ︦ⲥ︦ ϧⲉⲛ ⲣⲱϥ ⲉ︦ⲑ︦ⲩ︦: ϫⲉ ⲉ̀ϣⲱⲡ ⲁⲓϣⲁⲛⲟⲩⲱϣ ⲉ̀ⲭⲁϥ: ⲉ̀ⲫⲁⲓ ϣⲁϯⲓ̀ ⲁ̀ϧⲟⲕ ⲛ̀ⲑⲱⲕ.\nⲞⲩⲟϩ ⲙⲉⲛⲉⲛⲥⲁ ⲥⲉ ⲛ̀ⲣⲟⲙⲡⲓ: ⲉ̀ϯⲁ̀ⲛⲁⲥⲧⲁⲥⲓⲥ ⲉ︦ⲑ︦ⲩ︦: ⲁϥⲥ̀ϧⲁⲓ ⲙ̀ⲡⲉϥⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ: ⲁϥϩⲓⲱⲓϣ ⲙ̀ⲙⲟϥ ϧⲉⲛ ⲡⲓⲕⲟⲥⲙⲟⲥ.\nⲬⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: ⲭⲉⲣⲉ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦ ⲟⲩⲟϩ ⲙⲁⲑⲏⲧⲏⲥ.\nⲰⲟⲩⲛⲓⲁⲧⲕ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲱ̀ ⲡⲓⲙⲉⲛⲣⲓⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: Ⲓⲱⲁⲛⲛⲏⲥ ⲡⲓⲥⲱⲧⲡ ⲙ̀ⲙⲏⲓ: ⲡ̀ϣⲏⲣⲓ ⲛ̀Ⲍⲉⲃⲉⲇⲉⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: Ⲓⲱⲁⲛⲛⲏⲥ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-john-kame",
+  "name": "Doxology for St. John Kame",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-john-kame.json",
+  "folderOrder": 26,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. John Kame",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. John Kame",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The incense of your, perfect purity has spread, and your eternal guidance, our father Abba John Kame.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲡⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ ϣⲱϣ ⲉ̀ⲃⲟⲗ: ⲛ̀ⲧⲉ ⲡⲉⲕⲧⲟⲩⲃⲟ ⲉⲧϫⲏⲕ ⲉ̀ⲃⲟⲗ: ⲛⲉⲙ ⲡⲉⲕⲁ̀ⲙⲟⲛⲓ ϣⲁ ⲉ̀ⲃⲟⲗ: ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲓⲱⲁⲛⲛⲏⲥ Ⲭⲁⲙⲉ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The elders have smelled it, and were envious of your chosen zeal, for through your purity, and your spotless virginity.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲛⲓⲥⲟⲫⲟⲥ ϣⲱⲗⲉⲙ ⲉ̀ⲣⲟϥ: ⲁⲩⲭⲟϩ ⲉ̀ⲡⲉⲕⲃⲓⲟⲥ ⲉⲧⲥⲱⲧⲡ: ϫⲉ ⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲡⲉⲕⲧⲟⲩⲃⲟ: ⲛⲉⲙ ⲧⲉⲕⲡⲁⲣⲑⲉⲛⲓⲁ ⲉⲧⲟⲓ ⲛ̀ⲁⲧⲁϭⲛⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The Lord grew a vine, and it overshadowed your chamber, as a sign it revealed, your angelic purity.",
+                  "language": "English"
+                },
+                {
+                  "content": "ⲀⲠⲟ︦ⲥ︦ ⲫⲓⲣⲓ ⲛ̀ⲟⲩⲃⲱ ⲛ̀ⲁ̀ⲗⲟⲗⲓ: ⲁⲥⲉⲣϧⲏⲓⲃⲓ ⲉ̀ⲡⲉⲕⲙⲁⲛ̀ϣⲉⲗⲉⲧ: ⲟⲩⲙⲏⲓⲛⲓ ⲉϥⲟⲩⲱⲛϩ ⲉϥⲉⲣⲙⲉⲑⲣⲉ: ⲉ̀ⲡⲉⲕⲧⲟⲩⲃⲟ ⲛ̀ⲁⲅⲅⲉⲗⲓⲕⲟⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Your honored fame, and that of your celibate wife, the bride of Christ, spread throughout the whole earth.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲉⲕⲉⲣⲫ̀ⲙⲉⲩⲓ̀ ⲉⲧⲧⲁⲓⲏⲟⲩⲧ: ⲛⲉⲙ ⲧⲉⲕⲥ̀ϩⲓⲙⲓ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲁϥⲥⲱⲣ ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲡⲓⲕⲟⲥⲙⲟⲥ ⲧⲏⲣϥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Therefore those who seek the Lord, came unto you, O priest and shepherd, of the flock of Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲑⲃⲉ ⲫⲁⲓ ⲁⲩⲓ̀ ϩⲁⲣⲟⲕ: ⲛ̀ϫⲉ ⲛⲏⲉⲧⲕⲱϯ ⲛ̀ⲥⲁ Ⲡⲟ︦ⲥ︦: ⲱ̀ ⲡⲓⲟⲩⲏⲃ ⲙ̀ⲙⲁⲛⲉ̀ⲥⲱⲟⲩ: ⲛ̀ⲧⲉ ⲡⲓⲟ̀ϩⲓ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You taught them monasticism, according to the angelic rites, you lifted up a pleasant sacrifice, before God the Father.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲕϯⲥ̀ⲃⲱ ⲛⲱⲟⲩ ⲛ̀ϯⲙⲉⲧⲙⲟⲛⲁⲭⲟⲥ: ⲕⲁⲧⲁ ⲧ̀ⲧⲁⲝⲓⲥ ⲛ̀ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲁⲕⲉⲛⲟⲩ ⲉ̀ⲡ̀ϣⲱⲓ ⲛ̀ⲟⲩⲑⲩⲥⲓⲁ̀ ⲉⲥϣⲏⲡ: ⲛⲁϩⲣⲉⲛ Ⲫϯ Ⲫⲓⲱⲧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You received honor and crowns, before Christ the King, you rejoiced with the saints, in His kingdom.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲕϭⲓ ⲛ̀ϩⲁⲛⲧⲁⲓⲟ̀ ⲛⲉⲙ ϩⲁⲛⲭ̀ⲗⲟⲙ: ⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲡ̀ⲟⲩⲣⲟ Ⲡⲭ︦ⲥ︦: ⲁⲕⲟⲩⲛⲟϥ ⲛⲉⲙ ⲛⲏⲉ︦ⲑ︦ⲩ︦: ⲛ̀ϩ̀ⲣⲏⲓ ϧⲉⲛ ⲧⲉϥⲙⲉⲧⲟⲩⲣⲟ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O pure virgin, our father Abba John Kame, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ ⲉⲧⲧⲟⲩⲃⲏⲟⲩⲧ: ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲓⲱⲁⲛⲛⲏⲥ Ⲭⲁⲙⲉ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StJohnKame.cr",
+    "incipit": "Ⲁⲡⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ...",
+    "rowIds": [
+      "R5ad",
+      "R5ae",
+      "R5af",
+      "R5b0",
+      "R5b1",
+      "R5b2",
+      "R5b3",
+      "R5b4",
+      "R5b6"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. John Kame\nThe incense of your, perfect purity has spread, and your eternal guidance, our father Abba John Kame.\nThe elders have smelled it, and were envious of your chosen zeal, for through your purity, and your spotless virginity.\nThe Lord grew a vine, and it overshadowed your chamber, as a sign it revealed, your angelic purity.\nYour honored fame, and that of your celibate wife, the bride of Christ, spread throughout the whole earth.\nTherefore those who seek the Lord, came unto you, O priest and shepherd, of the flock of Christ.\nYou taught them monasticism, according to the angelic rites, you lifted up a pleasant sacrifice, before God the Father.\nYou received honor and crowns, before Christ the King, you rejoiced with the saints, in His kingdom.\nPray to the Lord on our behalf, O pure virgin, our father Abba John Kame, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲀⲡⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ ϣⲱϣ ⲉ̀ⲃⲟⲗ: ⲛ̀ⲧⲉ ⲡⲉⲕⲧⲟⲩⲃⲟ ⲉⲧϫⲏⲕ ⲉ̀ⲃⲟⲗ: ⲛⲉⲙ ⲡⲉⲕⲁ̀ⲙⲟⲛⲓ ϣⲁ ⲉ̀ⲃⲟⲗ: ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲓⲱⲁⲛⲛⲏⲥ Ⲭⲁⲙⲉ.\nⲀⲛⲓⲥⲟⲫⲟⲥ ϣⲱⲗⲉⲙ ⲉ̀ⲣⲟϥ: ⲁⲩⲭⲟϩ ⲉ̀ⲡⲉⲕⲃⲓⲟⲥ ⲉⲧⲥⲱⲧⲡ: ϫⲉ ⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲡⲉⲕⲧⲟⲩⲃⲟ: ⲛⲉⲙ ⲧⲉⲕⲡⲁⲣⲑⲉⲛⲓⲁ ⲉⲧⲟⲓ ⲛ̀ⲁⲧⲁϭⲛⲓ.\nⲀⲠⲟ︦ⲥ︦ ⲫⲓⲣⲓ ⲛ̀ⲟⲩⲃⲱ ⲛ̀ⲁ̀ⲗⲟⲗⲓ: ⲁⲥⲉⲣϧⲏⲓⲃⲓ ⲉ̀ⲡⲉⲕⲙⲁⲛ̀ϣⲉⲗⲉⲧ: ⲟⲩⲙⲏⲓⲛⲓ ⲉϥⲟⲩⲱⲛϩ ⲉϥⲉⲣⲙⲉⲑⲣⲉ: ⲉ̀ⲡⲉⲕⲧⲟⲩⲃⲟ ⲛ̀ⲁⲅⲅⲉⲗⲓⲕⲟⲛ.\nⲠⲉⲕⲉⲣⲫ̀ⲙⲉⲩⲓ̀ ⲉⲧⲧⲁⲓⲏⲟⲩⲧ: ⲛⲉⲙ ⲧⲉⲕⲥ̀ϩⲓⲙⲓ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲁϥⲥⲱⲣ ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲡⲓⲕⲟⲥⲙⲟⲥ ⲧⲏⲣϥ.\nⲈⲑⲃⲉ ⲫⲁⲓ ⲁⲩⲓ̀ ϩⲁⲣⲟⲕ: ⲛ̀ϫⲉ ⲛⲏⲉⲧⲕⲱϯ ⲛ̀ⲥⲁ Ⲡⲟ︦ⲥ︦: ⲱ̀ ⲡⲓⲟⲩⲏⲃ ⲙ̀ⲙⲁⲛⲉ̀ⲥⲱⲟⲩ: ⲛ̀ⲧⲉ ⲡⲓⲟ̀ϩⲓ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.\nⲀⲕϯⲥ̀ⲃⲱ ⲛⲱⲟⲩ ⲛ̀ϯⲙⲉⲧⲙⲟⲛⲁⲭⲟⲥ: ⲕⲁⲧⲁ ⲧ̀ⲧⲁⲝⲓⲥ ⲛ̀ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲁⲕⲉⲛⲟⲩ ⲉ̀ⲡ̀ϣⲱⲓ ⲛ̀ⲟⲩⲑⲩⲥⲓⲁ̀ ⲉⲥϣⲏⲡ: ⲛⲁϩⲣⲉⲛ Ⲫϯ Ⲫⲓⲱⲧ.\nⲀⲕϭⲓ ⲛ̀ϩⲁⲛⲧⲁⲓⲟ̀ ⲛⲉⲙ ϩⲁⲛⲭ̀ⲗⲟⲙ: ⲉ̀ⲃⲟⲗ ϩⲓⲧⲉⲛ ⲡ̀ⲟⲩⲣⲟ Ⲡⲭ︦ⲥ︦: ⲁⲕⲟⲩⲛⲟϥ ⲛⲉⲙ ⲛⲏⲉ︦ⲑ︦ⲩ︦: ⲛ̀ϩ̀ⲣⲏⲓ ϧⲉⲛ ⲧⲉϥⲙⲉⲧⲟⲩⲣⲟ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲡⲁⲣⲑⲉⲛⲟⲥ ⲉⲧⲧⲟⲩⲃⲏⲟⲩⲧ: ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲓⲱⲁⲛⲛⲏⲥ Ⲭⲁⲙⲉ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

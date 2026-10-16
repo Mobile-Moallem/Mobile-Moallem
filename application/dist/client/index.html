@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14263d">
+  <meta name="description" content="Learn Coptic hymns easily. Click anywhere and hear that exact section.">
+  <title>Mobile Moallem</title>
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" href="/favicon-48.png?v=mm1" sizes="48x48">
+  <link rel="icon" type="image/png" href="/favicon-32.png?v=mm1" sizes="32x32">
+  <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=mm1" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest?v=mm1">
+  <link rel="stylesheet" href="/brand-logo.css?v=mm1">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./refinements.css">
+  <link rel="stylesheet" href="./seasons.css">
+  <link rel="stylesheet" href="./notation.css">
+  <link rel="stylesheet" href="./layout.css?v=78">
+  <link rel="stylesheet" href="./dark-mode.css">
+  <link rel="stylesheet" href="./language.css">
+  <script src="./theme.js" defer></script>
+  <script src="./language.js" defer></script>
+  <script src="./site.js?v=77" defer></script>
+  <script type="module" src="./reference-alignment.js"></script>
+  <link rel="stylesheet" href="./reference-alignment.css">
+  <link rel="stylesheet" href="./recording-slider.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#/seasons"><img class="brand-mark brand-logo" src="/assets/mobile-moallem-logo.png?v=mm1" width="39" height="39" alt="" aria-hidden="true"><span>Mobile Moallem</span><span class="beta-badge">BETA</span></a>
+      <div class="top-actions"><a id="projectsLink" class="top-link" href="#/projects" hidden>My projects</a><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch site language to Arabic" title="Switch site language to Arabic">العربية</button><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button><span class="edition">Coptic hymn library</span></div>
+    </header>
+
+    <main class="workspace">
+      <section id="seasonsView" class="screen catalog-screen" aria-labelledby="seasonsTitle">
+        <div class="catalog-heading"><div><p class="eyebrow">Coptic hymn library</p><h1 id="seasonsTitle">Seasons</h1><p>Choose a season to see its hymns.</p></div><div class="season-heading-details"><p class="church-attribution" lang="en" dir="ltr">Product of Virgin Mary &amp; Saint Pachomius Coptic Orthodox Church, Stony Point, NY.</p><span id="seasonCount" class="catalog-count"></span></div></div>
+        <div class="home-report-actions"><button id="homeReportsBtn" class="button button-outline" type="button" hidden>See all reports</button></div>
+        <label class="search-wrap catalog-search"><span class="sr-only">Search seasons</span><span aria-hidden="true">⌕</span><input id="seasonSearch" type="search" placeholder="Search seasons"></label>
+        <nav id="seasonNav" class="season-grid" aria-label="Seasons"></nav>
+        <section id="libraryTools" class="library-tools" hidden aria-label="Editor library tools">
+          <div><p class="eyebrow">Private editor</p><h2>Build your library</h2><p>Add your own seasons, categories, and hymns. New items stay in your drafts until you complete them.</p></div>
+          <div class="library-tool-actions"><button id="addSeasonBtn" class="button button-gold" type="button">Add season</button><button id="addCategoryBtn" class="button button-outline" type="button">Add category</button><button id="addHymnBtn" class="button button-outline" type="button">Add hymn</button></div>
+        </section>
+      </section>
+
+      <section id="projectsView" class="screen catalog-screen" aria-labelledby="projectsTitle" hidden>
+        <a class="back-link" href="#/seasons">← All seasons</a>
+        <div class="catalog-heading"><div><p class="eyebrow">Editor workspace</p><h1 id="projectsTitle">My projects</h1><p>Saved alignments and uploads are kept online.</p></div></div>
+        <button id="projectReportsBtn" class="button button-outline" type="button" hidden>See all reports</button>
+        <label class="search-wrap catalog-search"><span class="sr-only">Search projects</span><span aria-hidden="true">⌕</span><input id="projectSearch" type="search" placeholder="Search saved projects"></label>
+        <div id="projectList" class="hymn-grid"></div>
+      </section>
+
+      <section id="hymnsView" class="screen catalog-screen" aria-labelledby="seasonTitle" hidden>
+        <a id="libraryBack" class="back-link" href="#/seasons">← All seasons</a>
+        <div class="catalog-heading"><div><p id="libraryEyebrow" class="eyebrow">Season</p><h1 id="seasonTitle">Hymns</h1><p id="librarySummary"></p></div><div class="catalog-actions"><span id="hymnCount" class="catalog-count">0</span><button id="editLibraryBtn" class="library-pencil" type="button" aria-label="Edit hymn boxes" aria-pressed="false" hidden><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 5 4 4M4 20l4-1L20 7a2.8 2.8 0 0 0-4-4L4 15Z"/></svg><span id="editLibraryLabel">Edit</span></button></div></div>
+        <p id="libraryEditHelp" class="library-edit-help" hidden>Drag the ⠿ handle to move a box, or use the arrow keys while the handle is focused. Choose Edit title to change its text. Changes save automatically.</p>
+        <p id="libraryEditStatus" class="library-edit-status" role="status" aria-live="polite"></p>
+        <label class="search-wrap catalog-search"><span id="librarySearchLabel" class="sr-only">Search hymns in this season</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search hymns in this season"></label>
+        <details id="removedHymnsPanel" class="removed-hymns-panel" hidden><summary id="removedHymnsSummary">Removed hymns</summary><p class="panel-copy">Only you and other editors can see this list. Restore a hymn to put it back in the library.</p><div id="removedHymnList" class="hymn-grid"></div></details>
+        <div id="hymnList" class="hymn-groups"></div>
+      </section>
+
+      <div id="readerView" class="screen reader-screen" hidden>
+      <section class="main-panel" aria-label="Hymn reader">
+        <a id="backToHymns" class="back-link" href="#/season/annual">← Hymns</a>
+        <div class="reader-head">
+          <div><p id="hymnCategory" class="eyebrow">Library</p><h2 id="hymnTitle">Loading hymns…</h2><p id="hymnSubtitle" class="subtitle">Preparing the seasonal library.</p></div>
+          <div class="reader-actions"><button id="reportErrorBtn" class="button button-outline" type="button">Report error</button><button id="reportInboxBtn" class="text-button" type="button" hidden>Error reports</button><button id="timingBtn" class="button button-outline" type="button" hidden>Edit hymn</button></div>
+        </div>
+        <div id="readerToolbar" class="reader-toolbar">
+          <div class="view-tabs" role="tablist" aria-label="Hymn view">
+            <button id="wordsTab" class="view-tab active" role="tab" aria-selected="true" type="button">Words</button>
+            <button id="hazzatTab" class="view-tab" role="tab" aria-selected="false" type="button">Hazzat</button>
+          </div>
+          <div class="size-controls" aria-label="Text and Hazzat size"><span>Size</span><button id="decreaseSize" type="button" aria-label="Make text smaller">−</button><output id="sizeValue">100%</output><button id="increaseSize" type="button" aria-label="Make text larger">+</button></div>
+        </div>
+        <div id="textLanguageWrap" class="text-language-wrap" role="group" aria-label="Words language" hidden><button id="copticLanguageBtn" type="button" aria-pressed="true">Coptic</button><button id="englishLanguageBtn" type="button" aria-pressed="false">English</button></div>
+        <div id="recordingGrid" class="recording-grid player-top-position" role="region" aria-label="Selected recording" hidden>
+          <div class="player" data-recording-section="hazzat" hidden>
+            <div class="player-top"><div><p id="hazzatRecordingLabel" class="eyebrow">Hazzat recording</p><strong id="audioName">No recording attached</strong></div></div>
+            <div class="player-controls"><button id="playBtn" class="play-button" type="button" aria-label="Play Hazzat recording">▶</button><span id="currentTime">0:00</span><input id="seek" aria-label="Seek Hazzat recording" type="range" min="0" max="1000" value="0"><span id="duration">0:00</span><select id="speed" aria-label="Hazzat playback speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option><option value="2">2×</option></select><button id="repeatBtn" class="repeat-button" type="button" aria-pressed="false">↻ Repeat part</button></div>
+            <p id="audioHelp" class="player-help">Tap a timed Hazzat stack to play from there.</p>
+          </div>
+          <div class="player" data-recording-section="english" hidden>
+            <div class="player-top"><div><p class="eyebrow">English text recording</p><strong id="englishAudioName">No recording attached</strong></div></div>
+            <div class="player-controls"><button id="englishPlayBtn" class="play-button" type="button" aria-label="Play English recording">▶</button><span id="englishCurrentTime">0:00</span><input id="englishSeek" aria-label="Seek English recording" type="range" min="0" max="1000" value="0"><span id="englishDuration">0:00</span><select id="englishSpeed" aria-label="English playback speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option><option value="2">2×</option></select><button id="englishRepeatBtn" class="repeat-button" type="button" aria-pressed="false">↻ Repeat part</button></div>
+            <p id="englishAudioHelp" class="player-help">Tap a timed English word to play from there.</p>
+          </div>
+          <div class="player" data-recording-section="coptic" hidden>
+            <div class="player-top"><div><p class="eyebrow">Coptic text recording</p><strong id="copticAudioName">No recording attached</strong></div></div>
+            <div class="player-controls"><button id="copticPlayBtn" class="play-button" type="button" aria-label="Play Coptic recording">▶</button><span id="copticCurrentTime">0:00</span><input id="copticSeek" aria-label="Seek Coptic recording" type="range" min="0" max="1000" value="0"><span id="copticDuration">0:00</span><select id="copticSpeed" aria-label="Coptic playback speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option><option value="2">2×</option></select><button id="copticRepeatBtn" class="repeat-button" type="button" aria-pressed="false">↻ Repeat part</button></div>
+            <p id="copticAudioHelp" class="player-help">Tap a timed Coptic word to play from there.</p>
+          </div>
+        </div>
+        <p id="repeatProgress" class="repeat-progress" role="status" hidden></p>
+        <div id="readerContent" class="reader-content"></div>
+        <div id="sourcePanel" class="source-panel" hidden></div>
+      </section>
+
+      <aside class="timing-panel" aria-label="Hymn editor">
+        <div class="section-heading"><div><p class="eyebrow">Private editor</p><h2>Edit this hymn</h2></div></div>
+        <p class="panel-copy">Choose Words or Hazzat above, select its recording, prepare the text, then start aligning.</p>
+        <h3 class="editor-subheading">Timing</h3>
+        <p class="panel-copy">Choose Words or Hazzat above, then select its recording below. Start aligning and use ← and → with Space, or tap a part directly to mark its time.</p>
+        <button id="alignBtn" class="button button-navy full" type="button">Start aligning</button>
+        <button id="repeatAlignmentBtn" class="button button-outline full repeat-alignment-button" type="button" aria-pressed="false">↻ Repeat alignment</button>
+        <p id="repeatAlignmentHelp" class="repeat-alignment-help" role="status" aria-live="polite">Choose two aligned parts to loop that recording range and redo only their timings.</p>
+        <button id="addSectionRepeat" class="button button-outline full" type="button">↻ Mark a section sung twice</button>
+        <p id="sectionRepeatHelp" role="status">Reuse the same words or Hazzat for each pass, with separate recording timings.</p>
+        <div id="sectionRepeatList"></div>
+        <section id="referenceAlignment" class="reference-alignment" aria-label="Reference hymn alignment">
+          <h3>Auto hymn alignment</h3>
+          <p>Automatically choose a reviewed reference and find candidate phrases in this recording. Review exact starts before saving your private draft.</p>
+          <label for="referenceSection">What to align<select id="referenceSection"><option value="hazzat">Hazzat note starts</option><option value="coptic">Coptic word starts</option><option value="english">English word starts</option></select></label>
+          <label for="referencePicker">Reviewed reference<select id="referencePicker"><option value="">Choose a reference</option></select></label>
+          <label class="upload-label">Import a reviewed reference<input id="referenceImport" type="file" accept=".json,application/json"></label>
+          <details><summary>Keep my manual timings as a reference</summary><p>Check the sung phrases and each start first. English words need an English recording; a translation cannot supply word starts from Coptic audio.</p><label class="reference-check"><input id="referenceAttestation" type="checkbox">I checked the sung phrases and exact starts in this recording.</label><button id="referenceExport" class="button button-outline full" type="button">Download reviewed reference</button></details>
+          <details id="referencePhraseSetup"><summary>Optional: guide a phrase match</summary><p>Automatic search runs without these ranges. To guide a difficult match, choose the same beginning and ending in both recordings, excluding the spoken intro. Split at changed repeats or omitted sections. Each range can be up to 90 seconds.</p><audio id="referenceListen" controls preload="none" aria-label="Reviewed reference recording"></audio><div class="reference-bounds"><label>Reference start<input id="referenceStart" type="text" placeholder="0:08.20" inputmode="decimal"></label><label>Reference end<input id="referenceEnd" type="text" placeholder="0:35.40" inputmode="decimal"></label><label>Current start<input id="referenceTargetStart" type="text" placeholder="0:09.00" inputmode="decimal"></label><label>Current end<input id="referenceTargetEnd" type="text" placeholder="0:37.10" inputmode="decimal"></label></div><button id="referenceAddPhrase" class="button button-outline full" type="button">Add phrase</button><div id="referencePhrases"></div></details>
+          <button id="referencePrepare" class="button button-navy full" type="button">Auto align · prepare review</button>
+          <p id="referenceStatus" role="status" aria-live="polite">Choose a reviewed reference. Unfamiliar melodies need a compatible reference before they can be aligned.</p>
+          <audio id="referenceReviewAudio" controls preload="none" aria-label="Current recording for timing review" hidden></audio>
+          <div id="referenceReview"></div>
+        </section>
+        <h3 class="editor-subheading">Hazzat recording</h3>
+        <label class="recording-label" for="recordingPicker">Choose an existing recording</label>
+        <select id="recordingPicker" class="recording-picker"><option value="">Choose a recording</option></select>
+        <label class="upload-label">Or upload Hazzat recording<input id="audioUpload" type="file" accept="audio/*"></label>
+        <details class="clip-editor"><summary>Use only part of this recording</summary><div class="clip-fields"><label>Start <input id="clipStartHazzat" type="text" inputmode="decimal" placeholder="0:00"></label><label>End <input id="clipEndHazzat" type="text" inputmode="decimal" placeholder="full length"></label></div><div class="clip-actions"><button id="setClipStartHazzat" class="button button-outline" type="button">Set start to player time</button><button id="setClipEndHazzat" class="button button-outline" type="button">Set end to player time</button><button id="saveClipHazzat" class="button button-gold" type="button">Use this part</button><button id="clearClipHazzat" class="text-button" type="button">Use full recording</button></div><p>Play or seek the recording above to choose the section, then capture its start and end times.</p></details>
+        <h3 class="editor-subheading">English text recording</h3>
+        <label class="recording-label" for="englishRecordingPicker">Choose an existing recording</label>
+        <select id="englishRecordingPicker" class="recording-picker"><option value="">Choose a recording</option></select>
+        <label class="upload-label">Or upload English recording<input id="englishAudioUpload" type="file" accept="audio/*"></label>
+        <details class="clip-editor"><summary>Use only part of this recording</summary><div class="clip-fields"><label>Start <input id="clipStartEnglish" type="text" inputmode="decimal" placeholder="0:00"></label><label>End <input id="clipEndEnglish" type="text" inputmode="decimal" placeholder="full length"></label></div><div class="clip-actions"><button id="setClipStartEnglish" class="button button-outline" type="button">Set start to player time</button><button id="setClipEndEnglish" class="button button-outline" type="button">Set end to player time</button><button id="saveClipEnglish" class="button button-gold" type="button">Use this part</button><button id="clearClipEnglish" class="text-button" type="button">Use full recording</button></div><p>Play or seek the recording above to choose the section, then capture its start and end times.</p></details>
+        <h3 class="editor-subheading">Coptic text recording</h3>
+        <label class="recording-label" for="copticRecordingPicker">Choose an existing recording</label>
+        <select id="copticRecordingPicker" class="recording-picker"><option value="">Choose a recording</option></select>
+        <label class="upload-label">Or upload Coptic recording<input id="copticAudioUpload" type="file" accept="audio/*"></label>
+        <details class="clip-editor"><summary>Use only part of this recording</summary><div class="clip-fields"><label>Start <input id="clipStartCoptic" type="text" inputmode="decimal" placeholder="0:00"></label><label>End <input id="clipEndCoptic" type="text" inputmode="decimal" placeholder="full length"></label></div><div class="clip-actions"><button id="setClipStartCoptic" class="button button-outline" type="button">Set start to player time</button><button id="setClipEndCoptic" class="button button-outline" type="button">Set end to player time</button><button id="saveClipCoptic" class="button button-gold" type="button">Use this part</button><button id="clearClipCoptic" class="text-button" type="button">Use full recording</button></div><p>Play or seek the recording above to choose the section, then capture its start and end times.</p></details>
+        <h3 class="editor-subheading">Words and Hazzat</h3>
+        <label class="editor-field" for="textInput">Hymn text<textarea id="textInput" rows="5" placeholder="Type or paste the hymn words here. Leave blank to use the library text."></textarea></label>
+        <label class="editor-field" for="copticInput">Coptic hymn text<textarea id="copticInput" rows="5" placeholder="Type or paste the Coptic words here. Leave blank to use the library Coptic text."></textarea></label>
+        <label class="upload-label">Or upload Coptic text<input id="copticUpload" type="file" accept=".txt,text/plain"></label>
+        <label class="editor-field" for="notationInput">Hazzat text or HTML<textarea id="notationInput" rows="6" placeholder="Type or paste Hazzat here. Leave blank to use the library notation."></textarea></label>
+        <label class="upload-label">Or upload Hazzat text or HTML<input id="hazzatUpload" type="file" accept=".txt,.html,text/plain,text/html"></label>
+        <label class="upload-label">Or upload a Hazzat scan (PDF or image)<input id="hazzatScoreUpload" type="file" accept="application/pdf,image/jpeg,image/png,image/webp,.pdf,.jpg,.jpeg,.png,.webp"></label>
+        <section id="hazzatImport" class="hazzat-import" hidden aria-label="Interactive Hazzat import"><p id="hazzatImportStatus" class="hazzat-import-status" role="status" aria-live="polite"></p><div id="hazzatImportPreview" class="hazzat-import-preview"></div><div class="hazzat-import-actions"><button id="saveHazzatScore" class="button button-gold" type="button" disabled>Save interactive Hazzat</button><button id="cancelHazzatScore" class="button button-outline" type="button">Cancel</button></div></section>
+        <div id="alignStatus" class="align-status" aria-live="polite">0 of 0 words timed</div>
+        <p id="projectState" class="project-state" aria-live="polite">Not saved yet</p>
+        <button id="saveDraftBtn" class="button button-gold full" type="button">Save now</button>
+        <button id="completeBtn" class="button button-outline full" type="button">Complete for listeners</button>
+        <button id="exportBtn" class="button button-outline full export-button" type="button">Copy timing for chat</button>
+        <button id="clearTimesBtn" class="text-button clear-button" type="button">Clear this hymn’s timings</button>
+      </aside>
+      </div>
+    </main>
+  </div>
+  <audio id="audio" preload="none"></audio>
+  <audio id="englishAudio" preload="none"></audio>
+  <audio id="copticAudio" preload="none"></audio>
+  <div id="libraryDialog" class="dialog-backdrop" hidden>
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="libraryDialogTitle">
+      <div class="dialog-head"><div><p class="eyebrow">Private editor</p><h2 id="libraryDialogTitle">Add to your library</h2></div><button id="libraryDialogClose" class="icon-button" type="button" aria-label="Close">×</button></div>
+      <form id="libraryForm">
+        <label> Name <input id="libraryName" type="text" required maxlength="240" placeholder="e.g. Feast of Saint Mark"></label>
+        <label id="librarySeasonField" hidden> Season <select id="librarySeasonSelect"></select></label>
+        <label id="libraryCategoryField" hidden> Category <select id="libraryCategorySelect"></select></label>
+        <label id="libraryEnglishField" hidden> English text <textarea id="libraryEnglishText" rows="4" placeholder="Optional English text"></textarea></label>
+        <label id="libraryCopticField" hidden> Coptic text <textarea id="libraryCopticText" rows="4" placeholder="Optional Coptic text"></textarea></label>
+        <label id="libraryHazzatField" hidden> Hazzat text or HTML <textarea id="libraryHazzatText" rows="4" placeholder="Optional Hazzat notation"></textarea></label>
+        <p id="libraryFormNote" class="form-note"></p>
+        <div class="form-actions"><button id="libraryDialogCancel" class="button button-outline" type="button">Cancel</button><button class="button button-gold" type="submit">Create</button></div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

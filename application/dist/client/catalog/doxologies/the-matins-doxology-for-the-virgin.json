@@ -1,0 +1,159 @@
+{
+  "id": "the-matins-doxology-for-the-virgin",
+  "name": "The Matins Doxology for the Virgin",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/the-matins-doxology-for-the-virgin.json",
+  "folderOrder": 1,
+  "formats": {
+    "1": [
+      {
+        "name": "The Matins Doxology for the Virgin",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "Blessed are you O Mary / the wise and the chaste / the Second Tabernacle / the spiritual treasure.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱⲟⲩⲛⲓⲁϯ ⲛ̀ⲑⲟ Ⲙⲁⲣⲓⲁ: ϯⲥⲁⲃⲏ ⲟⲩⲟϩ ⲛ̀ⲥⲉⲙⲛⲏ: ϯⲙⲁϩⲥ̀ⲛⲟⲩϯ ⲛ̀ⲥ̀ⲕⲏⲛⲏ: ⲡⲓⲁ̀ϩⲟ ⲙ̀ⲡ︦ⲛ︦ⲁ︦ⲧⲓⲕⲟⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The pure turtle-dove / who declared in our land / and brought to us / the Fruit of the Spirit.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϯϭⲣⲟⲙⲡ̀ϣⲁⲗ ⲛ̀ⲕⲁⲑⲁⲣⲟⲥ: ⲑⲏⲉ̀ⲧⲁⲥⲙⲟⲩϯ ϧⲉⲛ ⲡⲉⲛⲕⲁϩⲓ: ⲟⲩⲟϩ ⲁⲥⲫⲓⲣⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ: ⲛ̀ⲟⲩⲕⲁⲣⲡⲟⲥ ⲛ̀ⲧⲉ Ⲡⲓⲡ︦ⲛ︦ⲁ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The Spirit of Comfort / who came upon your son / in the waters of the Jordan. / According to the type of Noah-",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓⲡ︦ⲛ︦ⲁ︦ ⲙ̀ⲡⲁⲣⲁⲕⲗⲏⲧⲟⲛ: ⲫⲏⲉ̀ⲧⲁϥⲓ̀ ⲉ̀ϫⲉⲛ Ⲡⲉϣⲏⲣⲓ: ϩⲓϫⲉⲛ ⲛⲓⲙⲱⲟⲩ ⲛ̀ⲧⲉ Ⲡⲓⲓⲟⲣⲇⲁⲛⲏⲥ: ⲕⲁⲧⲁ ⲡ̀ⲧⲩⲡⲟⲥ ⲛ̀Ⲛⲱⲉ̀.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "That dove has / announced to us / the peace of God / for mankind.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϯϭⲣⲟⲙⲡⲓ ⲅⲁⲣ ⲉ̀ⲧⲉ ⲙ̀ⲙⲁⲩ: ⲛ̀ⲑⲟⲥ ⲁⲥϩⲓϣⲉⲛⲛⲟⲩϥⲓ ⲛⲁⲛ: ⲛ̀ϯϩⲓⲣⲏⲛⲏ ⲛ̀ⲧⲉ Ⲫϯ: ⲑⲏⲉ̀ⲧⲁⲥϣⲱⲡⲓ ϣⲁ ⲛⲓⲣⲱⲙⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Likewise you O our hope / the spiritual turtledove / have brought mercy unto us / carrying Him in your womb.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲑⲟ ϩⲱⲓ ⲱ̀ ⲧⲉⲛϩⲉⲗⲡⲓⲥ: ϯϭⲣⲟⲙⲡ̀ϣⲁⲗ ⲛ̀ⲛⲟⲏ̀ⲧⲉ: ⲁ̀ⲣⲉⲓ̀ⲛⲓ ⲙ̀ⲡⲓⲛⲁⲓ ⲛⲁⲛ: ⲁ̀ⲣⲉϥⲁⲓ ϧⲁⲣⲟϥ ϧⲉⲛ ⲧⲉⲛⲉϫⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He is Jesus / the begotten of the Father / He was born of you for us / setting free our race.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲧⲉ ⲫⲁⲓ ⲡⲉ Ⲓⲏ︦ⲥ︦: ⲡⲓⲙⲓⲥⲓ ⲉ̀ⲃⲟⲗ ϧⲉⲛ Ⲫⲓⲱⲧ: ⲁⲩⲙⲁⲥϥ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲛ̀ϧⲏϯ: ⲁϥⲉⲣ ⲡⲉⲛⲅⲉⲛⲟⲥ ⲛ̀ⲣⲉⲙϩⲉ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Therefore let us declare / first with our hearts / then also with our tongues / proclaiming and saying,",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲁⲓ ⲅⲁⲣ ⲙⲁⲣⲉⲛⲧⲁⲟⲩⲟϥ: ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲡⲉⲛϩⲏⲧ ⲛ̀ϣⲟⲣⲡ: ⲙⲉⲛⲉⲛⲥⲱⲥ ⲟⲛ ϧⲉⲛ ⲡⲉⲛⲕⲉⲗⲁⲥ: ⲉⲛⲱϣ ⲉ̀ⲃⲟⲗ ⲉⲛϫⲱ ⲙ̀ⲙⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "“O our Lord Jesus Christ / make for Yourself within us / a temple of Your Holy Spirit / glorifying You.”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲙⲁⲑⲁⲙⲓⲟ̀ ⲛⲁⲕ ⲛ̀ϧ̀ⲣⲏⲓ ⲛ̀ϧⲏⲧⲉⲛ: ⲛ̀ⲟⲩⲉⲣⲫⲉⲓ ⲛ̀ⲧⲉ Ⲡⲉⲕⲡ︦ⲛ︦ⲁ︦ ⲉ︦ⲑ︦ⲩ︦: ⲉⲩϯⲇⲟⲝⲟⲗⲟⲅⲓⲁ̀ ⲛⲁⲕ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you, O Virgin, / the right and true Queen. / Hail to the pride of our race / who bore to us Immanuel.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲉ ⲱ̀ ϯⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲟⲩⲣⲱ ⲙ̀ⲙⲏⲓ ⲛ̀ⲁ̀ⲗⲏⲑⲓⲛⲏ: ⲭⲉⲣⲉ ⲡ̀ϣⲟⲩϣⲟⲩ ⲛ̀ⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ: ⲁ̀ⲣⲉϫ̀ⲫⲟ ⲛⲁⲛ ⲛ̀Ⲉⲙⲙⲁⲛⲟⲩⲏⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "We ask you to remember us, / O our faithful advocate, / before our Lord Jesus Christ / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲉⲛϯϩⲟ ⲁ̀ⲣⲓⲡⲉⲛⲙⲉⲩⲓ̀: ⲱ̀ ϯⲡ̀ⲣⲟⲥⲧⲁⲧⲏⲥ ⲉ̀ⲧⲉⲛϩⲟⲧ: ⲛⲁϩⲣⲉⲛ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMaryStandard.cr",
+    "incipit": "Ⲱⲟⲩⲛⲓⲁϯ ⲛ̀ⲑⲟ Ⲙⲁⲣⲓⲁ...",
+    "rowIds": [
+      "R274",
+      "R275",
+      "R276",
+      "R277",
+      "R278",
+      "R279",
+      "R27a",
+      "R27b",
+      "R100000014",
+      "R100000016"
+    ]
+  },
+  "textOverride": "Blessed are you O Mary / the wise and the chaste / the Second Tabernacle / the spiritual treasure.\nThe pure turtle-dove / who declared in our land / and brought to us / the Fruit of the Spirit.\nThe Spirit of Comfort / who came upon your son / in the waters of the Jordan. / According to the type of Noah-\nThat dove has / announced to us / the peace of God / for mankind.\nLikewise you O our hope / the spiritual turtledove / have brought mercy unto us / carrying Him in your womb.\nHe is Jesus / the begotten of the Father / He was born of you for us / setting free our race.\nTherefore let us declare / first with our hearts / then also with our tongues / proclaiming and saying,\n“O our Lord Jesus Christ / make for Yourself within us / a temple of Your Holy Spirit / glorifying You.”\nHail to you, O Virgin, / the right and true Queen. / Hail to the pride of our race / who bore to us Immanuel.\nWe ask you to remember us, / O our faithful advocate, / before our Lord Jesus Christ / that He may forgive us our sins.",
+  "copticTextOverride": "Ⲱⲟⲩⲛⲓⲁϯ ⲛ̀ⲑⲟ Ⲙⲁⲣⲓⲁ: ϯⲥⲁⲃⲏ ⲟⲩⲟϩ ⲛ̀ⲥⲉⲙⲛⲏ: ϯⲙⲁϩⲥ̀ⲛⲟⲩϯ ⲛ̀ⲥ̀ⲕⲏⲛⲏ: ⲡⲓⲁ̀ϩⲟ ⲙ̀ⲡ︦ⲛ︦ⲁ︦ⲧⲓⲕⲟⲛ.\nϮϭⲣⲟⲙⲡ̀ϣⲁⲗ ⲛ̀ⲕⲁⲑⲁⲣⲟⲥ: ⲑⲏⲉ̀ⲧⲁⲥⲙⲟⲩϯ ϧⲉⲛ ⲡⲉⲛⲕⲁϩⲓ: ⲟⲩⲟϩ ⲁⲥⲫⲓⲣⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ: ⲛ̀ⲟⲩⲕⲁⲣⲡⲟⲥ ⲛ̀ⲧⲉ Ⲡⲓⲡ︦ⲛ︦ⲁ︦.\nⲠⲓⲡ︦ⲛ︦ⲁ︦ ⲙ̀ⲡⲁⲣⲁⲕⲗⲏⲧⲟⲛ: ⲫⲏⲉ̀ⲧⲁϥⲓ̀ ⲉ̀ϫⲉⲛ Ⲡⲉϣⲏⲣⲓ: ϩⲓϫⲉⲛ ⲛⲓⲙⲱⲟⲩ ⲛ̀ⲧⲉ Ⲡⲓⲓⲟⲣⲇⲁⲛⲏⲥ: ⲕⲁⲧⲁ ⲡ̀ⲧⲩⲡⲟⲥ ⲛ̀Ⲛⲱⲉ̀.\nϮϭⲣⲟⲙⲡⲓ ⲅⲁⲣ ⲉ̀ⲧⲉ ⲙ̀ⲙⲁⲩ: ⲛ̀ⲑⲟⲥ ⲁⲥϩⲓϣⲉⲛⲛⲟⲩϥⲓ ⲛⲁⲛ: ⲛ̀ϯϩⲓⲣⲏⲛⲏ ⲛ̀ⲧⲉ Ⲫϯ: ⲑⲏⲉ̀ⲧⲁⲥϣⲱⲡⲓ ϣⲁ ⲛⲓⲣⲱⲙⲓ.\nⲚⲑⲟ ϩⲱⲓ ⲱ̀ ⲧⲉⲛϩⲉⲗⲡⲓⲥ: ϯϭⲣⲟⲙⲡ̀ϣⲁⲗ ⲛ̀ⲛⲟⲏ̀ⲧⲉ: ⲁ̀ⲣⲉⲓ̀ⲛⲓ ⲙ̀ⲡⲓⲛⲁⲓ ⲛⲁⲛ: ⲁ̀ⲣⲉϥⲁⲓ ϧⲁⲣⲟϥ ϧⲉⲛ ⲧⲉⲛⲉϫⲓ.\nⲈⲧⲉ ⲫⲁⲓ ⲡⲉ Ⲓⲏ︦ⲥ︦: ⲡⲓⲙⲓⲥⲓ ⲉ̀ⲃⲟⲗ ϧⲉⲛ Ⲫⲓⲱⲧ: ⲁⲩⲙⲁⲥϥ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲛ̀ϧⲏϯ: ⲁϥⲉⲣ ⲡⲉⲛⲅⲉⲛⲟⲥ ⲛ̀ⲣⲉⲙϩⲉ.\nⲪⲁⲓ ⲅⲁⲣ ⲙⲁⲣⲉⲛⲧⲁⲟⲩⲟϥ: ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲡⲉⲛϩⲏⲧ ⲛ̀ϣⲟⲣⲡ: ⲙⲉⲛⲉⲛⲥⲱⲥ ⲟⲛ ϧⲉⲛ ⲡⲉⲛⲕⲉⲗⲁⲥ: ⲉⲛⲱϣ ⲉ̀ⲃⲟⲗ ⲉⲛϫⲱ ⲙ̀ⲙⲟⲥ.\nϪⲉ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲙⲁⲑⲁⲙⲓⲟ̀ ⲛⲁⲕ ⲛ̀ϧ̀ⲣⲏⲓ ⲛ̀ϧⲏⲧⲉⲛ: ⲛ̀ⲟⲩⲉⲣⲫⲉⲓ ⲛ̀ⲧⲉ Ⲡⲉⲕⲡ︦ⲛ︦ⲁ︦ ⲉ︦ⲑ︦ⲩ︦: ⲉⲩϯⲇⲟⲝⲟⲗⲟⲅⲓⲁ̀ ⲛⲁⲕ.\nⲬⲉⲣⲉ ⲛⲉ ⲱ̀ ϯⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲟⲩⲣⲱ ⲙ̀ⲙⲏⲓ ⲛ̀ⲁ̀ⲗⲏⲑⲓⲛⲏ: ⲭⲉⲣⲉ ⲡ̀ϣⲟⲩϣⲟⲩ ⲛ̀ⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ: ⲁ̀ⲣⲉϫ̀ⲫⲟ ⲛⲁⲛ ⲛ̀Ⲉⲙⲙⲁⲛⲟⲩⲏⲗ.\nⲦⲉⲛϯϩⲟ ⲁ̀ⲣⲓⲡⲉⲛⲙⲉⲩⲓ̀: ⲱ̀ ϯⲡ̀ⲣⲟⲥⲧⲁⲧⲏⲥ ⲉ̀ⲧⲉⲛϩⲟⲧ: ⲛⲁϩⲣⲉⲛ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-demiana",
+  "name": "Doxology for St. Demiana",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-demiana.json",
+  "folderOrder": 18,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Demiana",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Demiana:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The wise celibate child, the chosen and true lady, the bride of Christ, Saint Demiana.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϯⲁ̀ⲗⲟⲩ ⲛ̀ⲥⲁⲃⲏ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲥⲱⲧⲡ ⲛ̀ⲕⲩⲣⲓⲁ ⲙ̀ⲙⲏⲓ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ ⲙ̀ⲙⲏⲓ Ⲇⲩⲙⲓⲁⲛⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "This is she who was filled with wisdom, from her childhood, she hated the earthly, and she loved virginity.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲑⲁⲓ ⲓⲥϫⲉⲛ ⲧⲉⲥⲙⲉⲧⲁ̀ⲗⲟⲩ: ⲛⲁⲥⲙⲉϩ ⲉ̀ⲃⲟⲗ ϧⲉⲛ ϯⲥⲟⲫⲓⲁ: ⲁⲥⲙⲟⲥϯ ⲛ̀ⲛⲓⲕⲟⲥⲙⲓⲕⲟⲛ: ⲁⲥⲙⲉⲛⲣⲉ ⲛ̀ϯⲡⲁⲣⲑⲉⲛⲓⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "She became the head, and a harbor of salvation, the mother of forty virgins, in the tower which her father built.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲥϣⲱⲡⲓ ⲛ̀ϯⲁⲣⲭⲏ: ⲛ̀ⲗⲩⲙⲏⲛ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ: ⲑ̀ⲙⲁⲩ ⲛ̀ϩⲙⲉ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϧⲉⲛ ⲡⲓⲡⲩⲣⲅⲟⲥ ⲉ̀ⲧⲁ ⲡⲉⲥⲓⲱⲧ ⲕⲟⲧϥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "When he denied Christ, his loving daughter Demiana, restored his faith, and he received martyrdom.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥϫⲱⲗ ⲉ̀ⲃⲟⲗ ⲙ̀Ⲡⲭ︦ⲥ︦: ⲁⲥⲧⲁⲥⲑⲟ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ ⲧⲉϥϣⲉⲣⲓ: ⲉ̀ⲧⲁⲥⲙⲉnⲣⲉ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ Ⲇⲩⲙⲓⲁⲛⲏ: ⲁϥϭⲓ ⲛ̀ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲓⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Therefore the King sent for her, and ordered her to be tortured, she endured repeated sufferings, and received martyrdom.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲑⲃⲉ ⲫⲁⲓ ⲁϥⲟⲩⲱⲣⲡ ⲛ̀ϫⲉ ⲡ̀ⲟⲩⲣⲟ: ⲁϥⲟⲩⲁϩⲥⲁϩⲛⲓ ϧⲉⲛ ⲛⲉⲥϧⲓⲥⲓ: ⲁⲥϣⲉⲡⲙ̀ⲕⲁϩ ⲛ̀ⲟⲩⲙⲏϣ ⲛ̀ⲥⲟⲡ: ⲁⲥϭⲓ ⲛ̀ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲓⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The forty holy virgins, who were with her in the tower, received martyrdom, all in one day with her.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓϩ̀ⲙⲉ ⲉ︦ⲑ︦ⲩ︦ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ⲉ̀ⲛⲁⲩϣⲱⲡⲓ ⲛⲉⲙⲁⲥ ϧⲉⲛ ⲡⲓⲡⲩⲣⲅⲟⲥ: ⲁⲩϭⲓ ⲛ̀ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲓⲁ: ϧⲉⲛ ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛ̀ⲟⲩⲱⲧ ⲛⲉⲙⲁⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Blessed are you O Demiana, the bride of the Groom, the celibate nun, the chosen and true martyr.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱⲟⲩⲛⲓⲁ̀ϯ ⲛ̀ⲑⲟ Ⲇⲩⲙⲓⲁⲛⲏ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ ⲡⲓⲛⲩⲙⲫⲓⲟⲥ: ϯⲙⲟⲛⲁⲭⲏ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲥⲱⲧⲡ ⲙ̀ⲙⲏⲓ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O bride of Christ, Saint Demiana, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ ⲙ̀ⲙⲏⲓ Ⲇⲩⲙⲓⲁⲛⲏ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StDemiana.cr",
+    "incipit": "Ϯⲁ̀ⲗⲟⲩ ⲛ̀ⲥⲁⲃⲏ...",
+    "rowIds": [
+      "R4e8",
+      "R4e9",
+      "R4ea",
+      "R4eb",
+      "R4ec",
+      "R4ed",
+      "R4ee",
+      "R4f0",
+      "R4f2"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Demiana:\nThe wise celibate child, the chosen and true lady, the bride of Christ, Saint Demiana.\nThis is she who was filled with wisdom, from her childhood, she hated the earthly, and she loved virginity.\nShe became the head, and a harbor of salvation, the mother of forty virgins, in the tower which her father built.\nWhen he denied Christ, his loving daughter Demiana, restored his faith, and he received martyrdom.\nTherefore the King sent for her, and ordered her to be tortured, she endured repeated sufferings, and received martyrdom.\nThe forty holy virgins, who were with her in the tower, received martyrdom, all in one day with her.\nBlessed are you O Demiana, the bride of the Groom, the celibate nun, the chosen and true martyr.\nPray to the Lord on our behalf, O bride of Christ, Saint Demiana, that He may forgive us our sins.",
+  "copticTextOverride": "\nϮⲁ̀ⲗⲟⲩ ⲛ̀ⲥⲁⲃⲏ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲥⲱⲧⲡ ⲛ̀ⲕⲩⲣⲓⲁ ⲙ̀ⲙⲏⲓ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ ⲙ̀ⲙⲏⲓ Ⲇⲩⲙⲓⲁⲛⲏ.\nⲐⲁⲓ ⲓⲥϫⲉⲛ ⲧⲉⲥⲙⲉⲧⲁ̀ⲗⲟⲩ: ⲛⲁⲥⲙⲉϩ ⲉ̀ⲃⲟⲗ ϧⲉⲛ ϯⲥⲟⲫⲓⲁ: ⲁⲥⲙⲟⲥϯ ⲛ̀ⲛⲓⲕⲟⲥⲙⲓⲕⲟⲛ: ⲁⲥⲙⲉⲛⲣⲉ ⲛ̀ϯⲡⲁⲣⲑⲉⲛⲓⲁ.\nⲀⲥϣⲱⲡⲓ ⲛ̀ϯⲁⲣⲭⲏ: ⲛ̀ⲗⲩⲙⲏⲛ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ: ⲑ̀ⲙⲁⲩ ⲛ̀ϩⲙⲉ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϧⲉⲛ ⲡⲓⲡⲩⲣⲅⲟⲥ ⲉ̀ⲧⲁ ⲡⲉⲥⲓⲱⲧ ⲕⲟⲧϥ.\nⲀϥϫⲱⲗ ⲉ̀ⲃⲟⲗ ⲙ̀Ⲡⲭ︦ⲥ︦: ⲁⲥⲧⲁⲥⲑⲟ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ ⲧⲉϥϣⲉⲣⲓ: ⲉ̀ⲧⲁⲥⲙⲉnⲣⲉ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ Ⲇⲩⲙⲓⲁⲛⲏ: ⲁϥϭⲓ ⲛ̀ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲓⲁ.\nⲈⲑⲃⲉ ⲫⲁⲓ ⲁϥⲟⲩⲱⲣⲡ ⲛ̀ϫⲉ ⲡ̀ⲟⲩⲣⲟ: ⲁϥⲟⲩⲁϩⲥⲁϩⲛⲓ ϧⲉⲛ ⲛⲉⲥϧⲓⲥⲓ: ⲁⲥϣⲉⲡⲙ̀ⲕⲁϩ ⲛ̀ⲟⲩⲙⲏϣ ⲛ̀ⲥⲟⲡ: ⲁⲥϭⲓ ⲛ̀ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲓⲁ.\nⲠⲓϩ̀ⲙⲉ ⲉ︦ⲑ︦ⲩ︦ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ⲉ̀ⲛⲁⲩϣⲱⲡⲓ ⲛⲉⲙⲁⲥ ϧⲉⲛ ⲡⲓⲡⲩⲣⲅⲟⲥ: ⲁⲩϭⲓ ⲛ̀ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲓⲁ: ϧⲉⲛ ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛ̀ⲟⲩⲱⲧ ⲛⲉⲙⲁⲥ.\nⲰⲟⲩⲛⲓⲁ̀ϯ ⲛ̀ⲑⲟ Ⲇⲩⲙⲓⲁⲛⲏ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ ⲡⲓⲛⲩⲙⲫⲓⲟⲥ: ϯⲙⲟⲛⲁⲭⲏ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲥⲱⲧⲡ ⲙ̀ⲙⲏⲓ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ ⲙ̀ⲙⲏⲓ Ⲇⲩⲙⲓⲁⲛⲏ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

@@ -1,0 +1,81 @@
+{
+  "id": "the-conclusion-of-the-doxologies",
+  "name": "The Conclusion of the Doxologies",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/the-conclusion-of-the-doxologies.json",
+  "folderOrder": 31,
+  "formats": {
+    "1": [
+      {
+        "name": "The Conclusion of the Doxologies",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "Watch over us: from on high where you dwell: O Lady of us all: the ever-virgin Theotokos.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϣⲱⲡⲓ ⲛ̀ⲑⲟ ⲉ̀ⲣⲉⲥⲟⲙⲥ ⲉ̀ϫⲱⲛ: ϧⲉⲛ ⲛⲓⲙⲁ ⲉⲧϭⲟⲥⲓ ⲉ̀ⲧⲁⲣⲉⲭⲏ ⲛ̀ϧⲏⲧⲟⲩ: ⲱ̀ ⲧⲉⲛⲟ︦ⲥ︦ ⲛ̀ⲛⲏⲃ ⲧⲏⲣⲉⲛ ϯⲑⲉⲟ̀ⲧⲟⲕⲟⲥ: ⲉⲧⲟⲓ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ ⲛ̀ⲥⲏⲟⲩ ⲛⲓⲃⲉⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Ask of Him whom you have borne: our good Savior: to take away our troubles: and grant us His peace.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲁϯϩⲟ ⲙ̀ⲫⲏⲉ̀ⲧⲁⲣⲉⲙⲁⲥϥ: Ⲡⲉⲛⲥⲱⲧⲏⲣ ⲛ̀ⲁ̀ⲅⲁⲑⲟⲥ: ⲛ̀ⲧⲉϥⲱ̀ⲗⲓ ⲛ̀ⲛⲁⲓϧⲓⲥⲓ ⲉ̀ⲃⲟⲗϩⲁⲣⲟⲛ: ⲛ̀ⲧⲉϥⲥⲉⲙⲛⲓ ⲛⲁⲛ ⲛ̀ⲧⲉϥϩⲓⲣⲏⲛⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you, O Virgin, / the right and true Queen. / Hail to the pride of our race / who bore to us Immanuel.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲉ ⲱ̀ ϯⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲟⲩⲣⲱ ⲙ̀ⲙⲏⲓ ⲛ̀ⲁ̀ⲗⲏⲑⲓⲛⲏ: ⲭⲉⲣⲉ ⲡ̀ϣⲟⲩϣⲟⲩ ⲛ̀ⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ: ⲁ̀ⲣⲉϫ̀ⲫⲟ ⲛⲁⲛ ⲛ̀Ⲉⲙⲙⲁⲛⲟⲩⲏⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "We ask you to remember us, / O our faithful advocate, / before our Lord Jesus Christ / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲉⲛϯϩⲟ ⲁ̀ⲣⲓⲡⲉⲛⲙⲉⲩⲓ̀: ⲱ̀ ϯⲡ̀ⲣⲟⲥⲧⲁⲧⲏⲥ ⲉ̀ⲧⲉⲛϩⲟⲧ: ⲛⲁϩⲣⲉⲛ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/Conclusion.cr",
+    "incipit": "Ϣⲱⲡⲓ ⲛ̀ⲑⲟ...",
+    "rowIds": [
+      "R7bd",
+      "R7be",
+      "R200000014",
+      "R200000016"
+    ]
+  },
+  "textOverride": "Watch over us: from on high where you dwell: O Lady of us all: the ever-virgin Theotokos.\nAsk of Him whom you have borne: our good Savior: to take away our troubles: and grant us His peace.\nHail to you, O Virgin, / the right and true Queen. / Hail to the pride of our race / who bore to us Immanuel.\nWe ask you to remember us, / O our faithful advocate, / before our Lord Jesus Christ / that He may forgive us our sins.",
+  "copticTextOverride": "Ϣⲱⲡⲓ ⲛ̀ⲑⲟ ⲉ̀ⲣⲉⲥⲟⲙⲥ ⲉ̀ϫⲱⲛ: ϧⲉⲛ ⲛⲓⲙⲁ ⲉⲧϭⲟⲥⲓ ⲉ̀ⲧⲁⲣⲉⲭⲏ ⲛ̀ϧⲏⲧⲟⲩ: ⲱ̀ ⲧⲉⲛⲟ︦ⲥ︦ ⲛ̀ⲛⲏⲃ ⲧⲏⲣⲉⲛ ϯⲑⲉⲟ̀ⲧⲟⲕⲟⲥ: ⲉⲧⲟⲓ ⲙ̀ⲡⲁⲣⲑⲉⲛⲟⲥ ⲛ̀ⲥⲏⲟⲩ ⲛⲓⲃⲉⲛ.\nⲘⲁϯϩⲟ ⲙ̀ⲫⲏⲉ̀ⲧⲁⲣⲉⲙⲁⲥϥ: Ⲡⲉⲛⲥⲱⲧⲏⲣ ⲛ̀ⲁ̀ⲅⲁⲑⲟⲥ: ⲛ̀ⲧⲉϥⲱ̀ⲗⲓ ⲛ̀ⲛⲁⲓϧⲓⲥⲓ ⲉ̀ⲃⲟⲗϩⲁⲣⲟⲛ: ⲛ̀ⲧⲉϥⲥⲉⲙⲛⲓ ⲛⲁⲛ ⲛ̀ⲧⲉϥϩⲓⲣⲏⲛⲏ.\nⲬⲉⲣⲉ ⲛⲉ ⲱ̀ ϯⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲟⲩⲣⲱ ⲙ̀ⲙⲏⲓ ⲛ̀ⲁ̀ⲗⲏⲑⲓⲛⲏ: ⲭⲉⲣⲉ ⲡ̀ϣⲟⲩϣⲟⲩ ⲛ̀ⲧⲉ ⲡⲉⲛⲅⲉⲛⲟⲥ: ⲁ̀ⲣⲉϫ̀ⲫⲟ ⲛⲁⲛ ⲛ̀Ⲉⲙⲙⲁⲛⲟⲩⲏⲗ.\nⲦⲉⲛϯϩⲟ ⲁ̀ⲣⲓⲡⲉⲛⲙⲉⲩⲓ̀: ⲱ̀ ϯⲡ̀ⲣⲟⲥⲧⲁⲧⲏⲥ ⲉ̀ⲧⲉⲛϩⲟⲧ: ⲛⲁϩⲣⲉⲛ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

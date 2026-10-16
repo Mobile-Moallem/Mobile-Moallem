@@ -1,0 +1,120 @@
+{
+  "id": "another-doxology-for-st-mark-the-evangelist",
+  "name": "Another Doxology for St. Mark the Evangelist",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/another-doxology-for-st-mark-the-evangelist.json",
+  "folderOrder": 11,
+  "formats": {
+    "1": [
+      {
+        "name": "Another Doxology for St. Mark the Evangelist",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "The following doxology is said on the 30th of Paope and the 30th of Paramoute",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You wore three names: that are in heaven: O Beholder of God the Evangelist: Mark the apostle.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϣⲟⲙⲧ ⲛ̀ⲣⲁⲛ ⲉⲧϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ: ⲛ̀ⲑⲟⲕ ⲁⲕⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲙⲱⲟⲩ: ⲡⲓⲑⲉⲱ̀ⲣⲓⲙⲟⲥ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: Ⲙⲁⲣⲕⲟⲥ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You wore the three crowns: the three perfect names: which is the Father, the Son: and the Holy Spirit.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲕⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲓϣⲟⲙⲧ ⲛ̀ⲭ̀ⲗⲟⲙ: ⲡⲓϣⲟⲙⲧ ⲛ̀ⲣⲁⲛ ⲉⲧϫⲏⲕ ⲉ̀ⲃⲟⲗ: ⲉ̀ⲧⲉ ⲫⲁⲓ ⲡⲉ Ⲫⲓⲱⲧ ⲛⲉⲙ Ⲡϣⲏⲣⲓ: ⲛⲉⲙ Ⲡⲓⲡ̀ⲛⲉⲩⲙⲁ ⲉⲑⲟⲩⲁⲃ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You are an apostle: you are a martyr: you are also the second: chosen Evangelist.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲑⲟⲕ ⲟⲩⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲑⲟⲕ ⲟⲛ ⲟⲩⲙⲁⲣⲧⲩⲣⲟⲥ: ⲛ̀ⲑⲟⲕ ⲟⲛ ⲡⲉ ⲡⲓⲙⲁϩ ⲥ̀ⲛⲁⲩ: ⲛ̀ⲥⲱⲧⲡ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Your friends the Apostles: boast about you: and your words reached: the ends of the world.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲉⲕⲕⲉϣ̀ⲫⲏⲣ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲥⲉϣⲟⲩϣⲟⲩ ⲙ̀ⲙⲱⲟⲩ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲕ: ⲟⲩⲟϩ ⲛⲉⲕⲥⲁϫⲓ ⲁⲩⲫⲟϩ: ϣⲁ ⲁⲩⲫⲣⲏϫⲥ ⲛ̀ϯⲟⲓⲕⲟⲙⲉⲛⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Those whom you planted on earth: throughout the land of Egypt: take pride in you: they blossomed and brought forth fruit.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲥⲉϣⲟⲩϣⲟⲩ ⲙ̀ⲙⲱⲟⲩ ⲛ̀ϧ̀ⲣⲏⲓ ⲛ̀ϧⲏⲧⲕ: ⲛ̀ϫⲉ ⲛⲏⲉⲧⲁⲕⲧⲟϫⲟⲩ ϩⲓϫⲉⲛ ⲡⲓⲕⲁϩⲓ: ϧⲉⲛ ⲧ̀ⲭⲱⲣⲁ ⲧⲏⲣⲥ ⲛ̀Ⲭⲏⲙⲓ: ⲁⲩⲫⲓⲣⲓ ⲉ̀ⲃⲟⲗ ⲉⲩϯⲕⲁⲣⲡⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O Beholder of God, the Evangelist: Mark the apostle: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲡⲓⲑⲉⲱ̀ⲣⲓⲙⲟⲥ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: Ⲙⲁⲣⲕⲟⲥ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMark.cr",
+    "incipit": "Ϣⲟⲙⲧ ⲛ̀ⲣⲁⲛ ⲉⲧϧⲉⲛ...",
+    "rowIds": [
+      "R39f",
+      "R3a0",
+      "R3a1",
+      "R3a2",
+      "R3a3",
+      "R3a4",
+      "R10000039c"
+    ]
+  },
+  "textOverride": "The following doxology is said on the 30th of Paope and the 30th of Paramoute\nYou wore three names: that are in heaven: O Beholder of God the Evangelist: Mark the apostle.\nYou wore the three crowns: the three perfect names: which is the Father, the Son: and the Holy Spirit.\nYou are an apostle: you are a martyr: you are also the second: chosen Evangelist.\nYour friends the Apostles: boast about you: and your words reached: the ends of the world.\nThose whom you planted on earth: throughout the land of Egypt: take pride in you: they blossomed and brought forth fruit.\nPray to the Lord on our behalf: O Beholder of God, the Evangelist: Mark the apostle: that He may forgive us our sins.",
+  "copticTextOverride": "\nϢⲟⲙⲧ ⲛ̀ⲣⲁⲛ ⲉⲧϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ: ⲛ̀ⲑⲟⲕ ⲁⲕⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲙⲱⲟⲩ: ⲡⲓⲑⲉⲱ̀ⲣⲓⲙⲟⲥ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: Ⲙⲁⲣⲕⲟⲥ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ.\nⲀⲕⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲓϣⲟⲙⲧ ⲛ̀ⲭ̀ⲗⲟⲙ: ⲡⲓϣⲟⲙⲧ ⲛ̀ⲣⲁⲛ ⲉⲧϫⲏⲕ ⲉ̀ⲃⲟⲗ: ⲉ̀ⲧⲉ ⲫⲁⲓ ⲡⲉ Ⲫⲓⲱⲧ ⲛⲉⲙ Ⲡϣⲏⲣⲓ: ⲛⲉⲙ Ⲡⲓⲡ̀ⲛⲉⲩⲙⲁ ⲉⲑⲟⲩⲁⲃ.\nⲚⲑⲟⲕ ⲟⲩⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲑⲟⲕ ⲟⲛ ⲟⲩⲙⲁⲣⲧⲩⲣⲟⲥ: ⲛ̀ⲑⲟⲕ ⲟⲛ ⲡⲉ ⲡⲓⲙⲁϩ ⲥ̀ⲛⲁⲩ: ⲛ̀ⲥⲱⲧⲡ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ.\nⲚⲉⲕⲕⲉϣ̀ⲫⲏⲣ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲥⲉϣⲟⲩϣⲟⲩ ⲙ̀ⲙⲱⲟⲩ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲕ: ⲟⲩⲟϩ ⲛⲉⲕⲥⲁϫⲓ ⲁⲩⲫⲟϩ: ϣⲁ ⲁⲩⲫⲣⲏϫⲥ ⲛ̀ϯⲟⲓⲕⲟⲙⲉⲛⲏ.\nⲤⲉϣⲟⲩϣⲟⲩ ⲙ̀ⲙⲱⲟⲩ ⲛ̀ϧ̀ⲣⲏⲓ ⲛ̀ϧⲏⲧⲕ: ⲛ̀ϫⲉ ⲛⲏⲉⲧⲁⲕⲧⲟϫⲟⲩ ϩⲓϫⲉⲛ ⲡⲓⲕⲁϩⲓ: ϧⲉⲛ ⲧ̀ⲭⲱⲣⲁ ⲧⲏⲣⲥ ⲛ̀Ⲭⲏⲙⲓ: ⲁⲩⲫⲓⲣⲓ ⲉ̀ⲃⲟⲗ ⲉⲩϯⲕⲁⲣⲡⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲡⲓⲑⲉⲱ̀ⲣⲓⲙⲟⲥ ⲛ̀ⲉⲩⲁⲅⲅⲉⲗⲓⲥⲧⲏⲥ: Ⲙⲁⲣⲕⲟⲥ ⲡⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

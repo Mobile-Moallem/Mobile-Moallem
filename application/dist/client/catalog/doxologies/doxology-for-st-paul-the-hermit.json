@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-paul-the-hermit",
+  "name": "Doxology for St. Paul the Hermit",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-paul-the-hermit.json",
+  "folderOrder": 21,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Paul the Hermit",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Paul the Hermit:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Our holy father Abba Paul, was the first in the wilderness, he unceasingly disciplined himself, by day and by night.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲉⲛⲓⲱⲧ ⲉ︦ⲑ︦ⲩ︦ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲁϥϣⲱⲡⲓ ⲛ̀ϩⲟⲩⲓⲧ ϩⲓ ⲡ̀ϣⲁϥⲉ: ⲁϥⲉⲣⲁⲥⲕⲓⲛ ϧⲉⲛ ⲟⲩⲙⲉⲧⲁⲑⲙⲟⲩⲛⲕ: ⲙ̀ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲡⲓⲉ̀ϫⲱⲣϩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He fought in the stadium, of piety and he received, the gift of victory, through the strength of Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥϭⲟϫⲓ ϧⲉⲛ ⲡⲓⲥ̀ⲧⲁⲇⲓⲟⲛ: ⲛ̀ⲧⲉ ϯⲙⲉⲧⲉⲩⲥⲉⲃⲏⲥ: ⲁϥϭⲓ ⲙ̀ⲡⲓⲃⲁⲓ ⲛ̀ⲧⲉ ⲡⲓϭⲣⲟ: ϩⲓⲧⲉⲛ ⲧ̀ϫⲟⲙ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Proclaiming and saying, like the wise Paul, before our righteous father, the great Saint Antony.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉϥⲱϣ ⲉ̀ⲃⲟⲗ ⲉϥϫⲱ ⲙ̀ⲙⲟⲥ: ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡⲓⲥⲟⲫⲟⲥ Ⲡⲁⲩⲗⲟⲥ: ⲙ̀ⲡⲉⲙ̀ⲑⲟ ⲙ̀ⲡⲉⲛⲓⲱⲧ ⲡⲓⲑ̀ⲙⲏⲓ: ⲡⲓⲛⲓϣϯ ⲉ︦ⲑ︦ⲩ︦ Ⲁⲛⲧⲱⲛⲓⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "\"I have fought, the good fight, I have finished the race, and I have kept the faith.\"",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲛⲟⲕ ⲡⲓⲁ̀ⲅⲱⲛ ⲉⲑⲛⲁⲛⲉϥ: ⲁⲓⲉⲣⲁ̀ⲅⲱⲛⲓⲍⲉⲥⲑⲉ ⲙ̀ⲙⲟϥ: ⲡⲓⲇ̀ⲣⲟⲙⲟⲥ ⲁⲓϫⲟⲕϥ ⲉ̀ⲃⲟⲗ: ⲡⲓⲛⲁϩϯ ⲁⲓⲁ̀ⲣⲉϩ ⲉ̀ⲣⲟϥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "\"There is laid up for me, the crown of righteousness, which the Lord will give me, in that day.\"",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲁⲗⲓⲛ ϥ̀ⲭⲏ ⲛⲏⲓ ⲛ̀ϫⲉ ⲡⲓⲭ̀ⲗⲟⲙ: ⲛ̀ⲧⲉ ϯⲇⲓⲕⲉⲟⲥⲩⲛⲏ: ⲫⲁⲓ ⲉ̀ⲧⲉ Ⲡⲟ︦ⲥ︦ ⲛⲁⲧⲏⲓϥ ⲛⲏⲓ: ϧⲉⲛ ⲡⲓⲉ̀ϩⲟⲟⲩ ⲉ̀ⲧⲉ ⲙ̀ⲙⲁⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O great and holy Abba Paul, that the Lord whom you have loved, may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲛⲓϣϯ ⲉ︦ⲑ︦ⲩ︦ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ϩⲓⲛⲁ ⲛ̀ⲧⲉ Ⲡⲟ︦ⲥ︦ ⲫⲏⲉ̀ⲧⲁⲕⲙⲉⲛⲣⲓⲧϥ: ⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StPaulTheHermit.cr",
+    "incipit": "Ⲡⲉⲛⲓⲱⲧ ⲉ︦ⲑ︦ⲩ︦...",
+    "rowIds": [
+      "R52b",
+      "R52c",
+      "R52d",
+      "R52e",
+      "R52f",
+      "R530",
+      "R532"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Paul the Hermit:\nOur holy father Abba Paul, was the first in the wilderness, he unceasingly disciplined himself, by day and by night.\nHe fought in the stadium, of piety and he received, the gift of victory, through the strength of Christ.\nProclaiming and saying, like the wise Paul, before our righteous father, the great Saint Antony.\n\"I have fought, the good fight, I have finished the race, and I have kept the faith.\"\n\"There is laid up for me, the crown of righteousness, which the Lord will give me, in that day.\"\nPray to the Lord on our behalf, O great and holy Abba Paul, that the Lord whom you have loved, may forgive us our sins.",
+  "copticTextOverride": "\nⲠⲉⲛⲓⲱⲧ ⲉ︦ⲑ︦ⲩ︦ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲁϥϣⲱⲡⲓ ⲛ̀ϩⲟⲩⲓⲧ ϩⲓ ⲡ̀ϣⲁϥⲉ: ⲁϥⲉⲣⲁⲥⲕⲓⲛ ϧⲉⲛ ⲟⲩⲙⲉⲧⲁⲑⲙⲟⲩⲛⲕ: ⲙ̀ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲡⲓⲉ̀ϫⲱⲣϩ.\nⲀϥϭⲟϫⲓ ϧⲉⲛ ⲡⲓⲥ̀ⲧⲁⲇⲓⲟⲛ: ⲛ̀ⲧⲉ ϯⲙⲉⲧⲉⲩⲥⲉⲃⲏⲥ: ⲁϥϭⲓ ⲙ̀ⲡⲓⲃⲁⲓ ⲛ̀ⲧⲉ ⲡⲓϭⲣⲟ: ϩⲓⲧⲉⲛ ⲧ̀ϫⲟⲙ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.\nⲈϥⲱϣ ⲉ̀ⲃⲟⲗ ⲉϥϫⲱ ⲙ̀ⲙⲟⲥ: ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡⲓⲥⲟⲫⲟⲥ Ⲡⲁⲩⲗⲟⲥ: ⲙ̀ⲡⲉⲙ̀ⲑⲟ ⲙ̀ⲡⲉⲛⲓⲱⲧ ⲡⲓⲑ̀ⲙⲏⲓ: ⲡⲓⲛⲓϣϯ ⲉ︦ⲑ︦ⲩ︦ Ⲁⲛⲧⲱⲛⲓⲟⲥ.\nⲀⲛⲟⲕ ⲡⲓⲁ̀ⲅⲱⲛ ⲉⲑⲛⲁⲛⲉϥ: ⲁⲓⲉⲣⲁ̀ⲅⲱⲛⲓⲍⲉⲥⲑⲉ ⲙ̀ⲙⲟϥ: ⲡⲓⲇ̀ⲣⲟⲙⲟⲥ ⲁⲓϫⲟⲕϥ ⲉ̀ⲃⲟⲗ: ⲡⲓⲛⲁϩϯ ⲁⲓⲁ̀ⲣⲉϩ ⲉ̀ⲣⲟϥ.\nⲠⲁⲗⲓⲛ ϥ̀ⲭⲏ ⲛⲏⲓ ⲛ̀ϫⲉ ⲡⲓⲭ̀ⲗⲟⲙ: ⲛ̀ⲧⲉ ϯⲇⲓⲕⲉⲟⲥⲩⲛⲏ: ⲫⲁⲓ ⲉ̀ⲧⲉ Ⲡⲟ︦ⲥ︦ ⲛⲁⲧⲏⲓϥ ⲛⲏⲓ: ϧⲉⲛ ⲡⲓⲉ̀ϩⲟⲟⲩ ⲉ̀ⲧⲉ ⲙ̀ⲙⲁⲩ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲛⲓϣϯ ⲉ︦ⲑ︦ⲩ︦ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ϩⲓⲛⲁ ⲛ̀ⲧⲉ Ⲡⲟ︦ⲥ︦ ⲫⲏⲉ̀ⲧⲁⲕⲙⲉⲛⲣⲓⲧϥ: ⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

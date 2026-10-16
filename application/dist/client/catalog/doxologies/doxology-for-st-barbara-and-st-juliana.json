@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-barbara-and-st-juliana",
+  "name": "Doxology for St. Barbara and St. Juliana",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-barbara-and-st-juliana.json",
+  "folderOrder": 19,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Barbara and St. Juliana",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Barbara and St. Juliana:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The light of the holy Trinity, has shone upon this virgin, Saint Barbara, the Bride of Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓⲟⲩⲱⲓⲛⲓ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ ⲉ︦ⲑ︦ⲩ︦: ⲁϥϣⲁⲓ ⲉ̀ϫⲉⲛ ⲧⲁⲓⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲁ̀ⲅⲓⲁ Ⲃⲁⲣⲃⲁⲣⲁ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "She loved the holy Trinity, and disdained her father, the lawless man, who cut her head with his hand.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲥⲙⲉⲛⲣⲉ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ ⲉ︦ⲑ︦ⲩ︦: ⲟⲩⲟϩ ⲉⲑⲙⲟⲥϯ ⲅⲁⲣ ⲙ̀ⲡⲉⲥⲓⲱⲧ: ⲡⲓⲣⲱⲙⲓ ⲛ̀ⲁ̀ⲛⲟⲙⲟⲥ ⲉ̀ⲧⲁϥϣⲁⲧ: ⲛ̀ⲧⲉⲥⲁ̀ⲫⲉ ϧⲉⲛ ⲧⲉϥϫⲓϫ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Rejoice O true bride, who has become a sanctuary, for the Holy Spirit, since her early childhood.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲣⲁϣⲓ ⲱ̀ ϯϣⲉⲗⲉⲧ ⲙ̀ⲙⲏⲓ: ⲉⲏⲉ̀ⲧⲁⲥϣⲱⲡⲓ ⲛ̀ⲟⲩⲉ̀ⲣⲫⲉⲓ: ⲛ̀ⲧⲉ Ⲡⲓⲡ̀ⲛⲉⲩⲙⲁ ⲉ︦ⲑ︦ⲩ︦: ⲓⲥϫⲉⲛ ⲧⲉⲥⲙⲉⲧⲕⲟⲩϫⲓ ⲛ̀ⲁ̀ⲗⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For you became a daughter, of the heavenly Father, and you became a daughter, of Mary the Virgin.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲣⲉϣⲱⲡⲓ ⲅⲁⲣ ⲛ̀ⲑⲟ: ⲧϣⲉⲣⲓ ⲙ̀Ⲫⲓⲱⲧ ⲉⲧ ϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ: ⲟⲩⲟϩ ⲉ̀ⲣⲉϣⲱⲡⲓ ⲅⲁⲣ ⲛ̀ⲟⲩϣⲉⲣⲓ: ⲙ̀Ⲙⲁⲣⲓⲁ ϯⲡⲁⲣⲑⲉⲛⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "We honor you joyfully, O brides of Christ, Saint Barbara, and Saint Juliana.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲉⲛⲧⲁⲓⲟ̀ ⲙ̀ⲙⲱⲧⲉⲛ ϧⲉⲛ ⲟⲩⲟⲩⲛⲟϥ: ⲱ̀ ⲛⲓϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ Ⲃⲁⲣⲃⲁⲣⲁ: ⲛⲉⲙ ϯⲁ̀ⲅⲓⲁ Ⲓⲱⲗⲓⲁⲛⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O brides of Christ, Barbara and Juliana, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲛⲓϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: Ⲃⲁⲣⲃⲁⲣⲁ ⲛⲉⲙ Ⲓⲱⲗⲓⲁⲛⲁ: ⲛ̀ⲧⲉϥ ⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StBarbaraAndStJuliana.cr",
+    "incipit": "Ⲡⲓⲟⲩⲱⲓⲛⲓ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ...",
+    "rowIds": [
+      "R4f7",
+      "R4f8",
+      "R4f9",
+      "R4fa",
+      "R4fb",
+      "R4fc",
+      "R4fe"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Barbara and St. Juliana:\nThe light of the holy Trinity, has shone upon this virgin, Saint Barbara, the Bride of Christ.\nShe loved the holy Trinity, and disdained her father, the lawless man, who cut her head with his hand.\nRejoice O true bride, who has become a sanctuary, for the Holy Spirit, since her early childhood.\nFor you became a daughter, of the heavenly Father, and you became a daughter, of Mary the Virgin.\nWe honor you joyfully, O brides of Christ, Saint Barbara, and Saint Juliana.\nPray to the Lord on our behalf, O brides of Christ, Barbara and Juliana, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲠⲓⲟⲩⲱⲓⲛⲓ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ ⲉ︦ⲑ︦ⲩ︦: ⲁϥϣⲁⲓ ⲉ̀ϫⲉⲛ ⲧⲁⲓⲡⲁⲣⲑⲉⲛⲟⲥ: ϯⲁ̀ⲅⲓⲁ Ⲃⲁⲣⲃⲁⲣⲁ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.\nⲈⲥⲙⲉⲛⲣⲉ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ ⲉ︦ⲑ︦ⲩ︦: ⲟⲩⲟϩ ⲉⲑⲙⲟⲥϯ ⲅⲁⲣ ⲙ̀ⲡⲉⲥⲓⲱⲧ: ⲡⲓⲣⲱⲙⲓ ⲛ̀ⲁ̀ⲛⲟⲙⲟⲥ ⲉ̀ⲧⲁϥϣⲁⲧ: ⲛ̀ⲧⲉⲥⲁ̀ⲫⲉ ϧⲉⲛ ⲧⲉϥϫⲓϫ.\nⲢⲁϣⲓ ⲱ̀ ϯϣⲉⲗⲉⲧ ⲙ̀ⲙⲏⲓ: ⲉⲏⲉ̀ⲧⲁⲥϣⲱⲡⲓ ⲛ̀ⲟⲩⲉ̀ⲣⲫⲉⲓ: ⲛ̀ⲧⲉ Ⲡⲓⲡ̀ⲛⲉⲩⲙⲁ ⲉ︦ⲑ︦ⲩ︦: ⲓⲥϫⲉⲛ ⲧⲉⲥⲙⲉⲧⲕⲟⲩϫⲓ ⲛ̀ⲁ̀ⲗⲟⲩ.\nⲈⲣⲉϣⲱⲡⲓ ⲅⲁⲣ ⲛ̀ⲑⲟ: ⲧϣⲉⲣⲓ ⲙ̀Ⲫⲓⲱⲧ ⲉⲧ ϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ: ⲟⲩⲟϩ ⲉ̀ⲣⲉϣⲱⲡⲓ ⲅⲁⲣ ⲛ̀ⲟⲩϣⲉⲣⲓ: ⲙ̀Ⲙⲁⲣⲓⲁ ϯⲡⲁⲣⲑⲉⲛⲟⲥ.\nⲦⲉⲛⲧⲁⲓⲟ̀ ⲙ̀ⲙⲱⲧⲉⲛ ϧⲉⲛ ⲟⲩⲟⲩⲛⲟϥ: ⲱ̀ ⲛⲓϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ Ⲃⲁⲣⲃⲁⲣⲁ: ⲛⲉⲙ ϯⲁ̀ⲅⲓⲁ Ⲓⲱⲗⲓⲁⲛⲁ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲛⲓϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: Ⲃⲁⲣⲃⲁⲣⲁ ⲛⲉⲙ Ⲓⲱⲗⲓⲁⲛⲁ: ⲛ̀ⲧⲉϥ ⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

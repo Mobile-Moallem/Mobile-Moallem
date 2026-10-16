@@ -1,0 +1,159 @@
+{
+  "id": "doxology-for-all-the-heavenly-beings",
+  "name": "Doxology for All the Heavenly Beings",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-all-the-heavenly-beings.json",
+  "folderOrder": 4,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for All the Heavenly Beings",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "Seven archangels / praising as they stand / before the Pantocrator / serving the hidden Mystery.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϣⲁϣϥ ⲛ̀ⲁⲣⲭⲏⲁⲅⲅⲉⲗⲟⲥ: ⲥⲉⲟ̀ϩⲓ ⲉ̀ⲣⲁⲧⲟⲩ ⲉⲩⲉⲣϩⲩⲙⲛⲟⲥ: ⲙ̀ⲡⲉⲙ̀ⲑⲟ ⲙ̀ⲡⲓⲡⲁⲛⲧⲟⲕⲣⲁⲧⲱⲣ: ⲉⲩϣⲉⲙϣⲓ ⲙ̀ⲙⲩⲥⲧⲏⲣⲓⲟⲛ ⲉⲧϩⲏⲡ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Michael is the first / Gabriel is the second / Raphael is the third / a symbol of the Trinity.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲓⲭⲁⲏⲗ ⲡⲉ ⲡⲓϩⲟⲩⲓⲧ: Ⲅⲁⲃⲣⲓⲏⲗ ⲡⲉ ⲡⲓⲙⲁϩ ⲥ̀ⲛⲁⲩ: Ⲣⲁⲫⲁⲏⲗ ⲡⲉ ⲡⲓⲙⲁϩ ϣⲟⲙⲧ: ⲕⲁⲧⲁ ⲡ̀ⲧⲩⲡⲟⲥ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Suriel, Sedakiel / Sarathiel, and Ananiel / the great and holy luminaries / entreating Him for the creation.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲥⲟⲩⲣⲓⲏⲗ Ⲥⲉⲇⲁⲕⲓⲏⲗ: Ⲥⲁⲣⲁⲑⲓⲏⲗ ⲛⲉⲙ Ⲁⲛⲁⲛⲓⲏⲗ: ⲛⲁⲓ ⲛⲓϣϯ ⲛ̀ⲣⲉϥⲉⲣⲟⲩⲱⲓⲛⲓ ⲉ︦ⲑ︦ⲩ︦: ⲛⲏⲉⲧⲱⲃϩ ⲙ̀ⲙⲟϥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲉⲛ ⲡⲓⲥⲱⲛⲧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The cherubim and the seraphim / the thrones, dominions and powers, / the four incorporeal creatures, / carrying the throne of God.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲓⲭⲉⲣⲟⲩⲃⲓⲙ ⲛⲉⲙ ⲛⲓⲥⲉⲣⲁⲫⲓⲙ: ⲛⲓⲑ̀ⲣⲟⲛⲟⲥ ⲛⲓⲙⲉⲧⲟ︦ⲥ︦ ⲛⲓϫⲟⲙ: ⲡⲓϥ̀ⲧⲟⲩ ⲛ̀ⲍⲱⲟⲛ ⲛ̀ⲁ̀ⲥⲱⲙⲁⲧⲟⲥ: ⲉⲧϥⲁⲓ ϧⲁ ⲡⲓϩⲁⲣⲙⲁ ⲛ̀Ⲑⲉⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The twenty-four presbyters / in the Church of the first-born / praising Him without ceasing / proclaiming and saying.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓϫⲟⲩⲧ ϥ̀ⲧⲟⲩ ⲙ̀ⲡ̀ⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ: ϧⲉⲛ ϯⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀ ⲛ̀ⲧⲉ ⲛⲓϣⲟⲣⲡ ⲙ̀ⲙⲓⲥⲓ: ⲉⲩϩⲱⲥ ⲉ̀ⲣⲟϥ ϧⲉⲛ ⲟⲩⲙⲉⲧⲁⲧⲙⲟⲩⲛⲕ: ⲉⲩⲱϣ ⲉ̀ⲃⲟⲗ ⲉⲩϫⲱ ⲙ̀ⲙⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "“Holy God / heal the sick / Holy Mighty / O Lord repose those who are asleep;",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲁ̀ⲅⲓⲟⲥ ⲟ̀ Ⲑⲉⲟⲥ: ⲛⲏⲉⲧϣⲱⲛⲓ ⲙⲁⲧⲁⲗϭⲱⲟⲩ: ⲁ̀ⲅⲓⲟⲥ ⲓⲥⲭⲩⲣⲟⲥ: ⲛⲏⲉⲧⲁⲩⲉⲛⲕⲟⲧ Ⲡⲟ︦ⲥ︦ ⲙⲁⲙ̀ⲧⲟⲛ ⲛⲱⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Holy Immortal / bless Your inheritance / may Your mercy and peace / be a fortress to Your people.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲅⲓⲟⲥ ⲁ̀ⲑⲁⲛⲁⲧⲟⲥ: ⲥ̀ⲙⲟⲩ ⲉ̀ⲧⲉⲕⲕ̀ⲗⲏⲣⲟⲛⲟⲙⲓⲁ: ⲙⲁⲣⲉ ⲡⲉⲕⲛⲁⲓ ⲛⲉⲙ ⲧⲉⲕϩⲓⲣⲏⲛⲏ: ⲟⲓ ⲛ̀ⲥⲟⲃⲧ ⲙ̀ⲡⲉⲕⲗⲁⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Holy, Holy / Holy, O Lord of Hosts / heaven and earth are full of / Your glory and honor.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲭ̀ⲟⲩⲁⲃ ⲟⲩⲟϩ ⲭ̀ⲟⲩⲁⲃ: ⲭ̀ⲟⲩⲁⲃ Ⲡⲟ︦ⲥ︦ ⲥⲁⲃⲁⲱⲑ: ⲧ̀ⲫⲉ ⲛⲉⲙ ⲡ̀ⲕⲁϩⲓ ⲙⲉϩ ⲉ̀ⲃⲟⲗ: ϧⲉⲛ ⲡⲉⲕⲱ̀ⲟⲩ ⲛⲉⲙ ⲡⲉⲕⲧⲁⲓⲟ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "And when they say, \"Alleluia\" / the heavenly respond saying, / \"Holy. Amen. Alleluia. / Glory be to our God.\"",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲩϣⲁⲛϫⲟⲥ ⲙ̀ⲡⲓ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ: ϣⲁⲣⲉ ⲛⲁ ⲛⲓⲫⲏⲟⲩⲓ ⲟⲩⲱϩ ⲙ̀ⲙⲱⲟⲩ: ϫⲉ ⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲙⲏⲛ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ: ⲡⲓⲱ̀ⲟⲩ ⲫⲁ Ⲡⲉⲛⲛⲟⲩϯ ⲡⲉ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Intercede on our behalf / O angelic hosts / and heavenly orders / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲣⲓⲡ̀ⲣⲉⲥⲃⲉⲩⲓⲛ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲛⲓⲥ̀ⲧⲣⲁⲧⲓⲁ ⲛ̀ⲁⲅⲅⲉⲗⲓⲕⲟⲛ: ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ ⲛ̀ⲉ̀ⲡⲟⲩⲣⲁⲛⲓⲟⲛ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/HeavenlyHost.cr",
+    "incipit": "Ϣⲁϣϥ ⲛ̀ⲁⲣⲭⲏⲁⲅⲅⲉⲗⲟⲥ...",
+    "rowIds": [
+      "R2f2",
+      "R2f3",
+      "R2f4",
+      "R2f5",
+      "R2f6",
+      "R2f7",
+      "R2f8",
+      "R2f9",
+      "R2fa",
+      "R2fb"
+    ]
+  },
+  "textOverride": "Seven archangels / praising as they stand / before the Pantocrator / serving the hidden Mystery.\nMichael is the first / Gabriel is the second / Raphael is the third / a symbol of the Trinity.\nSuriel, Sedakiel / Sarathiel, and Ananiel / the great and holy luminaries / entreating Him for the creation.\nThe cherubim and the seraphim / the thrones, dominions and powers, / the four incorporeal creatures, / carrying the throne of God.\nThe twenty-four presbyters / in the Church of the first-born / praising Him without ceasing / proclaiming and saying.\n“Holy God / heal the sick / Holy Mighty / O Lord repose those who are asleep;\nHoly Immortal / bless Your inheritance / may Your mercy and peace / be a fortress to Your people.\nHoly, Holy / Holy, O Lord of Hosts / heaven and earth are full of / Your glory and honor.\nAnd when they say, \"Alleluia\" / the heavenly respond saying, / \"Holy. Amen. Alleluia. / Glory be to our God.\"\nIntercede on our behalf / O angelic hosts / and heavenly orders / that He may forgive us our sins.",
+  "copticTextOverride": "Ϣⲁϣϥ ⲛ̀ⲁⲣⲭⲏⲁⲅⲅⲉⲗⲟⲥ: ⲥⲉⲟ̀ϩⲓ ⲉ̀ⲣⲁⲧⲟⲩ ⲉⲩⲉⲣϩⲩⲙⲛⲟⲥ: ⲙ̀ⲡⲉⲙ̀ⲑⲟ ⲙ̀ⲡⲓⲡⲁⲛⲧⲟⲕⲣⲁⲧⲱⲣ: ⲉⲩϣⲉⲙϣⲓ ⲙ̀ⲙⲩⲥⲧⲏⲣⲓⲟⲛ ⲉⲧϩⲏⲡ.\nⲘⲓⲭⲁⲏⲗ ⲡⲉ ⲡⲓϩⲟⲩⲓⲧ: Ⲅⲁⲃⲣⲓⲏⲗ ⲡⲉ ⲡⲓⲙⲁϩ ⲥ̀ⲛⲁⲩ: Ⲣⲁⲫⲁⲏⲗ ⲡⲉ ⲡⲓⲙⲁϩ ϣⲟⲙⲧ: ⲕⲁⲧⲁ ⲡ̀ⲧⲩⲡⲟⲥ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ.\nⲤⲟⲩⲣⲓⲏⲗ Ⲥⲉⲇⲁⲕⲓⲏⲗ: Ⲥⲁⲣⲁⲑⲓⲏⲗ ⲛⲉⲙ Ⲁⲛⲁⲛⲓⲏⲗ: ⲛⲁⲓ ⲛⲓϣϯ ⲛ̀ⲣⲉϥⲉⲣⲟⲩⲱⲓⲛⲓ ⲉ︦ⲑ︦ⲩ︦: ⲛⲏⲉⲧⲱⲃϩ ⲙ̀ⲙⲟϥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲉⲛ ⲡⲓⲥⲱⲛⲧ.\nⲚⲓⲭⲉⲣⲟⲩⲃⲓⲙ ⲛⲉⲙ ⲛⲓⲥⲉⲣⲁⲫⲓⲙ: ⲛⲓⲑ̀ⲣⲟⲛⲟⲥ ⲛⲓⲙⲉⲧⲟ︦ⲥ︦ ⲛⲓϫⲟⲙ: ⲡⲓϥ̀ⲧⲟⲩ ⲛ̀ⲍⲱⲟⲛ ⲛ̀ⲁ̀ⲥⲱⲙⲁⲧⲟⲥ: ⲉⲧϥⲁⲓ ϧⲁ ⲡⲓϩⲁⲣⲙⲁ ⲛ̀Ⲑⲉⲟⲥ.\nⲠⲓϫⲟⲩⲧ ϥ̀ⲧⲟⲩ ⲙ̀ⲡ̀ⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ: ϧⲉⲛ ϯⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀ ⲛ̀ⲧⲉ ⲛⲓϣⲟⲣⲡ ⲙ̀ⲙⲓⲥⲓ: ⲉⲩϩⲱⲥ ⲉ̀ⲣⲟϥ ϧⲉⲛ ⲟⲩⲙⲉⲧⲁⲧⲙⲟⲩⲛⲕ: ⲉⲩⲱϣ ⲉ̀ⲃⲟⲗ ⲉⲩϫⲱ ⲙ̀ⲙⲟⲥ.\nϪⲉ ⲁ̀ⲅⲓⲟⲥ ⲟ̀ Ⲑⲉⲟⲥ: ⲛⲏⲉⲧϣⲱⲛⲓ ⲙⲁⲧⲁⲗϭⲱⲟⲩ: ⲁ̀ⲅⲓⲟⲥ ⲓⲥⲭⲩⲣⲟⲥ: ⲛⲏⲉⲧⲁⲩⲉⲛⲕⲟⲧ Ⲡⲟ︦ⲥ︦ ⲙⲁⲙ̀ⲧⲟⲛ ⲛⲱⲟⲩ.\nⲀⲅⲓⲟⲥ ⲁ̀ⲑⲁⲛⲁⲧⲟⲥ: ⲥ̀ⲙⲟⲩ ⲉ̀ⲧⲉⲕⲕ̀ⲗⲏⲣⲟⲛⲟⲙⲓⲁ: ⲙⲁⲣⲉ ⲡⲉⲕⲛⲁⲓ ⲛⲉⲙ ⲧⲉⲕϩⲓⲣⲏⲛⲏ: ⲟⲓ ⲛ̀ⲥⲟⲃⲧ ⲙ̀ⲡⲉⲕⲗⲁⲟⲥ.\nϪⲉ ⲭ̀ⲟⲩⲁⲃ ⲟⲩⲟϩ ⲭ̀ⲟⲩⲁⲃ: ⲭ̀ⲟⲩⲁⲃ Ⲡⲟ︦ⲥ︦ ⲥⲁⲃⲁⲱⲑ: ⲧ̀ⲫⲉ ⲛⲉⲙ ⲡ̀ⲕⲁϩⲓ ⲙⲉϩ ⲉ̀ⲃⲟⲗ: ϧⲉⲛ ⲡⲉⲕⲱ̀ⲟⲩ ⲛⲉⲙ ⲡⲉⲕⲧⲁⲓⲟ.\nⲀⲩϣⲁⲛϫⲟⲥ ⲙ̀ⲡⲓ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ: ϣⲁⲣⲉ ⲛⲁ ⲛⲓⲫⲏⲟⲩⲓ ⲟⲩⲱϩ ⲙ̀ⲙⲱⲟⲩ: ϫⲉ ⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲙⲏⲛ ⲁⲗⲗⲏⲗⲟⲩⲓⲁ: ⲡⲓⲱ̀ⲟⲩ ⲫⲁ Ⲡⲉⲛⲛⲟⲩϯ ⲡⲉ.\nⲀⲣⲓⲡ̀ⲣⲉⲥⲃⲉⲩⲓⲛ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲛⲓⲥ̀ⲧⲣⲁⲧⲓⲁ ⲛ̀ⲁⲅⲅⲉⲗⲓⲕⲟⲛ: ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ ⲛ̀ⲉ̀ⲡⲟⲩⲣⲁⲛⲓⲟⲛ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

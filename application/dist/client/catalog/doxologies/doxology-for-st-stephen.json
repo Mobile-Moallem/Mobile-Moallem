@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-stephen",
+  "name": "Doxology for St. Stephen",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-stephen.json",
+  "folderOrder": 9,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Stephen",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Stephen:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The honored martyr: of our Lord Jesus Christ: Saint Stephen: which means “the crown.”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲏⲉⲧⲧⲁⲓⲏⲟⲩⲧ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲛ̀ⲧⲉ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲫⲏⲉ︦ⲑ︦ⲩ︦ Ⲥⲧⲉⲫⲁⲛⲟⲥ: ⲉ̀ⲧⲉ ⲡⲉϥⲟⲩⲱ̀ϩⲉⲙ ⲡⲉ ⲡⲓⲭ̀ⲗⲟⲙ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "To whom God revealed: great mysteries: and his face did shine: like the face of an angel.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲏⲉⲧⲁ̀ Ⲫϯ ϭⲱⲣⲡ ⲉ̀ⲣⲟϥ: ⲛ̀ϩⲁⲛⲛⲓϣϯ ⲙ̀ⲙⲩⲥⲧⲏⲣⲓⲟⲛ: ⲁϥϭⲓⲟⲩⲱⲓⲛⲓ ⲛ̀ϫⲉ ⲡⲉϥϩⲟ: ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡ̀ϩⲟ ⲛ̀ⲟⲩⲁⲅⲅⲉⲗⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Who saw the heavens open: and our Lord Jesus at the right hand of His Father: And those who were stoning him: he was praying for their salvation.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲏⲉⲧⲁϥⲛⲁⲩ ⲉ̀ⲛⲓⲫⲏⲟⲩⲓ ⲉⲩⲟⲩⲏⲛ: ⲟⲩⲟϩ Ⲡⲁⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ ⲥⲁⲟⲩⲓⲛⲁⲙ ⲙ̀Ⲡⲉϥⲓⲱⲧ: ⲛⲏⲉ̀ⲧⲁⲩϩⲓⲱ̀ⲛⲓ ⲉ̀ϫⲱϥ: ⲛⲁϥⲧⲱⲃϩ ⲛ̀ⲥⲁ ⲡⲟⲩⲟⲩϫⲁⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Crying out saying: “My Lord Jesus Christ: receive my spirit: and count not this sin against these men.”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉϥⲱϣ ⲉ̀ⲃⲟⲗ ⲉϥϫⲱ ⲙ̀ⲙⲟⲥ: ϫⲉ Ⲡⲁⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ϣⲉⲡ ⲡⲁⲡ︦ⲛ︦ⲁ︦ ⲉ̀ⲣⲟⲕ: ⲙ̀ⲡⲉⲣⲉⲡ ⲡⲁⲓⲛⲟⲃⲓ ⲉ̀ⲛⲁⲓⲣⲱⲙⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "“For they do not know: what they are doing: Because of the hardness of their heart: O Lord, do not rebuke them.”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲛ̀ⲥⲉⲥⲱⲟⲩⲛ ⲛ̀ϩ̀ⲗⲓ ⲁⲛ: ϧⲉⲛ ⲛⲏⲉ̀ⲧⲟⲩⲓ̀ⲣⲓ ⲙ̀ⲙⲱⲟⲩ: ⲉⲑⲃⲉ ⲡⲓⲑⲱⲙ ⲛ̀ⲧⲉ ⲡⲟⲩϩⲏⲧ: Ⲡⲟ︦ⲥ︦ ⲙ̀ⲡⲉⲣⲥⲟϩⲓ ⲙ̀ⲙⲱⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He finished his course: and died for the Truth: and put on the everlasting crown: of martyrdom.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲉϥⲇ̀ⲣⲟⲙⲟⲥ ⲁϥϫⲟⲕϥ ⲉ̀ⲃⲟⲗ: ⲟⲩⲟϩ ⲁϥⲙⲟⲩ ⲉ̀ϫⲉⲛ ϯⲙⲉⲑⲙⲏⲓ: ⲁϥⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲧⲗⲱⲙ: ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you. O fighter: of our Lord Jesus Christ: Saint Stephen: which means “the crown.”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲁⲑⲗⲏⲧⲏⲥ: ⲛ̀ⲧⲉ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲫⲏⲉ︦ⲑ︦ⲩ︦ Ⲥⲧⲉⲫⲁⲛⲟⲥ: ⲉ̀ⲧⲉ ⲡⲉϥⲟⲩⲱ̀ϩⲉⲙ ⲡⲉ ⲡⲓⲭ̀ⲗⲟⲙ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O blessed archdeacon: Stephen the first martyr: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲣⲭⲏⲇⲓⲁⲕⲱⲛ ⲉⲧⲥ̀ⲙⲁⲣⲱⲟⲩⲧ: Ⲥⲧⲉⲫⲁⲛⲟⲥ ⲡⲓϣⲟⲣⲡ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StStephen.cr",
+    "incipit": "Ⲫⲏⲉⲧⲧⲁⲓⲏⲟⲩⲧ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ...",
+    "rowIds": [
+      "R367",
+      "R368",
+      "R369",
+      "R36a",
+      "R36b",
+      "R36c",
+      "R36d",
+      "R36e",
+      "R370"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Stephen:\nThe honored martyr: of our Lord Jesus Christ: Saint Stephen: which means “the crown.”\nTo whom God revealed: great mysteries: and his face did shine: like the face of an angel.\nWho saw the heavens open: and our Lord Jesus at the right hand of His Father: And those who were stoning him: he was praying for their salvation.\nCrying out saying: “My Lord Jesus Christ: receive my spirit: and count not this sin against these men.”\n“For they do not know: what they are doing: Because of the hardness of their heart: O Lord, do not rebuke them.”\nHe finished his course: and died for the Truth: and put on the everlasting crown: of martyrdom.\nHail to you. O fighter: of our Lord Jesus Christ: Saint Stephen: which means “the crown.”\nPray to the Lord on our behalf: O blessed archdeacon: Stephen the first martyr: that He may forgive us our sins.",
+  "copticTextOverride": "\nⲪⲏⲉⲧⲧⲁⲓⲏⲟⲩⲧ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲛ̀ⲧⲉ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲫⲏⲉ︦ⲑ︦ⲩ︦ Ⲥⲧⲉⲫⲁⲛⲟⲥ: ⲉ̀ⲧⲉ ⲡⲉϥⲟⲩⲱ̀ϩⲉⲙ ⲡⲉ ⲡⲓⲭ̀ⲗⲟⲙ.\nⲪⲏⲉⲧⲁ̀ Ⲫϯ ϭⲱⲣⲡ ⲉ̀ⲣⲟϥ: ⲛ̀ϩⲁⲛⲛⲓϣϯ ⲙ̀ⲙⲩⲥⲧⲏⲣⲓⲟⲛ: ⲁϥϭⲓⲟⲩⲱⲓⲛⲓ ⲛ̀ϫⲉ ⲡⲉϥϩⲟ: ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡ̀ϩⲟ ⲛ̀ⲟⲩⲁⲅⲅⲉⲗⲟⲥ.\nⲪⲏⲉⲧⲁϥⲛⲁⲩ ⲉ̀ⲛⲓⲫⲏⲟⲩⲓ ⲉⲩⲟⲩⲏⲛ: ⲟⲩⲟϩ Ⲡⲁⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ ⲥⲁⲟⲩⲓⲛⲁⲙ ⲙ̀Ⲡⲉϥⲓⲱⲧ: ⲛⲏⲉ̀ⲧⲁⲩϩⲓⲱ̀ⲛⲓ ⲉ̀ϫⲱϥ: ⲛⲁϥⲧⲱⲃϩ ⲛ̀ⲥⲁ ⲡⲟⲩⲟⲩϫⲁⲓ.\nⲈϥⲱϣ ⲉ̀ⲃⲟⲗ ⲉϥϫⲱ ⲙ̀ⲙⲟⲥ: ϫⲉ Ⲡⲁⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ϣⲉⲡ ⲡⲁⲡ︦ⲛ︦ⲁ︦ ⲉ̀ⲣⲟⲕ: ⲙ̀ⲡⲉⲣⲉⲡ ⲡⲁⲓⲛⲟⲃⲓ ⲉ̀ⲛⲁⲓⲣⲱⲙⲓ.\nϪⲉ ⲛ̀ⲥⲉⲥⲱⲟⲩⲛ ⲛ̀ϩ̀ⲗⲓ ⲁⲛ: ϧⲉⲛ ⲛⲏⲉ̀ⲧⲟⲩⲓ̀ⲣⲓ ⲙ̀ⲙⲱⲟⲩ: ⲉⲑⲃⲉ ⲡⲓⲑⲱⲙ ⲛ̀ⲧⲉ ⲡⲟⲩϩⲏⲧ: Ⲡⲟ︦ⲥ︦ ⲙ̀ⲡⲉⲣⲥⲟϩⲓ ⲙ̀ⲙⲱⲟⲩ.\nⲠⲉϥⲇ̀ⲣⲟⲙⲟⲥ ⲁϥϫⲟⲕϥ ⲉ̀ⲃⲟⲗ: ⲟⲩⲟϩ ⲁϥⲙⲟⲩ ⲉ̀ϫⲉⲛ ϯⲙⲉⲑⲙⲏⲓ: ⲁϥⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲧⲗⲱⲙ: ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲟⲥ.\nⲬⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲁⲑⲗⲏⲧⲏⲥ: ⲛ̀ⲧⲉ Ⲡⲉⲛⲟ︦ⲥ︦ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲫⲏⲉ︦ⲑ︦ⲩ︦ Ⲥⲧⲉⲫⲁⲛⲟⲥ: ⲉ̀ⲧⲉ ⲡⲉϥⲟⲩⲱ̀ϩⲉⲙ ⲡⲉ ⲡⲓⲭ̀ⲗⲟⲙ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲣⲭⲏⲇⲓⲁⲕⲱⲛ ⲉⲧⲥ̀ⲙⲁⲣⲱⲟⲩⲧ: Ⲥⲧⲉⲫⲁⲛⲟⲥ ⲡⲓϣⲟⲣⲡ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

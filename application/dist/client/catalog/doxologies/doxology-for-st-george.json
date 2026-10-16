@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-george",
+  "name": "Doxology for St. George",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-george.json",
+  "folderOrder": 13,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. George",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. George:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Saint George completed: seven whole years: being judged daily: by seventy lawless kings.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϣⲁϣϥⲓ ⲛ̀ⲣⲟⲙⲡⲓ ⲁϥϫⲟⲕⲟⲩ ⲉ̀ⲃⲟⲗ: ⲛ̀ϫⲉ ⲫⲏⲉ︦ⲑ︦ⲩ︦ Ⲅⲉⲱⲣⲅⲓⲟⲥ: ⲉ̀ⲣⲉ ⲡⲓϣ̀ⲃⲉ ⲛ̀ⲟⲩⲣⲟ ⲛ̀ⲁ̀ⲛⲟⲙⲟⲥ: ⲉⲩϯϩⲁⲡ ⲉ̀ⲣⲟϥ ⲙ̀ⲙⲏⲛⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "They could not change his mind: nor his upright faith: nor his great love: for Christ the King.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲡⲟⲩϣ̀ⲫⲱⲛϩ ⲙ̀ⲡⲉϥⲗⲟⲅⲓⲥⲙⲟⲥ: ⲟⲩⲇⲉ ⲡⲉϥⲛⲁϩϯ ⲉⲧⲥⲟⲩⲧⲱⲛ: ⲟⲩⲇⲉ ⲧⲉϥⲛⲓϣϯ ⲛ̀ⲁ̀ⲅⲁⲡⲏ: ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲡ̀ⲟⲩⲣⲟ Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He was singing with David saying: \"All the nations surrounded me: but in the name of Jesus my Lord: I took revenge upon them.”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲁϥⲉⲣⲯⲁⲗⲓⲛ ⲛⲉⲙ Ⲇⲁⲩⲓⲇ: ϫⲉ ⲁⲩⲕⲱϯ ⲉ̀ⲣⲟⲓ ⲛ̀ϫⲉ ⲛⲓⲉⲑⲛⲟⲥ ⲧⲏⲣⲟⲩ: ⲁⲗⲗⲁ ϧⲉⲛ ⲫ̀ⲣⲁⲛ ⲛ̀Ⲓⲏ︦ⲥ︦ Ⲡⲁⲛⲟⲩϯ: ⲁⲓϭⲓ ⲙ̀ⲡⲁϭⲓ ⲙ̀ⲡ̀ϣⲓϣ ⲛⲉⲙⲱⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For great is your honor: O my lord Prince George: for Christ rejoices in you: in the heavenly Jerusalem.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲛⲓϣϯ ⲅⲁⲣ ⲡⲉ ⲡⲉⲕⲧⲁⲓⲟ̀: ⲱ̀ ⲡⲁⲟ︦ⲥ︦ ⲡ̀ⲟⲩⲣⲟ Ⲅⲉⲱⲣⲅⲓⲟⲥ: ⲉ̀ⲣⲉ Ⲡⲭ︦ⲥ︦ ⲣⲁϣⲓ ⲛⲉⲙⲁⲕ: ϧⲉⲛ Ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ ⲛ̀ⲧⲉ ⲧ̀ⲫⲉ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you, O martyr: Hail to the courageous hero: Hail to the struggle-mantled: my lord Prince George.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: ⲡⲁⲟ︦ⲥ︦ ⲡ̀ⲟⲩⲣⲟ Ⲅⲉⲱⲣⲅⲓⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O struggle-mantled martyr: my lord Prince George: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲡⲁⲟ︦ⲥ︦ ⲡ̀ⲟⲩⲣⲟ Ⲅⲉⲱⲣⲅⲓⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StGeorge.cr",
+    "incipit": "Ϣⲁϣϥⲓ ⲛ̀ⲣⲟⲙⲡⲓ...",
+    "rowIds": [
+      "R3e6",
+      "R3e7",
+      "R3e8",
+      "R3e9",
+      "R3ea",
+      "R3eb",
+      "R3ed"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. George:\nSaint George completed: seven whole years: being judged daily: by seventy lawless kings.\nThey could not change his mind: nor his upright faith: nor his great love: for Christ the King.\nHe was singing with David saying: \"All the nations surrounded me: but in the name of Jesus my Lord: I took revenge upon them.”\nFor great is your honor: O my lord Prince George: for Christ rejoices in you: in the heavenly Jerusalem.\nHail to you, O martyr: Hail to the courageous hero: Hail to the struggle-mantled: my lord Prince George.\nPray to the Lord on our behalf: O struggle-mantled martyr: my lord Prince George: that He may forgive us our sins.",
+  "copticTextOverride": "\nϢⲁϣϥⲓ ⲛ̀ⲣⲟⲙⲡⲓ ⲁϥϫⲟⲕⲟⲩ ⲉ̀ⲃⲟⲗ: ⲛ̀ϫⲉ ⲫⲏⲉ︦ⲑ︦ⲩ︦ Ⲅⲉⲱⲣⲅⲓⲟⲥ: ⲉ̀ⲣⲉ ⲡⲓϣ̀ⲃⲉ ⲛ̀ⲟⲩⲣⲟ ⲛ̀ⲁ̀ⲛⲟⲙⲟⲥ: ⲉⲩϯϩⲁⲡ ⲉ̀ⲣⲟϥ ⲙ̀ⲙⲏⲛⲓ.\nⲘⲡⲟⲩϣ̀ⲫⲱⲛϩ ⲙ̀ⲡⲉϥⲗⲟⲅⲓⲥⲙⲟⲥ: ⲟⲩⲇⲉ ⲡⲉϥⲛⲁϩϯ ⲉⲧⲥⲟⲩⲧⲱⲛ: ⲟⲩⲇⲉ ⲧⲉϥⲛⲓϣϯ ⲛ̀ⲁ̀ⲅⲁⲡⲏ: ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲡ̀ⲟⲩⲣⲟ Ⲡⲭ︦ⲥ︦.\nⲚⲁϥⲉⲣⲯⲁⲗⲓⲛ ⲛⲉⲙ Ⲇⲁⲩⲓⲇ: ϫⲉ ⲁⲩⲕⲱϯ ⲉ̀ⲣⲟⲓ ⲛ̀ϫⲉ ⲛⲓⲉⲑⲛⲟⲥ ⲧⲏⲣⲟⲩ: ⲁⲗⲗⲁ ϧⲉⲛ ⲫ̀ⲣⲁⲛ ⲛ̀Ⲓⲏ︦ⲥ︦ Ⲡⲁⲛⲟⲩϯ: ⲁⲓϭⲓ ⲙ̀ⲡⲁϭⲓ ⲙ̀ⲡ̀ϣⲓϣ ⲛⲉⲙⲱⲟⲩ.\nⲞⲩⲛⲓϣϯ ⲅⲁⲣ ⲡⲉ ⲡⲉⲕⲧⲁⲓⲟ̀: ⲱ̀ ⲡⲁⲟ︦ⲥ︦ ⲡ̀ⲟⲩⲣⲟ Ⲅⲉⲱⲣⲅⲓⲟⲥ: ⲉ̀ⲣⲉ Ⲡⲭ︦ⲥ︦ ⲣⲁϣⲓ ⲛⲉⲙⲁⲕ: ϧⲉⲛ Ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ ⲛ̀ⲧⲉ ⲧ̀ⲫⲉ.\nⲬⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: ⲡⲁⲟ︦ⲥ︦ ⲡ̀ⲟⲩⲣⲟ Ⲅⲉⲱⲣⲅⲓⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲡⲁⲟ︦ⲥ︦ ⲡ̀ⲟⲩⲣⲟ Ⲅⲉⲱⲣⲅⲓⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

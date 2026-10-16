@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-philopater-mercurius",
+  "name": "Doxology for St. Philopater Mercurius",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-philopater-mercurius.json",
+  "folderOrder": 15,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Philopater Mercurius",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Philopater Mercurius:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Philopateer Mercurius: the mighty one of Christ: put on the full battle gear: and the whole armor of faith.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ: ⲡⲓⲣⲉⲙⲛ̀ϫⲟⲙ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲁϥϯϩⲓⲱⲧϥ ⲛ̀ϯⲡⲁⲛⲟⲡⲗⲓⲁ̀: ⲛⲉⲙ ⲡⲓϧⲱⲕ ⲧⲏⲣϥ ⲛ̀ⲧⲉ ⲡⲓⲛⲁϩϯ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He took in his hand: the two-edged sword: that an angel of the Lord: placed in his right hand.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲟϩ ⲁϥϭⲓ ϧⲉⲛ ⲧⲉϥϫⲓϫ: ⲛ̀ϯⲥⲏϥⲓ ⲛ̀ⲣⲟ ⲥ̀ⲛⲁⲩ: ⲑⲏⲉ̀ⲧⲁ ⲡⲓⲁⲅⲅⲉⲗⲟⲥ ⲛ̀ⲧⲉ Ⲡⲟ︦ⲥ︦ ⲧⲁϫⲣⲟⲥ: ϧⲉⲛ ⲧⲉϥϫⲓϫ ⲛ̀ⲟⲩⲓ̀ⲛⲁⲙ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He went to war: in the power of Christ. He smote the barbarians: with severe wounds.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥϣⲉⲛⲁϥ ⲉ̀ⲡⲓⲡⲟⲗⲉⲙⲟⲥ: ϧⲉⲛ ϯϫⲟⲙ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲁϥϣⲁⲣⲓ ⲉ̀ⲛⲓⲃⲁⲣⲃⲁⲣⲟⲥ: ϧⲉⲛ ⲟⲩⲛⲓϣϯ ⲛ̀ⲉⲣϧⲟⲧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He refused the earthly: and sought the heavenly. He fought in the stadium: of martyrdom.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥⲉⲣⲛⲩⲙⲫⲓⲛ ⲉ̀ⲃⲟⲗϩⲁ ⲛⲁ ⲡ̀ⲕⲁϩⲓ: ⲟⲩⲟϩ ⲁϥⲕⲱϯ ⲉ̀ⲛⲁ ⲛⲓⲫⲏⲟⲩⲓ: ⲁϥϭⲟϫⲓ ϧⲉⲛ ⲡⲓⲥ̀ⲧⲁⲇⲓⲟⲛ: ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He embarrassed Decius: the ungodly emperor: through his great patience: in the travails of his torments.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥϯϣⲓⲡⲓ ⲛ̀Ⲇⲉⲕⲓⲟⲥ: ⲡⲓⲟⲩⲣⲟ ⲛ̀ⲁ̀ⲥⲉⲃⲏⲥ: ϩⲓⲧⲉⲛ ⲧⲉϥⲛⲓϣϯ ⲛ̀ϩⲩⲡⲟⲙⲟⲛⲏ: ⲛⲉⲙ ⲡ̀ϧⲓⲥⲓ ⲛ̀ⲧⲉ ⲛⲓⲃⲁⲥⲁⲛⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "In this he wore the unfading crown: of martyrdom: he celebrated with all the saints: in the region of the living.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϧⲉⲛ ⲛⲁⲓ ⲁϥⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲧⲗⲱⲙ ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲟⲥ: ⲁϥⲉⲣϣⲁⲓ ⲛⲉⲙ ⲛⲏⲉ︦ⲑ︦ⲩ︦ ⲧⲏⲣⲟⲩ: ϧⲉⲛ ⲧ̀ⲭⲱⲣⲁ ⲛ̀ⲧⲉ ⲛⲏⲉⲧⲟⲛϧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you O martyr: hail to the noble hero: hail to the struggle-mantled: Philopateer Mercurius.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: Ⲫⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O struggle-mantled martyr: Philopateer Mercurius: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: Ⲫⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StPhilopaterMercurius.cr",
+    "incipit": "Ⲫⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ...",
+    "rowIds": [
+      "R41d",
+      "R41e",
+      "R41f",
+      "R420",
+      "R421",
+      "R422",
+      "R423",
+      "R424",
+      "R426"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Philopater Mercurius:\nPhilopateer Mercurius: the mighty one of Christ: put on the full battle gear: and the whole armor of faith.\nHe took in his hand: the two-edged sword: that an angel of the Lord: placed in his right hand.\nHe went to war: in the power of Christ. He smote the barbarians: with severe wounds.\nHe refused the earthly: and sought the heavenly. He fought in the stadium: of martyrdom.\nHe embarrassed Decius: the ungodly emperor: through his great patience: in the travails of his torments.\nIn this he wore the unfading crown: of martyrdom: he celebrated with all the saints: in the region of the living.\nHail to you O martyr: hail to the noble hero: hail to the struggle-mantled: Philopateer Mercurius.\nPray to the Lord on our behalf: O struggle-mantled martyr: Philopateer Mercurius: that He may forgive us our sins.",
+  "copticTextOverride": "\nⲪⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ: ⲡⲓⲣⲉⲙⲛ̀ϫⲟⲙ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲁϥϯϩⲓⲱⲧϥ ⲛ̀ϯⲡⲁⲛⲟⲡⲗⲓⲁ̀: ⲛⲉⲙ ⲡⲓϧⲱⲕ ⲧⲏⲣϥ ⲛ̀ⲧⲉ ⲡⲓⲛⲁϩϯ.\nⲞⲩⲟϩ ⲁϥϭⲓ ϧⲉⲛ ⲧⲉϥϫⲓϫ: ⲛ̀ϯⲥⲏϥⲓ ⲛ̀ⲣⲟ ⲥ̀ⲛⲁⲩ: ⲑⲏⲉ̀ⲧⲁ ⲡⲓⲁⲅⲅⲉⲗⲟⲥ ⲛ̀ⲧⲉ Ⲡⲟ︦ⲥ︦ ⲧⲁϫⲣⲟⲥ: ϧⲉⲛ ⲧⲉϥϫⲓϫ ⲛ̀ⲟⲩⲓ̀ⲛⲁⲙ.\nⲀϥϣⲉⲛⲁϥ ⲉ̀ⲡⲓⲡⲟⲗⲉⲙⲟⲥ: ϧⲉⲛ ϯϫⲟⲙ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲁϥϣⲁⲣⲓ ⲉ̀ⲛⲓⲃⲁⲣⲃⲁⲣⲟⲥ: ϧⲉⲛ ⲟⲩⲛⲓϣϯ ⲛ̀ⲉⲣϧⲟⲧ.\nⲀϥⲉⲣⲛⲩⲙⲫⲓⲛ ⲉ̀ⲃⲟⲗϩⲁ ⲛⲁ ⲡ̀ⲕⲁϩⲓ: ⲟⲩⲟϩ ⲁϥⲕⲱϯ ⲉ̀ⲛⲁ ⲛⲓⲫⲏⲟⲩⲓ: ⲁϥϭⲟϫⲓ ϧⲉⲛ ⲡⲓⲥ̀ⲧⲁⲇⲓⲟⲛ: ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲟⲥ.\nⲀϥϯϣⲓⲡⲓ ⲛ̀Ⲇⲉⲕⲓⲟⲥ: ⲡⲓⲟⲩⲣⲟ ⲛ̀ⲁ̀ⲥⲉⲃⲏⲥ: ϩⲓⲧⲉⲛ ⲧⲉϥⲛⲓϣϯ ⲛ̀ϩⲩⲡⲟⲙⲟⲛⲏ: ⲛⲉⲙ ⲡ̀ϧⲓⲥⲓ ⲛ̀ⲧⲉ ⲛⲓⲃⲁⲥⲁⲛⲟⲥ.\nϦⲉⲛ ⲛⲁⲓ ⲁϥⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲧⲗⲱⲙ ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲁⲣⲧⲩⲣⲟⲥ: ⲁϥⲉⲣϣⲁⲓ ⲛⲉⲙ ⲛⲏⲉ︦ⲑ︦ⲩ︦ ⲧⲏⲣⲟⲩ: ϧⲉⲛ ⲧ̀ⲭⲱⲣⲁ ⲛ̀ⲧⲉ ⲛⲏⲉⲧⲟⲛϧ.\nⲬⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: Ⲫⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: Ⲫⲓⲗⲟⲡⲁⲧⲏⲣ Ⲙⲉⲣⲕⲟⲩⲣⲓⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

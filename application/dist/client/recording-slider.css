@@ -1,0 +1,61 @@
+/* Keep native seeking and keyboard controls with a simple round handle. */
+.player-controls input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  direction: ltr;
+  --recording-track: #d4a43b;
+  --recording-remaining: #c5cbd0;
+  --seek-position: calc(9px + (100% - 18px) * var(--seek-fraction, 0));
+  --recording-fill: linear-gradient(to right, var(--recording-track) 0 var(--seek-position), var(--recording-remaining) var(--seek-position) 100%);
+}
+
+.player-controls input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--recording-fill);
+}
+
+.player-controls input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: -6px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--recording-track);
+  box-shadow: 0 1px 3px #14263d50;
+}
+
+.player-controls input[type="range"]::-moz-range-track {
+  height: 6px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--recording-fill);
+}
+
+.player-controls input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--recording-track);
+  box-shadow: 0 1px 3px #14263d50;
+}
+
+.player-controls input[type="range"]:focus-visible {
+  outline: 2px solid var(--recording-track);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+html[data-theme="dark"] .player-controls input[type="range"] {
+  --recording-track: #e2b64e;
+  --recording-remaining: #63707c;
+}

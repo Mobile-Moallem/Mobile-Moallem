@@ -1,0 +1,11 @@
+{
+  "sqlImport": "passed",
+  "allTableValuesCompared": true,
+  "rawJsonMatchesDatabaseValues": true,
+  "note": "SQLite REAL-affinity columns represent integral raw JSON numbers as equal floating-point values.",
+  "integrity": "ok",
+  "foreignKeys": [],
+  "tables": 14,
+  "rows": 315,
+  "externalRecordingUrls": 375
+}

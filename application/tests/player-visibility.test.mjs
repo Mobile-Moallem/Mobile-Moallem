@@ -1,0 +1,7 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+const source=readFileSync(new URL('../dist/client/site.js',import.meta.url),'utf8');
+test('readers can always see the selected player without editor access',()=>{const cards=['hazzat','english','coptic'].map(kind=>({dataset:{recordingSection:kind},hidden:true}));const grid={hidden:true,querySelectorAll:()=>cards};const reader={classList:{add(){}}};let pauses=0;const c={$:id=>id==='recordingGrid'?grid:reader,current:()=>({id:'hymn'}),canEdit:false,players:{hazzat:{pause(){}},english:{pause(){pauses++}},coptic:{pause(){pauses++}}}};runInNewContext(source.slice(source.indexOf('function showPlayer('),source.indexOf('\nconst workspace')),c);c.showPlayer('hazzat');assert.equal(grid.hidden,false);assert.equal(cards[0].hidden,false);assert.equal(cards[1].hidden,true);assert.equal(pauses,2);});
+test('every hymn has a player, with an available recording preferred over an empty channel',()=>{const c={view:'words',textLanguage:'coptic',players:{hazzat:{},english:{},coptic:{}},audioFor:(h,kind)=>h[kind]||''};const start=source.indexOf('function visiblePlayerKind(');runInNewContext(source.slice(start,source.indexOf('\nfunction recordingRange(',start)),c);assert.equal(c.visiblePlayerKind({hazzat:'recording'}),'hazzat');assert.equal(c.visiblePlayerKind({coptic:'recording',hazzat:'other'}),'coptic');assert.equal(c.visiblePlayerKind({}),'coptic');c.view='hazzat';assert.equal(c.visiblePlayerKind({}),'hazzat');});

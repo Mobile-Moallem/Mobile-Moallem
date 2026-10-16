@@ -1,0 +1,94 @@
+{
+  "id": "doxology-for-st-macarius-of-alexandria",
+  "name": "Doxology for St. Macarius of Alexandria",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-macarius-of-alexandria.json",
+  "folderOrder": 23,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Macarius of Alexandria",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Macarius of Alexandria:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For the dark caves, witness concerning you, when you dwelt in them, O Abba Makari the presbyter.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲥⲉⲉⲣⲙⲉⲑⲣⲉ ϧⲁⲣⲟⲕ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲛ̀ϫⲉ ⲛⲓⲥ̀ⲡⲏⲗⲉⲟⲛ ⲛ̀ⲭⲁⲕⲓ: ⲉ̀ⲧⲁⲕϣⲱⲡⲓ ⲛ̀ϧ̀ⲣⲏⲓ ⲛ̀ϧⲏⲧⲟⲩ: ⲁⲃⲃⲁ Ⲙⲁⲕⲁⲣⲓ ⲡⲓⲡ̀ⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "That you were worthy, to stand before the Lord, for five days and five nights, your mind was lifted to heaven.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϩⲱⲥⲧⲉ ⲛ̀ⲧⲉⲕⲉⲣⲡ̀ⲉⲙⲡ̀ϣⲁ: ⲛ̀ⲟ̀ϩⲓ ⲉ̀ⲣⲁⲧⲕ ⲙ̀ⲡⲉⲙ̀ⲑⲟ ⲙ̀Ⲡⲟ︦ⲥ︦: ⲛ̀ⲧ̀ⲓⲟⲩ ⲛ̀ⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲧ̀ⲓⲟⲩ ⲛ̀ⲉ̀ϫⲱⲣϩ: ⲉ̀ⲣⲉ ⲡⲉⲕⲛⲟⲩⲥ ⲭⲏ ϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You praised with the angels, and all the heavenly hosts, and the whole choir of the saints, you glorified the Trinity.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲕϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ ⲛ̀ⲉ̀ⲡⲟⲩⲣⲁⲛⲓⲟⲛ: ⲛⲉⲙ ⲡ̀ⲭⲟⲣⲟⲥ ⲧⲏⲣϥ ⲛ̀ⲧⲉ ⲛⲏⲉ︦ⲑ︦ⲩ︦: ⲉⲕϯⲱ̀ⲟⲩ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O Abba Makari the presbyter, and all his children the cross-bearers, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲁⲃⲃⲁ Ⲙⲁⲕⲁⲣⲓ ⲡⲓⲡ̀ⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ: ⲛⲉⲙ ⲛⲉϥϣⲏⲣⲓ ⲛ̀ⲥ̀ⲧⲁⲩⲣⲟⲫⲟⲣⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMacariusOfAlexandria.cr",
+    "incipit": "Ⲥⲉⲉⲣⲙⲉⲑⲣⲉ ϧⲁⲣⲟⲕ...",
+    "rowIds": [
+      "R566",
+      "R567",
+      "R568",
+      "R569",
+      "R56b"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Macarius of Alexandria:\nFor the dark caves, witness concerning you, when you dwelt in them, O Abba Makari the presbyter.\nThat you were worthy, to stand before the Lord, for five days and five nights, your mind was lifted to heaven.\nYou praised with the angels, and all the heavenly hosts, and the whole choir of the saints, you glorified the Trinity.\nPray to the Lord on our behalf, O Abba Makari the presbyter, and all his children the cross-bearers, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲤⲉⲉⲣⲙⲉⲑⲣⲉ ϧⲁⲣⲟⲕ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲛ̀ϫⲉ ⲛⲓⲥ̀ⲡⲏⲗⲉⲟⲛ ⲛ̀ⲭⲁⲕⲓ: ⲉ̀ⲧⲁⲕϣⲱⲡⲓ ⲛ̀ϧ̀ⲣⲏⲓ ⲛ̀ϧⲏⲧⲟⲩ: ⲁⲃⲃⲁ Ⲙⲁⲕⲁⲣⲓ ⲡⲓⲡ̀ⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ.\nϨⲱⲥⲧⲉ ⲛ̀ⲧⲉⲕⲉⲣⲡ̀ⲉⲙⲡ̀ϣⲁ: ⲛ̀ⲟ̀ϩⲓ ⲉ̀ⲣⲁⲧⲕ ⲙ̀ⲡⲉⲙ̀ⲑⲟ ⲙ̀Ⲡⲟ︦ⲥ︦: ⲛ̀ⲧ̀ⲓⲟⲩ ⲛ̀ⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲧ̀ⲓⲟⲩ ⲛ̀ⲉ̀ϫⲱⲣϩ: ⲉ̀ⲣⲉ ⲡⲉⲕⲛⲟⲩⲥ ⲭⲏ ϧⲉⲛ ⲛⲓⲫⲏⲟⲩⲓ.\nⲈⲕϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ ⲛ̀ⲉ̀ⲡⲟⲩⲣⲁⲛⲓⲟⲛ: ⲛⲉⲙ ⲡ̀ⲭⲟⲣⲟⲥ ⲧⲏⲣϥ ⲛ̀ⲧⲉ ⲛⲏⲉ︦ⲑ︦ⲩ︦: ⲉⲕϯⲱ̀ⲟⲩ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲁⲃⲃⲁ Ⲙⲁⲕⲁⲣⲓ ⲡⲓⲡ̀ⲣⲉⲥⲃⲩⲧⲉⲣⲟⲥ: ⲛⲉⲙ ⲛⲉϥϣⲏⲣⲓ ⲛ̀ⲥ̀ⲧⲁⲩⲣⲟⲫⲟⲣⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

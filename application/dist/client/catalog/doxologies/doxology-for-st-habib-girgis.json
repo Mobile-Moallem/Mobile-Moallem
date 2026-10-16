@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-habib-girgis",
+  "name": "Doxology for St. Habib Girgis",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-habib-girgis.json",
+  "folderOrder": 29,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Habib Girgis",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Habib Girgis",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "I begin joyfully / to honor St.Habib Girgis / the golden light house / of the Holy Church.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲓⲛⲁⲉⲣϩⲏⲧⲥ ϧⲉⲛ ⲟⲩϭⲓϣϣⲱⲟⲩ: ⲛ̀ⲧⲁϫⲱ ⲙ̀ⲡ̀ⲧⲁⲓⲟ ⲛⲉⲙ ϩⲁⲛϩⲩⲙⲛⲟⲥ: ⲙ̀ⲡⲓⲁ̀ⲅⲓⲟⲥ Ϩⲁⲡⲏⲡ Ⲅⲓⲣⲅⲓⲥ: ϯⲗⲩⲭⲛⲓⲁ ⲛ̀ⲛⲟⲃ ⲛ̀ⲧⲉ ϯⲉⲕⲕ̀ⲗⲏⲥⲓⲁ ⲉⲑⲟⲩⲁⲃ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He has become our guide / and harbor of salvation / with joy he invited us / to life everlasting.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲏⲉ̀ⲧⲁϥϣⲱⲡⲓ ⲛⲁⲛ ⲛ̀ϭⲁⲩⲙⲱⲓⲧ: ⲛ̀ⲗⲩⲙⲓⲛ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ: ⲁϥⲑⲱϩⲉⲙ ⲙ̀ⲙⲟⲛ ϧⲉⲛ ⲟⲩⲉⲣⲟⲩⲱⲧ: ⲉ̀ϧⲟⲩⲛ ⲉ̀ ⲡⲓⲱⲛϧ ⲛ̀ⲉ̀ⲛⲉϩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Preacher of Orthodoxy / is Archdeacon Habib Girgis / Guide of the flock / of Jesus Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓⲕⲩⲣⲉⲝ ⲛ̀ⲧⲉ ϯⲟⲣⲑⲟⲇⲟⲝⲓⲁ: ⲡⲓⲁⲣⲭⲏⲇⲓⲁⲕⲟⲛ Ϩⲁⲡⲏⲡ ⲄⲓⲣⲄⲓⲥ: ⲡⲓⲣⲉϥϯⲥ̀ⲃⲱ ⲛ̀ⲧⲉ ⲡⲓⲟ̀ϩⲓ: ⲛ̀ⲗⲟⲅⲓⲕⲟⲛ ⲛ̀ⲧⲉ Ⲡⲓⲭⲣⲓⲥⲧⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Your soul is luminous / in the heavenly Jerusalem / and your name is shining / in the Holy Church.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲥⲉⲣⲟⲩⲱⲓⲛⲓ ⲅⲁⲣ ⲛ̀ϫⲉ ⲧⲉⲕⲯⲩⲭⲏ: ϧⲉⲛ Ⲓⲉⲣⲟⲩⲥⲁⲗⲓⲙ ⲛ̀ⲧⲉ ⲧ̀ⲫⲉ: ⲁϥⲧⲉⲙⲙⲟ ⲛ̀ϫⲉ ⲡⲉⲕⲥⲱⲙⲁ: ϧⲉⲛ ⲧⲉⲕⲕ̀ⲗⲏⲥⲓⲁ ⲉⲑⲟⲩⲁⲃ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Therefore we ask as / your children in prayers / ask the Lord on our behalf / to have mercy on our souls.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲑⲉⲛ ⲧⲉⲛϯϩⲟ ⲉ̀ⲣⲟⲕ: ϩⲟⲥ ϣⲏⲣⲓ ⲛ̀ⲧⲉ ⲛⲓⲉⲩⲭⲏ: ⲙⲁϯϩⲟ ⲉ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲛ̀ⲧⲉϥⲉⲣⲟⲩⲛⲁⲓ ⲛⲉⲙ ⲛⲉⲛⲯⲩⲭⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf / O blessed Archdeacon / Habib Girgis the Educator / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲡⲓⲁⲣⲭⲏⲇⲓⲁⲕⲟⲛ ⲉⲧⲥ̀ⲙⲁⲣⲱⲟⲩⲧ: Ϩⲁⲡⲏⲡ Ⲅⲓⲣⲅⲓⲥ ⲡⲓⲣⲉϥϯⲥ̀ⲃⲱ: ⲛ̀ⲧⲉϥ ⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StHabibGirgis.cr",
+    "incipit": "Ⲁⲓⲛⲁⲉⲣϩⲏⲧⲥ ϧⲉⲛ ⲟⲩϭⲓϣϣⲱⲟⲩ...",
+    "rowIds": [
+      "R706",
+      "R707",
+      "R708",
+      "R709",
+      "R70a",
+      "R70b",
+      "R70d"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Habib Girgis\nI begin joyfully / to honor St.Habib Girgis / the golden light house / of the Holy Church.\nHe has become our guide / and harbor of salvation / with joy he invited us / to life everlasting.\nPreacher of Orthodoxy / is Archdeacon Habib Girgis / Guide of the flock / of Jesus Christ.\nYour soul is luminous / in the heavenly Jerusalem / and your name is shining / in the Holy Church.\nTherefore we ask as / your children in prayers / ask the Lord on our behalf / to have mercy on our souls.\nPray to the Lord on our behalf / O blessed Archdeacon / Habib Girgis the Educator / that He may forgive us our sins.",
+  "copticTextOverride": "\nⲀⲓⲛⲁⲉⲣϩⲏⲧⲥ ϧⲉⲛ ⲟⲩϭⲓϣϣⲱⲟⲩ: ⲛ̀ⲧⲁϫⲱ ⲙ̀ⲡ̀ⲧⲁⲓⲟ ⲛⲉⲙ ϩⲁⲛϩⲩⲙⲛⲟⲥ: ⲙ̀ⲡⲓⲁ̀ⲅⲓⲟⲥ Ϩⲁⲡⲏⲡ Ⲅⲓⲣⲅⲓⲥ: ϯⲗⲩⲭⲛⲓⲁ ⲛ̀ⲛⲟⲃ ⲛ̀ⲧⲉ ϯⲉⲕⲕ̀ⲗⲏⲥⲓⲁ ⲉⲑⲟⲩⲁⲃ.\nⲪⲏⲉ̀ⲧⲁϥϣⲱⲡⲓ ⲛⲁⲛ ⲛ̀ϭⲁⲩⲙⲱⲓⲧ: ⲛ̀ⲗⲩⲙⲓⲛ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ: ⲁϥⲑⲱϩⲉⲙ ⲙ̀ⲙⲟⲛ ϧⲉⲛ ⲟⲩⲉⲣⲟⲩⲱⲧ: ⲉ̀ϧⲟⲩⲛ ⲉ̀ ⲡⲓⲱⲛϧ ⲛ̀ⲉ̀ⲛⲉϩ.\nⲠⲓⲕⲩⲣⲉⲝ ⲛ̀ⲧⲉ ϯⲟⲣⲑⲟⲇⲟⲝⲓⲁ: ⲡⲓⲁⲣⲭⲏⲇⲓⲁⲕⲟⲛ Ϩⲁⲡⲏⲡ ⲄⲓⲣⲄⲓⲥ: ⲡⲓⲣⲉϥϯⲥ̀ⲃⲱ ⲛ̀ⲧⲉ ⲡⲓⲟ̀ϩⲓ: ⲛ̀ⲗⲟⲅⲓⲕⲟⲛ ⲛ̀ⲧⲉ Ⲡⲓⲭⲣⲓⲥⲧⲟⲥ.\nⲈⲥⲉⲣⲟⲩⲱⲓⲛⲓ ⲅⲁⲣ ⲛ̀ϫⲉ ⲧⲉⲕⲯⲩⲭⲏ: ϧⲉⲛ Ⲓⲉⲣⲟⲩⲥⲁⲗⲓⲙ ⲛ̀ⲧⲉ ⲧ̀ⲫⲉ: ⲁϥⲧⲉⲙⲙⲟ ⲛ̀ϫⲉ ⲡⲉⲕⲥⲱⲙⲁ: ϧⲉⲛ ⲧⲉⲕⲕ̀ⲗⲏⲥⲓⲁ ⲉⲑⲟⲩⲁⲃ.\nⲞⲑⲉⲛ ⲧⲉⲛϯϩⲟ ⲉ̀ⲣⲟⲕ: ϩⲟⲥ ϣⲏⲣⲓ ⲛ̀ⲧⲉ ⲛⲓⲉⲩⲭⲏ: ⲙⲁϯϩⲟ ⲉ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲛ̀ⲧⲉϥⲉⲣⲟⲩⲛⲁⲓ ⲛⲉⲙ ⲛⲉⲛⲯⲩⲭⲏ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲡⲓⲁⲣⲭⲏⲇⲓⲁⲕⲟⲛ ⲉⲧⲥ̀ⲙⲁⲣⲱⲟⲩⲧ: Ϩⲁⲡⲏⲡ Ⲅⲓⲣⲅⲓⲥ ⲡⲓⲣⲉϥϯⲥ̀ⲃⲱ: ⲛ̀ⲧⲉϥ ⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

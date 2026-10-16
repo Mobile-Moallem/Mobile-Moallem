@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-mena",
+  "name": "Doxology for St. Mena",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-mena.json",
+  "folderOrder": 16,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Mena",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Mena:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "What will it profit a man, if he gains the whole world and loses his soul? O the futility of this life!",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉϣⲱⲡ ⲟⲩⲛ ⲛ̀ⲧⲉ ⲡⲓⲣⲱⲙⲓ: ϫⲉⲙϩⲏⲟⲩ ⲙ̀ⲡⲓⲕⲟⲥⲙⲟⲥ ⲧⲏⲣϥ: ⲛ̀ⲧⲉϥϯⲟ̀ⲥⲓ ⲛ̀ⲧⲉϥⲯⲩⲭⲏ: ⲟⲩ ⲡⲉ ⲡⲁⲓ ⲱⲛϧ ⲛ̀ⲉ̀ⲫ̀ⲗⲏⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The saint Abba Mina, heard the divine voice, and forsook the whole world, and its corrupt glory.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ: ⲁϥⲥⲱⲧⲉⲙ ⲛ̀ⲥⲁ ϯⲥ̀ⲙⲏ ⲛ̀ⲛⲟⲩϯ: ⲁϥⲭⲱ ⲙ̀ⲡⲓⲕⲟⲥⲙⲟⲥ ⲧⲏⲣϥ ⲛ̀ⲥⲱϥ: ⲛⲉⲙ ⲡⲉϥⲱ̀ⲟⲩ ⲉⲑⲛⲁⲧⲁⲕⲟ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He gave his soul up to death, and his flesh to the fire, and accepted great torment, For the Son of the living God.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥϯ ⲛ̀ⲧⲉϥⲯ̀ⲩⲭⲏ ⲉ̀ⲫ̀ⲙⲟⲩ: ⲛⲉⲙ ⲡⲉϥⲥⲱⲙⲁ ⲉ̀ⲡⲓⲭ̀ⲣⲱⲙ: ⲁϥϣⲉⲡ ϩⲁⲛⲛⲓϣϯ ⲙ̀ⲃⲁⲥⲁⲛⲟⲥ: ⲉⲑⲃⲉ Ⲡϣⲏⲣⲓ ⲙ̀Ⲫϯ ⲉⲧⲟⲛϧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Therefore, our Savior / lifted him up to His kingdom, / and granted him the good things / that no eye has seen.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲑⲃⲉ ⲫⲁⲓ ⲁ̀Ⲡⲉⲛⲥⲱⲧⲏⲣ: ⲟⲗϥ ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲧⲉϥⲙⲉⲧⲟⲩⲣⲟ: ⲁϥϯ ⲛⲁϥ ⲛ̀ⲛⲓⲁ̀ⲅⲁⲑⲟⲛ: ⲛⲏⲉ̀ⲧⲉ ⲙ̀ⲡⲉⲃⲁⲗ ⲛⲁⲩ ⲉ̀ⲣⲱⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you, O martyr: Hail to the noble hero: Hail to the struggle-mantled: Saint Abba Mina.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ. (ⲁⲡⲁ Ⲙⲏⲛⲁ ⲛ̀ⲧⲉ ⲛⲓⲫⲁⲓⲁⲧ)",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O struggle-mantled martyr: Saint Abba Mina: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMena.cr",
+    "incipit": "Ⲉϣⲱⲡ ⲟⲩⲛ ⲛ̀ⲧⲉ ⲡⲓⲣⲱⲙⲓ...",
+    "rowIds": [
+      "R42b",
+      "R42c",
+      "R42d",
+      "R42e",
+      "R42f",
+      "R430",
+      "R432"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Mena:\nWhat will it profit a man, if he gains the whole world and loses his soul? O the futility of this life!\nThe saint Abba Mina, heard the divine voice, and forsook the whole world, and its corrupt glory.\nHe gave his soul up to death, and his flesh to the fire, and accepted great torment, For the Son of the living God.\nTherefore, our Savior / lifted him up to His kingdom, / and granted him the good things / that no eye has seen.\nHail to you, O martyr: Hail to the noble hero: Hail to the struggle-mantled: Saint Abba Mina.\nPray to the Lord on our behalf: O struggle-mantled martyr: Saint Abba Mina: that He may forgive us our sins.",
+  "copticTextOverride": "\nⲈϣⲱⲡ ⲟⲩⲛ ⲛ̀ⲧⲉ ⲡⲓⲣⲱⲙⲓ: ϫⲉⲙϩⲏⲟⲩ ⲙ̀ⲡⲓⲕⲟⲥⲙⲟⲥ ⲧⲏⲣϥ: ⲛ̀ⲧⲉϥϯⲟ̀ⲥⲓ ⲛ̀ⲧⲉϥⲯⲩⲭⲏ: ⲟⲩ ⲡⲉ ⲡⲁⲓ ⲱⲛϧ ⲛ̀ⲉ̀ⲫ̀ⲗⲏⲟⲩ.\nⲠⲓⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ: ⲁϥⲥⲱⲧⲉⲙ ⲛ̀ⲥⲁ ϯⲥ̀ⲙⲏ ⲛ̀ⲛⲟⲩϯ: ⲁϥⲭⲱ ⲙ̀ⲡⲓⲕⲟⲥⲙⲟⲥ ⲧⲏⲣϥ ⲛ̀ⲥⲱϥ: ⲛⲉⲙ ⲡⲉϥⲱ̀ⲟⲩ ⲉⲑⲛⲁⲧⲁⲕⲟ.\nⲀϥϯ ⲛ̀ⲧⲉϥⲯ̀ⲩⲭⲏ ⲉ̀ⲫ̀ⲙⲟⲩ: ⲛⲉⲙ ⲡⲉϥⲥⲱⲙⲁ ⲉ̀ⲡⲓⲭ̀ⲣⲱⲙ: ⲁϥϣⲉⲡ ϩⲁⲛⲛⲓϣϯ ⲙ̀ⲃⲁⲥⲁⲛⲟⲥ: ⲉⲑⲃⲉ Ⲡϣⲏⲣⲓ ⲙ̀Ⲫϯ ⲉⲧⲟⲛϧ.\nⲈⲑⲃⲉ ⲫⲁⲓ ⲁ̀Ⲡⲉⲛⲥⲱⲧⲏⲣ: ⲟⲗϥ ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲧⲉϥⲙⲉⲧⲟⲩⲣⲟ: ⲁϥϯ ⲛⲁϥ ⲛ̀ⲛⲓⲁ̀ⲅⲁⲑⲟⲛ: ⲛⲏⲉ̀ⲧⲉ ⲙ̀ⲡⲉⲃⲁⲗ ⲛⲁⲩ ⲉ̀ⲣⲱⲟⲩ.\nⲬⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ. (ⲁⲡⲁ Ⲙⲏⲛⲁ ⲛ̀ⲧⲉ ⲛⲓⲫⲁⲓⲁⲧ)\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲡⲓⲁ̀ⲅⲓⲟⲥ ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-anthony",
+  "name": "Doxology for St. Anthony",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-anthony.json",
+  "folderOrder": 20,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Anthony",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Anthony:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Purge from your hearts: thoughts of vice: and deceiving ideas: that darken the mind.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲃⲱⲗ ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲛⲉⲧⲉⲛϩⲏⲧ: ⲛ̀ⲛⲓⲙⲟⲕⲙⲉⲕ ⲛ̀ⲧⲉ ϯⲕⲁⲕⲓⲁ̀: ⲛⲉⲙ ⲛⲓⲙⲉⲩⲓ̀ ⲉⲧϣⲉⲃϣⲱⲃ: ⲉⲧⲓ̀ⲣⲓ ⲙ̀ⲡⲓⲛⲟⲩⲥ ⲛ̀ⲭⲁⲕⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Contemplate with understanding: the great virtues: of our blessed father: my lord, the great Abba Antony.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲣⲓⲛⲟⲓⲛ ϧⲉⲛ ⲟⲩϯϩ̀ⲑⲏϥ: ⲛ̀ⲛⲓⲕⲁⲑⲁⲣⲧⲱⲙⲁ ⲉⲧϭⲟⲥⲓ: ⲛ̀ⲧⲉ ⲡⲉⲛⲙⲁⲕⲁⲣⲓⲟⲥ ⲛ̀ⲓⲱⲧ: ⲡⲁⲟ︦ⲥ︦ ⲡⲓⲛⲓϣϯ Ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He has become our: guide and harbor of salvation: with joy he invites us: to life everlasting.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲁⲓ ⲉ̀ⲧⲁϥϣⲱⲡⲓ ⲛⲁⲛ ⲛ̀ϭⲁⲩⲙⲱⲓⲧ: ⲛ̀ⲗⲩⲙⲏⲛ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ: ⲁϥⲑⲱϩⲉⲙ ⲙ̀ⲙⲟⲛ ϧⲉⲛ ⲟⲩⲉ̀ⲣⲟⲩⲱⲧ: ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲡⲓⲱⲛϧ ⲛ̀ⲉ̀ⲛⲉϩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The incense of his virtues: delights our souls: as fragrant aroma: throughout Paradise pervades.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲡⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ ⲛ̀ⲧⲉ ⲛⲉϥⲁⲣⲉⲧⲏ: ϯ ⲙ̀ⲡ̀ⲟⲩⲛⲟϥ ⲛ̀ⲛⲉⲛⲯⲩⲭⲏ: ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡⲓⲁⲣⲱⲙⲁⲧⲁ: ⲉⲧⲣⲏⲧ ϧⲉⲛ ⲡⲓⲡⲁⲣⲁⲇⲓⲥⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Let us be confirmed in the faith: upright and true: of Antony the great: proclaiming and saying:",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲁⲣⲉⲛⲧⲁϫⲣⲟⲛ ϧⲉⲛ ⲡⲓⲛⲁϩϯ: ⲉⲧⲥⲟⲩⲧⲱⲛ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲛ̀ⲧⲉ ⲡⲓⲛⲓϣϯ Ⲁⲛⲧⲱⲛⲓⲟⲥ: ⲉⲛⲱϣ ⲉ̀ⲃⲟⲗ ⲉ̀ⲛϫⲱ ⲙ̀ⲙⲟⲥ:",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "“I sought and I found: I asked and I was given: I knocked and I believed: that it will be opened to me.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲁⲓⲕⲱϯ ⲟⲩⲟϩ ⲁⲓϫⲓⲙⲓ: ⲁⲓⲉ̀ⲣⲉⲧⲓⲛ ⲟⲩⲟϩ ⲁⲓϭⲓ: ⲁⲓⲕⲱⲗϩ ⲟⲩⲟϩ ϯⲛⲁϩϯ: ϫⲉ ⲥⲉⲛⲁⲁ̀ⲟⲩⲱⲛ ⲛⲏⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to our father, Abba Antony: the light of monasticism: Hail to our father Abba Paul: the beloved of Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ Ⲁⲛⲧⲱⲛⲓⲟⲥ: ⲡⲓϧⲏⲃⲥ ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲟⲛⲁⲭⲟⲥ: ⲭⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲡⲓⲙⲉⲛⲣⲓⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O my lords and fathers, who love their children: Abba Antony and Abba Paul: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲙ̀ⲙⲁⲓⲛⲟⲩϣⲏⲣⲓ: ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓⲟⲥ ⲛⲉⲙ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StAnthony.cr",
+    "incipit": "Ⲃⲱⲗ ⲉ̀ⲃⲟⲗ...",
+    "rowIds": [
+      "R51d",
+      "R51e",
+      "R51f",
+      "R520",
+      "R521",
+      "R522",
+      "R523",
+      "R524",
+      "R526"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Anthony:\nPurge from your hearts: thoughts of vice: and deceiving ideas: that darken the mind.\nContemplate with understanding: the great virtues: of our blessed father: my lord, the great Abba Antony.\nHe has become our: guide and harbor of salvation: with joy he invites us: to life everlasting.\nThe incense of his virtues: delights our souls: as fragrant aroma: throughout Paradise pervades.\nLet us be confirmed in the faith: upright and true: of Antony the great: proclaiming and saying:\n“I sought and I found: I asked and I was given: I knocked and I believed: that it will be opened to me.\nHail to our father, Abba Antony: the light of monasticism: Hail to our father Abba Paul: the beloved of Christ.\nPray to the Lord on our behalf: O my lords and fathers, who love their children: Abba Antony and Abba Paul: that He may forgive us our sins.",
+  "copticTextOverride": "\nⲂⲱⲗ ⲉ̀ⲃⲟⲗ ϧⲉⲛ ⲛⲉⲧⲉⲛϩⲏⲧ: ⲛ̀ⲛⲓⲙⲟⲕⲙⲉⲕ ⲛ̀ⲧⲉ ϯⲕⲁⲕⲓⲁ̀: ⲛⲉⲙ ⲛⲓⲙⲉⲩⲓ̀ ⲉⲧϣⲉⲃϣⲱⲃ: ⲉⲧⲓ̀ⲣⲓ ⲙ̀ⲡⲓⲛⲟⲩⲥ ⲛ̀ⲭⲁⲕⲓ.\nⲀⲣⲓⲛⲟⲓⲛ ϧⲉⲛ ⲟⲩϯϩ̀ⲑⲏϥ: ⲛ̀ⲛⲓⲕⲁⲑⲁⲣⲧⲱⲙⲁ ⲉⲧϭⲟⲥⲓ: ⲛ̀ⲧⲉ ⲡⲉⲛⲙⲁⲕⲁⲣⲓⲟⲥ ⲛ̀ⲓⲱⲧ: ⲡⲁⲟ︦ⲥ︦ ⲡⲓⲛⲓϣϯ Ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓ.\nⲪⲁⲓ ⲉ̀ⲧⲁϥϣⲱⲡⲓ ⲛⲁⲛ ⲛ̀ϭⲁⲩⲙⲱⲓⲧ: ⲛ̀ⲗⲩⲙⲏⲛ ⲛ̀ⲧⲉ ⲡⲓⲟⲩϫⲁⲓ: ⲁϥⲑⲱϩⲉⲙ ⲙ̀ⲙⲟⲛ ϧⲉⲛ ⲟⲩⲉ̀ⲣⲟⲩⲱⲧ: ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲡⲓⲱⲛϧ ⲛ̀ⲉ̀ⲛⲉϩ.\nⲀⲡⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ ⲛ̀ⲧⲉ ⲛⲉϥⲁⲣⲉⲧⲏ: ϯ ⲙ̀ⲡ̀ⲟⲩⲛⲟϥ ⲛ̀ⲛⲉⲛⲯⲩⲭⲏ: ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡⲓⲁⲣⲱⲙⲁⲧⲁ: ⲉⲧⲣⲏⲧ ϧⲉⲛ ⲡⲓⲡⲁⲣⲁⲇⲓⲥⲟⲥ.\nⲘⲁⲣⲉⲛⲧⲁϫⲣⲟⲛ ϧⲉⲛ ⲡⲓⲛⲁϩϯ: ⲉⲧⲥⲟⲩⲧⲱⲛ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲛ̀ⲧⲉ ⲡⲓⲛⲓϣϯ Ⲁⲛⲧⲱⲛⲓⲟⲥ: ⲉⲛⲱϣ ⲉ̀ⲃⲟⲗ ⲉ̀ⲛϫⲱ ⲙ̀ⲙⲟⲥ:\nϪⲉ ⲁⲓⲕⲱϯ ⲟⲩⲟϩ ⲁⲓϫⲓⲙⲓ: ⲁⲓⲉ̀ⲣⲉⲧⲓⲛ ⲟⲩⲟϩ ⲁⲓϭⲓ: ⲁⲓⲕⲱⲗϩ ⲟⲩⲟϩ ϯⲛⲁϩϯ: ϫⲉ ⲥⲉⲛⲁⲁ̀ⲟⲩⲱⲛ ⲛⲏⲓ.\nⲬⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ Ⲁⲛⲧⲱⲛⲓⲟⲥ: ⲡⲓϧⲏⲃⲥ ⲛ̀ⲧⲉ ϯⲙⲉⲧⲙⲟⲛⲁⲭⲟⲥ: ⲭⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲡⲓⲙⲉⲛⲣⲓⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲙ̀ⲙⲁⲓⲛⲟⲩϣⲏⲣⲓ: ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓⲟⲥ ⲛⲉⲙ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

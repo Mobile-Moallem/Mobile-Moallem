@@ -1,0 +1,25 @@
+{
+  "productionBindings": [
+    "DB",
+    "BUCKET",
+    "ASSETS"
+  ],
+  "configuredSitesVariablesAfterCleanup": [],
+  "standaloneCloudflareVariables": [
+    "ACCESS_TEAM_DOMAIN",
+    "ACCESS_AUD"
+  ],
+  "localPreviewVariables": [
+    "LOCAL_EDITOR_PASSWORD",
+    "LOCAL_DATA_DIR",
+    "PORT"
+  ],
+  "optionalR2UploadCredentials": [
+    "R2_ENDPOINT_URL",
+    "R2_BUCKET_NAME",
+    "R2_ACCESS_KEY_ID",
+    "R2_SECRET_ACCESS_KEY"
+  ],
+  "removedTemporarySecret": "MOBILE_MOALLEM_EXPORT_KEY",
+  "valuesIncluded": false
+}

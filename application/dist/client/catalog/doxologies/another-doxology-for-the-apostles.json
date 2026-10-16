@@ -1,0 +1,107 @@
+{
+  "id": "another-doxology-for-the-apostles",
+  "name": "Another Doxology for the Apostles",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/another-doxology-for-the-apostles.json",
+  "folderOrder": 7,
+  "formats": {
+    "1": [
+      {
+        "name": "Another Doxology for the Apostles",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "Our Lord Jesus Christ: has chosen His apostles: Peter and Andrew: John and James.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲕⲩⲣⲓⲟⲥ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲁϥⲥⲱⲧⲡ ⲛ̀ⲛⲉϥⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲉ̀ⲧⲉ Ⲡⲉⲧⲣⲟⲥ ⲛⲉⲙ Ⲁⲛⲇ̀ⲣⲉⲁⲥ: Ⲓⲱⲁⲛⲛⲏⲥ ⲛⲉⲙ Ⲓⲁⲕⲱⲃⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Also Philip and Matthew: Bartholomew and Thomas: James the son of Alphaeus: and Simon the Canaanite.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲗⲟⲓⲡⲟⲛ Ⲫⲓⲗⲓⲡⲡⲟⲥ ⲛⲉⲙ Ⲙⲁⲧⲑⲉⲟⲥ: Ⲃⲁⲣⲑⲟⲗⲟⲙⲉⲟⲥ ⲛⲉⲙ Ⲑⲱⲙⲁⲥ: Ⲓⲁⲕⲱⲃⲟⲥ ⲛ̀ⲧⲉ Ⲁⲗⲫⲉⲟⲥ: ⲛⲉⲙ Ⲥⲓⲙⲱⲛ ⲡⲓⲕⲁⲛⲁⲛⲉⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Thaddeus and Matthias: Paul, Mark and Luke: and the rest of the disciples: who followed our Savior.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲑⲁⲇⲇⲉⲟⲥ ⲛⲉⲙ Ⲙⲁⲧⲑⲓⲁⲥ: Ⲡⲁⲩⲗⲟⲥ ⲛⲉⲙ Ⲙⲁⲣⲕⲟⲥ ⲛⲉⲙ Ⲗⲟⲩⲕⲁⲥ: ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ ⲛ̀ⲧⲉ ⲛⲓⲙⲁⲑⲏⲧⲏⲥ: ⲛⲏⲉ̀ⲧⲁⲩⲙⲟϣⲓ ⲛ̀ⲥⲁ Ⲡⲉⲛⲥⲱⲧⲏⲣ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Matthias, who was chosen: in place of Judas: all of them and the rest: followed the Master.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲁⲧⲑⲓⲁⲥ ⲫⲏⲉ̀ⲧⲁϥϣⲱⲡⲓ: ⲛ̀ⲧ̀ϣⲉⲃⲓⲱ ⲛ̀Ⲓⲟⲩⲇⲁⲥ: ⲛⲉⲙ ⲡ̀ϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ: ⲛⲏⲉ̀ⲧⲁⲩⲙⲟϣⲓ ⲛ̀ⲥⲁ ⲇⲉⲥⲡⲟⲧⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Their voice went forth / upon the face of the whole earth / and their words have reached / the ends of the world.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲡⲟⲩϧ̀ⲣⲱⲟⲩ ϣⲉⲛⲁϥ ⲉ̀ⲃⲟⲗ: ϩⲓϫⲉⲛ ⲡ̀ϩⲟ ⲙ̀ⲡ̀ⲕⲁϩⲓ ⲧⲏⲣϥ: ⲟⲩⲟϩ ⲛⲟⲩⲥⲁϫⲓ ⲁⲩⲫⲟϩ: ϣⲁ ⲁⲩⲣⲏϫⲥ ⲛ̀ϯⲟⲓⲕⲟⲩⲙⲉⲛⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O my lords and fathers the apostles: and the seventy-two disciples: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛⲉⲙ ⲡⲓⲕⲉϣ̀ⲃⲉ ⲥ̀ⲛⲁⲩ  ⲙ̀ⲙⲁⲑⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/Apostles.cr",
+    "incipit": "Ⲕⲩⲣⲓⲟⲥ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦...",
+    "rowIds": [
+      "R332",
+      "R333",
+      "R334",
+      "R335",
+      "R337",
+      "R339"
+    ]
+  },
+  "textOverride": "Our Lord Jesus Christ: has chosen His apostles: Peter and Andrew: John and James.\nAlso Philip and Matthew: Bartholomew and Thomas: James the son of Alphaeus: and Simon the Canaanite.\nThaddeus and Matthias: Paul, Mark and Luke: and the rest of the disciples: who followed our Savior.\nMatthias, who was chosen: in place of Judas: all of them and the rest: followed the Master.\nTheir voice went forth / upon the face of the whole earth / and their words have reached / the ends of the world.\nPray to the Lord on our behalf: O my lords and fathers the apostles: and the seventy-two disciples: that He may forgive us our sins.",
+  "copticTextOverride": "Ⲕⲩⲣⲓⲟⲥ Ⲓⲏ︦ⲥ︦ Ⲡⲭ︦ⲥ︦: ⲁϥⲥⲱⲧⲡ ⲛ̀ⲛⲉϥⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲉ̀ⲧⲉ Ⲡⲉⲧⲣⲟⲥ ⲛⲉⲙ Ⲁⲛⲇ̀ⲣⲉⲁⲥ: Ⲓⲱⲁⲛⲛⲏⲥ ⲛⲉⲙ Ⲓⲁⲕⲱⲃⲟⲥ.\nⲖⲟⲓⲡⲟⲛ Ⲫⲓⲗⲓⲡⲡⲟⲥ ⲛⲉⲙ Ⲙⲁⲧⲑⲉⲟⲥ: Ⲃⲁⲣⲑⲟⲗⲟⲙⲉⲟⲥ ⲛⲉⲙ Ⲑⲱⲙⲁⲥ: Ⲓⲁⲕⲱⲃⲟⲥ ⲛ̀ⲧⲉ Ⲁⲗⲫⲉⲟⲥ: ⲛⲉⲙ Ⲥⲓⲙⲱⲛ ⲡⲓⲕⲁⲛⲁⲛⲉⲟⲥ.\nⲐⲁⲇⲇⲉⲟⲥ ⲛⲉⲙ Ⲙⲁⲧⲑⲓⲁⲥ: Ⲡⲁⲩⲗⲟⲥ ⲛⲉⲙ Ⲙⲁⲣⲕⲟⲥ ⲛⲉⲙ Ⲗⲟⲩⲕⲁⲥ: ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ ⲛ̀ⲧⲉ ⲛⲓⲙⲁⲑⲏⲧⲏⲥ: ⲛⲏⲉ̀ⲧⲁⲩⲙⲟϣⲓ ⲛ̀ⲥⲁ Ⲡⲉⲛⲥⲱⲧⲏⲣ.\nⲘⲁⲧⲑⲓⲁⲥ ⲫⲏⲉ̀ⲧⲁϥϣⲱⲡⲓ: ⲛ̀ⲧ̀ϣⲉⲃⲓⲱ ⲛ̀Ⲓⲟⲩⲇⲁⲥ: ⲛⲉⲙ ⲡ̀ϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ: ⲛⲏⲉ̀ⲧⲁⲩⲙⲟϣⲓ ⲛ̀ⲥⲁ ⲇⲉⲥⲡⲟⲧⲁ.\nⲀⲡⲟⲩϧ̀ⲣⲱⲟⲩ ϣⲉⲛⲁϥ ⲉ̀ⲃⲟⲗ: ϩⲓϫⲉⲛ ⲡ̀ϩⲟ ⲙ̀ⲡ̀ⲕⲁϩⲓ ⲧⲏⲣϥ: ⲟⲩⲟϩ ⲛⲟⲩⲥⲁϫⲓ ⲁⲩⲫⲟϩ: ϣⲁ ⲁⲩⲣⲏϫⲥ ⲛ̀ϯⲟⲓⲕⲟⲩⲙⲉⲛⲏ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛⲉⲙ ⲡⲓⲕⲉϣ̀ⲃⲉ ⲥ̀ⲛⲁⲩ  ⲙ̀ⲙⲁⲑⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

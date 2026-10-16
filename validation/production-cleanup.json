@@ -1,0 +1,19 @@
+{
+  "reader": {
+    "status": 200
+  },
+  "session": {
+    "status": 200,
+    "canEdit": false
+  },
+  "privateProjects": {
+    "status": 403
+  },
+  "removedExport": {
+    "status": 404
+  },
+  "signin": {
+    "status": 302,
+    "redirectHost": "auth.openai.com"
+  }
+}

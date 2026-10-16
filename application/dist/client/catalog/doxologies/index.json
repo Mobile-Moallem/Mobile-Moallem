@@ -1,0 +1,194 @@
+[
+  {
+    "id": "introduction-to-the-doxologies",
+    "name": "Introduction to the Doxologies",
+    "file": "doxologies/introduction-to-the-doxologies.json",
+    "order": 0
+  },
+  {
+    "id": "the-matins-doxology-for-the-virgin",
+    "name": "The Matins Doxology for the Virgin",
+    "file": "doxologies/the-matins-doxology-for-the-virgin.json",
+    "order": 1
+  },
+  {
+    "id": "doxology-for-archangel-gabriel",
+    "name": "Doxology for Archangel Gabriel",
+    "file": "doxologies/doxology-for-archangel-gabriel.json",
+    "order": 2
+  },
+  {
+    "id": "doxology-for-archangels-michael-and-gabriel",
+    "name": "Doxology for Archangels Michael and Gabriel",
+    "file": "doxologies/doxology-for-archangels-michael-and-gabriel.json",
+    "order": 3
+  },
+  {
+    "id": "doxology-for-all-the-heavenly-beings",
+    "name": "Doxology for All the Heavenly Beings",
+    "file": "doxologies/doxology-for-all-the-heavenly-beings.json",
+    "order": 4
+  },
+  {
+    "id": "doxology-for-jonah-the-prophet",
+    "name": "Doxology for Jonah the Prophet",
+    "file": "doxologies/doxology-for-jonah-the-prophet.json",
+    "order": 5
+  },
+  {
+    "id": "doxology-for-the-apostles",
+    "name": "Doxology for the Apostles",
+    "file": "doxologies/doxology-for-the-apostles.json",
+    "order": 6
+  },
+  {
+    "id": "another-doxology-for-the-apostles",
+    "name": "Another Doxology for the Apostles",
+    "file": "doxologies/another-doxology-for-the-apostles.json",
+    "order": 7
+  },
+  {
+    "id": "doxology-for-st-john-the-evangelist",
+    "name": "Doxology for St. John the Evangelist",
+    "file": "doxologies/doxology-for-st-john-the-evangelist.json",
+    "order": 8
+  },
+  {
+    "id": "doxology-for-st-stephen",
+    "name": "Doxology for St. Stephen",
+    "file": "doxologies/doxology-for-st-stephen.json",
+    "order": 9
+  },
+  {
+    "id": "doxology-for-st-mark-the-evangelist",
+    "name": "Doxology for St. Mark the Evangelist",
+    "file": "doxologies/doxology-for-st-mark-the-evangelist.json",
+    "order": 10
+  },
+  {
+    "id": "another-doxology-for-st-mark-the-evangelist",
+    "name": "Another Doxology for St. Mark the Evangelist",
+    "file": "doxologies/another-doxology-for-st-mark-the-evangelist.json",
+    "order": 11
+  },
+  {
+    "id": "doxology-for-st-mary-magdalene",
+    "name": "Doxology for St. Mary Magdalene",
+    "file": "doxologies/doxology-for-st-mary-magdalene.json",
+    "order": 12
+  },
+  {
+    "id": "doxology-for-st-george",
+    "name": "Doxology for St. George",
+    "file": "doxologies/doxology-for-st-george.json",
+    "order": 13
+  },
+  {
+    "id": "another-doxology-for-st-george",
+    "name": "Another Doxology for St. George",
+    "file": "doxologies/another-doxology-for-st-george.json",
+    "order": 14
+  },
+  {
+    "id": "doxology-for-st-philopater-mercurius",
+    "name": "Doxology for St. Philopater Mercurius",
+    "file": "doxologies/doxology-for-st-philopater-mercurius.json",
+    "order": 15
+  },
+  {
+    "id": "doxology-for-st-mena",
+    "name": "Doxology for St. Mena",
+    "file": "doxologies/doxology-for-st-mena.json",
+    "order": 16
+  },
+  {
+    "id": "doxology-for-st-maurice",
+    "name": "Doxology for St. Maurice",
+    "file": "doxologies/doxology-for-st-maurice.json",
+    "order": 17
+  },
+  {
+    "id": "doxology-for-st-demiana",
+    "name": "Doxology for St. Demiana",
+    "file": "doxologies/doxology-for-st-demiana.json",
+    "order": 18
+  },
+  {
+    "id": "doxology-for-st-barbara-and-st-juliana",
+    "name": "Doxology for St. Barbara and St. Juliana",
+    "file": "doxologies/doxology-for-st-barbara-and-st-juliana.json",
+    "order": 19
+  },
+  {
+    "id": "doxology-for-st-anthony",
+    "name": "Doxology for St. Anthony",
+    "file": "doxologies/doxology-for-st-anthony.json",
+    "order": 20
+  },
+  {
+    "id": "doxology-for-st-paul-the-hermit",
+    "name": "Doxology for St. Paul the Hermit",
+    "file": "doxologies/doxology-for-st-paul-the-hermit.json",
+    "order": 21
+  },
+  {
+    "id": "doxology-for-st-anthony-and-st-paul",
+    "name": "Doxology for St. Anthony and St. Paul",
+    "file": "doxologies/doxology-for-st-anthony-and-st-paul.json",
+    "order": 22
+  },
+  {
+    "id": "doxology-for-st-macarius-of-alexandria",
+    "name": "Doxology for St. Macarius of Alexandria",
+    "file": "doxologies/doxology-for-st-macarius-of-alexandria.json",
+    "order": 23
+  },
+  {
+    "id": "doxology-for-st-maximus-and-st-dometius",
+    "name": "Doxology for St. Maximus and St. Dometius",
+    "file": "doxologies/doxology-for-st-maximus-and-st-dometius.json",
+    "order": 24
+  },
+  {
+    "id": "doxology-for-the-strong-abba-moses",
+    "name": "Doxology for the Strong Abba Moses",
+    "file": "doxologies/doxology-for-the-strong-abba-moses.json",
+    "order": 25
+  },
+  {
+    "id": "doxology-for-st-john-kame",
+    "name": "Doxology for St. John Kame",
+    "file": "doxologies/doxology-for-st-john-kame.json",
+    "order": 26
+  },
+  {
+    "id": "doxology-for-st-mary-of-egypt",
+    "name": "Doxology for St. Mary of Egypt",
+    "file": "doxologies/doxology-for-st-mary-of-egypt.json",
+    "order": 27
+  },
+  {
+    "id": "doxology-for-pope-kyrillos",
+    "name": "Doxology for Pope Kyrillos",
+    "file": "doxologies/doxology-for-pope-kyrillos.json",
+    "order": 28
+  },
+  {
+    "id": "doxology-for-st-habib-girgis",
+    "name": "Doxology for St. Habib Girgis",
+    "file": "doxologies/doxology-for-st-habib-girgis.json",
+    "order": 29
+  },
+  {
+    "id": "doxology-for-st-mikhail-el-behirey",
+    "name": "Doxology for St. Mikhail El-Behirey",
+    "file": "doxologies/doxology-for-st-mikhail-el-behirey.json",
+    "order": 30
+  },
+  {
+    "id": "the-conclusion-of-the-doxologies",
+    "name": "The Conclusion of the Doxologies",
+    "file": "doxologies/the-conclusion-of-the-doxologies.json",
+    "order": 31
+  }
+]

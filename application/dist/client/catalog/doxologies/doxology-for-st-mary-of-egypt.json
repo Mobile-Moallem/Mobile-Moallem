@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-mary-of-egypt",
+  "name": "Doxology for St. Mary of Egypt",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-mary-of-egypt.json",
+  "folderOrder": 27,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Mary of Egypt",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Mary of Egypt:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Blessed are you truly, O Saint Mary of Egypt, the Bride of Christ, the pure Bridegroom.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱⲟⲩⲓⲛⲁϯ ⲁ̀ⲗⲏⲑⲱⲥ: ⲱ̀ ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛⲭ̀ⲏⲙⲓ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲡⲓⲛⲩⲙⲫⲓⲟⲥ ⲛ̀ⲕⲁⲑⲁⲣⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For you have forsaken, the glory of this world, and the pride of this age, for you loved Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲁ̀ⲣⲉⲉⲣⲕⲁⲧⲁⲫ̀ⲣⲟⲛⲓⲛ: ⲙ̀ⲡⲓⲱ̀ⲟⲩ ⲧⲏⲣϥ ⲛ̀ⲧⲉ ⲡⲁⲓⲕⲟⲥⲙⲟⲥ: ⲛⲉⲙ ⲡ̀ϣⲟⲩϣⲟⲩ ⲛ̀ⲧⲉ ⲡⲁⲓⲃⲓⲟⲥ: ⲁⲣⲉⲙⲉⲛⲣⲉ ⲙ̀Ⲡⲓⲭ̀ⲣⲓⲥⲧⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For truly it is great, the chosen struggle, of Saint Mary of Egypt, full of holiness.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲛⲓϣϯ ⲅⲁⲣ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲡⲉ ⲡⲓⲁ̀ⲅⲱⲛ ⲉⲧⲥⲱⲧⲡ: ⲛ̀ⲧⲉ ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛ̀ⲭⲏⲙⲓ: ϯⲉⲑⲙⲉϩ ⲛ̀ⲉⲩⲗⲟⲅⲓⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "She completed her life, with her great humility, and reposed with the saints, in the region of the living.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲥϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲙ̀ⲡⲉⲥⲃⲓⲟⲥ: ϧⲉⲛ ⲡⲉⲥⲛⲓϣϯ ⲛ̀ⲑⲉⲃⲓⲟ: ⲁⲥⲙ̀ⲧⲟⲛ ⲙ̀ⲙⲟⲥ ⲛⲉⲙ ⲛⲏⲉⲑⲟⲩⲁⲃ: ϧⲉⲛ ⲧ̀ⲭⲱⲣⲁ ⲛ̀ⲧⲉ ⲛⲏⲉⲧⲟⲛϧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to the holy ascetic, hail to the truly chosen, hail to the Bride of Christ, Saint Mary of Egypt.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ϯⲁⲥⲕⲏⲧⲏⲥ ⲉⲑⲟⲩⲁⲃ: ⲭⲉⲣⲉ ϯⲥⲱⲧⲡ ⲙ̀ⲙⲏⲓ: ⲭⲉⲣⲉ ⲧ̀ϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛⲬⲏⲙⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, O Bride of Christ, Saint Mary of Egypt, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛ̀ⲭⲏⲙⲓ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMaryOfEgypt.cr",
+    "incipit": "Ⲱⲟⲩⲓⲛⲁϯ ⲁ̀ⲗⲏⲑⲱⲥ...",
+    "rowIds": [
+      "R6ad",
+      "R6ae",
+      "R6af",
+      "R6b0",
+      "R6b1",
+      "R6b2",
+      "R6b4"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Mary of Egypt:\nBlessed are you truly, O Saint Mary of Egypt, the Bride of Christ, the pure Bridegroom.\nFor you have forsaken, the glory of this world, and the pride of this age, for you loved Christ.\nFor truly it is great, the chosen struggle, of Saint Mary of Egypt, full of holiness.\nShe completed her life, with her great humility, and reposed with the saints, in the region of the living.\nHail to the holy ascetic, hail to the truly chosen, hail to the Bride of Christ, Saint Mary of Egypt.\nPray to the Lord on our behalf, O Bride of Christ, Saint Mary of Egypt, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲰⲟⲩⲓⲛⲁϯ ⲁ̀ⲗⲏⲑⲱⲥ: ⲱ̀ ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛⲭ̀ⲏⲙⲓ: ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ⲡⲓⲛⲩⲙⲫⲓⲟⲥ ⲛ̀ⲕⲁⲑⲁⲣⲟⲥ.\nϪⲉ ⲁ̀ⲣⲉⲉⲣⲕⲁⲧⲁⲫ̀ⲣⲟⲛⲓⲛ: ⲙ̀ⲡⲓⲱ̀ⲟⲩ ⲧⲏⲣϥ ⲛ̀ⲧⲉ ⲡⲁⲓⲕⲟⲥⲙⲟⲥ: ⲛⲉⲙ ⲡ̀ϣⲟⲩϣⲟⲩ ⲛ̀ⲧⲉ ⲡⲁⲓⲃⲓⲟⲥ: ⲁⲣⲉⲙⲉⲛⲣⲉ ⲙ̀Ⲡⲓⲭ̀ⲣⲓⲥⲧⲟⲥ.\nⲞⲩⲛⲓϣϯ ⲅⲁⲣ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲡⲉ ⲡⲓⲁ̀ⲅⲱⲛ ⲉⲧⲥⲱⲧⲡ: ⲛ̀ⲧⲉ ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛ̀ⲭⲏⲙⲓ: ϯⲉⲑⲙⲉϩ ⲛ̀ⲉⲩⲗⲟⲅⲓⲁ.\nⲀⲥϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲙ̀ⲡⲉⲥⲃⲓⲟⲥ: ϧⲉⲛ ⲡⲉⲥⲛⲓϣϯ ⲛ̀ⲑⲉⲃⲓⲟ: ⲁⲥⲙ̀ⲧⲟⲛ ⲙ̀ⲙⲟⲥ ⲛⲉⲙ ⲛⲏⲉⲑⲟⲩⲁⲃ: ϧⲉⲛ ⲧ̀ⲭⲱⲣⲁ ⲛ̀ⲧⲉ ⲛⲏⲉⲧⲟⲛϧ.\nⲬⲉⲣⲉ ϯⲁⲥⲕⲏⲧⲏⲥ ⲉⲑⲟⲩⲁⲃ: ⲭⲉⲣⲉ ϯⲥⲱⲧⲡ ⲙ̀ⲙⲏⲓ: ⲭⲉⲣⲉ ⲧ̀ϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛⲬⲏⲙⲓ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ϯϣⲉⲗⲉⲧ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦: ϯⲁ̀ⲅⲓⲁ Ⲙⲁⲣⲓⲁ ⲛ̀ⲣⲉⲙ ⲛ̀ⲭⲏⲙⲓ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

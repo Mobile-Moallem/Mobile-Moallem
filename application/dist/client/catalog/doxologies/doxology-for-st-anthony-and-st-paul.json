@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-anthony-and-st-paul",
+  "name": "Doxology for St. Anthony and St. Paul",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-anthony-and-st-paul.json",
+  "folderOrder": 22,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Anthony and St. Paul",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "The following doxology is said at anytime, during the placing of the monk’s schema and the prayer of the monk’s funeral",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "O the pillars of light: the stars in truth: that enlighten our souls: through their holy virtues,",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱ ⲛⲓⲥⲧⲩⲗⲗⲟⲥ ⲛ̀ⲣⲉϥⲉⲣⲟⲩⲱⲓⲛⲓ: ⲛⲓⲫⲱⲥⲧⲏⲣ ⲛ̀ⲁⲗⲏⲑⲓⲛⲟⲛ: ⲉ̀ⲧⲉⲣⲟⲩⲱⲓⲛⲓ ⲛ̀ⲛⲉⲛⲯⲏⲭⲏ: ϩⲓⲧⲉⲛ ⲛⲟⲩⲁ̀ⲣⲏⲧⲏ ⲉ︦ⲑ︦ⲩ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Abba Antony and Abba Paul: who decorated their lives: with fastings and prayers: and great purity,",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓ ⲛⲉⲙ Ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛⲁⲓ ⲉ̀ⲧⲁⲩⲥⲟⲗⲥⲉⲗ ⲙ̀ⲡⲟⲩⲃⲓⲟⲥ: ϧⲉⲛ ϩⲁⲛⲛⲏⲥⲧⲓⲁ̀ ⲛⲉⲙ ϩⲁⲛϣ̀ⲗⲏⲗ: ⲛⲉⲙ ⲟⲩⲛⲓϣϯ ⲛ̀ⲧⲟⲩⲃⲟ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Dwelling in the wilderness: and praising God incessantly: by day and by night: in the likeness of angels,",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲩϣⲟⲡ ⲛ̀ϧ̀ⲣⲏⲓ ϧⲉⲛ ⲛⲓϣⲁϥⲉⲩ: ⲉⲩϩⲱⲥ Ⲫϯ ϧⲉⲛ ⲟⲩⲙⲉⲧⲁⲧⲙⲟⲩⲛⲕ: ⲙ̀ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲡⲓⲉ̀ϫⲱⲣϩ: ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲛⲓⲁⲅⲅⲉⲗⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Until they completed their lives: in joy and happiness: they received everlasting crowns: in the heavenly Jerusalem;",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϣⲁⲛ̀ⲧⲟⲩϫⲱⲕ ⲙ̀ⲡⲟⲩⲃⲓⲟⲥ ⲉ̀ⲃⲟⲗ: ϧⲉⲛ ⲟⲩⲟⲩⲛⲟϥ ⲛⲉⲙ ⲟⲩⲑⲉⲗⲏⲗ: ⲁⲩϭⲓ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲧⲧⲁⲕⲟ: ϧⲉⲛ Ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ ⲛ̀ⲧⲉ ⲧ̀ⲫⲉ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Singing with the angels: and the heavenly orders: and the chorus of the saints: in a single symphony,",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲩϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ ⲛ̀ⲉ̀ⲡⲟⲩⲣⲁⲛⲓⲟⲛ: ⲛⲉⲙ ⲡ̀ⲭⲟⲣⲟⲥ ⲛ̀ⲧⲉ ⲛⲏⲉ︦ⲑ︦ⲩ︦: ϧⲉⲛ ⲟⲩⲥⲩⲙⲫⲱⲛⲓⲁ̀ ⲛ̀ⲟⲩⲱⲧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Glorifying the Holy Trinity: who is of one essence: who is the beginning and the end: of all good things.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲩϯⲱ̀ⲟⲩ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ: ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲟ̀ⲙⲟⲟⲩⲥⲓⲟⲥ: ⲉ̀ⲧⲉ ⲛ̀ⲑⲟⲥ ⲧⲉ ϯⲁⲣⲭⲏ: ⲛⲉⲙ ⲡ̀ϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛ̀ⲁⲅⲁⲑⲟⲛ ⲛⲓⲃⲉⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Truly blessed are you: our holy and righteous fathers: Abba Antony and Abba Paul: the beloved of Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱⲟⲩⲛⲓⲁⲧⲟⲩ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲛⲉⲛⲓⲟϯ ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲇⲓⲕⲉⲟⲥ: Ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓⲟⲥ ⲛⲉⲙ Ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛⲓⲙⲉⲛⲣⲁϯ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: my lords and fathers who love their children: Abba Antony and Abba Paul: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲙ̀ⲙⲁⲓⲛⲟⲩϣⲏⲣⲓ: ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓⲟⲥ ⲛⲉⲙ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StAnthonyAndStPaul.cr",
+    "incipit": "Ⲱ ⲛⲓⲥⲧⲩⲗⲗⲟⲥ...",
+    "rowIds": [
+      "R537",
+      "R538",
+      "R539",
+      "R53a",
+      "R53b",
+      "R53c",
+      "R53d",
+      "R53e",
+      "R53f"
+    ]
+  },
+  "textOverride": "The following doxology is said at anytime, during the placing of the monk’s schema and the prayer of the monk’s funeral\nO the pillars of light: the stars in truth: that enlighten our souls: through their holy virtues,\nAbba Antony and Abba Paul: who decorated their lives: with fastings and prayers: and great purity,\nDwelling in the wilderness: and praising God incessantly: by day and by night: in the likeness of angels,\nUntil they completed their lives: in joy and happiness: they received everlasting crowns: in the heavenly Jerusalem;\nSinging with the angels: and the heavenly orders: and the chorus of the saints: in a single symphony,\nGlorifying the Holy Trinity: who is of one essence: who is the beginning and the end: of all good things.\nTruly blessed are you: our holy and righteous fathers: Abba Antony and Abba Paul: the beloved of Christ.\nPray to the Lord on our behalf: my lords and fathers who love their children: Abba Antony and Abba Paul: that He may forgive us our sins.",
+  "copticTextOverride": "\nⲰ ⲛⲓⲥⲧⲩⲗⲗⲟⲥ ⲛ̀ⲣⲉϥⲉⲣⲟⲩⲱⲓⲛⲓ: ⲛⲓⲫⲱⲥⲧⲏⲣ ⲛ̀ⲁⲗⲏⲑⲓⲛⲟⲛ: ⲉ̀ⲧⲉⲣⲟⲩⲱⲓⲛⲓ ⲛ̀ⲛⲉⲛⲯⲏⲭⲏ: ϩⲓⲧⲉⲛ ⲛⲟⲩⲁ̀ⲣⲏⲧⲏ ⲉ︦ⲑ︦ⲩ︦.\nⲀⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓ ⲛⲉⲙ Ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛⲁⲓ ⲉ̀ⲧⲁⲩⲥⲟⲗⲥⲉⲗ ⲙ̀ⲡⲟⲩⲃⲓⲟⲥ: ϧⲉⲛ ϩⲁⲛⲛⲏⲥⲧⲓⲁ̀ ⲛⲉⲙ ϩⲁⲛϣ̀ⲗⲏⲗ: ⲛⲉⲙ ⲟⲩⲛⲓϣϯ ⲛ̀ⲧⲟⲩⲃⲟ.\nⲈⲩϣⲟⲡ ⲛ̀ϧ̀ⲣⲏⲓ ϧⲉⲛ ⲛⲓϣⲁϥⲉⲩ: ⲉⲩϩⲱⲥ Ⲫϯ ϧⲉⲛ ⲟⲩⲙⲉⲧⲁⲧⲙⲟⲩⲛⲕ: ⲙ̀ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲡⲓⲉ̀ϫⲱⲣϩ: ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲛⲓⲁⲅⲅⲉⲗⲟⲥ.\nϢⲁⲛ̀ⲧⲟⲩϫⲱⲕ ⲙ̀ⲡⲟⲩⲃⲓⲟⲥ ⲉ̀ⲃⲟⲗ: ϧⲉⲛ ⲟⲩⲟⲩⲛⲟϥ ⲛⲉⲙ ⲟⲩⲑⲉⲗⲏⲗ: ⲁⲩϭⲓ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲧⲧⲁⲕⲟ: ϧⲉⲛ Ⲓⲉⲣⲟⲩⲥⲁⲗⲏⲙ ⲛ̀ⲧⲉ ⲧ̀ⲫⲉ.\nⲈⲩϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲛⲉⲙ ⲛⲓⲧⲁⲅⲙⲁ ⲛ̀ⲉ̀ⲡⲟⲩⲣⲁⲛⲓⲟⲛ: ⲛⲉⲙ ⲡ̀ⲭⲟⲣⲟⲥ ⲛ̀ⲧⲉ ⲛⲏⲉ︦ⲑ︦ⲩ︦: ϧⲉⲛ ⲟⲩⲥⲩⲙⲫⲱⲛⲓⲁ̀ ⲛ̀ⲟⲩⲱⲧ.\nⲈⲩϯⲱ̀ⲟⲩ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ: ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲟ̀ⲙⲟⲟⲩⲥⲓⲟⲥ: ⲉ̀ⲧⲉ ⲛ̀ⲑⲟⲥ ⲧⲉ ϯⲁⲣⲭⲏ: ⲛⲉⲙ ⲡ̀ϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛ̀ⲁⲅⲁⲑⲟⲛ ⲛⲓⲃⲉⲛ.\nⲰⲟⲩⲛⲓⲁⲧⲟⲩ ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲛⲉⲛⲓⲟϯ ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲇⲓⲕⲉⲟⲥ: Ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓⲟⲥ ⲛⲉⲙ Ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛⲓⲙⲉⲛⲣⲁϯ ⲛ̀ⲧⲉ Ⲡⲭ︦ⲥ︦.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲙ̀ⲙⲁⲓⲛⲟⲩϣⲏⲣⲓ: ⲁⲃⲃⲁ Ⲁⲛⲧⲱⲛⲓⲟⲥ ⲛⲉⲙ ⲁⲃⲃⲁ Ⲡⲁⲩⲗⲉ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

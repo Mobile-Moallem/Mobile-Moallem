@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-st-maurice",
+  "name": "Doxology for St. Maurice",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-maurice.json",
+  "folderOrder": 17,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Maurice",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Maurice:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Maurice the strong martyr, truly brave in the wars, the head of the soldiers, of the Theban legion.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲟⲩⲣⲏⲥ ⲡⲓϫⲱⲣⲓ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲡⲓϣⲱⲓϫ ⲙ̀ⲙⲏⲓ ϧⲉⲛ ⲛⲓⲃⲱⲧⲥ: ⲡⲓⲁⲛϫⲱϫ ⲛ̀ⲛⲓⲙⲁⲧⲟⲓ: ⲛ̀ⲧⲉ ϯⲡⲁⲣⲁⲃⲟⲗⲏ ⲛ̀ⲣⲉⲙⲛ̀ⲧⲓⲃⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "A name of pride is your name, O our Saint Maurice, King Maximianos was delighted, in your victory.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲣⲁⲛ  ⲛ̀ϣⲟⲩϣⲟⲩ ⲡⲉ ⲡⲉⲕⲣⲁⲛ: ⲱ̀ ⲫⲏⲉⲑⲟⲩⲁⲃ Ⲙⲟⲩⲣⲏⲥ ⲛ̀ⲧⲁⲛ: Ⲙⲁⲝⲓⲙⲓⲁⲛⲟⲥ ⲡⲓⲟⲩⲣⲟ: ⲁϥⲣⲁϣⲓ ϫⲉ ⲉ̀ⲧⲁⲕϭ̀ⲣⲟ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "All glory is due to you, at all times, for you have opposed the evil king, and bore witness to the God of glory.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲩⲙⲛⲟⲗⲟⲅⲓⲁ ⲛⲓⲃⲉⲛ: ⲥⲉⲧⲱⲙⲓ ⲉ̀ⲣⲟⲕ ⲛ̀ⲥⲏⲟⲩ ⲛⲓⲃⲉⲛ: ϫⲉ ⲁⲕϩⲓⲡ̀ϩⲟ ⲙ̀ⲡ̀ⲟⲩⲣⲟ ⲉⲧϩⲟⲟⲩ: ⲟⲩⲟϩ ⲁⲕⲉⲣⲙⲉⲑⲣⲉ ϧⲁ ⲫ̀ⲛⲟⲩϯ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Be joyful Maurice and delight, O beloved of Immanuel, for you have received great grace, O faithful father and saint.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲣⲁϣⲓ  Ⲙⲟⲩⲣⲏⲥ ⲟⲩⲟϩ ⲑⲉⲗⲏⲗ: ⲱ̀ ⲡⲓⲙⲉⲛⲣⲓⲧ ⲛ̀Ⲉⲙⲙⲁⲛⲟⲩⲏⲗ: ϫⲉ ⲁⲕϣⲁϣⲛⲓ ⲛ̀ⲟⲩⲛⲓϣϯ ⲛ̀ϩ̀ⲙⲟⲧ: ⲱ̀ ⲡⲉⲛⲓⲱⲧ ⲉⲑⲟⲩⲁⲃ ⲉ̀ⲧⲉⲛϩⲟⲧ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Behold your soldiers also, who suffered with you, have received unfading crowns, in the year two-hundred-ninety.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲏⲡⲡⲉ ⲓⲥ ⲛⲓⲕⲉⲙⲁⲧⲟⲓ: ⲛⲏⲉⲧⲁⲩϭⲓⲙ̀ⲕⲁϩ ⲛⲉⲙⲁⲕ: ⲁⲩϭⲓ ⲟⲛ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲑⲗⲱⲙ: ϧⲉⲛ ϯⲡⲣⲟⲙⲡⲓ ⲥ̀ⲛⲁⲩ ϣⲉ ⲡⲓⲥ̀ⲧⲁⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Listen to the voice full of joy, of our Lord Jesus our God, saying enter into the joy, of your Lord Giver of victory.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲥⲱⲧⲉⲛ ⲉ̀ ⲧ̀ⲥ̀ⲙⲏ ⲉⲑⲙⲉϩ ⲛ̀ⲣⲁϣⲓ: ⲛ̀ⲧⲉ Ⲡⲉⲛϭⲟⲓⲥ Ⲓⲏⲥⲟⲩⲥ Ⲡⲉⲛⲛⲟⲩϯ: ϫⲉ ⲁ̀ⲙⲟⲩ ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲫ̀ⲣⲁϣⲓ: ⲛ̀ⲧⲉ ⲡⲉⲕϭⲟⲓⲥ ⲛ̀ⲣⲉϥⲛⲁϣϯ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you  O martyr: Hail to the courageous hero: Hail to the struggle-mantled: Saint Maurice the Theban.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: ⲁⲃⲃⲁ Ⲙⲟⲩⲣⲏⲥ ⲛ̀ⲧⲉ Ⲧⲓⲃⲁ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf: O struggle-mantled martyr: Saint Maurice the Theban: that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲁⲃⲃⲁ Ⲙⲟⲩⲣⲏⲥ ⲛ̀ⲧⲉ Ⲧⲓⲃⲁ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲩⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMaurice.cr",
+    "incipit": "Ⲙⲟⲩⲣⲏⲥ ⲡⲓϫⲱⲣⲓ...",
+    "rowIds": [
+      "R493",
+      "R494",
+      "R495",
+      "R496",
+      "R497",
+      "R498",
+      "R499",
+      "R49a",
+      "R49c"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Maurice:\nMaurice the strong martyr, truly brave in the wars, the head of the soldiers, of the Theban legion.\nA name of pride is your name, O our Saint Maurice, King Maximianos was delighted, in your victory.\nAll glory is due to you, at all times, for you have opposed the evil king, and bore witness to the God of glory.\nBe joyful Maurice and delight, O beloved of Immanuel, for you have received great grace, O faithful father and saint.\nBehold your soldiers also, who suffered with you, have received unfading crowns, in the year two-hundred-ninety.\nListen to the voice full of joy, of our Lord Jesus our God, saying enter into the joy, of your Lord Giver of victory.\nHail to you  O martyr: Hail to the courageous hero: Hail to the struggle-mantled: Saint Maurice the Theban.\nPray to the Lord on our behalf: O struggle-mantled martyr: Saint Maurice the Theban: that He may forgive us our sins.",
+  "copticTextOverride": "\nⲘⲟⲩⲣⲏⲥ ⲡⲓϫⲱⲣⲓ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲡⲓϣⲱⲓϫ ⲙ̀ⲙⲏⲓ ϧⲉⲛ ⲛⲓⲃⲱⲧⲥ: ⲡⲓⲁⲛϫⲱϫ ⲛ̀ⲛⲓⲙⲁⲧⲟⲓ: ⲛ̀ⲧⲉ ϯⲡⲁⲣⲁⲃⲟⲗⲏ ⲛ̀ⲣⲉⲙⲛ̀ⲧⲓⲃⲁ.\nⲞⲩⲣⲁⲛ  ⲛ̀ϣⲟⲩϣⲟⲩ ⲡⲉ ⲡⲉⲕⲣⲁⲛ: ⲱ̀ ⲫⲏⲉⲑⲟⲩⲁⲃ Ⲙⲟⲩⲣⲏⲥ ⲛ̀ⲧⲁⲛ: Ⲙⲁⲝⲓⲙⲓⲁⲛⲟⲥ ⲡⲓⲟⲩⲣⲟ: ⲁϥⲣⲁϣⲓ ϫⲉ ⲉ̀ⲧⲁⲕϭ̀ⲣⲟ.\nⲨⲙⲛⲟⲗⲟⲅⲓⲁ ⲛⲓⲃⲉⲛ: ⲥⲉⲧⲱⲙⲓ ⲉ̀ⲣⲟⲕ ⲛ̀ⲥⲏⲟⲩ ⲛⲓⲃⲉⲛ: ϫⲉ ⲁⲕϩⲓⲡ̀ϩⲟ ⲙ̀ⲡ̀ⲟⲩⲣⲟ ⲉⲧϩⲟⲟⲩ: ⲟⲩⲟϩ ⲁⲕⲉⲣⲙⲉⲑⲣⲉ ϧⲁ ⲫ̀ⲛⲟⲩϯ.\nⲢⲁϣⲓ  Ⲙⲟⲩⲣⲏⲥ ⲟⲩⲟϩ ⲑⲉⲗⲏⲗ: ⲱ̀ ⲡⲓⲙⲉⲛⲣⲓⲧ ⲛ̀Ⲉⲙⲙⲁⲛⲟⲩⲏⲗ: ϫⲉ ⲁⲕϣⲁϣⲛⲓ ⲛ̀ⲟⲩⲛⲓϣϯ ⲛ̀ϩ̀ⲙⲟⲧ: ⲱ̀ ⲡⲉⲛⲓⲱⲧ ⲉⲑⲟⲩⲁⲃ ⲉ̀ⲧⲉⲛϩⲟⲧ.\nⲎⲡⲡⲉ ⲓⲥ ⲛⲓⲕⲉⲙⲁⲧⲟⲓ: ⲛⲏⲉⲧⲁⲩϭⲓⲙ̀ⲕⲁϩ ⲛⲉⲙⲁⲕ: ⲁⲩϭⲓ ⲟⲛ ⲙ̀ⲡⲓⲭ̀ⲗⲟⲙ ⲛ̀ⲁⲑⲗⲱⲙ: ϧⲉⲛ ϯⲡⲣⲟⲙⲡⲓ ⲥ̀ⲛⲁⲩ ϣⲉ ⲡⲓⲥ̀ⲧⲁⲩ.\nⲤⲱⲧⲉⲛ ⲉ̀ ⲧ̀ⲥ̀ⲙⲏ ⲉⲑⲙⲉϩ ⲛ̀ⲣⲁϣⲓ: ⲛ̀ⲧⲉ Ⲡⲉⲛϭⲟⲓⲥ Ⲓⲏⲥⲟⲩⲥ Ⲡⲉⲛⲛⲟⲩϯ: ϫⲉ ⲁ̀ⲙⲟⲩ ⲉ̀ϧⲟⲩⲛ ⲉ̀ⲫ̀ⲣⲁϣⲓ: ⲛ̀ⲧⲉ ⲡⲉⲕϭⲟⲓⲥ ⲛ̀ⲣⲉϥⲛⲁϣϯ.\nⲬⲉⲣⲉ ⲛⲁⲕ ⲱ̀ ⲡⲓⲙⲁⲣⲧⲩⲣⲟⲥ: ⲭⲉⲣⲉ ⲡⲓϣⲱⲓϫ ⲛ̀ⲅⲉⲛⲛⲉⲟⲥ: ⲭⲉⲣⲉ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ: ⲁⲃⲃⲁ Ⲙⲟⲩⲣⲏⲥ ⲛ̀ⲧⲉ Ⲧⲓⲃⲁ.\nⲦⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲱ̀ ⲡⲓⲁⲑⲗⲟⲫⲟⲣⲟⲥ ⲙ̀ⲙⲁⲣⲧⲩⲣⲟⲥ: ⲁⲃⲃⲁ Ⲙⲟⲩⲣⲏⲥ ⲛ̀ⲧⲉ Ⲧⲓⲃⲁ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲩⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

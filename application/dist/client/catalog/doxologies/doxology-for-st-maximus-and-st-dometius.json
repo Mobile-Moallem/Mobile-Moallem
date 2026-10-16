@@ -1,0 +1,120 @@
+{
+  "id": "doxology-for-st-maximus-and-st-dometius",
+  "name": "Doxology for St. Maximus and St. Dometius",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-maximus-and-st-dometius.json",
+  "folderOrder": 24,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Maximus and St. Dometius",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Maximus and St. Dometius",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The stars of the truth, and the great princes, of our holy congregation, Maximus and Dometius.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲓⲫⲱⲥⲧⲏⲣ ⲛ̀ⲧⲉ ϯⲙⲉⲑⲙⲏⲓ: ⲟⲩⲟϩ ⲛⲓⲛⲓϣϯ ⲛ̀ⲁⲣⲭⲏⲅⲟⲥ: ⲛ̀ⲧⲉ ⲧⲉⲛⲥⲩⲛⲟⲩⲇⲓⲁ̀ ⲉ︦ⲑ︦ⲩ︦: Ⲙⲁⲝⲓⲙⲟⲥ ⲛⲉⲙ Ⲇⲟⲙⲉⲧⲓⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "These whom the Life-giving Trinity, has gathered us in their name, that we may follow in their footsteps, and wear their holy images.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲁⲓ ⲉ̀ⲧⲁⲥⲑⲟⲩⲱⲧⲉⲛ ϧⲉⲛ ⲛⲟⲩⲣⲁⲛ: ⲛ̀ϫⲉ Ϯⲧ̀ⲣⲓⲁⲥ ⲛ̀ⲣⲉϥⲧⲁⲛϧⲟ: ⲉⲑⲣⲉⲛⲙⲟϣⲓ ⲛ̀ⲥⲁ ⲛⲟⲩϣⲉⲛⲧⲁⲧⲥⲓ: ⲛ̀ⲧⲉⲛⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲟⲩⲥ̀ⲭⲏⲙⲁ ⲉ︦ⲑ︦ⲩ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "They gave us the written promises, that were in the Gospel, this is the love of brothers, the perfection of all virtues.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲩϯ ⲉ̀ⲧⲟⲧⲉⲛ ⲛ̀ⲛⲓⲱϣ: ⲉⲧⲥ̀ϧⲏⲟⲩⲧ ϧⲉⲛ ⲡⲓⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ: ⲉ̀ⲧⲉ ⲑⲁⲓ ⲧⲉ ϯⲙⲉⲧⲙⲁⲓⲥⲟⲛ: ⲡ̀ϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛ̀ⲛⲓⲁⲣⲉ̀ⲧⲏ ⲧⲏⲣⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "We celebrate in their church, and we complete their remembrance, we glorify the Trinity, by day and by night.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲛⲉⲣϣⲁⲓ ϧⲉⲛ ⲧⲟⲩⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀: ⲉⲛϫⲱⲕ ⲙ̀ⲡⲟⲩⲉⲣⲫ̀ⲙⲉⲩⲓ̀ ⲉ̀ⲃⲟⲗ: ⲉⲛϯⲱ̀ⲟⲩ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ: ⲙ̀ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲡⲓⲉ̀ϫⲱⲣϩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you O righteous ones, hail to the spirit mantled, hail to our holy roman fathers, Maximus and Dometius.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲛⲱⲧⲉⲛ ⲱ̀ ⲛⲓⲇⲓⲕⲉⲟⲥ: ⲭⲉⲣⲉ ⲛⲓⲡ︦ⲛ︦ⲁ︦ⲧⲟⲫⲟⲣⲟⲥ: ⲭⲉⲣⲉ ⲛⲉⲛⲓⲟϯ ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲣⲱⲙⲉⲟⲥ: Ⲙⲁⲝⲓⲙⲟⲥ ⲛⲉⲙ Ⲇⲟⲙⲉⲧⲓⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, our holy roman fathers, Maximus and Dometius, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲛⲉⲛⲓⲟϯ ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲣⲱⲙⲉⲟⲥ: Ⲙⲁⲝⲓⲙⲟⲥ ⲛⲉⲙ Ⲇⲟⲙⲉⲧⲓⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMaximusAndStDometius.cr",
+    "incipit": "Ⲛⲓⲫⲱⲥⲧⲏⲣ...",
+    "rowIds": [
+      "R594",
+      "R595",
+      "R596",
+      "R597",
+      "R598",
+      "R599",
+      "R59b"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Maximus and St. Dometius\nThe stars of the truth, and the great princes, of our holy congregation, Maximus and Dometius.\nThese whom the Life-giving Trinity, has gathered us in their name, that we may follow in their footsteps, and wear their holy images.\nThey gave us the written promises, that were in the Gospel, this is the love of brothers, the perfection of all virtues.\nWe celebrate in their church, and we complete their remembrance, we glorify the Trinity, by day and by night.\nHail to you O righteous ones, hail to the spirit mantled, hail to our holy roman fathers, Maximus and Dometius.\nPray to the Lord on our behalf, our holy roman fathers, Maximus and Dometius, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲚⲓⲫⲱⲥⲧⲏⲣ ⲛ̀ⲧⲉ ϯⲙⲉⲑⲙⲏⲓ: ⲟⲩⲟϩ ⲛⲓⲛⲓϣϯ ⲛ̀ⲁⲣⲭⲏⲅⲟⲥ: ⲛ̀ⲧⲉ ⲧⲉⲛⲥⲩⲛⲟⲩⲇⲓⲁ̀ ⲉ︦ⲑ︦ⲩ︦: Ⲙⲁⲝⲓⲙⲟⲥ ⲛⲉⲙ Ⲇⲟⲙⲉⲧⲓⲟⲥ.\nⲚⲁⲓ ⲉ̀ⲧⲁⲥⲑⲟⲩⲱⲧⲉⲛ ϧⲉⲛ ⲛⲟⲩⲣⲁⲛ: ⲛ̀ϫⲉ Ϯⲧ̀ⲣⲓⲁⲥ ⲛ̀ⲣⲉϥⲧⲁⲛϧⲟ: ⲉⲑⲣⲉⲛⲙⲟϣⲓ ⲛ̀ⲥⲁ ⲛⲟⲩϣⲉⲛⲧⲁⲧⲥⲓ: ⲛ̀ⲧⲉⲛⲉⲣⲫⲟⲣⲓⲛ ⲙ̀ⲡⲟⲩⲥ̀ⲭⲏⲙⲁ ⲉ︦ⲑ︦ⲩ︦.\nⲀⲩϯ ⲉ̀ⲧⲟⲧⲉⲛ ⲛ̀ⲛⲓⲱϣ: ⲉⲧⲥ̀ϧⲏⲟⲩⲧ ϧⲉⲛ ⲡⲓⲉⲩⲁⲅⲅⲉⲗⲓⲟⲛ: ⲉ̀ⲧⲉ ⲑⲁⲓ ⲧⲉ ϯⲙⲉⲧⲙⲁⲓⲥⲟⲛ: ⲡ̀ϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛ̀ⲛⲓⲁⲣⲉ̀ⲧⲏ ⲧⲏⲣⲟⲩ.\nⲈⲛⲉⲣϣⲁⲓ ϧⲉⲛ ⲧⲟⲩⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀: ⲉⲛϫⲱⲕ ⲙ̀ⲡⲟⲩⲉⲣⲫ̀ⲙⲉⲩⲓ̀ ⲉ̀ⲃⲟⲗ: ⲉⲛϯⲱ̀ⲟⲩ ⲛ̀Ϯⲧ̀ⲣⲓⲁⲥ: ⲙ̀ⲡⲓⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ⲡⲓⲉ̀ϫⲱⲣϩ.\nⲬⲉⲣⲉ ⲛⲱⲧⲉⲛ ⲱ̀ ⲛⲓⲇⲓⲕⲉⲟⲥ: ⲭⲉⲣⲉ ⲛⲓⲡ︦ⲛ︦ⲁ︦ⲧⲟⲫⲟⲣⲟⲥ: ⲭⲉⲣⲉ ⲛⲉⲛⲓⲟϯ ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲣⲱⲙⲉⲟⲥ: Ⲙⲁⲝⲓⲙⲟⲥ ⲛⲉⲙ Ⲇⲟⲙⲉⲧⲓⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲛⲉⲛⲓⲟϯ ⲉ︦ⲑ︦ⲩ︦ ⲛ̀ⲣⲱⲙⲉⲟⲥ: Ⲙⲁⲝⲓⲙⲟⲥ ⲛⲉⲙ Ⲇⲟⲙⲉⲧⲓⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

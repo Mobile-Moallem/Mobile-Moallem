@@ -1,0 +1,146 @@
+{
+  "id": "doxology-for-jonah-the-prophet",
+  "name": "Doxology for Jonah the Prophet",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-jonah-the-prophet.json",
+  "folderOrder": 5,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for Jonah the Prophet",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Fast of Jonah:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Jonah, the prophet, / was in the belly of the whale/ for three days and three nights / like the burial of our Savior.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲓⲱⲛⲁ ⲡⲓⲡ̀ⲣⲟⲫⲏⲧⲏⲥ: ⲛⲁϥⲭⲏ ϧⲉⲛ ⲑ̀ⲛⲉϫⲓ ⲙ̀ⲡⲓⲕⲏⲧⲟⲥ: ⲛ̀ϣⲟⲙⲧ ⲛ̀ⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ϣⲟⲙⲧ ⲛ̀ⲉ̀ϫⲱⲣϩ: ⲕⲁⲧⲁ ⲡⲓⲕⲱⲥ ⲙ̀Ⲡⲉⲛⲥⲱⲧⲏⲣ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He was sent by the Lord, God / to the people of Nineveh; / He preached to them according to His word / and they repented.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥⲟⲩⲱⲣⲡ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ Ⲡⲟ︦ⲥ︦ Ⲫϯ: ϣⲁ ⲛⲓⲣⲱⲙⲓ ⲛ̀ⲧⲉ Ⲛⲓⲛⲉⲩⲏ: ⲁϥϩⲓⲱⲓϣ ⲛⲱⲟⲩ ⲕⲁⲧⲁ ⲡⲉϥⲥⲁϫⲓ: ⲟⲩⲟϩ ⲁⲩⲉⲣⲙⲉⲧⲁ̀ⲛⲟⲓⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For three days and three nights / they were in prayer and fasting / with pain and tears / with the birds and animals.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲥϣⲟⲙⲧ ⲛ̀ⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ϣⲟⲙⲧ ⲛ̀ⲉ̀ϫⲱⲣϩ: ϧⲉⲛ ϩⲁⲛϣ̀ⲗⲏⲗ ⲛⲉⲙ ϩⲁⲛⲛⲏⲥⲧⲓⲁ̀: ⲛⲉⲙ ⲛⲓⲛⲁⲕϩⲓ ⲛⲉⲙ ⲛⲓⲉⲣⲙⲱⲟⲩⲓ̀: ⲛⲓϩⲁⲗⲁϯ ⲛⲉⲙ ⲛⲓⲧⲉⲃⲛⲱⲟⲩⲓ̀.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "God accepted their repentance, / and had mercy on them; / He lifted His anger away from them / and forgave them their sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁϥϣⲱⲡ ⲉ̀ⲣⲟϥ ⲛ̀ⲧⲟⲩⲙⲉⲧⲁ̀ⲛⲟⲓⲁ̀: ⲛ̀ϫⲉ Ⲫϯ ⲟⲩⲟϩ ⲁϥⲛⲁⲓ ⲛⲱⲟⲩ: ⲁϥⲱ̀ⲗⲓ ⲙ̀ⲡⲉϥϫⲱⲛⲧ ⲉ̀ⲃⲟⲗ ϩⲁⲣⲱⲟⲩ: ⲁϥⲭⲁ ⲛⲟⲩⲛⲟⲃⲓ ⲛⲱⲟⲩ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "We pray to You, O merciful One, / deal with us, the sinners, / like the people of Nineveh, / have mercy on us according to Your great mercy.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲉⲛⲧⲱⲃϩ ⲙ̀ⲙⲟⲕ ⲱ̀ ⲡⲓⲛⲁⲏⲧ: ⲁⲣⲓⲟⲩⲓ̀ ⲛⲉⲙⲁⲛ ϧⲁ ⲛⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ: ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲛⲓⲣⲉⲙ Ⲛⲓⲛⲉⲩⲏ: ⲛⲁⲓ ⲛⲁⲛ ⲕⲁⲧⲁ ⲡⲉⲕⲛⲓϣϯ ⲛ̀ⲛⲁⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For You are a merciful God, / the great in compassion, / and full of patience, / the good Lover of Mankind.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲛ̀ⲑⲟⲕ ⲟⲩⲛⲟⲩϯ ⲛ̀ⲛⲁⲏⲧ: ⲡⲓⲙⲏϣ ⲛ̀ⲛⲁⲓ ⲛ̀ⲣⲉϥϣⲉⲛϩⲏⲧ: ⲟⲩⲟϩ ⲡⲓⲣⲉϥⲱ̀ⲟⲩⲛ̀ϩⲏⲧ: ⲡⲓⲙⲁⲓⲣⲱⲙⲓ ⲛ̀ⲁ̀ⲅⲁⲑⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For You do not desire the death of a sinner, / but rather that he returns and lives: / accept us and have mercy on us; / forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϫⲉ ⲭ̀ⲟⲩⲱϣ ⲙ̀ⲫ̀ⲙⲟⲩ ⲁⲛ ⲙ̀ⲡⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ: ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲧⲉϥⲕⲟⲧϥ ⲟⲩⲟϩ ⲛ̀ⲧⲉϥⲱⲛϧ: ϣⲟⲡⲧⲉⲛ ⲉ̀ⲣⲟⲕ ⲟⲩⲟϩ ⲛⲁⲓ ⲛⲁⲛ: ⲭⲱ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲛ̀ⲛⲉⲛⲛⲟⲃⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, / O preacher of the people of Nineveh, / Jonah the Prophet, / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲣⲉϥϩⲓⲱⲓϣ ⲛ̀ⲧⲉ ⲛⲓⲣⲉⲙ Ⲛⲓⲛⲉⲩⲏ: Ⲓⲱⲛⲁ ⲡⲓⲡ̀ⲣⲟⲫⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/JonahContents.cr",
+    "incipit": "Ⲓⲱⲛⲁ ⲡⲓⲡ̀ⲣⲟⲫⲏⲧⲏⲥ...",
+    "rowIds": [
+      "Rc9",
+      "Rca",
+      "Rcb",
+      "Rcc",
+      "Rcd",
+      "Rce",
+      "Rcf",
+      "Rd0",
+      "Rd1"
+    ]
+  },
+  "textOverride": "For the Fast of Jonah:\nJonah, the prophet, / was in the belly of the whale/ for three days and three nights / like the burial of our Savior.\nHe was sent by the Lord, God / to the people of Nineveh; / He preached to them according to His word / and they repented.\nFor three days and three nights / they were in prayer and fasting / with pain and tears / with the birds and animals.\nGod accepted their repentance, / and had mercy on them; / He lifted His anger away from them / and forgave them their sins.\nWe pray to You, O merciful One, / deal with us, the sinners, / like the people of Nineveh, / have mercy on us according to Your great mercy.\nFor You are a merciful God, / the great in compassion, / and full of patience, / the good Lover of Mankind.\nFor You do not desire the death of a sinner, / but rather that he returns and lives: / accept us and have mercy on us; / forgive us our sins.\nPray to the Lord on our behalf, / O preacher of the people of Nineveh, / Jonah the Prophet, / that He may forgive us our sins.",
+  "copticTextOverride": "\nⲒⲱⲛⲁ ⲡⲓⲡ̀ⲣⲟⲫⲏⲧⲏⲥ: ⲛⲁϥⲭⲏ ϧⲉⲛ ⲑ̀ⲛⲉϫⲓ ⲙ̀ⲡⲓⲕⲏⲧⲟⲥ: ⲛ̀ϣⲟⲙⲧ ⲛ̀ⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ϣⲟⲙⲧ ⲛ̀ⲉ̀ϫⲱⲣϩ: ⲕⲁⲧⲁ ⲡⲓⲕⲱⲥ ⲙ̀Ⲡⲉⲛⲥⲱⲧⲏⲣ.\nⲀϥⲟⲩⲱⲣⲡ ⲙ̀ⲙⲟϥ ⲛ̀ϫⲉ Ⲡⲟ︦ⲥ︦ Ⲫϯ: ϣⲁ ⲛⲓⲣⲱⲙⲓ ⲛ̀ⲧⲉ Ⲛⲓⲛⲉⲩⲏ: ⲁϥϩⲓⲱⲓϣ ⲛⲱⲟⲩ ⲕⲁⲧⲁ ⲡⲉϥⲥⲁϫⲓ: ⲟⲩⲟϩ ⲁⲩⲉⲣⲙⲉⲧⲁ̀ⲛⲟⲓⲛ.\nⲤϣⲟⲙⲧ ⲛ̀ⲉ̀ϩⲟⲟⲩ ⲛⲉⲙ ϣⲟⲙⲧ ⲛ̀ⲉ̀ϫⲱⲣϩ: ϧⲉⲛ ϩⲁⲛϣ̀ⲗⲏⲗ ⲛⲉⲙ ϩⲁⲛⲛⲏⲥⲧⲓⲁ̀: ⲛⲉⲙ ⲛⲓⲛⲁⲕϩⲓ ⲛⲉⲙ ⲛⲓⲉⲣⲙⲱⲟⲩⲓ̀: ⲛⲓϩⲁⲗⲁϯ ⲛⲉⲙ ⲛⲓⲧⲉⲃⲛⲱⲟⲩⲓ̀.\nⲀϥϣⲱⲡ ⲉ̀ⲣⲟϥ ⲛ̀ⲧⲟⲩⲙⲉⲧⲁ̀ⲛⲟⲓⲁ̀: ⲛ̀ϫⲉ Ⲫϯ ⲟⲩⲟϩ ⲁϥⲛⲁⲓ ⲛⲱⲟⲩ: ⲁϥⲱ̀ⲗⲓ ⲙ̀ⲡⲉϥϫⲱⲛⲧ ⲉ̀ⲃⲟⲗ ϩⲁⲣⲱⲟⲩ: ⲁϥⲭⲁ ⲛⲟⲩⲛⲟⲃⲓ ⲛⲱⲟⲩ ⲉ̀ⲃⲟⲗ.\nⲦⲉⲛⲧⲱⲃϩ ⲙ̀ⲙⲟⲕ ⲱ̀ ⲡⲓⲛⲁⲏⲧ: ⲁⲣⲓⲟⲩⲓ̀ ⲛⲉⲙⲁⲛ ϧⲁ ⲛⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ: ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲛⲓⲣⲉⲙ Ⲛⲓⲛⲉⲩⲏ: ⲛⲁⲓ ⲛⲁⲛ ⲕⲁⲧⲁ ⲡⲉⲕⲛⲓϣϯ ⲛ̀ⲛⲁⲓ.\nϪⲉ ⲛ̀ⲑⲟⲕ ⲟⲩⲛⲟⲩϯ ⲛ̀ⲛⲁⲏⲧ: ⲡⲓⲙⲏϣ ⲛ̀ⲛⲁⲓ ⲛ̀ⲣⲉϥϣⲉⲛϩⲏⲧ: ⲟⲩⲟϩ ⲡⲓⲣⲉϥⲱ̀ⲟⲩⲛ̀ϩⲏⲧ: ⲡⲓⲙⲁⲓⲣⲱⲙⲓ ⲛ̀ⲁ̀ⲅⲁⲑⲟⲥ.\nϪⲉ ⲭ̀ⲟⲩⲱϣ ⲙ̀ⲫ̀ⲙⲟⲩ ⲁⲛ ⲙ̀ⲡⲓⲣⲉϥⲉⲣⲛⲟⲃⲓ: ⲙ̀ⲫ̀ⲣⲏϯ ⲛ̀ⲧⲉϥⲕⲟⲧϥ ⲟⲩⲟϩ ⲛ̀ⲧⲉϥⲱⲛϧ: ϣⲟⲡⲧⲉⲛ ⲉ̀ⲣⲟⲕ ⲟⲩⲟϩ ⲛⲁⲓ ⲛⲁⲛ: ⲭⲱ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲛ̀ⲛⲉⲛⲛⲟⲃⲓ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ:  ⲱ̀ ⲡⲓⲣⲉϥϩⲓⲱⲓϣ ⲛ̀ⲧⲉ ⲛⲓⲣⲉⲙ Ⲛⲓⲛⲉⲩⲏ: Ⲓⲱⲛⲁ ⲡⲓⲡ̀ⲣⲟⲫⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

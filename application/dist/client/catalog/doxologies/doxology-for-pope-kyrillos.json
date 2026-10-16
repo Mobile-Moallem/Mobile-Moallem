@@ -1,0 +1,172 @@
+{
+  "id": "doxology-for-pope-kyrillos",
+  "name": "Doxology for Pope Kyrillos",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-pope-kyrillos.json",
+  "folderOrder": 28,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for Pope Kyrillos",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of Pope Kyrillos:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pope Kyrillos the sixth: the truely honored: who founded us in the true: orthodox faith.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲁⲡⲁ Ⲁⲃⲃⲁ Ⲕⲩⲣⲓⲗⲗⲟⲥ ⲡⲓⲙⲁϩ Ⲋ︦: ⲡⲓⲙ̀ⲁⲕⲁⲣⲓⲟⲥ ’ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲫⲏⲉⲧⲁϥ ⲧⲁϫⲣⲟⲛ ϧⲉⲛ ⲡⲓⲛⲁϩϯ: ⲛ̀ⲟⲣⲑⲟⲍⲟⲝⲟⲥ ⲛ̀ⲧⲁⲫ̀ⲙⲏⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Your name is a pride: O pure monk: the strengthened hermit: the friend of the anchorites.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲣⲁⲛ ⲛ̀ϣⲟⲩϣⲟⲩ ⲡⲉ ⲡⲉⲕⲣⲁⲛ: ⲱ̀ ⲡⲓⲙⲟⲛⲁⲭⲟⲥ ⲉⲧⲧⲟⲩⲃⲏⲟⲩⲧ: ⲡⲓⲙⲁⲛⲇ̀ⲣⲓⲧⲏⲥ ⲉⲧⲧⲁϫⲣⲏⲟⲩⲧ: ⲡⲓϣ̀ⲫⲏⲣ ⲛ̀ⲛⲓⲁⲛⲁⲭⲱⲣⲓⲧⲏⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "For you have become: a leading example: of words, love, and deeds: and of purity in faith.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲑⲃⲉ ⲫⲁⲓ ⲁⲕϣⲱⲡⲓ ⲛⲁⲛ: ⲛ̀ⲟⲩⲧⲩⲡⲟⲥ ϧⲉⲛ ⲡ̀ⲥⲁϫⲓ: ϧⲉⲛ ϯⲁⲅⲁⲡⲏ: ϧⲉⲛ ⲡⲓϫⲓⲛⲙⲟϣⲓ: ϧⲉⲛ ⲡⲓⲧⲟⲩⲃⲟ ϧⲉⲛ ⲫ̀ⲛⲁϩϯ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to you loving father: who healed the sick: and foresaw miracles: and cast out demons.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲡⲓⲙⲁⲓⲛⲉϥϣⲏⲣⲓ: ⲫⲏⲉⲧⲁϥⲧⲁⲗϭⲟ ⲛ̀ⲛⲏⲉⲧϣⲱⲛⲓ: ⲁϥⲉⲣ ⲡ̀ⲣⲟⲫⲏⲧⲉⲩⲓⲛ ⲛ̀ⲛⲓϣ̀ⲫⲏⲣⲓ: ⲟⲩⲟϩ ⲛⲓⲇⲩⲙⲱⲛ ⲁϥϩⲓⲧⲟⲩ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Your era was blessed: O our honored father: you restored St. Mark's relics: and made the sacred Myron",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϥⲥ̀ⲙⲁⲣⲱⲟⲩⲧ ⲛ̀ϫⲉ ⲡⲉⲕⲃⲓⲟⲥ: ⲱ̀ ⲡⲉⲛⲓⲱⲧ ⲙ̀ⲙⲁⲕⲁⲣⲓⲟⲥ: ⲁⲕⲧⲁⲥⲑⲟ ⲛⲁⲛ ⲙ̀ⲡⲓⲥⲱⲙⲁ ⲛ̀ⲁⲃⲃⲁ Ⲙⲁⲣⲕⲟⲥ: ⲟⲩⲟϩ ⲁⲕⲓ̀ⲣⲓ ⲙ̀ⲡⲓⲙⲩⲣⲟⲛ ⲉⲑⲟⲩⲁⲃ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Mary the Mother of God: appeared miraculously: with doves and incense: above her church in Zeitoun.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙⲁⲣⲓⲁ ϯⲙⲁⲥⲛⲟⲩϯ: ⲁⲥⲟⲩⲱⲛϩ ϧⲉⲛ ⲟⲩⲛⲓϣϯ ⲛ̀ϣ̀ⲫⲏⲣⲓ: ⲛⲉⲙ ⲛⲓϭ̀ⲣⲟⲙⲡⲓ ⲛⲉⲙ ⲛⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ: ϧⲉⲛ ⲧⲉⲥⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀ ϧⲉⲛ Ⲍⲁⲓⲧⲟⲩⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You built a new cathedral: and St. Mina’s great monastery: and many more churches: but you remained humble.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲕⲕⲱⲧ ⲛ̀ⲟⲩⲙⲁⲛⲕⲁⲑⲉⲇⲣⲁ ⲙ̀ⲃⲉⲣⲓ: ⲛⲉⲙ ⲡⲓⲛⲓϣϯ ⲛ̀ⲁ̀ⲃⲏⲧ ⲛ̀ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ: ⲛⲉⲙ ϩⲁⲛⲙⲏϣ ⲛ̀ⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀: ⲡⲉⲕϩⲏⲧ ⲙ̀ⲡⲉϥϭⲁⲥ ⲛⲁϩⲃⲓ ⲉ̀ⲡ̀ⲧⲏⲣϥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You rose at dawn: both in health and sickness: to praise with the angels: and your beloved saints.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϣⲁⲕⲧⲱⲛⲕ ⲙ̀ⲃ̀ⲛⲁⲩ ⲛ̀ϣⲟⲣⲡ: ’ϧⲉⲛ ⲧⲉⲕϫⲟⲙ ⲛⲉⲙ ⲛⲉⲕϣⲱⲛⲓ: ⲉⲑⲣⲉⲕ ϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲛⲉⲙ ⲛⲏⲉⲑⲟⲩⲁⲃ ⲉⲧⲉⲕⲙⲉⲛⲣⲓⲧⲟⲩ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "And now remember us: before our God: that He may keep us: in His love and faith.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ϯⲛⲟⲩ ⲁⲣⲓⲡⲉⲛⲙⲉⲩⲓ̀: ⲛⲁϩⲣⲉⲛ Ⲡⲉⲛⲛⲟⲩϯ: ⲉⲑⲣⲉϥϫⲱⲕ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲙ̀ⲡⲉⲕⲣⲏϯ: ϧⲉⲛ ϯⲁⲅⲁⲡⲏ ϧⲉⲛ ⲫ̀ⲛⲁϩϯ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, our holy father the patriarch, Abba Kyrillos the Sixth, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲡⲉⲛⲓⲱⲧ ⲉⲑⲟⲩⲁⲃ ⲙ̀ⲡⲁⲧⲣⲓⲁⲣⲭⲏⲥ: Ⲁⲃⲃⲁ Ⲕⲩⲣⲓⲗⲗⲟⲥ ⲠⲓⲙⲁϩⲤⲟⲟⲩ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/PopeKyrillos.cr",
+    "incipit": "Ⲡⲁⲡⲁ Ⲁⲃⲃⲁ Ⲕⲩⲣⲓⲗⲗⲟⲥ...",
+    "rowIds": [
+      "R6f6",
+      "R6f7",
+      "R6f8",
+      "R6f9",
+      "R6fa",
+      "R6fb",
+      "R6fc",
+      "R6fd",
+      "R6fe",
+      "R6ff",
+      "R701"
+    ]
+  },
+  "textOverride": "For the Commemoration of Pope Kyrillos:\nPope Kyrillos the sixth: the truely honored: who founded us in the true: orthodox faith.\nYour name is a pride: O pure monk: the strengthened hermit: the friend of the anchorites.\nFor you have become: a leading example: of words, love, and deeds: and of purity in faith.\nHail to you loving father: who healed the sick: and foresaw miracles: and cast out demons.\nYour era was blessed: O our honored father: you restored St. Mark's relics: and made the sacred Myron\nMary the Mother of God: appeared miraculously: with doves and incense: above her church in Zeitoun.\nYou built a new cathedral: and St. Mina’s great monastery: and many more churches: but you remained humble.\nYou rose at dawn: both in health and sickness: to praise with the angels: and your beloved saints.\nAnd now remember us: before our God: that He may keep us: in His love and faith.\nPray to the Lord on our behalf, our holy father the patriarch, Abba Kyrillos the Sixth, that He may forgive us our sins.",
+  "copticTextOverride": "\nⲠⲁⲡⲁ Ⲁⲃⲃⲁ Ⲕⲩⲣⲓⲗⲗⲟⲥ ⲡⲓⲙⲁϩ Ⲋ︦: ⲡⲓⲙ̀ⲁⲕⲁⲣⲓⲟⲥ ’ϧⲉⲛ ⲟⲩⲙⲉⲑⲙⲏⲓ: ⲫⲏⲉⲧⲁϥ ⲧⲁϫⲣⲟⲛ ϧⲉⲛ ⲡⲓⲛⲁϩϯ: ⲛ̀ⲟⲣⲑⲟⲍⲟⲝⲟⲥ ⲛ̀ⲧⲁⲫ̀ⲙⲏⲓ.\nⲞⲩⲣⲁⲛ ⲛ̀ϣⲟⲩϣⲟⲩ ⲡⲉ ⲡⲉⲕⲣⲁⲛ: ⲱ̀ ⲡⲓⲙⲟⲛⲁⲭⲟⲥ ⲉⲧⲧⲟⲩⲃⲏⲟⲩⲧ: ⲡⲓⲙⲁⲛⲇ̀ⲣⲓⲧⲏⲥ ⲉⲧⲧⲁϫⲣⲏⲟⲩⲧ: ⲡⲓϣ̀ⲫⲏⲣ ⲛ̀ⲛⲓⲁⲛⲁⲭⲱⲣⲓⲧⲏⲥ.\nⲈⲑⲃⲉ ⲫⲁⲓ ⲁⲕϣⲱⲡⲓ ⲛⲁⲛ: ⲛ̀ⲟⲩⲧⲩⲡⲟⲥ ϧⲉⲛ ⲡ̀ⲥⲁϫⲓ: ϧⲉⲛ ϯⲁⲅⲁⲡⲏ: ϧⲉⲛ ⲡⲓϫⲓⲛⲙⲟϣⲓ: ϧⲉⲛ ⲡⲓⲧⲟⲩⲃⲟ ϧⲉⲛ ⲫ̀ⲛⲁϩϯ.\nⲬⲉⲣⲉ ⲡⲓⲙⲁⲓⲛⲉϥϣⲏⲣⲓ: ⲫⲏⲉⲧⲁϥⲧⲁⲗϭⲟ ⲛ̀ⲛⲏⲉⲧϣⲱⲛⲓ: ⲁϥⲉⲣ ⲡ̀ⲣⲟⲫⲏⲧⲉⲩⲓⲛ ⲛ̀ⲛⲓϣ̀ⲫⲏⲣⲓ: ⲟⲩⲟϩ ⲛⲓⲇⲩⲙⲱⲛ ⲁϥϩⲓⲧⲟⲩ ⲉ̀ⲃⲟⲗ.\nϤⲥ̀ⲙⲁⲣⲱⲟⲩⲧ ⲛ̀ϫⲉ ⲡⲉⲕⲃⲓⲟⲥ: ⲱ̀ ⲡⲉⲛⲓⲱⲧ ⲙ̀ⲙⲁⲕⲁⲣⲓⲟⲥ: ⲁⲕⲧⲁⲥⲑⲟ ⲛⲁⲛ ⲙ̀ⲡⲓⲥⲱⲙⲁ ⲛ̀ⲁⲃⲃⲁ Ⲙⲁⲣⲕⲟⲥ: ⲟⲩⲟϩ ⲁⲕⲓ̀ⲣⲓ ⲙ̀ⲡⲓⲙⲩⲣⲟⲛ ⲉⲑⲟⲩⲁⲃ.\nⲘⲁⲣⲓⲁ ϯⲙⲁⲥⲛⲟⲩϯ: ⲁⲥⲟⲩⲱⲛϩ ϧⲉⲛ ⲟⲩⲛⲓϣϯ ⲛ̀ϣ̀ⲫⲏⲣⲓ: ⲛⲉⲙ ⲛⲓϭ̀ⲣⲟⲙⲡⲓ ⲛⲉⲙ ⲛⲓⲥ̀ⲑⲟⲓⲛⲟⲩϥⲓ: ϧⲉⲛ ⲧⲉⲥⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀ ϧⲉⲛ Ⲍⲁⲓⲧⲟⲩⲛ.\nⲀⲕⲕⲱⲧ ⲛ̀ⲟⲩⲙⲁⲛⲕⲁⲑⲉⲇⲣⲁ ⲙ̀ⲃⲉⲣⲓ: ⲛⲉⲙ ⲡⲓⲛⲓϣϯ ⲛ̀ⲁ̀ⲃⲏⲧ ⲛ̀ⲁ̀ⲡⲁ Ⲙⲏⲛⲁ: ⲛⲉⲙ ϩⲁⲛⲙⲏϣ ⲛ̀ⲉⲕⲕ̀ⲗⲏⲥⲓⲁ̀: ⲡⲉⲕϩⲏⲧ ⲙ̀ⲡⲉϥϭⲁⲥ ⲛⲁϩⲃⲓ ⲉ̀ⲡ̀ⲧⲏⲣϥ.\nϢⲁⲕⲧⲱⲛⲕ ⲙ̀ⲃ̀ⲛⲁⲩ ⲛ̀ϣⲟⲣⲡ: ’ϧⲉⲛ ⲧⲉⲕϫⲟⲙ ⲛⲉⲙ ⲛⲉⲕϣⲱⲛⲓ: ⲉⲑⲣⲉⲕ ϩⲱⲥ ⲛⲉⲙ ⲛⲓⲁⲅⲅⲉⲗⲟⲥ: ⲛⲉⲙ ⲛⲏⲉⲑⲟⲩⲁⲃ ⲉⲧⲉⲕⲙⲉⲛⲣⲓⲧⲟⲩ.\nϮⲛⲟⲩ ⲁⲣⲓⲡⲉⲛⲙⲉⲩⲓ̀: ⲛⲁϩⲣⲉⲛ Ⲡⲉⲛⲛⲟⲩϯ: ⲉⲑⲣⲉϥϫⲱⲕ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ ⲙ̀ⲡⲉⲕⲣⲏϯ: ϧⲉⲛ ϯⲁⲅⲁⲡⲏ ϧⲉⲛ ⲫ̀ⲛⲁϩϯ.\nⲦⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲡⲉⲛⲓⲱⲧ ⲉⲑⲟⲩⲁⲃ ⲙ̀ⲡⲁⲧⲣⲓⲁⲣⲭⲏⲥ: Ⲁⲃⲃⲁ Ⲕⲩⲣⲓⲗⲗⲟⲥ ⲠⲓⲙⲁϩⲤⲟⲟⲩ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

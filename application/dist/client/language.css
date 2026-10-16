@@ -1,0 +1,9 @@
+.language-toggle{min-height:36px;padding:7px 13px;border:1px solid #9ab0bc;border-radius:999px;background:#203b57;color:#f2d49b;font:700 .88rem/1 Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.language-toggle:hover{background:#2b5275}
+.language-toggle:focus-visible{outline:2px solid #f2d49b;outline-offset:3px}
+html[data-theme="dark"] .language-toggle{border-color:#718796;background:#1e3040;color:#f3d69d}
+html[data-theme="dark"] .language-toggle:hover{background:#2b4355}
+html[dir="rtl"] .workspace,html[dir="rtl"] .top-actions,html[dir="rtl"] .reader-screen .main-panel,html[dir="rtl"] .reader-screen .timing-panel{direction:rtl}
+html[dir="rtl"] .reader-screen .reader-content{direction:ltr;text-align:left}
+html[dir="rtl"] .reader-screen .reader-content .word-row,html[dir="rtl"] .reader-screen .reader-content .word-line,html[dir="rtl"] .reader-screen .reader-content .hazzat-score,html[dir="rtl"] .reader-screen .reader-content .hazzat-content,html[dir="rtl"] .reader-screen .reader-content .hazzat-stack,html[dir="rtl"] .reader-screen .reader-content .hazzat-line,html[dir="rtl"] .reader-screen .reader-content .hazzat-image-page{text-align:left}
+@media(max-width:700px){.top-actions{gap:8px}.language-toggle,.theme-toggle{min-height:34px;padding:6px 10px;font-size:.78rem}}

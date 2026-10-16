@@ -1,0 +1,11 @@
+{
+  "restoredProjectsVerified": 98,
+  "publicCompletedProjects": 74,
+  "privateDrafts": 24,
+  "allFourTimingArraysCompared": true,
+  "textAndNotationCompared": true,
+  "allUploadedRecordingsServedByteCorrectly": 27,
+  "mediaNote": "Active recordings honor byte ranges; retained reference uploads use the existing full-file response.",
+  "localEditorLogin": true,
+  "productionDataModified": false
+}

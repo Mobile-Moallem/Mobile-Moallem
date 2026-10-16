@@ -1,0 +1,81 @@
+{
+  "id": "doxology-for-the-apostles",
+  "name": "Doxology for the Apostles",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-the-apostles.json",
+  "folderOrder": 6,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for the Apostles",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "The first among the Apostles, who is called Simon Peter, he was entrusted with the keys, of the kingdom of heaven.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓϣⲟⲣⲡ ϧⲉⲛ ⲛⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲉⲩⲙⲟⲩϯ ⲉ̀ⲣⲟϥ ϫⲉ Ⲥⲓⲙⲱⲛ Ⲡⲉⲧⲣⲟⲥ: ⲛ̀ⲑⲟϥ ⲟⲛ ⲡⲉ ⲉ̀ⲧⲁⲩⲧⲉⲛϩⲟⲩⲧϥ: ⲉ̀ⲛⲓϣⲟϣⲧ ⲛ̀ⲧⲉ ⲑ̀ⲙⲉⲧⲟⲩⲣⲟ ⲛ̀ⲛⲓⲫⲏⲟⲩⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Also another one is John, he loved Him very much, he rested his head, on the shoulders of our Savior.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲕⲉ ⲟⲩⲁⲓ ⲟⲛ ϫⲉ Ⲓⲱⲁⲛⲛⲏⲥ: ϥ̀ⲙⲉⲓ ⲙ̀ⲙⲟϥ ⲉ̀ⲙⲁϣⲱ: ⲁϥⲣⲱⲧⲉⲃ ⲙ̀ⲙⲟϥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲉⲛ: ⲑ̀ⲙⲉⲥⲧⲉⲛϩⲏⲧ ⲙ̀Ⲡⲉⲛⲥⲱⲧⲏⲣ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "And the rest of the disciples, they have honor also, on account of their apostleship, for they followed our Savior.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ ⲛ̀ⲧⲉ ⲛⲓⲙⲁⲑⲏⲧⲏⲥ: ⲟⲩⲟⲛ ⲛ̀ⲧⲱⲟⲩ ⲛ̀ⲟⲩⲧⲁⲓⲟ̀ ⲙ̀ⲙⲁⲩ: ⲉⲑⲃⲉ ⲧⲟⲩⲙⲉⲧⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ϫⲉ ⲁⲩⲙⲟϣⲓ ⲛ̀ⲥⲁ Ⲡⲉⲛⲥⲱⲧⲏⲣ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, my lords and fathers the apostles, and the rest of the disciples, that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ ⲛ̀ⲧⲉ ⲛⲓⲙⲁⲑⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/Apostles.cr",
+    "incipit": "Ⲡⲓϣⲟⲣⲡ ϧⲉⲛ ⲛⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ...",
+    "rowIds": [
+      "R32b",
+      "R32c",
+      "R32d",
+      "R32f"
+    ]
+  },
+  "textOverride": "The first among the Apostles, who is called Simon Peter, he was entrusted with the keys, of the kingdom of heaven.\nAlso another one is John, he loved Him very much, he rested his head, on the shoulders of our Savior.\nAnd the rest of the disciples, they have honor also, on account of their apostleship, for they followed our Savior.\nPray to the Lord on our behalf, my lords and fathers the apostles, and the rest of the disciples, that He may forgive us our sins.",
+  "copticTextOverride": "Ⲡⲓϣⲟⲣⲡ ϧⲉⲛ ⲛⲓⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲉⲩⲙⲟⲩϯ ⲉ̀ⲣⲟϥ ϫⲉ Ⲥⲓⲙⲱⲛ Ⲡⲉⲧⲣⲟⲥ: ⲛ̀ⲑⲟϥ ⲟⲛ ⲡⲉ ⲉ̀ⲧⲁⲩⲧⲉⲛϩⲟⲩⲧϥ: ⲉ̀ⲛⲓϣⲟϣⲧ ⲛ̀ⲧⲉ ⲑ̀ⲙⲉⲧⲟⲩⲣⲟ ⲛ̀ⲛⲓⲫⲏⲟⲩⲓ.\nⲔⲉ ⲟⲩⲁⲓ ⲟⲛ ϫⲉ Ⲓⲱⲁⲛⲛⲏⲥ: ϥ̀ⲙⲉⲓ ⲙ̀ⲙⲟϥ ⲉ̀ⲙⲁϣⲱ: ⲁϥⲣⲱⲧⲉⲃ ⲙ̀ⲙⲟϥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲉⲛ: ⲑ̀ⲙⲉⲥⲧⲉⲛϩⲏⲧ ⲙ̀Ⲡⲉⲛⲥⲱⲧⲏⲣ.\nⲚⲉⲙ ⲡ̀ⲥⲉⲡⲓ ⲛ̀ⲧⲉ ⲛⲓⲙⲁⲑⲏⲧⲏⲥ: ⲟⲩⲟⲛ ⲛ̀ⲧⲱⲟⲩ ⲛ̀ⲟⲩⲧⲁⲓⲟ̀ ⲙ̀ⲙⲁⲩ: ⲉⲑⲃⲉ ⲧⲟⲩⲙⲉⲧⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ϫⲉ ⲁⲩⲙⲟϣⲓ ⲛ̀ⲥⲁ Ⲡⲉⲛⲥⲱⲧⲏⲣ.\nⲦⲱⲃϩ ⲙ̀Ⲡⲟ︦ⲥ︦ ⲉ̀ϩ̀ⲣⲏⲓ ⲉ̀ϫⲱⲛ: ⲛⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲟϯ ⲛ̀ⲁ̀ⲡⲟⲥⲧⲟⲗⲟⲥ: ⲛⲉⲙ ⲡ̀ⲥⲉⲡⲓ ⲛ̀ⲧⲉ ⲛⲓⲙⲁⲑⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}

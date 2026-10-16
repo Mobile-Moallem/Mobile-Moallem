@@ -1,0 +1,198 @@
+{
+  "id": "doxology-for-st-mikhail-el-behirey",
+  "name": "Doxology for St. Mikhail El-Behirey",
+  "source": "Coptic Reader",
+  "textEncoding": "unicode",
+  "documentFile": "doxologies/doxology-for-st-mikhail-el-behirey.json",
+  "folderOrder": 30,
+  "formats": {
+    "1": [
+      {
+        "name": "Doxology for St. Mikhail El-Behirey",
+        "contentType": "Text",
+        "content": {
+          "paragraphs": [
+            {
+              "columns": [
+                {
+                  "content": "For the Commemoration of St. Mikhail El-Behirey:",
+                  "language": "English"
+                },
+                {
+                  "content": "",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "The shining lamp / in Koskam and all Egypt / because of his wonders and signs / and his love for Christ.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲡⲓϧⲏⲃⲥ ⲉⲧⲉⲣⲟⲩⲱⲓⲛⲓ: ϧⲉⲛ Ⲕⲟⲥⲕⲁⲙ ⲛⲉⲙ Ⲭⲏⲙⲓ ⲧⲏⲣⲥ: ⲉⲑⲃⲉ ⲛⲉϥϣ̀ⲫⲏⲣⲓ ⲛⲉⲙ ⲛⲉϥⲙⲏⲓⲛⲓ: ⲛⲉⲙ ⲧⲉϥⲁ̀ⲅⲁⲡⲏ ⲉ̀ϧⲟⲩⲛ ⲉ̀Ⲡⲭ︦ⲥ︦.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Like our father Abraam, / the father of Isaac and Jacob, / you loved mercy / and fulfilled the commandments.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲙ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡⲉⲛⲓⲱⲧ Ⲁⲃⲣⲁⲁⲙ: ⲫ̀ⲓⲱⲧ ⲛ̀Ⲓⲥⲁⲁⲕ ⲛⲉⲙ Ⲓⲁⲕⲱⲃ: ⲁⲕⲙⲉⲛⲣⲉ ϯⲙⲉⲑⲛⲁⲏⲧ: ⲟⲩⲟϩ ⲁⲕϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛ̀ⲛⲓⲉⲛⲧⲟⲗⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "How many are your wonders? / You healed the sick, / prophesied about wonders, / and cast out demons.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲟⲩⲏⲣ ⲛⲉ ⲛⲉⲕϣ̀ⲫⲏⲣⲓ: ⲁⲕⲧⲁⲗϭⲟ ⲛ̀ⲛⲏⲉⲧϣⲱⲛⲓ: ⲁⲕⲉⲣⲡ̀ⲣⲟⲫⲉⲧⲉⲩⲓⲛ ⲛ̀ⲛⲓϣ̀ⲫⲏⲣⲓ: ⲛⲓⲇⲉⲙⲱⲛ ⲁⲕⲏⲓⲧⲟⲩ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "You became for us an example / by your pure journey / in love and mercy / and the witness to the truth.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲁⲕϣⲱⲡⲓ ⲛⲁⲛ ⲛ̀ⲟⲩⲧⲩⲡⲟⲥ: ϧⲉⲛ ⲡⲉⲕϫⲓⲛⲙⲟϣⲓ ⲉⲧⲧⲟⲩⲃⲏⲟⲩⲧ: ϧⲉⲛ ϯⲁⲅⲁⲡⲏ ⲛⲉⲙ ϯⲙⲉⲑⲛⲁⲏⲧ: ⲛⲉⲙ ϯⲙⲉⲧⲙⲉⲑⲣⲉ ⲛ̀ϯⲙⲉⲑⲙⲏⲓ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "O you who have the crown of jewels, / and the friend of all saints, / the just and righteous ones / who followed our Savior.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲫⲁ ⲡⲓⲭ̀ⲗⲟⲙ ⲙ̀ⲙⲁⲣⲅⲁⲣⲓⲧⲏⲥ: ⲡⲓϣ̀ⲫⲏⲣ ⲛ̀ⲛⲓⲁⲅⲓⲟⲥ ⲧⲏⲣⲟⲩ: ⲛⲉⲙ ⲛⲓⲑ̀ⲙⲏⲒ ⲛⲉⲙ ⲛⲓⲇⲓⲕⲉⲟⲥ: ⲫⲏⲉⲧⲁϥⲙⲟϣⲓ ⲛ̀ⲥⲁ ⲡⲉⲛⲥⲱⲧⲏⲣ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "He is the righteous, perfect man, / the ascetic / Abba Mikhail the hegumen, / the teacher of virtues.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲛ̀ⲑⲟϥ ⲡⲉ ⲡⲓⲑ̀ⲙⲏⲓ ⲡⲓⲣⲱⲙⲓ: ⲛ̀ⲧⲉ ⲗⲓⲟⲥ ⲡⲓⲁⲥⲕⲉⲧⲏⲥ: ⲡⲉⲛⲓⲱⲧ Ⲙⲓⲭⲁⲏⲗ ⲡⲓϩⲏⲅⲟⲩⲙⲉⲛⲟⲥ: ⲡⲓⲥⲁϧ ⲛ̀ⲧⲉ ⲛⲓⲁⲣⲉⲧⲏ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to our father Abba Mikhail, / who performed signs and wonders / and healed the sick / in the monastery of Koskam.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ Ⲙⲓⲭⲁⲏⲗ: ⲫⲏⲉⲧⲁϥⲓ̀ⲣⲓ ⲛ̀ϩⲁⲛⲙⲏⲓⲛⲓ ⲛⲉⲙ ϩⲁⲛϣ̀ⲫⲏⲣⲓ: ⲟⲩⲟϩ ⲁϥⲧⲁⲗϭⲟ ⲛ̀ⲛⲏⲉⲧϣⲱⲛⲓ: ϧⲉⲛ ⲡⲓⲙⲟⲛⲁⲥⲧⲏⲣⲓⲟⲛ ⲛ̀ⲧⲉ Ⲕⲟⲥⲕⲁⲙ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Hail to our father Abba Mikhail, / who became a merciful father / and a good teacher / to his children the monks.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲭⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲙⲓⲭⲁⲏⲗ: ⲫⲏⲉ̀ⲧⲁϥϣⲱⲡⲓ ⲛ̀ⲓⲱⲧ ⲛ̀ⲛⲁⲏⲧ: ⲛⲉⲙ ⲟⲩⲣⲉϥϯⲥ̀ⲃⲱ ⲛ̀ⲁ̀ⲅⲁⲑⲟⲥ: ⲛ̀ⲛⲉϥϣⲏⲣⲓ ⲙ̀ⲙⲟⲛⲁⲭⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Blessed are you, Abba Mikhail, / who became worthy of the blessing / from the mouth of the Lord / and gained the place of comfort.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲱⲟⲩⲛⲓⲁⲧⲕ ⲡⲉⲛⲓⲱⲧ Ⲙⲓⲭⲁⲏⲗ: ⲫⲏⲉⲧⲁⲕⲉⲙⲡ̀ϣⲁ ⲙ̀ⲡⲓⲥ̀ⲙⲟⲩ: ⲉ̀ⲃⲟⲗϧⲉⲛ ⲣⲱϥ ⲙ̀Ⲡⲟ︦ⲥ︦: ⲟⲩⲟϩ ⲁⲕϣⲁϣⲛⲓ ⲉⲡⲓⲙⲁ ⲛ̀ⲉ̀ⲙⲧⲟⲛ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Therefore, we praise / with an unceasing voice / the priest and servant, saying, / “Worthy! Worthy! Worthy!”",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲉⲑⲃⲉ ⲫⲁⲓ ⲧⲉⲛϩⲱⲥ: ϧⲉⲛ ⲟⲩⲥ̀ⲙⲏ ⲛ̀ⲁⲭⲁⲣⲱϥ: ⲡⲓⲟⲩⲏⲃ ⲡⲓⲇⲓⲁⲕⲱⲛⲟⲥ: ϫⲉ ⲁⲝⲓⲟⲥ ϥ̀ⲉⲙⲡ̀ϣⲁ ⲁⲝⲓⲟⲥ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, / O Saint Abba Abraam the bishop / and Mikhail his disciple, / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉϫⲱⲛ: Ⲁⲃⲃⲁ Ⲁⲃⲣⲁⲁⲙ ⲡⲓⲉ̀ⲡⲓⲥⲕⲟⲡⲟⲥ: ⲛⲉⲙ Ⲙⲓⲭⲁⲏⲗ ⲡⲉϥⲙⲁⲑⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            },
+            {
+              "columns": [
+                {
+                  "content": "Pray to the Lord on our behalf, / O my lord righteous father / Abba Mikhail the hegumen, / that He may forgive us our sins.",
+                  "language": "English"
+                },
+                {
+                  "content": "Ⲧⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉϫⲱⲛ: ⲱⲠⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲱⲧ ⲛ̀ⲇⲓⲕⲉⲟⲥ: Ⲁⲃⲃⲁ Ⲙⲓⲭⲁⲏⲗ ⲡⲓϩⲏⲅⲟⲩⲙⲉⲛⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.",
+                  "language": "Coptic"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "provenance": {
+    "url": "https://copticreader.org/app/#/document",
+    "document": "include/doxologies/StMikhailBehirey.cr",
+    "incipit": "Ⲡⲓϧⲏⲃⲥ ⲉⲧⲉⲣⲟⲩⲱⲓⲛⲓ...",
+    "rowIds": [
+      "R712",
+      "R713",
+      "R714",
+      "R715",
+      "R716",
+      "R717",
+      "R718",
+      "R719",
+      "R71a",
+      "R71b",
+      "R71c",
+      "R71d",
+      "R71f"
+    ]
+  },
+  "textOverride": "For the Commemoration of St. Mikhail El-Behirey:\nThe shining lamp / in Koskam and all Egypt / because of his wonders and signs / and his love for Christ.\nLike our father Abraam, / the father of Isaac and Jacob, / you loved mercy / and fulfilled the commandments.\nHow many are your wonders? / You healed the sick, / prophesied about wonders, / and cast out demons.\nYou became for us an example / by your pure journey / in love and mercy / and the witness to the truth.\nO you who have the crown of jewels, / and the friend of all saints, / the just and righteous ones / who followed our Savior.\nHe is the righteous, perfect man, / the ascetic / Abba Mikhail the hegumen, / the teacher of virtues.\nHail to our father Abba Mikhail, / who performed signs and wonders / and healed the sick / in the monastery of Koskam.\nHail to our father Abba Mikhail, / who became a merciful father / and a good teacher / to his children the monks.\nBlessed are you, Abba Mikhail, / who became worthy of the blessing / from the mouth of the Lord / and gained the place of comfort.\nTherefore, we praise / with an unceasing voice / the priest and servant, saying, / “Worthy! Worthy! Worthy!”\nPray to the Lord on our behalf, / O Saint Abba Abraam the bishop / and Mikhail his disciple, / that He may forgive us our sins.\nPray to the Lord on our behalf, / O my lord righteous father / Abba Mikhail the hegumen, / that He may forgive us our sins.",
+  "copticTextOverride": "\nⲠⲓϧⲏⲃⲥ ⲉⲧⲉⲣⲟⲩⲱⲓⲛⲓ: ϧⲉⲛ Ⲕⲟⲥⲕⲁⲙ ⲛⲉⲙ Ⲭⲏⲙⲓ ⲧⲏⲣⲥ: ⲉⲑⲃⲉ ⲛⲉϥϣ̀ⲫⲏⲣⲓ ⲛⲉⲙ ⲛⲉϥⲙⲏⲓⲛⲓ: ⲛⲉⲙ ⲧⲉϥⲁ̀ⲅⲁⲡⲏ ⲉ̀ϧⲟⲩⲛ ⲉ̀Ⲡⲭ︦ⲥ︦.\nⲘ̀ⲫ̀ⲣⲏϯ ⲙ̀ⲡⲉⲛⲓⲱⲧ Ⲁⲃⲣⲁⲁⲙ: ⲫ̀ⲓⲱⲧ ⲛ̀Ⲓⲥⲁⲁⲕ ⲛⲉⲙ Ⲓⲁⲕⲱⲃ: ⲁⲕⲙⲉⲛⲣⲉ ϯⲙⲉⲑⲛⲁⲏⲧ: ⲟⲩⲟϩ ⲁⲕϫⲱⲕ ⲉ̀ⲃⲟⲗ ⲛ̀ⲛⲓⲉⲛⲧⲟⲗⲏ.\nⲞⲩⲏⲣ ⲛⲉ ⲛⲉⲕϣ̀ⲫⲏⲣⲓ: ⲁⲕⲧⲁⲗϭⲟ ⲛ̀ⲛⲏⲉⲧϣⲱⲛⲓ: ⲁⲕⲉⲣⲡ̀ⲣⲟⲫⲉⲧⲉⲩⲓⲛ ⲛ̀ⲛⲓϣ̀ⲫⲏⲣⲓ: ⲛⲓⲇⲉⲙⲱⲛ ⲁⲕⲏⲓⲧⲟⲩ ⲉ̀ⲃⲟⲗ.\nⲀⲕϣⲱⲡⲓ ⲛⲁⲛ ⲛ̀ⲟⲩⲧⲩⲡⲟⲥ: ϧⲉⲛ ⲡⲉⲕϫⲓⲛⲙⲟϣⲓ ⲉⲧⲧⲟⲩⲃⲏⲟⲩⲧ: ϧⲉⲛ ϯⲁⲅⲁⲡⲏ ⲛⲉⲙ ϯⲙⲉⲑⲛⲁⲏⲧ: ⲛⲉⲙ ϯⲙⲉⲧⲙⲉⲑⲣⲉ ⲛ̀ϯⲙⲉⲑⲙⲏⲓ.\nⲪⲁ ⲡⲓⲭ̀ⲗⲟⲙ ⲙ̀ⲙⲁⲣⲅⲁⲣⲓⲧⲏⲥ: ⲡⲓϣ̀ⲫⲏⲣ ⲛ̀ⲛⲓⲁⲅⲓⲟⲥ ⲧⲏⲣⲟⲩ: ⲛⲉⲙ ⲛⲓⲑ̀ⲙⲏⲒ ⲛⲉⲙ ⲛⲓⲇⲓⲕⲉⲟⲥ: ⲫⲏⲉⲧⲁϥⲙⲟϣⲓ ⲛ̀ⲥⲁ ⲡⲉⲛⲥⲱⲧⲏⲣ.\nⲚ̀ⲑⲟϥ ⲡⲉ ⲡⲓⲑ̀ⲙⲏⲓ ⲡⲓⲣⲱⲙⲓ: ⲛ̀ⲧⲉ ⲗⲓⲟⲥ ⲡⲓⲁⲥⲕⲉⲧⲏⲥ: ⲡⲉⲛⲓⲱⲧ Ⲙⲓⲭⲁⲏⲗ ⲡⲓϩⲏⲅⲟⲩⲙⲉⲛⲟⲥ: ⲡⲓⲥⲁϧ ⲛ̀ⲧⲉ ⲛⲓⲁⲣⲉⲧⲏ.\nⲬⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ Ⲙⲓⲭⲁⲏⲗ: ⲫⲏⲉⲧⲁϥⲓ̀ⲣⲓ ⲛ̀ϩⲁⲛⲙⲏⲓⲛⲓ ⲛⲉⲙ ϩⲁⲛϣ̀ⲫⲏⲣⲓ: ⲟⲩⲟϩ ⲁϥⲧⲁⲗϭⲟ ⲛ̀ⲛⲏⲉⲧϣⲱⲛⲓ: ϧⲉⲛ ⲡⲓⲙⲟⲛⲁⲥⲧⲏⲣⲓⲟⲛ ⲛ̀ⲧⲉ Ⲕⲟⲥⲕⲁⲙ.\nⲬⲉⲣⲉ ⲡⲉⲛⲓⲱⲧ ⲁⲃⲃⲁ Ⲙⲓⲭⲁⲏⲗ: ⲫⲏⲉ̀ⲧⲁϥϣⲱⲡⲓ ⲛ̀ⲓⲱⲧ ⲛ̀ⲛⲁⲏⲧ: ⲛⲉⲙ ⲟⲩⲣⲉϥϯⲥ̀ⲃⲱ ⲛ̀ⲁ̀ⲅⲁⲑⲟⲥ: ⲛ̀ⲛⲉϥϣⲏⲣⲓ ⲙ̀ⲙⲟⲛⲁⲭⲟⲥ.\nⲰⲟⲩⲛⲓⲁⲧⲕ ⲡⲉⲛⲓⲱⲧ Ⲙⲓⲭⲁⲏⲗ: ⲫⲏⲉⲧⲁⲕⲉⲙⲡ̀ϣⲁ ⲙ̀ⲡⲓⲥ̀ⲙⲟⲩ: ⲉ̀ⲃⲟⲗϧⲉⲛ ⲣⲱϥ ⲙ̀Ⲡⲟ︦ⲥ︦: ⲟⲩⲟϩ ⲁⲕϣⲁϣⲛⲓ ⲉⲡⲓⲙⲁ ⲛ̀ⲉ̀ⲙⲧⲟⲛ.\nⲈⲑⲃⲉ ⲫⲁⲓ ⲧⲉⲛϩⲱⲥ: ϧⲉⲛ ⲟⲩⲥ̀ⲙⲏ ⲛ̀ⲁⲭⲁⲣⲱϥ: ⲡⲓⲟⲩⲏⲃ ⲡⲓⲇⲓⲁⲕⲱⲛⲟⲥ: ϫⲉ ⲁⲝⲓⲟⲥ ϥ̀ⲉⲙⲡ̀ϣⲁ ⲁⲝⲓⲟⲥ.\nⲦⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉϫⲱⲛ: Ⲁⲃⲃⲁ Ⲁⲃⲣⲁⲁⲙ ⲡⲓⲉ̀ⲡⲓⲥⲕⲟⲡⲟⲥ: ⲛⲉⲙ Ⲙⲓⲭⲁⲏⲗ ⲡⲉϥⲙⲁⲑⲏⲧⲏⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ.\nⲦⲱⲃϩ ⲙ̀Ⲡϭⲟⲓⲥ ⲉ̀ϩ̀ⲣⲏⲓ ⲉϫⲱⲛ: ⲱⲠⲁⲟ︦ⲥ︦ ⲛ̀ⲓⲱⲧ ⲛ̀ⲇⲓⲕⲉⲟⲥ: Ⲁⲃⲃⲁ Ⲙⲓⲭⲁⲏⲗ ⲡⲓϩⲏⲅⲟⲩⲙⲉⲛⲟⲥ: ⲛ̀ⲧⲉϥⲭⲁ ⲛⲉⲛⲛⲟⲃⲓ ⲛⲁⲛ ⲉ̀ⲃⲟⲗ."
+}
