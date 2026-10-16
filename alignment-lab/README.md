@@ -16,6 +16,14 @@ FINDSTART=1 FINDEND2=1 PIECES=1 SOFT=1 KEY=1 KEYBREATH=1 python3 eval_matcher.py
 Feature caches (`data/*.feat.npz`) are produced by computing `features.features()`
 on each recording; see `features.py`.
 
+## In the site (branch only)
+
+`application/dist/client/hazzat-reader.js` is the browser version. The editor's alignment
+worker uses it for Hazzat suggestions (`method: 'hazzat-reader'`); word sections keep the old
+estimate. `node eval-js.mjs` scores that exact file at the editor's 4 kHz audio:
+88% within 1 s with start/end marked, 86% fully automatic (clip honoured when set).
+Tests: `application/tests/hazzat-reader.test.mjs`.
+
 ## Data
 
 9 hymns with uploaded recordings and complete Hazzat timings, 2,102 timed words.

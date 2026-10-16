@@ -102,7 +102,11 @@
     });
     return mapped.every(Number.isFinite)?mapped:null;
   }
-  function analyze({pcm,rate,parts,reference}) {
+  function analyze({pcm,rate,parts,reference,glyphs,lineStart,clip}) {
+    if(glyphs?.length&&globalThis.HazzatReader){
+      const read=globalThis.HazzatReader.read({pcm,rate,glyphs,lineStart,clip});
+      return {times:read.times,duration:read.duration,method:'hazzat-reader',message:'Read from the Hazzat: note lengths from the notation, breaths at line starts and breath marks. Check pieces after long held notes.'};
+    }
     const target=features(pcm,rate);
     if(reference?.pcm&&reference.times.length===parts.length&&reference.times.every(Number.isFinite)){
       try {
@@ -112,6 +116,7 @@
     }
     return {times:estimate(target,parts),duration:target.duration,method:'phrase-estimate',message:'Estimated from audible phrases and passage lengths. Words and Hazzat have not been recognized; review every time before accepting.'};
   }
+  if(typeof self!=='undefined'&&typeof document==='undefined'&&typeof importScripts==='function'){try{importScripts('/hazzat-reader.js');}catch{/* Fall back to the phrase estimate. */}}
   if(typeof self!=='undefined'&&typeof document==='undefined')self.onmessage=event=>{try{self.postMessage({result:analyze(event.data)});}catch(error){self.postMessage({error:error.message});}};
   if(typeof module!=='undefined')module.exports={features,estimate,transfer,analyze};
   globalThis.RecordingAlignment={features,estimate,transfer,analyze};

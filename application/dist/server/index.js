@@ -633,7 +633,7 @@ async function alignmentSuggestions(request, env, hymnId) {
     if (!Number.isFinite(body.duration) || body.duration <= 0 || body.duration > 86400 || !validSuggestionTimes(body.times, data.parts, body.duration)) return json({ error: "Invalid suggested times." }, 400);
     data.times = body.times;
     data.duration = body.duration;
-    data.method = body.method === "reference" ? "reference" : "phrase-estimate";
+    data.method = ["reference", "hazzat-reader"].includes(body.method) ? body.method : "phrase-estimate";
     data.message = cleanString(body.message, 500);
     status = "pending";
   } else if (action === "edit" || action === "accept") {

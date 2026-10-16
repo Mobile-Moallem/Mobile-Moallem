@@ -15,6 +15,8 @@
         font:mark.querySelector('.HazzatVFont')?'HazzatVFont':'HazzatFont',
         stack:Number(mark.closest('.hazzat-stack').dataset.position),
         weight:Math.max(1,Array.from(mark.textContent.trim()).length),
+        // First piece of a notation line: the cantor usually breathes just before it.
+        line:mark.closest('.hazzat-line')?.querySelector('.hazza-mark')===mark,
       }));
     }
     return words(kind==='coptic'?hymnCopticText(h):hymnText(h)).map(word=>({label:word.slice(0,2000),weight:Math.max(1,Array.from(word.replace(/[^\p{L}]/gu,'')).length/3)}));
@@ -72,7 +74,7 @@
       if(job.section==='hazzat'&&job.granularity!=='piece'&&job.status==='accepted')card.append(button('Guess each Hazzat piece',()=>enqueue(hymn,job)));
       if(job.status==='pending'&&job.section==='hazzat'&&job.granularity!=='piece')card.append(el('p','Preparing a separate guess for each Hazzat piece…','panel-copy'));
       if(job.status==='pending'&&(job.section!=='hazzat'||job.granularity==='piece')){
-        card.append(el('p',job.method==='reference'?'Matched with the earlier aligned recording. Review before accepting.':'Estimated alignment — review closely.','suggestion-method'));
+        card.append(el('p',job.method==='reference'?'Matched with the earlier aligned recording. Review before accepting.':job.method==='hazzat-reader'?'Read from the Hazzat and the recording. Spot-check pieces after long held notes before accepting.':'Estimated alignment — review closely.','suggestion-method'));
         card.append(el('p',job.message,'panel-copy'));
         card.append(el('p',job.parts.length+' individual '+(job.section==='hazzat'?'pieces':'words')+' to review.','panel-copy'));
         const editor=edits.get(job.id)||{times:[...job.times],dirty:false};edits.set(job.id,editor);
@@ -148,7 +150,14 @@
         if(latest.reference?.source&&latest.reference.times?.length===parts.length&&latest.reference.times.every(Number.isFinite)){
           try{reference={pcm:await decode(latest.reference.source),times:latest.reference.times};}catch{/* Still save a labelled estimate if the reference is unavailable. */}
         }
-        const result=await analyze({pcm,rate:4000,parts,reference});
+        const payload={pcm,rate:4000,parts,reference};
+        if(job.section==='hazzat'){
+          // Read the Hazzat: one time per piece, honouring the editor's clip when set.
+          payload.glyphs=parts.map(p=>p.glyph);payload.lineStart=parts.map(p=>Boolean(p.line));
+          const clip=h.recordingClips?.hazzat;if(clip&&Number.isFinite(clip.start))payload.clip={start:clip.start,end:Number.isFinite(clip.end)?clip.end:undefined};
+          payload.reference=null;
+        }
+        const result=await analyze(payload);
         await action(latest,'result',result);edits.delete(latest.id);
       }catch(error){
         try{await action(latest,'fail',{message:error.message});}catch{if(shown?.id===h.id)showError(error);}
