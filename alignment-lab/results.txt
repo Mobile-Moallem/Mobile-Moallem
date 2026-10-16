@@ -1,26 +1,26 @@
 
-AUTO  {'sigma': 0.45, 'alpha': 0.3, 'learn_hymn': 3, 'passes': 2, 'beta': 0.0, 'pitch_iters': 0}  (73s)
+AUTO  {'sigma': 0.6, 'alpha': 0.3, 'learn_hymn': 3, 'passes': 2, 'beta': 0.0, 'pitch_iters': 0}  (45s)
 hymn                               slots median ≤0.3s ≤0.5s  ≤1s  ≤2s
-3rd-canticle-annual                  150  5.44s    0%    1%   7%  25%
-apetjeek-evol                        525 72.84s    1%    1%   3%   6%
-apinav-shopi                         305  7.67s    5%    7%  10%  21%
-deacon-response-for-the-litany-for   116  5.14s   10%   12%  19%  31%
-psalm-116-ni-ethnos-teero            383  7.74s    5%    6%   8%  11%
-shere-maria                          410 62.25s    0%    1%   1%   2%
-the-creed                             40  4.98s    2%    2%   5%  15%
-the-hymn-of-blessing-ten-ouosht       73  3.35s    3%    8%  14%  29%
-the-hymn-of-the-censer-tai-shouri-   100  0.95s   31%   34%  52%  82%
-ALL                                 2102 12.64s    4%    5%   8%  15%
+3rd-canticle-annual                  150 11.68s    5%    9%  16%  20%
+apetjeek-evol                        525 71.80s    0%    1%   2%   3%
+apinav-shopi                         305  5.40s    8%   13%  23%  36%
+deacon-response-for-the-litany-for   116  0.41s   43%   56%  68%  89%
+psalm-116-ni-ethnos-teero            383  0.48s   37%   51%  74%  93%
+shere-maria                          410 54.51s    1%    1%   1%   1%
+the-creed                             40  4.67s    5%    5%  15%  22%
+the-hymn-of-blessing-ten-ouosht       73  0.90s   22%   37%  52%  70%
+the-hymn-of-the-censer-tai-shouri-   100  0.55s   30%   45%  78%  94%
+ALL                                 2102  9.32s   13%   19%  28%  37%
 
-ANCHORED  {'sigma': 0.45, 'alpha': 0.3, 'learn_hymn': 3, 'passes': 2, 'beta': 0.0, 'pitch_iters': 0}  (67s)
+ANCHORED  {'sigma': 0.6, 'alpha': 0.3, 'learn_hymn': 3, 'passes': 2, 'beta': 0.0, 'pitch_iters': 0}  (42s)
 hymn                               slots median ≤0.3s ≤0.5s  ≤1s  ≤2s
-3rd-canticle-annual                  150  3.81s    6%   13%  18%  33%
-apetjeek-evol                        525  8.56s    2%    3%   5%   9%
-apinav-shopi                         305 11.22s    2%    2%   3%   5%
-deacon-response-for-the-litany-for   116  0.63s   29%   43%  60%  93%
-psalm-116-ni-ethnos-teero            383  1.69s   16%   21%  29%  53%
-shere-maria                          410  2.96s   25%   30%  36%  43%
-the-creed                             40  1.80s   12%   15%  20%  60%
-the-hymn-of-blessing-ten-ouosht       73  0.88s   26%   36%  53%  78%
-the-hymn-of-the-censer-tai-shouri-   100  0.67s   38%   42%  64%  89%
-ALL                                 2102  3.28s   14%   17%  24%  37%
+3rd-canticle-annual                  150  1.04s   17%   29%  49%  71%
+apetjeek-evol                        525  1.99s   14%   20%  34%  50%
+apinav-shopi                         305  3.64s   11%   16%  26%  38%
+deacon-response-for-the-litany-for   116  0.43s   40%   56%  66%  86%
+psalm-116-ni-ethnos-teero            383  0.47s   42%   52%  75%  95%
+shere-maria                          410  4.37s    4%    7%  12%  26%
+the-creed                             40  0.43s   42%   60%  82% 100%
+the-hymn-of-blessing-ten-ouosht       73  0.90s   23%   38%  55%  75%
+the-hymn-of-the-censer-tai-shouri-   100  0.67s   23%   37%  75% 100%
+ALL                                 2102  1.35s   20%   28%  43%  60%

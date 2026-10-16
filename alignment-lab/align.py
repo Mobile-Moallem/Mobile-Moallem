@@ -115,7 +115,7 @@ def activity(F, floor=0.08):
     return np.maximum(a, floor)
 
 
-def dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.08, min_band=60, fixed=None, act=None, pitch=None, beta=0.0):
+def dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.08, min_band=60, fixed=None, act=None, pitch=None, beta=0.0, bonus=None, is_line=None, gamma=0.0, return_cost=False):
     """pitch: optional (CF, CV, templates[n,2]) - cumulative voiced pitch sums and per-word
     expected (first-half, second-half) pitch levels; beta weights that match."""
     """expected: per-word expected frames (sum = end-start). Returns start frame per word.
@@ -178,6 +178,11 @@ def dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.08, min_band
             arg[better] = cand[better] - k
         if i < n:
             best = best - alpha * onset[cand]
+            if bonus is not None and gamma > 0:
+                if is_line[i]:
+                    best = best - gamma * bonus[cand]
+                else:
+                    best = best + 0.25 * gamma * bonus[cand]  # mid-line words rarely start after a breath
         if not np.isfinite(best).any() or best.min() >= INF / 2:
             # Fallback: nothing reachable (extreme tempo); place proportionally.
             best = np.abs(cand - (cum[i] if i < n else end)).astype(float)
@@ -192,6 +197,8 @@ def dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.08, min_band
         starts[i - 1] = p
         cur = p
     starts[0] = start
+    if return_cost:
+        return starts, float(prev[-1])
     return starts
 
 
@@ -210,7 +217,7 @@ def _anchor_expected(expected, start, end, fixed, clock=None):
 
 
 def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_window=12,
-          passes=2, learn_hymn=3, shrink=2.0, known=None, use_activity=False, beta=0.0, pitch_iters=0, oracle_starts=None):
+          passes=2, learn_hymn=3, shrink=2.0, known=None, use_activity=False, beta=0.0, pitch_iters=0, oracle_starts=None, line_start=None, gamma=0.0):
     """known: {word_index: seconds} hand timings to honour (e.g. the first verse)."""
     onset = onset_score(F)
     act = activity(F) if use_activity else None
@@ -245,6 +252,10 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
             tpl[idx] = med
         return tpl
 
+    bonus = is_line = None
+    if line_start is not None and gamma > 0:
+        bonus = pause_bonus(F)
+        is_line = np.array(line_start, bool)
     rel = model.predict(tokens)
     groups = {}
     for i, g in enumerate(tokens):
@@ -273,11 +284,11 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
             n = len(r)
             expected[groups[g]] *= np.exp(np.mean(r) * n / (n + shrink))
         expected = _anchor_expected(expected, start, end, fixed, Cs)
-    starts = dp_align(expected, start, end, onset, sigma, alpha, fixed=fixed, act=act)
+    starts = dp_align(expected, start, end, onset, sigma, alpha, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
     base = expected
     for _ in range(learn_hymn):
         expected = _anchor_expected(adapt(base, starts), start, end, fixed, Cs)
-        starts = dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.05, min_band=50, fixed=fixed, act=act)
+        starts = dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.05, min_band=50, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
     for _ in range(passes - 1):
         ends = np.append(starts[1:], end)
         actual = np.maximum(Cs[ends] - Cs[starts], 0.5)
@@ -285,7 +296,7 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
         k = np.ones(2 * local_window + 1)
         sm = np.convolve(ratio, k, 'same') / np.convolve(np.ones_like(ratio), k, 'same')
         exp2 = _anchor_expected(expected * np.exp(sm), start, end, fixed, Cs)
-        starts = dp_align(exp2, start, end, onset, sigma, alpha, band_frac=0.03, min_band=40, fixed=fixed, act=act)
+        starts = dp_align(exp2, start, end, onset, sigma, alpha, band_frac=0.03, min_band=40, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
         expected = exp2
     if known and pitch_iters and len(fixed) >= 2:
         # Melody templates from the hand-timed words only (realistic: editor timed verse 1).
@@ -304,10 +315,148 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
         for g, vals in lv.items():
             tpl[groups[g]] = np.nanmedian(np.array(vals), axis=0)
         starts = dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.05, min_band=50,
-                          fixed=fixed, act=act, pitch=(CF, CV, tpl), beta=beta)
+                          fixed=fixed, act=act, pitch=(CF, CV, tpl), beta=beta, bonus=bonus, is_line=is_line, gamma=gamma)
         pitch_iters -= 1
     for _ in range(pitch_iters):
         tpl = templates(starts if oracle_starts is None else np.round(np.array(oracle_starts) / HOP).astype(np.int64))
         starts = dp_align(expected, start, end, onset, sigma, alpha, band_frac=0.05, min_band=50,
-                          fixed=fixed, act=act, pitch=(CF, CV, tpl), beta=beta)
+                          fixed=fixed, act=act, pitch=(CF, CV, tpl), beta=beta, bonus=bonus, is_line=is_line, gamma=gamma)
     return starts * HOP
+
+
+# ---------- line anchoring (phrases start after breaths) ----------
+def pause_candidates(F, min_len=0.12):
+    """Frames where a quiet stretch ends, with a 0..1 'pause strength'."""
+    db = F['rms_db']
+    lo, hi = np.percentile(db, 10), np.percentile(db, 90)
+    q = (db - lo) / max(hi - lo, 1e-6)          # 0 = quiet, 1 = loud
+    quiet = q < 0.15
+    cands = []
+    n = len(q)
+    i = 0
+    k = int(min_len / HOP)
+    while i < n:
+        if quiet[i]:
+            j = i
+            while j < n and quiet[j]:
+                j += 1
+            if j - i >= k:
+                depth = 1 - max(q[i:j].min(), 0) / 0.15
+                length = min((j - i) * HOP / 0.6, 1.0)
+                cands.append((j, 0.5 * length + 0.5 * depth))
+            i = j
+        else:
+            i += 1
+    return cands
+
+
+def line_dp(line_exp, start, end, cands, sigma=0.35, gamma=2.0, band_frac=0.15):
+    """Choose a start frame for each line after the first among pause candidates.
+    line_exp: expected frames per line (sums to end-start)."""
+    L = len(line_exp)
+    if L <= 1:
+        return []
+    pos = np.array([c for c, _ in cands if start < c < end], dtype=np.int64)
+    strength = np.array([s for c, s in cands if start < c < end])
+    if len(pos) < L - 1:
+        return None
+    cum = start + np.cumsum(line_exp)
+    band = max(int(band_frac * (end - start)), 150)
+    INF = 1e18
+    # prev over candidate indices (plus virtual start)
+    prev_pos = np.array([start]); prev = np.array([0.0])
+    backs = []
+    for li in range(1, L + 1):
+        if li < L:
+            ok = np.abs(pos - cum[li - 1]) <= band
+            cpos = pos[ok]; cstr = strength[ok]; cidx = np.flatnonzero(ok)
+            if not len(cpos):
+                return None
+        else:
+            cpos = np.array([end]); cstr = np.array([0.0]); cidx = np.array([-1])
+        e = max(line_exp[li - 1], 1.0)
+        k = cpos[None, :] - prev_pos[:, None]
+        dur = np.where(k > 0, np.log(np.maximum(k, 1) / e) ** 2 / (2 * sigma ** 2), INF)
+        tot = prev[:, None] + dur
+        j = tot.argmin(0)
+        best = tot[j, np.arange(len(cpos))] - gamma * cstr
+        backs.append((cpos, j))
+        prev_pos, prev = cpos, best
+    # backtrack
+    out = []
+    ci = 0
+    for li in range(L, 1, -1):
+        cpos, j = backs[li - 1]
+        ci = j[ci]
+        out.append(int(backs[li - 2][0][ci]))
+    return out[::-1]
+
+
+def align_lines(tokens, line_start, F, model, start=None, end=None, sigma_line=0.35, gamma=2.0, **kw):
+    """Anchor each notation line to a pause, then align words inside lines."""
+    s0, e0 = singing_span(F)
+    sf = s0 if start is None else int(round(start / HOP))
+    ef = e0 if end is None else int(round(end / HOP))
+    rel = model.predict(tokens)
+    rel = rel / rel.sum() * (ef - sf)
+    firsts = [i for i in range(1, len(tokens)) if line_start[i]]
+    bounds = [0] + firsts + [len(tokens)]
+    line_exp = np.array([rel[a:b].sum() for a, b in zip(bounds, bounds[1:])])
+    picks = line_dp(line_exp, sf, ef, pause_candidates(F), sigma=sigma_line, gamma=gamma)
+    known = None
+    if picks:
+        known = {i: f * HOP for i, f in zip(firsts, picks)}
+    return align(tokens, F, model, start=sf * HOP, end=ef * HOP, known=known, **kw)
+
+
+def pause_bonus(F, lead=0.06, spread=0.2):
+    """Per-frame 0..1 evidence that a phrase (notation line) starts here:
+    peaks just before the end of each breath/pause."""
+    n = len(F['rms_db'])
+    out = np.zeros(n)
+    w = int(3 * spread / HOP)
+    ker = np.exp(-0.5 * (np.arange(-w, w + 1) * HOP / spread) ** 2)
+    for end, strength in pause_candidates(F):
+        c = end - int(round(lead / HOP))
+        lo, hi = max(0, c - w), min(n, c + w + 1)
+        out[lo:hi] = np.maximum(out[lo:hi], strength * ker[lo - (c - w):hi - (c - w)])
+    return out
+
+
+def find_end(tokens, F, model, start, line_start=None, sec_per_unit=2.0, tempo_sd=0.2,
+             sigma=0.6, alpha=0.3, gamma=3.0, max_cands=14):
+    """Pick where the hymn ends when the recording has extra audio after it.
+    Tries pause starts near the tempo-predicted end; keeps the best notation fit."""
+    s0, e0 = singing_span(F)
+    sf = int(round(start / HOP)) if start is not None else s0
+    units = model.predict(tokens).sum()
+    exp_end = sf + sec_per_unit * units / HOP
+    db = F['rms_db']
+    lo, hi = np.percentile(db, 10), np.percentile(db, 90)
+    q = (db - lo) / max(hi - lo, 1e-6)
+    quiet = q < 0.15
+    # pause starts = loud->quiet transitions lasting >= 0.3 s
+    k = int(0.3 / HOP)
+    starts_q = [i for i in range(1, len(q) - k) if quiet[i] and not quiet[i - 1] and quiet[i:i + k].all()]
+    win_lo, win_hi = sf + 0.7 * (exp_end - sf), min(e0, sf + 1.35 * (exp_end - sf))
+    cands = [c for c in starts_q if win_lo <= c <= win_hi] + [e0]
+    cands = sorted(set(min(c, e0) for c in cands))
+    if len(cands) > max_cands:
+        idx = np.linspace(0, len(cands) - 1, max_cands).round().astype(int)
+        cands = [cands[i] for i in idx]
+    onset = onset_score(F)
+    bonus = pause_bonus(F) if line_start is not None else None
+    is_line = np.array(line_start, bool) if line_start is not None else None
+    rel = model.predict(tokens)
+    best, best_end = np.inf, e0
+    for c in cands:
+        if c - sf < len(tokens) * 3:
+            continue
+        expct = rel / rel.sum() * (c - sf)
+        _, cost = dp_align(expct, sf, c, onset, sigma, alpha, bonus=bonus, is_line=is_line,
+                           gamma=gamma if bonus is not None else 0, return_cost=True)
+        rate = (c - sf) * HOP / units
+        total = cost / len(tokens) + np.log(rate / sec_per_unit) ** 2 / (2 * tempo_sd ** 2) / len(tokens) * 30
+        if total < best:
+            best, best_end = total, c
+    return best_end * HOP

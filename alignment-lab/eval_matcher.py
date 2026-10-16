@@ -9,7 +9,7 @@ Modes:
 """
 import glob, json, os, sys, time
 import numpy as np
-from align import DurationModel, align, HOP
+from align import DurationModel, align, align_lines, find_end, singing_span, HOP
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -42,6 +42,15 @@ def run(hymns, mode, **kw):
             end = timed[-1] + float(np.median(gaps)) * 1.5
         elif h['clip']:
             start, end = h['clip'][0], min(h['clip'][1], h['duration'] - 0.05)
+        if mode == 'auto':
+            # Start: first sustained singing (inside the clip if one is set).
+            s0, _ = singing_span(h['F'])
+            start = max(start or 0, s0 * HOP)
+            if os.environ.get('FINDEND'):
+                end = find_end(h['tokens'], h['F'], model, start, line_start=h['line_start'] if os.environ.get('SOFT') else None,
+                               sigma=kw['sigma'], alpha=kw['alpha'], gamma=float(os.environ.get('GAMMA', 3.0)))
+                if h['clip']:
+                    end = min(end, h['clip'][1])
         known = None
         truth = list(h['times'])
         if mode == 'seeded':
@@ -54,7 +63,14 @@ def run(hymns, mode, **kw):
         if os.environ.get('ORACLE'):
             tt = np.array([np.nan if x is None else x for x in h['times']]); ok = np.isfinite(tt)
             orc = np.interp(np.arange(len(tt)), np.flatnonzero(ok), tt[ok])
-        pred = align(h['tokens'], h['F'], model, start=start, end=end, known=known, oracle_starts=orc, **kw)
+        if os.environ.get('SOFT'):
+            pred = align(h['tokens'], h['F'], model, start=start, end=end, line_start=h['line_start'],
+                         gamma=float(os.environ.get('GAMMA', 2.0)), **kw)
+        elif os.environ.get('LINES'):
+            pred = align_lines(h['tokens'], h['line_start'], h['F'], model, start=start, end=end,
+                               gamma=float(os.environ.get('GAMMA', 2.0)), **kw)
+        else:
+            pred = align(h['tokens'], h['F'], model, start=start, end=end, known=known, oracle_starts=orc, **kw)
         if known:
             truth = [None if i in known else t for i, t in enumerate(truth)]  # score only untouched words
         out[h['name']] = (pred, score(pred, truth))
@@ -77,7 +93,7 @@ def report(title, res):
 
 if __name__ == '__main__':
     hymns = load_all()
-    kw = dict(sigma=float(os.environ.get('SIGMA', 0.45)), alpha=float(os.environ.get('ALPHA', 0.3)), learn_hymn=int(os.environ.get('LEARN', 3)), passes=int(os.environ.get('PASSES', 2)), beta=float(os.environ.get('BETA', 0)), pitch_iters=int(os.environ.get('PITER', 0)))
+    kw = dict(sigma=float(os.environ.get('SIGMA', 0.6)), alpha=float(os.environ.get('ALPHA', 0.3)), learn_hymn=int(os.environ.get('LEARN', 3)), passes=int(os.environ.get('PASSES', 2)), beta=float(os.environ.get('BETA', 0)), pitch_iters=int(os.environ.get('PITER', 0)))
     for mode in sys.argv[1:] or ['auto', 'anchored']:
         t0 = time.time()
         res = run(hymns, mode, **kw)

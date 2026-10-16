@@ -17,18 +17,26 @@ RATE = 22050
 
 
 class HazzatText(HTMLParser):
-    """Collect text of HazzatFont/HazzatVFont spans in document order."""
+    """Collect text of HazzatFont/HazzatVFont spans in document order.
+    chunks: [line_number_at_chunk_start, text]; a <br> anywhere advances the line."""
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.stack, self.chunks = [], []
+        self.line = 0
+        self.breaks = []  # (chunk_index, char_offset) where a line break occurred
     # Each outermost Hazzat element is one chunk, like element.textContent in site.js.
     def handle_starttag(self, tag, attrs):
         if tag == 'br':
+            self.line += 1
+            if any(self.stack) and self.chunks:
+                self.breaks.append((len(self.chunks) - 1, len(self.chunks[-1][1])))
+            else:
+                self.breaks.append((len(self.chunks), 0))
             return
         cls = (dict(attrs).get('class') or '').split()
         hz = 'HazzatFont' in cls or 'HazzatVFont' in cls
         if hz and not any(self.stack):
-            self.chunks.append([0, ''])
+            self.chunks.append([self.line, ''])
         self.stack.append(hz)
     def handle_startendtag(self, tag, attrs):
         pass
@@ -55,9 +63,23 @@ def tokens_for(notation):
     return toks
 
 
-def words_for(notation):
+def words_for(notation, with_lines=False):
     p = HazzatText(); p.feed(notation)
-    return [w for _, text in p.chunks for w in text.split()]
+    words, lines = [], []
+    brk = set(p.breaks)
+    pending = 0
+    for ci, (_, text) in enumerate(p.chunks):
+        # breaks before this chunk
+        pos = 0
+        for m in re.finditer(r'\S+', text):
+            # any break inside this chunk before this word?
+            if any(c == ci and pos <= off <= m.start() for c, off in brk) or (ci, 0) in brk and m.start() == pos == 0:
+                pending = 1
+            words.append(m.group()); lines.append(pending); pending = 0
+            pos = m.end()
+        if any(c == ci and off >= pos for c, off in brk):
+            pending = 1
+    return (words, lines) if with_lines else words
 
 
 def catalog_notation(hymn_id):
@@ -97,7 +119,7 @@ def main():
         notation = p['notation_html'] or catalog_notation(hid)
         # Stored timings still use the pre-v2 format: one slot per whitespace word.
         # site.js splits these into hit boxes on load (migrateHazzatHitBoxes).
-        words = words_for(notation)
+        words, newline = words_for(notation, with_lines=True)
         toks = words
         times = json.loads(p['hazzat_timings_json'])
         name = hid.split('/')[-1][:40]
@@ -121,7 +143,7 @@ def main():
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(local, key), '-ac', '1', '-ar', str(RATE), '-f', 'f32le', pcm], check=True)
         dur = os.path.getsize(pcm) / 4 / RATE
         clip = clips.get((hid, 'hazzat'))
-        rec = {'hymn_id': hid, 'tokens': toks, 'times': times, 'sung': sung, 'performance': timed_sung,
+        rec = {'hymn_id': hid, 'tokens': toks, 'line_start': newline, 'times': times, 'sung': sung, 'performance': timed_sung,
                'audio': os.path.basename(pcm), 'rate': RATE, 'duration': dur,
                'clip': [clip['clip_start'], clip['clip_end']] if clip else None}
         json.dump(rec, open(os.path.join(OUT, name + '.json'), 'w'), ensure_ascii=False)
