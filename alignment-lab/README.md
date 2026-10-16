@@ -43,6 +43,17 @@ See `results.txt` for per-hymn numbers.
 
 ## Findings
 
+Round 5 (9 more hymns from Tasbeha, 18 hymns / 4,962 timed entries):
+- Repeats are written in the Hazzat as `( ... )N`; `sung_order` expands them, matching the
+  editor's saved repeat sections exactly (`eval_perf.py` scores every pass).
+- With start/end given: 78% within 1 s, 64% within 0.5 s, 49% within 0.25 s across 18 hymns
+  (`results-18-hymns-anchored.txt`). 6 of the 9 new hymns reach 83-94% within 1 s.
+- Lobsh of the 2nd Canticle switches to half pace for its closing section (39% within 1 s).
+  Tried: per-line pace DP (`line_tempo`, slips a line), wider drift bands (no effect),
+  onset-density pace map (helps Lobsh hymns, hurts others), read-along in windows
+  (`follow_along`: Lobsh 39%->66% but 69% overall), and choosing between readers by how well
+  line starts sit on breaths (`breath_fit` cannot tell which is right). None adopted.
+
 Round 4 (toward 99% within 0.25 s):
 - Measured symbol lengths in key units from hand timings (`LearnedKey`): z=1.08 x=1.94 c=2.95
   v=4.5 confirm the key; 'A' is about one full note (not a fast transition); a breath mark

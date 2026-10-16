@@ -1,0 +1,21 @@
+ANCHORED (Hazzat key, every piece, repeats sung in order)
+hymn                               timed reps median ≤.25s  ≤.5s   ≤1s   ≤2s
+3rd-canticle-annual                  150    0  0.34s   43%   60%   77%   93%
+apetjeek-evol                        525    0  0.13s   76%   87%   96%   99%
+apinav-shopi                         305    0  0.28s   49%   68%   85%   92%
+arise-o-children-of-the-light-ten-   226   40  0.34s   42%   60%   73%   90%
+deacon-response-for-the-litany-for   116    0  0.17s   64%   84%   96%  100%
+explanation-lobsh-of-the-1st-canti   433    0  0.61s   25%   44%   69%   90%
+explanation-lobsh-of-the-2nd-canti   593    0 11.63s   20%   31%   39%   44%
+leepon                               222    0  0.20s   55%   75%   89%   98%
+psalm-116-ni-ethnos-teero            383    0  0.19s   57%   78%   91%  100%
+semouti                              349    0  0.23s   51%   67%   83%   94%
+shere-maria                          410    0  0.06s   66%   80%   89%   97%
+shere-ne-maria-annual                169    0  0.30s   47%   57%   67%   89%
+tenen                                581   24  0.37s   43%   55%   68%   78%
+teoi-enhikanos                       132    0  0.27s   48%   71%   92%   98%
+the-creed                             40    0  0.69s   35%   45%   57%  100%
+the-hymn-of-blessing-ten-ouosht       73    0  0.17s   63%   79%   95%   97%
+the-hymn-of-the-censer-tai-shouri-   100    0  0.06s   84%   90%   97%  100%
+we-follow-you-tenoueh-ensok-annual   155    0  0.22s   57%   75%   94%   99%
+ALL                                 4962       0.27s   49%   64%   78%   87%

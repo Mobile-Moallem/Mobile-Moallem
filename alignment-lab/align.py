@@ -15,6 +15,7 @@ MIN_COUNT = 15
 import os as _os
 PACE_W = float(_os.environ.get('PACE_W', 0.5)); PACE_SD = float(_os.environ.get('PACE_SD', 0.25))
 SPREAD = float(_os.environ.get('SPREAD', 0.45)); NCAND = int(_os.environ.get('NCAND', 13))
+BAND1 = float(_os.environ.get('BAND1', 0.08)); BAND2 = float(_os.environ.get('BAND2', 0.03))
 ONSET_MODE = _os.environ.get('ONSET', 'syllable')
 ONSET_PITCH = float(_os.environ.get('OPITCH', 0.0))
 UNV_W = float(_os.environ.get('UNVW', 0.3))
@@ -341,7 +342,7 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
             n = len(r)
             expected[groups[g]] *= np.exp(np.mean(r) * n / (n + shrink))
         expected = _anchor_expected(expected, start, end, fixed, Cs)
-    starts = dp_align(expected, start, end, onset, sigma, alpha, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
+    starts = dp_align(expected, start, end, onset, sigma, alpha, band_frac=BAND1, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
     base = expected
     for _ in range(learn_hymn):
         expected = _anchor_expected(adapt(base, starts), start, end, fixed, Cs)
@@ -353,7 +354,7 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
         k = np.ones(2 * local_window + 1)
         sm = np.convolve(ratio, k, 'same') / np.convolve(np.ones_like(ratio), k, 'same')
         exp2 = _anchor_expected(expected * np.exp(sm), start, end, fixed, Cs)
-        starts = dp_align(exp2, start, end, onset, sigma, alpha, band_frac=0.03, min_band=40, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
+        starts = dp_align(exp2, start, end, onset, sigma, alpha, band_frac=BAND2, min_band=40, fixed=fixed, act=act, bonus=bonus, is_line=is_line, gamma=gamma)
         expected = exp2
     if known and pitch_iters and len(fixed) >= 2:
         # Melody templates from the hand-timed words only (realistic: editor timed verse 1).
@@ -860,3 +861,14 @@ def follow_along(pieces, pline, F, model, start, end, window=6, commit=3, sigma=
         pace = fr / max(u, 1e-9)
         pos, li = newpos, keep
     return out * HOP
+
+
+def breath_fit(piece_times, pline, F):
+    """Self-check that needs no hand timings: how well the predicted line starts (and pieces
+    after a breath mark) sit right after a breath. Higher is better."""
+    bonus = pause_bonus(F)
+    idx = [i for i in range(1, len(piece_times)) if pline[i]]
+    if not idx:
+        return 0.0
+    fr = np.clip(np.round(np.asarray(piece_times)[idx] / HOP).astype(int), 0, len(bonus) - 1)
+    return float(np.mean(bonus[fr]))
