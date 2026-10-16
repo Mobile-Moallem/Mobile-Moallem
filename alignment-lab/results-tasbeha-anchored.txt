@@ -1,0 +1,14 @@
+/home/claude/mobile-moallem/alignment-lab/features.py:53: RuntimeWarning: invalid value encountered in divide
+  shift = np.where(np.abs(denom) > 1e-9, 0.5 * (a - c) / denom, 0)
+ANCHORED (Hazzat key, every piece, repeats sung in order)
+hymn                               timed reps median ≤.25s  ≤.5s   ≤1s   ≤2s
+arise-o-children-of-the-light-ten-   226   40  0.34s   42%   60%   73%   90%
+explanation-lobsh-of-the-1st-canti   433    0  0.61s   25%   44%   69%   90%
+explanation-lobsh-of-the-2nd-canti   593    0 11.63s   20%   31%   39%   44%
+leepon                               222    0  0.20s   55%   75%   89%   98%
+semouti                              349    0  0.23s   51%   67%   83%   94%
+shere-ne-maria-annual                169    0  0.30s   47%   57%   67%   89%
+tenen                                581   24  0.37s   43%   55%   68%   78%
+teoi-enhikanos                       132    0  0.27s   48%   71%   92%   98%
+we-follow-you-tenoueh-ensok-annual   155    0  0.22s   57%   75%   94%   99%
+ALL                                 2860       0.43s   39%   54%   68%   80%

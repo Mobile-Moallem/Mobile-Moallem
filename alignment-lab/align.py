@@ -13,6 +13,8 @@ import numpy as np
 HOP = 0.02
 MIN_COUNT = 15
 import os as _os
+PACE_W = float(_os.environ.get('PACE_W', 0.5)); PACE_SD = float(_os.environ.get('PACE_SD', 0.25))
+SPREAD = float(_os.environ.get('SPREAD', 0.45)); NCAND = int(_os.environ.get('NCAND', 13))
 ONSET_MODE = _os.environ.get('ONSET', 'syllable')
 ONSET_PITCH = float(_os.environ.get('OPITCH', 0.0))
 UNV_W = float(_os.environ.get('UNVW', 0.3))
@@ -265,7 +267,7 @@ def _anchor_expected(expected, start, end, fixed, clock=None):
 
 
 def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_window=12,
-          passes=2, learn_hymn=3, shrink=2.0, known=None, use_activity=False, beta=0.0, pitch_iters=0, oracle_starts=None, line_start=None, gamma=0.0, breath=None):
+          passes=2, learn_hymn=3, shrink=2.0, known=None, use_activity=False, beta=0.0, pitch_iters=0, oracle_starts=None, line_start=None, gamma=0.0, breath=None, tempo=None):
     """known: {word_index: seconds} hand timings to honour (e.g. the first verse)."""
     onset = onset_score(F)
     act = activity(F) if use_activity else None
@@ -310,6 +312,8 @@ def align(tokens, F, model, start=None, end=None, sigma=0.45, alpha=0.3, local_w
         else:
             is_line = np.array(line_start, bool)
     rel = model.predict(tokens)
+    if tempo is not None:
+        rel = rel * np.asarray(tempo, float)  # section-by-section pace (see line_tempo)
     groups = {}
     for i, g in enumerate(tokens):
         groups.setdefault(g, []).append(i)
@@ -573,7 +577,10 @@ def align_pieces(words, line_start, F, model, start=None, end=None, **kw):
         for k, p in enumerate(hit_pieces(w)):
             pieces.append(p); owner.append(wi)
             pline.append(bool(line_start[wi]) and k == 0)
-    pt = align(pieces, F, model, start=start, end=end, line_start=pline, **kw)
+    tempo = None
+    if kw.pop('section_tempo', False) and start is not None and end is not None:
+        tempo = line_tempo(pieces, pline, F, model, start, end)
+    pt = align(pieces, F, model, start=start, end=end, line_start=pline, tempo=tempo, **kw)
     owner = np.array(owner)
     first = np.searchsorted(owner, np.arange(len(words)))
     return pt[first], pt, owner
@@ -726,3 +733,130 @@ def sung_order(words):
             for k in range(1, n):
                 seq.extend((j, k) for j in range(a, i + 1))
     return seq
+
+
+
+# ---------- section tempo: follow sudden pace changes line by line ----------
+def line_tempo(tokens, line_start, F, model, start, end, sigma=0.25, gamma=1.0, jump=0.35,
+               nbins=25, span=1.2):
+    """Per-token pace factor. Each notation line starts at a breath (pause end); its length is
+    its notation length times a pace that may change between lines (cheaply by small steps, at a
+    cost for big jumps). Returns factor = line pace / overall pace for every token."""
+    n = len(tokens)
+    starts = [0] + [i for i in range(1, n) if line_start[i]]
+    bounds = list(zip(starts, starts[1:] + [n]))
+    rel = model.predict(tokens)
+    U = np.array([rel[a:b].sum() for a, b in bounds])
+    sf, ef = int(round(start / HOP)), int(round(end / HOP))
+    g = (ef - sf) / U.sum()
+    tempos = g * np.exp(np.linspace(-span, span, nbins))
+    pc = [(c, s) for c, s in pause_candidates(F) if sf + 5 < c < ef - 5]
+    pos = np.array([sf] + [c for c, _ in pc] + [ef], dtype=np.int64)
+    strength = np.array([0.0] + [s for _, s in pc] + [0.0])
+    C = len(pos)
+    INF = 1e18
+    # prev[a, b]: best cost with the current line starting at candidate a, pace bin b
+    prev = np.full((C, nbins), INF)
+    prev[0, :] = np.abs(np.arange(nbins) - nbins // 2) * 0.05   # mild preference for overall pace
+    bi = np.arange(nbins)
+    trans = jump * np.abs(bi[:, None] - bi[None, :]) ** 1.0
+    backs = []
+    L = len(bounds)
+    for li in range(L):
+        last = li == L - 1
+        cur = np.full((C, nbins), INF)
+        arg_a = np.zeros((C, nbins), np.int64)
+        arg_b = np.zeros((C, nbins), np.int64)
+        # pace may change at a line boundary
+        P = prev[:, :, None] + trans[None, :, :]          # (C, b_from, b_to)
+        pb = P.argmin(1); pv = P.min(1)                    # best from-bin for each (a, b_to)
+        live = np.flatnonzero(np.isfinite(pv).any(1) & (pv.min(1) < INF / 2))
+        for b in range(nbins):
+            want = U[li] * tempos[b]
+            lo = np.searchsorted(pos, pos[live] + 0.55 * want)
+            hi = np.searchsorted(pos, pos[live] + 1.8 * want, side='right')
+            for ai, a in enumerate(live):
+                base = pv[a, b]
+                if base >= INF / 2:
+                    continue
+                cs = np.arange(lo[ai], hi[ai])
+                if last:
+                    cs = cs[pos[cs] == ef]
+                if not len(cs):
+                    continue
+                d = pos[cs] - pos[a]
+                v = base + np.log(d / want) ** 2 / (2 * sigma ** 2) - (0 if last else gamma * strength[cs])
+                better = v < cur[cs, b]
+                cur[cs[better], b] = v[better]
+                arg_a[cs[better], b] = a
+                arg_b[cs[better], b] = pb[a, b]
+        backs.append((arg_a, arg_b))
+        prev = cur
+    endi = C - 1
+    if not np.isfinite(prev[endi]).any() or prev[endi].min() >= INF / 2:
+        return np.ones(n)
+    b = int(prev[endi].argmin()); c = endi
+    line_pos = [0] * (L + 1); line_pos[L] = pos[c]
+    for li in range(L - 1, -1, -1):
+        arg_a, arg_b = backs[li]
+        a, b = int(arg_a[c, b]), int(arg_b[c, b])
+        line_pos[li] = pos[a]; c = a
+    factor = np.ones(n)
+    for li, (a, bnd) in enumerate(bounds):
+        factor[a:bnd] = max(line_pos[li + 1] - line_pos[li], 1) / max(U[li] * g, 1e-9)
+    return factor
+
+
+def follow_along(pieces, pline, F, model, start, end, window=6, commit=3, sigma=0.45, alpha=0.3,
+                 gamma=1.0, pace_lines=6, spread=SPREAD, ncand=NCAND):
+    """Read along like a person: align a few lines at a time with the cantor's recent pace,
+    keep the first lines of each window, continue from there. Returns piece start times (s)."""
+    n = len(pieces)
+    rel = model.predict(pieces)
+    onset = onset_score(F); bonus = pause_bonus(F)
+    bw = HazzatKey.breath_weights(pieces, pline)
+    sf, ef = int(round(start / HOP)), int(round(end / HOP))
+    lines = [0] + [i for i in range(1, n) if pline[i]] + [n]
+    L = len(lines) - 1
+    pace = (ef - sf) / rel.sum()               # frames per unit, refined as we go
+    out = np.zeros(n, np.int64)
+    li, pos = 0, sf
+    history = []                               # (units, frames) of committed lines
+    while li < L:
+        last = min(L, li + window)
+        a, b = lines[li], lines[last]
+        units = rel[a:b].sum()
+        if last == L:
+            ends = [ef]
+        else:
+            ends = sorted({int(round(pos + units * pace * f)) for f in np.exp(np.linspace(-spread, spread, ncand))})
+            # prefer pause ends near each guess (a line usually starts right after a breath)
+            pc = np.array([c for c, _ in pause_candidates(F) if pos < c < ef]) if True else np.array([])
+            snapped = set()
+            for e in ends:
+                if len(pc):
+                    j = np.argmin(np.abs(pc - e))
+                    if abs(pc[j] - e) < 0.15 * (e - pos):
+                        snapped.add(int(pc[j]))
+                snapped.add(e)
+            ends = sorted(x for x in snapped if pos + (b - a) * 2 < x <= ef) or [ef]
+        best = None
+        for e in ends:
+            exp_ = rel[a:b] / units * (e - pos)
+            st, cost = dp_align(exp_, pos, e, onset, sigma, alpha, bonus=bonus, is_line=bw[a:b] if True else None,
+                                gamma=gamma, return_cost=True)
+            # the next line should start at a breath, and the pace should stay plausible
+            r = (e - pos) / (units * pace)
+            total = cost + PACE_W * (b - a) * np.log(r) ** 2 / (2 * PACE_SD ** 2) - (gamma * 2 * bonus[min(e, len(bonus) - 1)] if last < L else 0)
+            if best is None or total < best[0]:
+                best = (total, st, e)
+        _, st, e = best
+        keep = L if last == L else min(L, li + commit)
+        kb = lines[keep]
+        out[a:kb] = st[:kb - a]
+        newpos = int(st[kb - a]) if kb < b else e
+        history.append((rel[a:kb].sum(), newpos - pos))
+        u = sum(h[0] for h in history[-pace_lines:]); fr = sum(h[1] for h in history[-pace_lines:])
+        pace = fr / max(u, 1e-9)
+        pos, li = newpos, keep
+    return out * HOP
