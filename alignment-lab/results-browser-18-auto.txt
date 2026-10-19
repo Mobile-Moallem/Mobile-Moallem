@@ -1,0 +1,22 @@
+
+AUTO (browser engine, 4 kHz)  394s
+hymn                               slots median ≤0.3s ≤0.5s  ≤1s  ≤2s  time
+3rd-canticle-annual                  150  0.81s   31%   39%  57%  75%   5.7s
+apetjeek-evol                        525  0.12s   80%   87%  96%  99%  47.9s
+apinav-shopi                         305  0.25s   53%   67%  82%  90%  23.9s
+arise-o-children-of-the-light-ten-   226  0.42s   42%   56%  69%  83%  12.3s
+deacon-response-for-the-litany-for   116  0.16s   66%   82%  96% 100%   2.9s
+explanation-lobsh-of-the-1st-canti   433  0.73s   23%   36%  57%  71%  33.7s
+explanation-lobsh-of-the-2nd-canti   593  0.50s   37%   50%  64%  71%  42.2s
+leepon                               222  0.22s   58%   73%  89%  96%  10.8s
+psalm-116-ni-ethnos-teero            383  0.19s   64%   76%  91% 100%  33.8s
+semouti                              349  0.33s   49%   61%  78%  88%  36.4s
+shere-maria                          410  0.16s   62%   71%  84%  94%  22.7s
+shere-ne-maria-annual                169 55.42s    2%    3%   5%   9%   7.4s
+tenen                                581  0.31s   49%   56%  70%  79%  62.0s
+teoi-enhikanos                       132 218.52s    0%    0%   0%   0%   9.8s
+the-creed                             40  3.10s    8%   10%  18%  43%   1.3s
+the-hymn-of-blessing-ten-ouosht       73  0.17s   67%   81%  92%  99%   1.7s
+the-hymn-of-the-censer-tai-shouri-   100  0.08s   78%   82%  98% 100%   2.0s
+we-follow-you-tenoueh-ensok-annual   155  0.24s   55%   68%  87%  91%   7.5s
+ALL                                 4962  0.32s   49%   59%  73%  81%

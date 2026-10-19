@@ -26,7 +26,7 @@ const modes = process.argv.slice(2).length ? process.argv.slice(2) : ['auto', 'a
 for (const mode of modes) {
   const rows = [];
   const t0 = Date.now();
-  for (const file of readdirSync(new URL('data/', here)).filter(f => f.endsWith('.json')).sort()) {
+  for (const file of readdirSync(new URL('data/', here)).filter(f => f.endsWith('.json') && (!process.env.ONLY || process.env.ONLY.split(',').some(o => f.includes(o)))).sort()) {
     const d = JSON.parse(readFileSync(new URL('data/' + file, here)));
     const glyphs = [], lineStart = [], owner = [];
     d.tokens.forEach((w, wi) => pieces(w).forEach((p, k) => { glyphs.push(p); owner.push(wi); lineStart.push(Boolean(d.line_start[wi]) && k === 0); }));

@@ -20,8 +20,21 @@ on each recording; see `features.py`.
 
 `application/dist/client/hazzat-reader.js` is the browser version. The editor's alignment
 worker uses it for Hazzat suggestions (`method: 'hazzat-reader'`); word sections keep the old
-estimate. `node eval-js.mjs` scores that exact file at the editor's 4 kHz audio:
-88% within 1 s with start/end marked, 86% fully automatic (clip honoured when set).
+estimate. It reads repeat marks `( ... )N` and returns the time of every extra pass; accepting
+the suggestion saves those as the hymn's Hazzat repeat sections (unless repeats were changed by
+hand meanwhile). `node eval-js.mjs [anchored|auto]` scores that exact file at the editor's 4 kHz
+audio on all 18 hymns, including every repeat pass (4,962 timings):
+
+| | within 0.3 s | 0.5 s | 1 s | 2 s |
+|---|---|---|---|---|
+| Start/end marked (or clip set) | 51% | 63% | 77% | 87% |
+| Fully automatic | 49% | 59% | 73% | 81% |
+
+Fully automatic misses the hymn's place in 3 recordings that contain other audio or other
+hymns (Teoi Enhikanos, Shere Ne Maria, The Creed); setting the clip fixes these. A
+whole-recording span search with a pace prior (0.50-0.79 s per note unit across all 18 hymns)
+fixed two of them but hurt two others and was 4x slower, so it was not kept.
+Per-hymn numbers: `results-browser-18-anchored.txt`, `results-browser-18-auto.txt`.
 Tests: `application/tests/hazzat-reader.test.mjs`.
 
 ## Data
