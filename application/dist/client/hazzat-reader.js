@@ -332,27 +332,72 @@
 
   /* glyphs: Hazzat text of each piece (site hit boxes, in order); lineStart: true where a piece
      begins a notation line; clip: optional {start, end} seconds set by the editor. */
+  // ---------- repeats written in the Hazzat: ( ... )N ----------
+  /* Groups of pieces sung more than once: [{ start, end, times }] in piece indices. A ')N' at the
+     start of a piece closes the group before that piece; elsewhere it closes it after that piece. */
+  function repeatGroups(glyphs) {
+    const out = [], open = [];
+    glyphs.forEach((g, i) => {
+      if (g.includes('(')) open.push(i);
+      const m = /\)(\d+)/u.exec(g);
+      if (m && open.length) {
+        const a = open.pop(), b = g.trimStart().startsWith(')') ? i - 1 : i;
+        if (b >= a && Number(m[1]) > 1) out.push({ start: a, end: b, times: Math.min(9, Number(m[1])) });
+      }
+    });
+    return out.sort((x, y) => x.start - y.start);
+  }
+  // Piece indices in the order a cantor sings them, with the pass number (0 = first time).
+  function sungOrder(glyphs) {
+    const byEnd = new Map(repeatGroups(glyphs).map(r => [r.end, r]));
+    const seq = [];
+    glyphs.forEach((_, i) => {
+      seq.push([i, 0]);
+      const r = byEnd.get(i);
+      if (r) for (let k = 1; k < r.times; k++) for (let j = r.start; j <= i; j++) seq.push([j, k]);
+    });
+    return seq;
+  }
+
+  /* glyphs: Hazzat text of each piece (site hit boxes, in order); lineStart: true where a piece
+     begins a notation line; clip: optional {start, end} seconds set by the editor.
+     Returns one time per written piece (first time sung) and, for repeat groups, the times of
+     each extra pass in the site's repeat-section format. */
   function read({ pcm, rate, glyphs, lineStart, clip, start, end }) {
     if (!glyphs?.length) throw new Error('Add Hazzat first.');
     const F = features(pcm, rate);
     if (percentile(F.rmsDb, 90) < -80) throw new Error('This recording is silent or too quiet to align.');
     const cache = {};
     cache.onset = onsetScore(F); cache.bonus = pauseBonus(F);
-    const ls = glyphs.map((_, i) => Boolean(lineStart?.[i]));
+    const order = sungOrder(glyphs);
+    const sung = order.map(([i]) => glyphs[i]);
+    // A repeat restarts a phrase, so the cantor usually breathes before it.
+    const ls = order.map(([i], k) => Boolean(lineStart?.[i]) || (k > 0 && order[k - 1][0] !== i - 1));
     let s = Number.isFinite(start) ? start : Math.max(clip?.start || 0, singingSpan(F)[0] * HOP);
     let e = end;
     if (!Number.isFinite(e)) {
-      e = findEnd(glyphs, ls, F, s, cache);
+      e = findEnd(sung, ls, F, s, cache);
       if (Number.isFinite(clip?.end)) e = Math.min(e, clip.end);
-      if (!Number.isFinite(start)) s = Math.max(s, findStart(glyphs, ls, F, e, cache));
+      if (!Number.isFinite(start)) s = Math.max(s, findStart(sung, ls, F, e, cache));
     }
     e = Math.min(e, F.duration - 0.05);
-    if (e - s < glyphs.length * 0.06) throw new Error('The recording is too short for this much Hazzat.');
-    const times = alignPieces(glyphs, ls, F, s, e, cache);
-    return { times, duration: Math.round(F.duration * 100) / 100, start: s, end: e };
+    if (e - s < sung.length * 0.06) throw new Error('The recording is too short for this much Hazzat.');
+    const all = alignPieces(sung, ls, F, s, e, cache);
+    const times = new Array(glyphs.length).fill(null);
+    const passTimes = new Map();
+    order.forEach(([i, k], n) => {
+      if (k === 0) times[i] = all[n];
+      else passTimes.set(i + ':' + k, all[n]);
+    });
+    const repeats = repeatGroups(glyphs).map(r => ({
+      key: 'hazzatTimings', startIndex: r.start, endIndex: r.end,
+      passes: Array.from({ length: r.times - 1 }, (_, k) =>
+        Array.from({ length: r.end - r.start + 1 }, (_, j) => passTimes.get((r.start + j) + ':' + (k + 1)))),
+    }));
+    return { times, repeats, duration: Math.round(F.duration * 100) / 100, start: s, end: e };
   }
 
-  const api = { read, features, units, breathWeights, singingSpan, pauseCandidates, HOP };
+  const api = { read, repeatGroups, sungOrder, features, units, breathWeights, singingSpan, pauseCandidates, HOP };
   if (typeof module !== 'undefined') module.exports = api;
   globalThis.HazzatReader = api;
 })();

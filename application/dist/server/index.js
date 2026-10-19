@@ -591,6 +591,14 @@ const suggestionFromRow = row => ({ id: row.id, hymnId: row.hymn_id, section: ro
 const validSuggestionTimes = (times, parts, duration) => Array.isArray(times) && times.length === parts.length &&
   times.every((t, i) => Number.isFinite(t) && t >= 0 && t < duration && (i === 0 || t >= times[i-1]));
 
+// Repeat passes suggested by the Hazzat reader, in the same shape as saved repeat sections.
+const validSuggestedRepeats = (repeats, partCount, duration) => Array.isArray(repeats) && repeats.length <= 100 &&
+  repeats.every(section => section && section.key === "hazzatTimings" && Number.isInteger(section.startIndex) && Number.isInteger(section.endIndex) &&
+    section.startIndex >= 0 && section.endIndex >= section.startIndex && section.endIndex < partCount &&
+    Array.isArray(section.passes) && section.passes.length >= 1 && section.passes.length <= 9 &&
+    section.passes.every(pass => Array.isArray(pass) && pass.length === section.endIndex - section.startIndex + 1 &&
+      pass.every((t, i) => Number.isFinite(t) && t >= 0 && t < duration && (i === 0 || t >= pass[i - 1]))));
+
 async function alignmentSuggestions(request, env, hymnId) {
   if (!isEditor(request)) return json({ error: "Editor access required." }, 403);
   if (!validId(hymnId)) return json({ error: "Invalid hymn." }, 400);
@@ -599,6 +607,7 @@ async function alignmentSuggestions(request, env, hymnId) {
     return json({ suggestions: (rows.results || []).map(suggestionFromRow) });
   }
   if (!sameOrigin(request)) return json({ error: "Invalid request origin." }, 403);
+  await ensureLibrarySchema(env.DB);  // repeat sections live in a table created on demand
   const raw = await request.text();
   if (raw.length > 2_000_000) return json({ error: "Suggestion is too large." }, 413);
   let body;
@@ -623,6 +632,8 @@ async function alignmentSuggestions(request, env, hymnId) {
     data.content = project[config.content] || "";
     data.baseline = project[config.times] || "[]";
     data.baselineLines = project.hazzat_line_timings_json || "[]";
+    data.baselineRepeats = (await env.DB.prepare("SELECT sections_json FROM hymn_repeat_sections WHERE hymn_id = ?").bind(hymnId).first())?.sections_json || "[]";
+    delete data.repeats;
     data.parts = body.parts;
     data.signature = cleanString(body.signature, 100);
     data.message = "";
@@ -633,6 +644,11 @@ async function alignmentSuggestions(request, env, hymnId) {
     if (!Number.isFinite(body.duration) || body.duration <= 0 || body.duration > 86400 || !validSuggestionTimes(body.times, data.parts, body.duration)) return json({ error: "Invalid suggested times." }, 400);
     data.times = body.times;
     data.duration = body.duration;
+    delete data.repeats;
+    if (row.section === "hazzat" && body.repeats !== undefined) {
+      if (!validSuggestedRepeats(body.repeats, data.parts.length, body.duration)) return json({ error: "Invalid suggested repeat passes." }, 400);
+      if (body.repeats.length) data.repeats = body.repeats;
+    }
     data.method = ["reference", "hazzat-reader"].includes(body.method) ? body.method : "phrase-estimate";
     data.message = cleanString(body.message, 500);
     status = "pending";
@@ -647,6 +663,15 @@ async function alignmentSuggestions(request, env, hymnId) {
       const stackTimes = [];
       if (row.section === "hazzat") data.parts.forEach((part,i) => { if (stackTimes[part.stack] === undefined) stackTimes[part.stack] = data.times[i]; });
       const extraValues = row.section === "hazzat" ? [JSON.stringify(stackTimes)] : [];
+      let repeatWrite = null;
+      if (row.section === "hazzat" && data.repeats?.length) {
+        const current = (await env.DB.prepare("SELECT sections_json FROM hymn_repeat_sections WHERE hymn_id = ?").bind(hymnId).first())?.sections_json || "[]";
+        if (current !== (data.baselineRepeats || "[]")) return json({ error: "Repeated sections changed since this suggestion was made. Your manual work is saved; reject this suggestion to keep it." }, 409);
+        // Keep repeat sections for the other channels; the suggestion replaces the Hazzat ones.
+        const merged = [...JSON.parse(current).filter(section => section.key !== "hazzatTimings"), ...data.repeats];
+        repeatWrite = env.DB.prepare(`INSERT INTO hymn_repeat_sections (hymn_id,sections_json) SELECT ?,? WHERE COALESCE((SELECT sections_json FROM hymn_repeat_sections WHERE hymn_id = ?), '[]') = ?
+          ON CONFLICT(hymn_id) DO UPDATE SET sections_json=excluded.sections_json`).bind(hymnId, JSON.stringify(merged), hymnId, current);
+      }
       const update = await env.DB.batch([
         env.DB.prepare(`UPDATE hymn_projects SET ${config.times} = ?${row.section === "hazzat" ? ", hazzat_line_timings_json = ?" : ""}, status = 'draft', completed_at = NULL, updated_at = ?
           WHERE hymn_id = ? AND ${config.source} = ? AND COALESCE(${config.content}, '') = ? AND ${config.times} = ? AND (? != 'hazzat' OR hazzat_line_timings_json = ?)
@@ -654,7 +679,8 @@ async function alignmentSuggestions(request, env, hymnId) {
           .bind(JSON.stringify(data.times),...extraValues,now,hymnId,row.source_url,data.content,data.baseline,row.section,data.baselineLines,row.id,row.version),
         env.DB.prepare(`UPDATE alignment_suggestions SET status = 'accepted', payload_json = ?, version = version + 1, updated_at = ?
           WHERE id = ? AND version = ? AND EXISTS (SELECT 1 FROM hymn_projects WHERE hymn_id = ? AND updated_at = ?)`)
-          .bind(JSON.stringify(data),now,row.id,row.version,hymnId,now)
+          .bind(JSON.stringify(data),now,row.id,row.version,hymnId,now),
+        ...(repeatWrite ? [repeatWrite] : [])
       ]);
       if (!update[0].meta.changes) return json({ error: "The hymn changed while accepting. Reload to protect your latest edits." }, 409);
       return json({ suggestion: suggestionFromRow(await env.DB.prepare("SELECT * FROM alignment_suggestions WHERE id = ?").bind(row.id).first()), project: await projectWithMedia(env.DB, await getRow(env.DB,hymnId)) });

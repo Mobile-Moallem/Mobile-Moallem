@@ -10,6 +10,8 @@ const ctx = { Math, Float64Array, Float32Array, Int32Array, Uint8Array, Array, S
 runInNewContext(readFileSync(new URL('../application/dist/client/hazzat-reader.js', here), 'utf8'), ctx);
 const reader = ctx.HazzatReader;
 const RATE = 4000;
+const SECTIONS = Object.fromEntries(JSON.parse(readFileSync(new URL('../live-backup/tables/hymn_repeat_sections.json', here)))
+  .map(r => [r.hymn_id, JSON.parse(r.sections_json || '[]').filter(s => s.key === 'hazzatTimings')]));
 
 function pieces(word) { return word.split(/(?<=\.)(?=[^\s).])/u).filter(Boolean); }
 
@@ -33,13 +35,23 @@ for (const mode of modes) {
     if (d.clip) args.clip = { start: d.clip[0], end: d.clip[1] };
     if (mode === 'anchored') {
       const gaps = timed.slice(1).map((t, i) => t - timed[i]).sort((a, b) => a - b);
-      args.start = timed[0]; args.end = timed.at(-1) + gaps[Math.floor(gaps.length / 2)] * 1.5;
+      const allT = [...timed, ...(SECTIONS[d.hymn_id] || []).flatMap(s => s.passes.flat()).filter(t => t != null)];
+      args.start = Math.min(...allT); args.end = Math.max(...allT) + gaps[Math.floor(gaps.length / 2)] * 1.5;
     }
     const s0 = Date.now();
-    const { times } = reader.read(args);
+    const { times, repeats } = reader.read(args);
     const ms = Date.now() - s0;
     const firstPiece = d.tokens.map((_, wi) => owner.indexOf(wi));
-    const errs = d.times.map((t, wi) => t == null ? null : Math.abs(times[firstPiece[wi]] - t)).filter(e => e != null).sort((a, b) => a - b);
+    const errs = d.times.map((t, wi) => t == null ? null : Math.abs(times[firstPiece[wi]] - t)).filter(e => e != null);
+    // Repeat passes: the editor's saved repeat sections (word indices) vs the reader's (piece indices).
+    for (const sec of SECTIONS[d.hymn_id] || []) sec.passes.forEach((pass, k) => pass.forEach((t, j) => {
+      if (t == null) return;
+      const p = firstPiece[sec.startIndex + j];
+      const r = repeats.find(r => r.startIndex <= p && p <= r.endIndex);
+      const got = r?.passes[k]?.[p - r.startIndex];
+      errs.push(Number.isFinite(got) ? Math.abs(got - t) : Infinity);
+    }));
+    errs.sort((a, b) => a - b);
     rows.push({ hymn: file.replace('.json', ''), errs, ms });
   }
   const pct = (e, s) => (100 * e.filter(x => x <= s).length / e.length).toFixed(0).padStart(3) + '%';

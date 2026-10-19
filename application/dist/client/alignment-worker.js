@@ -105,7 +105,7 @@
   function analyze({pcm,rate,parts,reference,glyphs,lineStart,clip}) {
     if(glyphs?.length&&globalThis.HazzatReader){
       const read=globalThis.HazzatReader.read({pcm,rate,glyphs,lineStart,clip});
-      return {times:read.times,duration:read.duration,method:'hazzat-reader',message:'Read from the Hazzat: note lengths from the notation, breaths at line starts and breath marks. Check pieces after long held notes.'};
+      return {times:read.times,repeats:read.repeats,duration:read.duration,method:'hazzat-reader',message:read.repeats.length?'Read from the Hazzat, including '+read.repeats.length+' repeated '+(read.repeats.length===1?'section':'sections')+'. Check pieces after long held notes.':'Read from the Hazzat: note lengths from the notation, breaths at line starts and breath marks. Check pieces after long held notes.'};
     }
     const target=features(pcm,rate);
     if(reference?.pcm&&reference.times.length===parts.length&&reference.times.every(Number.isFinite)){

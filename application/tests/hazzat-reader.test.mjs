@@ -107,3 +107,83 @@ test('the server keeps the reader method on saved suggestions', async () => {
   assert.equal(saved.method, 'hazzat-reader');
   assert.deepEqual(saved.times, [0.5, 1.5]);
 });
+
+test('repeat marks in the Hazzat are sung again, and each pass is timed', () => {
+  const glyphs = ['z', '(x', 'zc.', 'x)2', 'c', 'x.'];
+  assert.deepEqual(JSON.parse(JSON.stringify(reader.repeatGroups(glyphs))), [{ start: 1, end: 3, times: 2 }]);
+  // ')2' at the start of a piece closes the group before it
+  assert.deepEqual(JSON.parse(JSON.stringify(reader.repeatGroups(['(z', 'x.', ')2zz.', 'x']))), [{ start: 0, end: 1, times: 2 }]);
+  const order = JSON.parse(JSON.stringify(reader.sungOrder(glyphs).map(([i]) => i)));
+  assert.deepEqual(order, [0, 1, 2, 3, 1, 2, 3, 4, 5]);
+  const sung = order.map(i => glyphs[i]);
+  const { pcm, truth } = synth(sung, order.map((i, k) => k > 0 && order[k - 1] !== i - 1));
+  const { times, repeats } = reader.read({ pcm, rate: 4000, glyphs, lineStart: glyphs.map(() => false) });
+  assert.equal(times.length, glyphs.length);
+  assert.equal(repeats.length, 1);
+  assert.deepEqual(JSON.parse(JSON.stringify([repeats[0].key, repeats[0].startIndex, repeats[0].endIndex, repeats[0].passes.length])), ['hazzatTimings', 1, 3, 1]);
+  const second = repeats[0].passes[0];
+  assert.ok(second[0] > times[3], 'the second pass starts after the first pass ends');
+  const all = [times[0], times[1], times[2], times[3], ...second, times[4], times[5]];
+  const errs = all.map((t, k) => Math.abs(t - truth[k]));
+  assert.ok(errs.filter(e => e <= 0.3).length >= errs.length - 1, 'pieces within 0.3 s: ' + errs.map(e => e.toFixed(2)));
+});
+
+function server() {
+  const db = new DatabaseSync(':memory:');
+  for (const f of ['0000_complete_caretaker', '0001_hymn_text', '0002_coptic_text', '0003_section_recordings', '0004_alignment_suggestions']) db.exec(readFileSync(new URL('drizzle/' + f + '.sql', root), 'utf8'));
+  const wrap = (sql, values = []) => ({ bind(...a) { return wrap(sql, a); }, async first() { return db.prepare(sql).get(...values) || null; }, async all() { return { results: db.prepare(sql).all(...values) }; }, async run() { const r = db.prepare(sql).run(...values); return { meta: { changes: Number(r.changes) } }; } });
+  const blobs = new Map();
+  const env = { DB: { prepare: wrap, async batch(s) { db.exec('BEGIN'); try { const out = []; for (const x of s) out.push(await x.run()); db.exec('COMMIT'); return out; } catch (e) { db.exec('ROLLBACK'); throw e; } } }, BUCKET: { async put(k, b) { blobs.set(k, await new Response(b).arrayBuffer()); }, async head(k) { return blobs.has(k) ? {} : null; }, async get(k) { const d = blobs.get(k); return d ? { body: d, writeHttpMetadata: h => h.set('content-type', 'audio/wav') } : null; } }, ASSETS: { fetch: () => new Response('asset') } };
+  const hymn = 'annual/test/repeats';
+  const req = async (path, method = 'GET', body) => {
+    const headers = { 'oai-authenticated-user-email': 'mikezaki174@gmail.com' };
+    if (body) headers['content-type'] = body instanceof Uint8Array ? 'audio/wav' : 'application/json';
+    const r = await app.fetch(new Request('https://test.local' + path, { method, headers, body: body ? (body instanceof Uint8Array ? body : JSON.stringify(body)) : undefined }), env);
+    return { status: r.status, ...(await r.json()) };
+  };
+  const project = { title: 'T', season: 'annual', service: 'test', timings: [], copticTimings: [], hazzatTimings: [null, null, null], hazzatLineTimings: [], textContent: '', copticText: '',
+    notationHtml: '<span class="HazzatFont">(z x)2 c</span>', recordingUrl: 'https://media.tasbeha.org/mp3/test.mp3',
+    repeatSections: [{ key: 'timings', startIndex: 0, endIndex: 0, passes: [[9]] }] };
+  const api = '/api/alignment-suggestions?hymnId=' + hymn;
+  const act = (j, action, b = {}) => req(api, 'POST', { id: j.id, version: j.version, action, ...b });
+  const parts = [{ label: 'Piece 1', weight: 1, glyph: '(z', font: 'HazzatFont', stack: 0, line: true }, { label: 'Piece 2', weight: 1, glyph: 'x)2', font: 'HazzatFont', stack: 0, line: false }, { label: 'Piece 3', weight: 1, glyph: 'c', font: 'HazzatFont', stack: 0, line: false }];
+  async function pending(repeats) {
+    await req('/api/project?hymnId=' + hymn, 'PUT', project);
+    await req('/api/upload/audio?hymnId=' + hymn + '&section=hazzat', 'PUT', new Uint8Array([1, 2, 3]));
+    let job = (await req(api)).suggestions.find(j => j.section === 'hazzat');
+    job = (await act(job, 'prepare', { parts, signature: 's', granularity: 'piece' })).suggestion;
+    return act(job, 'result', { times: [1, 2, 5], repeats, duration: 9, method: 'hazzat-reader' });
+  }
+  return { req, act, pending, hymn, project };
+}
+
+test('accepting a reader suggestion also saves its repeat passes and keeps other channels', async () => {
+  const s = server();
+  const repeats = [{ key: 'hazzatTimings', startIndex: 0, endIndex: 1, passes: [[3, 4]] }];
+  const saved = await s.pending(repeats);
+  assert.equal(saved.status, 200);
+  assert.deepEqual(saved.suggestion.repeats, repeats);
+  const accepted = await s.act(saved.suggestion, 'accept', { times: [1, 2, 5], signature: 's' });
+  assert.equal(accepted.status, 200, accepted.error);
+  assert.deepEqual(accepted.project.hazzatTimings, [1, 2, 5]);
+  assert.deepEqual(accepted.project.repeatSections, [{ key: 'timings', startIndex: 0, endIndex: 0, passes: [[9]] }, ...repeats]);
+});
+
+test('bad repeat passes are refused, and repeats changed by hand are never overwritten', async () => {
+  const s = server();
+  for (const bad of [[{ key: 'hazzatTimings', startIndex: 0, endIndex: 5, passes: [[1, 2, 3, 4, 5, 6]] }],
+    [{ key: 'hazzatTimings', startIndex: 0, endIndex: 1, passes: [[4, 3]] }],
+    [{ key: 'hazzatTimings', startIndex: 0, endIndex: 1, passes: [[3, 99]] }],
+    [{ key: 'timings', startIndex: 0, endIndex: 1, passes: [[3, 4]] }]]) {
+    assert.equal((await s.pending(bad)).status, 400);
+  }
+  const saved = await s.pending([{ key: 'hazzatTimings', startIndex: 0, endIndex: 1, passes: [[3, 4]] }]);
+  assert.equal(saved.status, 200);
+  // An editor changes repeats by hand while the suggestion waits for review.
+  const manual = [{ key: 'hazzatTimings', startIndex: 0, endIndex: 1, passes: [[3.5, 4.5]] }];
+  const project = (await s.req('/api/project?hymnId=' + s.hymn)).project;
+  await s.req('/api/project?hymnId=' + s.hymn, 'PUT', { ...s.project, hazzatTimings: project.hazzatTimings, repeatSections: manual });
+  const refused = await s.act(saved.suggestion, 'accept', { times: [1, 2, 5], signature: 's' });
+  assert.equal(refused.status, 409);
+  assert.deepEqual((await s.req('/api/project?hymnId=' + s.hymn)).project.repeatSections, manual);
+});
