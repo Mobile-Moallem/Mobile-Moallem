@@ -52,7 +52,11 @@ for (const mode of modes) {
       errs.push(Number.isFinite(got) ? Math.abs(got - t) : Infinity);
     }));
     errs.sort((a, b) => a - b);
-    rows.push({ hymn: file.replace('.json', ''), errs, ms });
+    if (process.env.LINES) {
+      // Only the first piece of each notation line (what a line-by-line view would show).
+      const lineErrs = d.times.map((t, wi) => (t == null || !(wi === 0 || d.line_start[wi])) ? null : Math.abs(times[firstPiece[wi]] - t)).filter(e => e != null).sort((a, b) => a - b);
+      rows.push({ hymn: file.replace('.json', ''), errs: lineErrs, ms });
+    } else rows.push({ hymn: file.replace('.json', ''), errs, ms });
   }
   const pct = (e, s) => (100 * e.filter(x => x <= s).length / e.length).toFixed(0).padStart(3) + '%';
   console.log(`\n${mode.toUpperCase()} (browser engine, 4 kHz)  ${((Date.now() - t0) / 1000).toFixed(0)}s`);
