@@ -37,6 +37,28 @@ fixed two of them but hurt two others and was 4x slower, so it was not kept.
 Per-hymn numbers: `results-browser-18-anchored.txt`, `results-browser-18-auto.txt`.
 Tests: `application/tests/hazzat-reader.test.mjs`.
 
+## Words only (no Hazzat)
+
+`HazzatReader.readWords({pcm, rate, words, lineStart, clip, start, end})` times text words with
+the same engine. With no notation, a word's expected length is `0.6 + 0.4 x letters`, x2.2 when it
+ends a phrase ('.' or end of line) and x1.4 at a half verse ('@' or ','); a breath is expected
+after those. Measured on hand-timed Coptic words: letters predict mid-line word length only
+weakly (r ~0.47), phrase-final words last ~2.5x, half-verse words ~1.5x.
+
+`node eval-words.mjs` (data in `words-data/`, built from the backup's `coptic_text`,
+`coptic_timings_json` and Coptic recordings; not committed). `results-words-only.txt`:
+
+| Hymn (words) | within 0.25 s | 0.5 s | 1 s | 2 s |
+|---|---|---|---|---|
+| 3rd Canticle (459), fully automatic | 39% | 65% | 91% | 99% |
+| Adam Sunday Psali (230), start/end marked | 26% | 52% | 81% | 94% |
+| Doxa Patri (17), start/end marked | 18% | 18% | 29% | 41% |
+
+Works on hymns sung about one note per syllable (canticles, psalis). Fails on long melismas
+(Doxa Patri holds single syllables for many notes): only the Hazzat says how long. Settings were
+picked on these same hymns (and Adam Psali is sensitive to them), so expect less on new ones.
+Automatic start found Adam Psali's start 6 s late; the editor's clip fixes that.
+
 ## Data
 
 9 hymns with uploaded recordings and complete Hazzat timings, 2,102 timed words.

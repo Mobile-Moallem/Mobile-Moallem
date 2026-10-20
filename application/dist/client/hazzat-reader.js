@@ -244,10 +244,10 @@
     const n = glyphs.length;
     const onset = cache.onset || (cache.onset = onsetScore(F));
     const bonus = cache.bonus || (cache.bonus = pauseBonus(F));
-    const weights = breathWeights(glyphs, lineStart);
+    const weights = cache.weights || breathWeights(glyphs, lineStart);
     const opt = { sigma: 0.45, alpha: 0.3, bonus, weights, gamma: 1.0 };
     const start = Math.round(startSec / HOP), end = Math.round(endSec / HOP);
-    const rel = Float64Array.from(glyphs, units);
+    const rel = cache.rel || Float64Array.from(glyphs, units);
     let rs = 0; for (const r of rel) rs += r;
     const span = end - start;
     const base = Float64Array.from(rel, r => r / rs * span);
@@ -292,8 +292,8 @@
   }
 
   function fitCost(glyphs, lineStart, F, start, end, cache) {
-    const rel = Float64Array.from(glyphs, units);
-    const opt = { sigma: 0.45, alpha: 0.3, bonus: cache.bonus, weights: breathWeights(glyphs, lineStart), gamma: 1.0 };
+    const rel = cache.rel || Float64Array.from(glyphs, units);
+    const opt = { sigma: 0.45, alpha: 0.3, bonus: cache.bonus, weights: cache.weights || breathWeights(glyphs, lineStart), gamma: 1.0 };
     return dpAlign(rel, start, end, cache.onset, opt).cost / glyphs.length;
   }
   function pick(list, max) {
@@ -302,7 +302,7 @@
   }
   function findEnd(glyphs, lineStart, F, startSec, cache) {
     const [, e0] = singingSpan(F), sf = Math.round(startSec / HOP), n = glyphs.length;
-    let total = 0; for (const g of glyphs) total += units(g);
+    let total = 0; for (const u of cache.rel || glyphs.map(units)) total += u;
     const q = quietness(F), k = Math.floor(0.4 / HOP), cands = new Set([e0]);
     const loEnd = sf + 0.45 * total / HOP, hiEnd = Math.min(e0, sf + 1.1 * total / HOP);
     for (let i = sf + 1; i < e0 - k; i++) {
@@ -397,7 +397,48 @@
     return { times, repeats, duration: Math.round(F.duration * 100) / 100, start: s, end: e };
   }
 
-  const api = { read, repeatGroups, sungOrder, features, units, breathWeights, singingSpan, pauseCandidates, HOP };
+  // ---------- words only (no Hazzat) ----------
+  /* Without notation the best length clue is the word itself: sung words last roughly in
+     proportion to their letters, and the last word of a phrase is held. Measured on hand-timed
+     Coptic words: phrase-final words ('.' or line end) last ~2.2x, half-verse words ('@' or ',')
+     ~1.4x a mid-phrase word (0.6 + 0.4 per letter). A new phrase usually starts after a breath. */
+  function isPhraseEnd(words, lineStart, i) { return i === words.length - 1 || Boolean(lineStart[i + 1]) || /[.:!?]$/u.test(words[i]); }
+  function wordUnits(words, lineStart) {
+    return Float64Array.from(words, (w, i) => {
+      const letters = (w.toLowerCase().match(/[a-z\]\[;]/gu) || []).length;
+      let u = 0.6 + 0.4 * letters;
+      if (isPhraseEnd(words, lineStart, i)) u *= 2.2;
+      else if (/[@,]$/u.test(w)) u *= 1.4;
+      return u;
+    });
+  }
+  function wordWeights(words, lineStart) {
+    const w = new Float64Array(words.length).fill(-0.25);
+    w[0] = 0;
+    for (let i = 1; i < words.length; i++) if (/[@,]$/u.test(words[i - 1]) || isPhraseEnd(words, lineStart, i - 1)) w[i] = 1;
+    return w;
+  }
+  /* words: the text words in order; lineStart: true where a word begins a text line. */
+  function readWords({ pcm, rate, words, lineStart, clip, start, end }) {
+    if (!words?.length) throw new Error('Add the text first.');
+    const F = features(pcm, rate);
+    if (percentile(F.rmsDb, 90) < -80) throw new Error('This recording is silent or too quiet to align.');
+    const ls = words.map((_, i) => Boolean(lineStart?.[i]));
+    const cache = { onset: onsetScore(F), bonus: pauseBonus(F), rel: wordUnits(words, ls), weights: wordWeights(words, ls) };
+    let s = Number.isFinite(start) ? start : Math.max(clip?.start || 0, singingSpan(F)[0] * HOP);
+    let e = end;
+    if (!Number.isFinite(e)) {
+      e = findEnd(words, ls, F, s, cache);
+      if (Number.isFinite(clip?.end)) e = Math.min(e, clip.end);
+      if (!Number.isFinite(start)) s = Math.max(s, findStart(words, ls, F, e, cache));
+    }
+    e = Math.min(e, F.duration - 0.05);
+    if (e - s < words.length * 0.06) throw new Error('The recording is too short for this much text.');
+    const times = alignPieces(words, ls, F, s, e, cache);
+    return { times, duration: Math.round(F.duration * 100) / 100, start: s, end: e };
+  }
+
+  const api = { read, readWords, wordUnits, wordWeights, repeatGroups, sungOrder, features, units, breathWeights, singingSpan, pauseCandidates, HOP };
   if (typeof module !== 'undefined') module.exports = api;
   globalThis.HazzatReader = api;
 })();

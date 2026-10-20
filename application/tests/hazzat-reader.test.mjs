@@ -187,3 +187,34 @@ test('bad repeat passes are refused, and repeats changed by hand are never overw
   assert.equal(refused.status, 409);
   assert.deepEqual((await s.req('/api/project?hymnId=' + s.hymn)).project.repeatSections, manual);
 });
+
+test('words only: phrase-final and half-verse words are expected to be held longer', () => {
+  const words = ['Ainahi', 'e;be', 'vai@', 'aicaji', 'qen', 'oujom.', 'Bo`h;in'];
+  const lineStart = [true, false, false, false, false, false, true];
+  const u = Array.from(reader.wordUnits(words, lineStart));
+  assert.ok(u[2] > reader.wordUnits(['vai', 'qen'], [true, false])[0] * 1.3);   // '@' half verse
+  assert.ok(u[5] > u[3]);                                         // '.' ends the phrase
+  assert.deepEqual(Array.from(reader.wordWeights(words, lineStart)), [0, -0.25, -0.25, 1, -0.25, -0.25, 1]);
+});
+
+test('words only: reads a synthetic recording without Hazzat', () => {
+  const words = 'Ainahi e;be vai@ aicaji qen oujom@ e;be peknis] `nnai@ P[oic `nte nijom. Bo`h;in `eroi Pa[oic@ Iycouc pirefsenhyt@ e;ri]wou `nta[oic.'.split(' ');
+  const lineStart = words.map((_, i) => i === 0 || i === 12);
+  const units = reader.wordUnits(words, lineStart), rate = 4000, truth = [];
+  const chunks = [new Float32Array(rate * 1.5)]; let t = 1.5, f = 220;
+  words.forEach((w, i) => {
+    if (i && /[@.]$/.test(words[i - 1])) { chunks.push(new Float32Array(Math.round(0.4 * rate))); t += 0.4; }
+    truth.push(t);
+    const n = Math.round(units[i] * 0.3 * rate), tone = new Float32Array(n);
+    f *= i % 2 ? 1.08 : 0.94;
+    for (let k = 0; k < n; k++) tone[k] = 0.3 * Math.min(1, k / (0.05 * rate)) * (k < 0.04 * rate ? 0.15 : 1) * Math.sin(2 * Math.PI * f * k / rate);
+    chunks.push(tone); t += n / rate;
+  });
+  chunks.push(new Float32Array(rate * 1.5));
+  const pcm = new Float32Array(chunks.reduce((s, c) => s + c.length, 0));
+  let o = 0; for (const c of chunks) { pcm.set(c, o); o += c.length; }
+  const { times } = reader.readWords({ pcm, rate, words, lineStart });
+  assert.equal(times.length, words.length);
+  const within = times.filter((x, i) => Math.abs(x - truth[i]) <= 0.3).length / words.length;
+  assert.ok(within >= 0.8, `only ${(within * 100).toFixed(0)}% within 0.3 s: ${times.map((x, i) => (x - truth[i]).toFixed(2))}`);
+});

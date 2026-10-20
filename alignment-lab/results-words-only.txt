@@ -1,0 +1,14 @@
+
+ANCHORED
+hymn                 words median  ≤0.25  ≤0.5   ≤1s   ≤2s | letters-only ≤0.5 ≤1s
+3rd-canticle           459  0.36s   39%   63%   90%   99% |    2%    4%  span 33.5-578.7 (hand 33.52-576.71)
+adam-sunday-psali      230  0.50s   26%   52%   81%   94% |   17%   28%  span 17.5-420.9 (hand 17.49-418.89)
+doxa-patri              17  3.02s   18%   18%   29%   41% |   12%   18%  span 0.8-34.6 (hand 0.85-32.64)
+ALL                    706  0.42s   34%   58%   86%   96% |    7%   12%
+
+AUTO
+hymn                 words median  ≤0.25  ≤0.5   ≤1s   ≤2s | letters-only ≤0.5 ≤1s
+3rd-canticle           459  0.37s   39%   65%   91%   99% |    1%    4%  span 33.5-579.6 (hand 33.52-576.71)
+adam-sunday-psali      230  0.64s   23%   39%   63%   75% |    3%    9%  span 23.2-422.9 (hand 17.49-418.89)
+doxa-patri              17  3.52s    6%   12%   35%   41% |    6%   18%  span 0.1-32.5 (hand 0.85-32.64)
+ALL                    706  0.45s   33%   55%   81%   90% |    2%    6%
