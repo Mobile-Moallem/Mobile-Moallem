@@ -649,7 +649,7 @@ async function alignmentSuggestions(request, env, hymnId) {
       if (!validSuggestedRepeats(body.repeats, data.parts.length, body.duration)) return json({ error: "Invalid suggested repeat passes." }, 400);
       if (body.repeats.length) data.repeats = body.repeats;
     }
-    data.method = ["reference", "hazzat-reader"].includes(body.method) ? body.method : "phrase-estimate";
+    data.method = ["reference", "hazzat-reader", "words-reader"].includes(body.method) ? body.method : "phrase-estimate";
     data.message = cleanString(body.message, 500);
     status = "pending";
   } else if (action === "edit" || action === "accept") {

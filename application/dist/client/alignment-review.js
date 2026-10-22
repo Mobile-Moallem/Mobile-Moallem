@@ -21,6 +21,12 @@
     }
     return words(kind==='coptic'?hymnCopticText(h):hymnText(h)).map(word=>({label:word.slice(0,2000),weight:Math.max(1,Array.from(word.replace(/[^\p{L}]/gu,'')).length/3)}));
   }
+  // True for the first word of each text line (a new line usually follows a breath).
+  // Kept out of the parts so saved suggestion signatures do not change.
+  function wordLineStarts(h,kind){
+    const text=kind==='coptic'?hymnCopticText(h):hymnText(h);
+    return (text||'').split(/\n/u).flatMap(line=>words(line).map((_,i)=>i===0));
+  }
   async function signature(parts){
     const data=new TextEncoder().encode(JSON.stringify(parts));
     const hash=await crypto.subtle.digest('SHA-256',data);
@@ -74,7 +80,7 @@
       if(job.section==='hazzat'&&job.granularity!=='piece'&&job.status==='accepted')card.append(button('Guess each Hazzat piece',()=>enqueue(hymn,job)));
       if(job.status==='pending'&&job.section==='hazzat'&&job.granularity!=='piece')card.append(el('p','Preparing a separate guess for each Hazzat piece…','panel-copy'));
       if(job.status==='pending'&&(job.section!=='hazzat'||job.granularity==='piece')){
-        card.append(el('p',job.method==='reference'?'Matched with the earlier aligned recording. Review before accepting.':job.method==='hazzat-reader'?'Read from the Hazzat and the recording. Spot-check pieces after long held notes before accepting.':'Estimated alignment — review closely.','suggestion-method'));
+        card.append(el('p',job.method==='reference'?'Matched with the earlier aligned recording. Review before accepting.':job.method==='hazzat-reader'?'Read from the Hazzat and the recording. Spot-check pieces after long held notes before accepting.':job.method==='words-reader'?'Read from the words and the recording. Spot-check long held words before accepting.':'Estimated alignment — review closely.','suggestion-method'));
         card.append(el('p',job.message,'panel-copy'));
         card.append(el('p',job.parts.length+' individual '+(job.section==='hazzat'?'pieces':'words')+' to review.','panel-copy'));
         const editor=edits.get(job.id)||{times:[...job.times],dirty:false};edits.set(job.id,editor);
@@ -156,6 +162,13 @@
           payload.glyphs=parts.map(p=>p.glyph);payload.lineStart=parts.map(p=>Boolean(p.line));
           const clip=h.recordingClips?.hazzat;if(clip&&Number.isFinite(clip.start))payload.clip={start:clip.start,end:Number.isFinite(clip.end)?clip.end:undefined};
           payload.reference=null;
+        }else{
+          // Read the words: lengths from the text, breaths at line and verse ends.
+          const lineStart=wordLineStarts(h,job.section);
+          if(lineStart.length===parts.length){
+            payload.words=parts.map(p=>p.label);payload.lineStart=lineStart;
+            const clip=h.recordingClips?.[job.section];if(clip&&Number.isFinite(clip.start))payload.clip={start:clip.start,end:Number.isFinite(clip.end)?clip.end:undefined};
+          }
         }
         const result=await analyze(payload);
         await action(latest,'result',result);edits.delete(latest.id);

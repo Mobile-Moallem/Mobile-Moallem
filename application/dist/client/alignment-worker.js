@@ -102,7 +102,7 @@
     });
     return mapped.every(Number.isFinite)?mapped:null;
   }
-  function analyze({pcm,rate,parts,reference,glyphs,lineStart,clip}) {
+  function analyze({pcm,rate,parts,reference,glyphs,words,lineStart,clip}) {
     if(glyphs?.length&&globalThis.HazzatReader){
       const read=globalThis.HazzatReader.read({pcm,rate,glyphs,lineStart,clip});
       return {times:read.times,repeats:read.repeats,duration:read.duration,method:'hazzat-reader',message:read.repeats.length?'Read from the Hazzat, including '+read.repeats.length+' repeated '+(read.repeats.length===1?'section':'sections')+'. Check pieces after long held notes.':'Read from the Hazzat: note lengths from the notation, breaths at line starts and breath marks. Check pieces after long held notes.'};
@@ -113,6 +113,12 @@
         const mapped=transfer(features(reference.pcm,rate),target,reference.times);
         if(mapped)return {times:mapped,duration:target.duration,method:'reference',message:'Matched to the earlier aligned recording of this hymn. Check repeated phrases and long held notes.'};
       } catch { /* A reference failure must not prevent a reviewable draft. */ }
+    }
+    if(words?.length===parts.length&&globalThis.HazzatReader?.readWords){
+      try{
+        const read=globalThis.HazzatReader.readWords({pcm,rate,words,lineStart,clip});
+        return {times:read.times,duration:read.duration,method:'words-reader',message:'Read from the words: word lengths from the text, breaths at line ends and verse marks. Check long held words; melismatic hymns are better timed from the Hazzat.'};
+      }catch{/* Fall back to the phrase estimate. */}
     }
     return {times:estimate(target,parts),duration:target.duration,method:'phrase-estimate',message:'Estimated from audible phrases and passage lengths. Words and Hazzat have not been recognized; review every time before accepting.'};
   }

@@ -430,7 +430,8 @@
     if (!Number.isFinite(e)) {
       e = findEnd(words, ls, F, s, cache);
       if (Number.isFinite(clip?.end)) e = Math.min(e, clip.end);
-      if (!Number.isFinite(start)) s = Math.max(s, findStart(words, ls, F, e, cache));
+      // A start set by the editor's clip is trusted as is.
+      if (!Number.isFinite(start) && !Number.isFinite(clip?.start)) s = Math.max(s, findStart(words, ls, F, e, cache));
     }
     e = Math.min(e, F.duration - 0.05);
     if (e - s < words.length * 0.06) throw new Error('The recording is too short for this much text.');

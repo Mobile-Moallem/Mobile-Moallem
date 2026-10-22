@@ -83,6 +83,10 @@ test('the worker hands Hazzat pieces to the reader', () => {
   // Word sections still use the phrase estimate.
   const words = ctx.RecordingAlignment.analyze({ pcm, rate: 4000, parts: [{ label: 'one', weight: 1 }, { label: 'two', weight: 1 }] });
   assert.equal(words.method, 'phrase-estimate');
+  // With the words and their line starts, word sections are read by the words reader.
+  const read = ctx.RecordingAlignment.analyze({ pcm, rate: 4000, parts: ['Ainahi', 'e;be', 'vai@', 'qen.'].map(label => ({ label, weight: 1 })), words: ['Ainahi', 'e;be', 'vai@', 'qen.'], lineStart: [true, false, false, false] });
+  assert.equal(read.method, 'words-reader');
+  assert.equal(read.times.length, 4);
 });
 
 test('the server keeps the reader method on saved suggestions', async () => {
@@ -106,6 +110,16 @@ test('the server keeps the reader method on saved suggestions', async () => {
   const saved = (await act(job, 'result', { times: [0.5, 1.5], duration: 4, method: 'hazzat-reader', message: 'Read from the Hazzat.' })).suggestion;
   assert.equal(saved.method, 'hazzat-reader');
   assert.deepEqual(saved.times, [0.5, 1.5]);
+  // English/Coptic word suggestions keep the words-reader method too.
+  await req('/api/project?hymnId=' + hymn, 'PUT', { title: 'T', season: 'annual', service: 'test', timings: [null, null], copticTimings: [], hazzatTimings: [null, null], hazzatLineTimings: [], textContent: 'Hail Mary', copticText: '', notationHtml: '<span class="HazzatFont">z x</span>', recordingUrl: 'https://media.tasbeha.org/mp3/test.mp3' });
+  await req('/api/upload/audio?hymnId=' + hymn + '&section=english', 'PUT', new Uint8Array([1, 2, 3]));
+  let wjob = (await req('/api/alignment-suggestions?hymnId=' + hymn)).suggestions.find(j => j.section === 'english');
+  assert.ok(wjob, 'english suggestion exists');
+  const prep = await act(wjob, 'prepare', { parts: [{ label: 'Hail', weight: 1 }, { label: 'Mary', weight: 1 }], signature: 'w', granularity: 'word' });
+  assert.equal(prep.status, 200, prep.error + ' ' + JSON.stringify(wjob));
+  wjob = prep.suggestion;
+  const wsaved = (await act(wjob, 'result', { times: [0.5, 1.5], duration: 4, method: 'words-reader', message: 'Read from the words.' })).suggestion;
+  assert.equal(wsaved.method, 'words-reader');
 });
 
 test('repeat marks in the Hazzat are sung again, and each pass is timed', () => {
