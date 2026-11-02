@@ -24,7 +24,7 @@ function mapFor(h,section,sourceOverride) {
     let cursor=0,pending='';parts=[];
     for(const node of map.querySelectorAll('.CopticFont,.hazza-mark')) {
       if(node.classList.contains('CopticFont')){const fragment=node.textContent.replace(/\s/gu,'');cursor+=fragment.length;pending+=fragment;continue;}
-      const i=Number(node.dataset.position),glyph=node.textContent.trim(),font=node.firstElementChild.className;
+      const i=Number(node.dataset.position),glyph=node.dataset.glyph??node.textContent.trim(),font=node.dataset.font||node.firstElementChild.className;
       const wi=exactAttachment&&cursor?ends.findIndex(end=>end>=cursor):-1;
       const context=wi>=0?writtenWords.slice(Math.max(0,wi-1),wi+2).join(' '):[...node.closest('.hazzat-stack').querySelectorAll('.CopticFont')].map(n=>n.textContent).join('');
       const previous=parts[parts.length-1];

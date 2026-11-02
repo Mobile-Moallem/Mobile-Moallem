@@ -400,7 +400,17 @@ function updateKaraoke() {
     const mark = passage < 0 ? null : content.querySelector('.hazza-mark[data-position="' + passage + '"]');
     const box = mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
     if (box) box.classList.add("karaoke-line-active");
-    if (mark) { mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true"); }
+    if (mark) {
+      mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true");
+      // Dashes not timed yet light up with the timed dash before them in the same piece.
+      const piece = mark.closest(".hazza-piece");
+      if (piece) for (const next of piece.querySelectorAll(".hazza-dash")) {
+        const at = Number(next.dataset.position);
+        if (at <= passage) continue;
+        if (Number.isFinite(h.hazzatTimings?.[at])) break;
+        next.classList.add("karaoke-active");
+      }
+    }
   } else {
     const key = kind === "coptic" ? "copticTimings" : "timings";
     const index = lastTimedIndex(playbackTimings(h, key, time), time);
@@ -815,9 +825,8 @@ function hazzatHitTokens(text) {
 function expandHazzatTimings(values, counts) {
   return counts.flatMap((count, index) => [values?.[index] ?? null, ...Array(count - 1).fill(null)]);
 }
-function migrateHazzatHitBoxes(h, html, counts) {
-  const marker = "<!-- hazzat-hit-boxes:v2 -->";
-  if (html.includes(marker) || h.id === "annual/liturgy-of-the-word/al-el-qorban" || counts.every(n => n === 1)) return;
+// Splits every saved Hazzat slot into `counts[i]` slots: the old time stays on the first one.
+function expandHazzatIndex(h, counts) {
   const starts = [0];
   for (const count of counts) starts.push(starts.at(-1) + count);
   h.hazzatTimings = expandHazzatTimings(h.hazzatTimings, counts);
@@ -828,14 +837,123 @@ function migrateHazzatHitBoxes(h, html, counts) {
     return { ...section, startIndex: starts[startIndex], endIndex: starts[endIndex + 1] - 1,
       passes: section.passes.map(values => expandHazzatTimings(values, counts.slice(startIndex, endIndex + 1))) };
   });
+}
+const HAZZAT_DASH_MARKER = "<!-- hazzat-hit-boxes:v3 -->";
+function migrateHazzatHitBoxes(h, html, counts) {
+  const marker = "<!-- hazzat-hit-boxes:v2 -->";
+  if (html.includes(marker) || html.includes(HAZZAT_DASH_MARKER) || h.id === "annual/liturgy-of-the-word/al-el-qorban" || counts.every(n => n === 1)) return html;
+  expandHazzatIndex(h, counts);
   // Persist the index format with the notation on the next ordinary editor save.
   h.notationHtml = html + marker;
+  return h.notationHtml;
+}
+/* One hit box per black dash (v3). Positions of each dash inside the Hazzat font's glyphs,
+   in em: [left, right, bottom, top], listed bottom to top (the order they are sung).
+   Measured from fonts/hazzat.ttf. Other symbols (breaths, transitions, arrows, repeat marks)
+   are not dashes and stay part of the score without their own box. */
+const HAZZAT_DASHES = (() => {
+  const L = [[0.005, 0.563, -0.049, 0.019], [0.103, 0.661, 0.098, 0.166], [0.2, 0.758, 0.244, 0.312], [0.298, 0.856, 0.391, 0.458]];
+  const W = [[0.005, 0.591, -0.049, 0.019], [0.103, 0.689, 0.098, 0.166], [0.2, 0.787, 0.244, 0.312], [0.298, 0.884, 0.391, 0.458], [0.396, 0.982, 0.537, 0.605], [0.493, 1.08, 0.684, 0.751], [0.591, 1.177, 0.83, 0.898]];
+  const S = [[0.005, 0.299, -0.049, 0.019], [0.103, 0.396, 0.098, 0.166], [0.2, 0.494, 0.244, 0.312], [0.298, 0.592, 0.391, 0.458], [0.396, 0.689, 0.537, 0.605], [0.493, 0.787, 0.684, 0.751], [0.591, 0.885, 0.83, 0.898]];
+  const U = [[0.041, 0.627, 0.098, 0.166], [0.139, 0.725, 0.244, 0.312], [0.236, 0.823, 0.391, 0.458], [0.334, 0.92, 0.537, 0.605], [0.432, 1.018, 0.684, 0.751], [0.529, 1.116, 0.83, 0.898]];
+  return {
+    z: L.slice(0, 1), x: L.slice(0, 2), c: L.slice(0, 3), v: L, b: W.slice(0, 5), n: W.slice(0, 6), m: W,
+    q: S.slice(0, 1), w: S.slice(0, 2), e: S.slice(0, 3), r: S.slice(0, 4), t: S.slice(0, 5), y: S.slice(0, 6), u: S,
+    s: [U[0]], d: [U[1]], f: [U[2]], g: [U[3]], h: [U[4]], j: [[-0.684, 0.34, -0.134, -0.066]],
+    Z: U.slice(5), X: U.slice(4), C: U.slice(3), V: U.slice(2), B: U.slice(1), N: U,
+  };
+})();
+// Advance width of each dash glyph in em (from the font), used to join continuation dashes.
+const HAZZAT_ADVANCE = { z: 0.519, x: 0.519, c: 0.519, v: 0.519, b: 0.519, n: 0.519, m: 0.519, q: 0.244, w: 0.244, e: 0.244, r: 0.244, t: 0.244, y: 0.244, u: 0.244,
+  s: 0.49, d: 0.49, f: 0.49, g: 0.49, h: 0.49, j: 0, Z: 0.49, X: 0.49, C: 0.49, V: 0.49, B: 0.49, N: 0.49 };
+/* The black dashes of one piece, in the order they are sung. A continuation stroke (s d f g h)
+   drawn at the same height right after a dash makes that dash longer; it is not a new dash. */
+function hazzatDashes(token, font) {
+  if (font !== "HazzatFont") return [];
+  const out = [];
+  let x = 0, previous = null;
+  Array.from(token).forEach((ch, glyph) => {
+    const boxes = HAZZAT_DASHES[ch];
+    if (!boxes) { previous = null; return; }
+    if (!previous) x = 0;
+    const created = [];
+    boxes.forEach((box, k) => {
+      const left = x + box[0];
+      const joined = previous?.find(d => Math.abs(d.box[2] - box[2]) < 0.01 && left <= d.right + 0.05);
+      if (joined) { joined.right = Math.max(joined.right, x + box[1]); created.push(joined); return; }
+      const dash = { glyph, ch, k, of: boxes.length, box, origin: x, right: x + box[1] };
+      out.push(dash); created.push(dash);
+    });
+    previous = created;
+    x += HAZZAT_ADVANCE[ch];
+  });
+  return out;
+}
+// A piece with no dash (for example a lone breath mark) keeps one box, so no saved time is lost.
+function migrateHazzatDashes(h, html, pieces) {
+  if (html.includes(HAZZAT_DASH_MARKER)) return html;
+  const counts = pieces.map(({ token, font }) => Math.max(1, hazzatDashes(token, font).length));
+  if (counts.some(n => n !== 1)) expandHazzatIndex(h, counts);
+  h.notationHtml = html + HAZZAT_DASH_MARKER;
+  return h.notationHtml;
+}
+function hazzatMarkClick(h, position) {
+  if (!aligning && !Number.isFinite(h.hazzatTimings?.[position])) {
+    showPlayer("hazzat");
+    setHelp("This passage has no timing yet. You can play the recording from the controls.");
+    return;
+  }
+  activateTiming(h, "hazzatTimings", position);
+}
+// Draws one Hazzat piece with the font as usual, plus a transparent button over each dash.
+function hazzatDashPiece(h, token, className, nextPosition) {
+  const piece = document.createElement("span");
+  piece.className = className + " hazza-piece";
+  const dashes = hazzatDashes(token, className);
+  Array.from(token).forEach((ch, glyphIndex) => {
+    const own = dashes.filter(d => d.glyph === glyphIndex);
+    if (!own.length) { piece.append(document.createTextNode(ch)); return; }
+    const boxes = HAZZAT_DASHES[ch];
+    const glyph = document.createElement("span");
+    glyph.className = "hazza-glyph";
+    const anchor = document.createElement("span");
+    anchor.className = "hazza-anchor";
+    glyph.append(anchor, document.createTextNode(ch));
+    for (const dash of own) {
+      const [left, , bottom, top] = dash.box, k = dash.k;
+      // Stacked dashes split the space between them; the outer ones get extra room to tap.
+      const low = k === 0 ? bottom - 0.32 : (bottom + boxes[k - 1][3]) / 2;
+      const high = k === boxes.length - 1 ? top + (boxes.length === 1 ? 0.45 : 0.3) : (top + boxes[k + 1][2]) / 2;
+      const right = dash.right - dash.origin;
+      const position = nextPosition();
+      const timed = Number.isFinite(h.hazzatTimings?.[position]);
+      const mark = document.createElement("button");
+      mark.type = "button";
+      mark.dataset.position = String(position);
+      mark.dataset.glyph = ch;
+      mark.dataset.font = className;
+      mark.className = "hazza-mark hazza-dash" + (timed ? " timed" : "") + (aligning ? " marking" : "");
+      mark.style.left = (left - 0.03).toFixed(3) + "em";
+      mark.style.width = (right - left + 0.06).toFixed(3) + "em";
+      mark.style.bottom = low.toFixed(3) + "em";
+      mark.style.height = (high - low).toFixed(3) + "em";
+      mark.setAttribute("aria-label", "Hazzat dash " + (position + 1) + (boxes.length > 1 ? " (" + (k + 1) + " of " + boxes.length + " in this stack)" : "") + (timed ? ", " + stamp(h.hazzatTimings[position]) : ""));
+      mark.addEventListener("click", () => hazzatMarkClick(h, position));
+      anchor.append(mark);
+    }
+    piece.append(glyph);
+  });
+  return piece;
 }
 function safeHazzat(html, h) {
   const source = new DOMParser().parseFromString("<div>" + html + "</div>", "text/html").body.firstElementChild;
-  const counts = [...source.querySelectorAll(".HazzatFont, .HazzatVFont")].flatMap(span =>
+  const hazzatSpans = [...source.querySelectorAll(".HazzatFont, .HazzatVFont")];
+  const counts = hazzatSpans.flatMap(span =>
     (span.textContent || "").split(/\s+/u).filter(Boolean).map(token => hazzatHitTokens(token).filter(Boolean).length));
-  migrateHazzatHitBoxes(h, html, counts);
+  html = migrateHazzatHitBoxes(h, html, counts);
+  const pieces = hazzatSpans.flatMap(span => hazzatHitTokens(span.textContent || "").filter(t => t && !/^\s+$/u.test(t))
+    .map(token => ({ token, font: span.classList.contains("HazzatFont") ? "HazzatFont" : "HazzatVFont" })));
+  migrateHazzatDashes(h, html, pieces);
   const output = document.createElement("div");
   output.className = "hazzat-score";
   let index = 0;
@@ -869,6 +987,8 @@ function safeHazzat(html, h) {
       for (const token of hazzatHitTokens(element.textContent || "", h.id)) {
         if (!token) continue;
         if (/^\s+$/u.test(token)) { target.append(document.createTextNode(token)); continue; }
+        const dashes = hazzatDashes(token, className);
+        if (dashes.length) { target.append(hazzatDashPiece(h, token, className, () => index++)); continue; }
         const mark = document.createElement("button");
         const position = index++;
         mark.type = "button";
