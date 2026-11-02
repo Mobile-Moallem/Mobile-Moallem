@@ -22,6 +22,11 @@ jobs:
           node-version: '24'
       - name: Check the secrets are set
         run: test -n "$CLOUDFLARE_API_TOKEN" && test -n "$CLOUDFLARE_ACCOUNT_ID" || (echo "Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID in GitHub > Settings > Secrets and variables > Actions" && exit 1)
+      - name: Check what the Cloudflare key can reach
+        run: |
+          npx --yes wrangler@4.151.2 whoami || true
+          echo "--- D1 (database) access:"; npx --yes wrangler@4.151.2 d1 list || echo "NO D1 ACCESS"
+          echo "--- R2 (recordings) access:"; npx --yes wrangler@4.151.2 r2 bucket list || echo "NO R2 ACCESS"
       - name: Run the site's tests
         working-directory: application
         run: npm test
