@@ -1,0 +1,33 @@
+// Test copy of Mobile Moallem on Cloudflare (not mobilemoallem.com).
+// Uses the staging database and recording storage only; never production.
+{
+  "name": "mobile-moallem-staging",
+  "main": "cloudflare/worker.mjs",
+  "compatibility_date": "2026-10-15",
+  // Temporary test address: mobile-moallem-staging.<account>.workers.dev
+  "workers_dev": true,
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  // Editor sign-in stays closed until Cloudflare Access is set up for the test address.
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "https://REPLACE.cloudflareaccess.com",
+    "ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUD"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mobile-moallem-staging",
+      "database_id": "07f41135-03e3-4f36-b346-f67b73e7e830",
+      "migrations_dir": "drizzle"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "mobile-moallem-staging-media"
+    }
+  ]
+}

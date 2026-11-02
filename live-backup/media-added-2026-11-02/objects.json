@@ -1,0 +1,95 @@
+{
+ "note": "Recordings uploaded to the live site after the 2026-10-15 backup. Fetched from mobilemoallem.com/api/media/recordings/<id> on 2026-11-02 (full files, sizes match the server).",
+ "objects": [
+  {
+   "key": "recordings/2e4b8695-eb77-4770-bc2a-8a010e73bd92",
+   "size": 2087077,
+   "sha256": "c381ae34e93d8627e49f232949998162e133dd8e8a3e4e44eae96dd5215132df",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/3b70e422-67d8-4987-b0fc-b076461c1adb",
+   "size": 3341003,
+   "sha256": "7722ac03cf6e7542d50eb90c32f2fe1962b69c3b0a95802c95ebf90e1cec40ed",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/3d654ee4-ad4e-4e31-a4a4-251cee52ef1c",
+   "size": 1524922,
+   "sha256": "3466382dbde1dc355e6f97ccc6db4c5a4dca09a9de31c64e8f5be7359f5b6e50",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/47423580-d833-49a0-af58-1fad61658de8",
+   "size": 2087077,
+   "sha256": "c381ae34e93d8627e49f232949998162e133dd8e8a3e4e44eae96dd5215132df",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/50504721-f155-4a7e-a796-df05d1118969",
+   "size": 11775789,
+   "sha256": "a8023df643f3088a1ca7a6649a0f8e6525366d426e4ca8a0702247f54fc5443e",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/70bbe9a7-0cb7-4872-a1b5-7b795b6c1bcf",
+   "size": 1240414,
+   "sha256": "8e79408a00037db6571a1bbfdd632b4ad226f69cc9ee530bcf8173e864e09645",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/85e43e5e-b7bc-48da-88b4-885cbedbd663",
+   "size": 8386976,
+   "sha256": "68785742558779e0469ef9c59bf5180274f13d3565dc31604af62a64e0c389f8",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/99b71a69-3d9e-46d4-8f27-70b839061af9",
+   "size": 1240414,
+   "sha256": "8e79408a00037db6571a1bbfdd632b4ad226f69cc9ee530bcf8173e864e09645",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/b8aeb364-73a5-41e3-b3c5-36b7b0f506d5",
+   "size": 823204,
+   "sha256": "c851cfb492f142ccf23e0921ae76c7e7a747d06e7e82f27ea052e9b4ccd846d0",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  },
+  {
+   "key": "recordings/e33bf325-617f-433a-8f8c-f50d8086cc97",
+   "size": 19728275,
+   "sha256": "c7436d913af800d60fc522b931bee7c628cbbe803637aa9e2c4396b885406778",
+   "httpMetadata": {
+    "contentType": "audio/mpeg"
+   },
+   "customMetadata": {}
+  }
+ ]
+}
