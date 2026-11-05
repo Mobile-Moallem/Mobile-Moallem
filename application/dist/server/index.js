@@ -782,7 +782,11 @@ async function handleApi(request, env) {
       }
       if (url.pathname === "/api/projects" && request.method === "GET") {
         if (!isEditor(request)) return json({ error: "Editor access required." }, 403);
-        const results = await env.DB.prepare("SELECT hymn_id,title,season,service,status,updated_at,completed_at FROM hymn_projects WHERE owner_email = ? ORDER BY updated_at DESC LIMIT 1000").bind(EDITOR_EMAIL).all();
+        await ensureLibrarySchema(env.DB);
+        // Show the library title (renames live in hymn_library_presentation), falling back to the project title.
+        const results = await env.DB.prepare(`SELECT p.hymn_id,COALESCE(NULLIF(lp.title,''),p.title) AS title,p.season,p.service,p.status,p.updated_at,p.completed_at
+          FROM hymn_projects p LEFT JOIN hymn_library_presentation lp ON lp.hymn_id = p.hymn_id
+          WHERE p.owner_email = ? ORDER BY p.updated_at DESC LIMIT 1000`).bind(EDITOR_EMAIL).all();
         return json({ projects: results.results || [] });
       }
       if (url.pathname === "/api/alignment-suggestions" && ["GET", "POST"].includes(request.method)) return await alignmentSuggestions(request, env, hymnId);

@@ -1767,6 +1767,21 @@ function changeReaderScale(amount) {
   $("increaseSize").disabled = readerScale >= 2;
 }
 window.addEventListener("hashchange", route);
+// Another tab or editor may have renamed, added or removed hymns: refresh the library when this tab is shown again.
+async function refreshLibraryState() {
+  if (editingLibrary || document.visibilityState !== "visible") return;
+  try {
+    const response = await fetch("/api/library", { cache: "no-store" });
+    if (!response.ok || editingLibrary) return;
+    const data = await response.json();
+    customLibrary = data;
+    hymnLibraryState = data.hymnState || {};
+    if (!$("seasonsView").hidden) renderSeasons();
+    else if (!$("hymnsView").hidden) renderLibrary();
+    else if (!$("readerView").hidden && current()) $("hymnTitle").textContent = displayHymnName(current());
+  } catch {}
+}
+document.addEventListener("visibilitychange", () => { void refreshLibraryState(); });
 $("seasonSearch").addEventListener("input", renderSeasons);
 $("search").addEventListener("input", renderLibrary);
 $("projectSearch").addEventListener("input", renderProjects);

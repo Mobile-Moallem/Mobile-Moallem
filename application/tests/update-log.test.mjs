@@ -96,3 +96,10 @@ test('approval refuses stale reviews, empty updates and non-editors',async()=>{
   assert.equal((await f.call('/api/updates/approve',{method:'POST',body:{entryIds:all,bump:'minor'},origin:'https://evil.test'})).status,403);
   assert.deepEqual((await (await f.call('/api/updates',{editor:null})).json()).updates,[]);
 });
+
+test('My projects shows a renamed hymn by its new title',async()=>{
+  const f=fixture();
+  await f.call('/api/library/hymn-state',{method:'POST',body:{action:'rename',hymnId:hymn,title:'Aripsalin'}});
+  const {projects}=await (await f.call('/api/projects')).json();
+  assert.equal(projects.find(p=>p.hymn_id===hymn).title,'Aripsalin');
+});
