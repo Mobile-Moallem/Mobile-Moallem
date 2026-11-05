@@ -21,9 +21,11 @@
   <link rel="stylesheet" href="./layout.css?v=78">
   <link rel="stylesheet" href="./dark-mode.css">
   <link rel="stylesheet" href="./language.css">
+  <link rel="stylesheet" href="./updates.css?v=1">
   <script src="./theme.js" defer></script>
-  <script src="./language.js" defer></script>
-  <script src="./site.js?v=77" defer></script>
+  <script src="./language.js?v=2" defer></script>
+  <script src="./updates.js?v=1" defer></script>
+  <script src="./site.js?v=78" defer></script>
   <script type="module" src="./reference-alignment.js"></script>
   <link rel="stylesheet" href="./reference-alignment.css">
   <link rel="stylesheet" href="./recording-slider.css">
@@ -38,6 +40,7 @@
     <main class="workspace">
       <section id="seasonsView" class="screen catalog-screen" aria-labelledby="seasonsTitle">
         <div class="catalog-heading"><div><p class="eyebrow">Coptic hymn library</p><h1 id="seasonsTitle">Seasons</h1><p>Choose a season to see its hymns.</p></div><div class="season-heading-details"><p class="church-attribution" lang="en" dir="ltr">Product of Virgin Mary &amp; Saint Pachomius Coptic Orthodox Church, Stony Point, NY.</p><span id="seasonCount" class="catalog-count"></span></div></div>
+        <div id="updateHome" class="update-home" hidden></div>
         <div class="home-report-actions"><button id="homeReportsBtn" class="button button-outline" type="button" hidden>See all reports</button></div>
         <label class="search-wrap catalog-search"><span class="sr-only">Search seasons</span><span aria-hidden="true">⌕</span><input id="seasonSearch" type="search" placeholder="Search seasons"></label>
         <nav id="seasonNav" class="season-grid" aria-label="Seasons"></nav>
@@ -53,6 +56,12 @@
         <button id="projectReportsBtn" class="button button-outline" type="button" hidden>See all reports</button>
         <label class="search-wrap catalog-search"><span class="sr-only">Search projects</span><span aria-hidden="true">⌕</span><input id="projectSearch" type="search" placeholder="Search saved projects"></label>
         <div id="projectList" class="hymn-grid"></div>
+      </section>
+
+      <section id="updatesView" class="screen catalog-screen" aria-labelledby="updatesTitle" hidden>
+        <a class="back-link" href="#/seasons">← All seasons</a>
+        <div class="catalog-heading"><div><p class="eyebrow">Update log</p><h1 id="updatesTitle">What's new</h1><p id="updatesIntro">Every change to the hymn library, newest first.</p></div></div>
+        <div id="updatesBody"></div>
       </section>
 
       <section id="hymnsView" class="screen catalog-screen" aria-labelledby="seasonTitle" hidden>

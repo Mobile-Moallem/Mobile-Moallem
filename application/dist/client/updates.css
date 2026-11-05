@@ -1,0 +1,44 @@
+/* Update log: home card, history page and editor review page. */
+.update-home{margin:0 0 22px}
+.update-card{display:flex;flex-direction:column;gap:10px;padding:20px 22px;border:1px solid #d6e0e6;border-inline-start:4px solid #b48640;border-radius:12px;background:#fff;color:#18324a;box-shadow:0 3px 12px #14263d08}
+.update-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.update-card-head .eyebrow{margin:0}
+.update-card h2,.update-entry h2{margin:0;font-size:1.3rem;line-height:1.3}
+.update-date{color:#657f8e;font:.85rem/1.4 Arial,sans-serif}
+.update-notes{margin:0;padding-inline-start:1.2em;display:grid;gap:5px;font:.95rem/1.5 Arial,sans-serif;color:#2b4459}
+.update-notes li{overflow-wrap:anywhere}
+.update-more{color:#657f8e;font:.85rem Arial,sans-serif}
+.update-link{color:#30546f;font:700 .9rem Arial,sans-serif;text-decoration:none;white-space:nowrap}
+.update-link:hover{text-decoration:underline}
+.update-link:focus-visible{outline:2px solid #b48640;outline-offset:3px;border-radius:3px}
+.update-pending-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px;padding:10px 14px;border:1px dashed #c5a06a;border-radius:10px;background:#fbf6ec;color:#5d4520;font:.9rem/1.4 Arial,sans-serif}
+.update-list{display:grid;gap:16px;max-width:760px}
+.update-entry{display:flex;flex-direction:column;gap:8px;padding:20px 22px;border:1px solid #d6e0e6;border-radius:12px;background:#fff;color:#18324a}
+.update-empty{color:#657f8e;font:.95rem/1.5 Arial,sans-serif}
+.pending-list{display:grid;gap:10px;max-width:760px;margin:0;padding:0;list-style:none}
+.pending-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid #d6e0e6;border-radius:10px;background:#fff;color:#18324a}
+.pending-item-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.pending-item-text{font:.98rem/1.45 Arial,sans-serif;overflow-wrap:anywhere}
+.pending-item-meta{color:#657f8e;font:.8rem/1.4 Arial,sans-serif}
+.pending-item-actions{display:flex;gap:6px;flex-shrink:0}
+.pending-item input,.pending-add input{width:100%;min-height:38px;padding:7px 10px;border:1px solid #9fb3bf;border-radius:7px;background:#fff;color:#18324a;font:.95rem Arial,sans-serif}
+.pending-add{display:flex;gap:8px;max-width:760px;margin:14px 0 0}
+.pending-add input{flex:1}
+.pending-approve{display:flex;flex-direction:column;gap:12px;max-width:760px;margin-top:22px;padding:18px 20px;border:1px solid #c5a06a;border-radius:12px;background:#fbf6ec;color:#3f2f15}
+.pending-approve fieldset{display:flex;gap:18px;flex-wrap:wrap;margin:0;padding:0;border:0;font:.95rem Arial,sans-serif}
+.pending-approve legend{margin-bottom:8px;font-weight:700}
+.pending-approve label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.pending-status{min-height:1.4em;margin:10px 0 0;font:.9rem/1.4 Arial,sans-serif;color:#8d321f}
+.pending-status.ok{color:#2f6b3a}
+.update-button-small{min-height:32px;padding:5px 10px;font-size:.8rem}
+@media(max-width:700px){.update-card,.update-entry{padding:16px}.pending-item{flex-direction:column}.pending-item-actions{align-self:flex-end}.pending-add{flex-direction:column}}
+
+html[data-theme="dark"] .update-card,html[data-theme="dark"] .update-entry,html[data-theme="dark"] .pending-item{background:#1a2a38;border-color:#405463;color:#eff5f7}
+html[data-theme="dark"] .update-card{border-inline-start-color:#c59b5a}
+html[data-theme="dark"] .update-notes{color:#dce9ef}
+html[data-theme="dark"] .update-date,html[data-theme="dark"] .update-more,html[data-theme="dark"] .update-empty,html[data-theme="dark"] .pending-item-meta{color:#b3c5cf}
+html[data-theme="dark"] .update-link{color:#b9d6e5}
+html[data-theme="dark"] .update-pending-banner,html[data-theme="dark"] .pending-approve{background:#2a2416;border-color:#8a6b3a;color:#f2dfbd}
+html[data-theme="dark"] .pending-item input,html[data-theme="dark"] .pending-add input{background:#1c2b38;border-color:#4b6170;color:#edf4f8}
+html[data-theme="dark"] .pending-status{color:#f0a48f}
+html[data-theme="dark"] .pending-status.ok{color:#9fd8a9}

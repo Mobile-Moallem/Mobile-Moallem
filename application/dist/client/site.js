@@ -1240,6 +1240,7 @@ function showScreen(name) {
   $("seasonsView").hidden = name !== "seasons";
   $("hymnsView").hidden = name !== "hymns";
   $("projectsView").hidden = name !== "projects";
+  $("updatesView").hidden = name !== "updates";
   $("readerView").hidden = name !== "reader";
   if (name !== "reader") {
     hidePlayer();
@@ -1267,11 +1268,17 @@ async function route() {
     showScreen("seasons");
     return;
   }
-  if (!path || path === "seasons") { showScreen("seasons"); return; }
+  if (!path || path === "seasons") { showScreen("seasons"); globalThis.UpdateLog?.refreshHome(); return; }
   if (path === "projects") {
     if (!canEdit) { location.hash = "#/seasons"; return; }
     showScreen("projects");
     await loadProjects();
+    return;
+  }
+  if (path === "updates" || path === "updates/pending") {
+    if (path === "updates/pending" && !canEdit) { location.hash = "#/updates"; return; }
+    showScreen("updates");
+    await globalThis.UpdateLog?.show(path === "updates/pending");
     return;
   }
   if (path === "folder/annual/doxologies") {
@@ -1741,6 +1748,7 @@ async function start() {
     $("projectsLink").hidden = !canEdit;
     $("libraryTools").hidden = !canEdit;
     $("timingBtn").hidden = !canEdit;
+    globalThis.UpdateLog?.init(canEdit);
     renderSeasons();
     await route();
     void fetch("/api/completed").then(response => response.ok ? response.json() : null).then(data => {

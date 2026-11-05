@@ -1,6 +1,7 @@
 import { sectionConfig, validateAlignment, catalogSource } from './alignment-publish.js';
 import { errorReports } from './error-reports.js';
 import { referenceAlignment } from './reference-alignment.js';
+import { beforeChange, afterChange, updatesApi } from './change-log.js';
 const EDITOR_EMAIL = "mikailzaki48@gmail.com";
 const EDITOR_EMAILS = new Set([EDITOR_EMAIL, "mikezaki174@gmail.com", "jghali514@gmail.com", "davidzaki654@gmail.com", "chrisaawad@gmail.com", "gmmh2006@gmail.com"]);
 const EDITOR_ACCOUNT_ID = "60371ed2-84d3-452f-adf4-74c24c065784";
@@ -762,8 +763,7 @@ async function voiceExample(request, env, hymnId) {
   return json({ saved: true, key });
 }
 
-export default {
-  async fetch(request, env) {
+async function handleApi(request, env) {
     const url = new URL(request.url);
     if (!url.pathname.startsWith("/api/")) return env.ASSETS.fetch(request);
     if (!env.DB || !env.BUCKET) return json({ error: "Cloud storage is temporarily unavailable." }, 503);
@@ -817,10 +817,25 @@ export default {
       if (url.pathname === "/api/upload/hazzat-score" && request.method === "POST") return await uploadHazzatScore(request, env, hymnId);
       if (url.pathname === "/api/upload/hazzat" && request.method === "PUT") return await uploadFile(request, env, hymnId, "hazzat");
       if (url.pathname.startsWith("/api/media/") && ["GET","HEAD"].includes(request.method)) return await serveMedia(request, env, url.pathname.slice(11));
+      if (url.pathname === "/api/updates" || url.pathname.startsWith("/api/updates/")) return await updatesApi(request, env, { isEditor, sameOrigin });
       return json({ error: "Not found." }, 404);
     } catch (error) {
       console.error("Mobile Moallem storage request failed", error);
       return json({ error: "Cloud storage is unavailable. Your unsaved changes are still on this page; try again." }, 503);
     }
+}
+
+export default {
+  async fetch(request, env) {
+    // Record editor changes for the update log. Logging is best-effort: it never blocks or fails a save.
+    let change = null;
+    if (env.DB && request.method !== "GET" && request.method !== "HEAD") {
+      try { change = await beforeChange(request, env, { isEditor, getRow, validId }); } catch (error) { console.error("Update log: could not prepare change", error); }
+    }
+    const response = await handleApi(request, env);
+    if (change && response.ok) {
+      try { await afterChange(change, response.clone(), env, { getRow }); } catch (error) { console.error("Update log: could not record change", error); }
+    }
+    return response;
   },
 };
