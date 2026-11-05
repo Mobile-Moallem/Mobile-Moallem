@@ -30,5 +30,35 @@
       "binding": "BUCKET",
       "bucket_name": "mobile-moallem-staging-media"
     }
-  ]
+  ],
+  // PRODUCTION. Deployed only from the `production` branch with `npx wrangler deploy --env production`.
+  // Bindings and vars are not inherited from staging; every value below is production-only.
+  // It starts on next.mobilemoallem.com for testing; mobilemoallem.com is added only at cutover.
+  "env": {
+    "production": {
+      "name": "mobile-moallem",
+      "workers_dev": false,
+      "routes": [
+        { "pattern": "next.mobilemoallem.com", "custom_domain": true }
+      ],
+      "vars": {
+        "ACCESS_TEAM_DOMAIN": "https://weathered-frog-a300.cloudflareaccess.com",
+        "ACCESS_AUD": "REPLACE_WITH_PRODUCTION_ACCESS_AUD"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "mobile-moallem-production",
+          "database_id": "5843fc53-7c0c-4d8c-b5d9-da6e3898c3d6",
+          "migrations_dir": "drizzle"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "BUCKET",
+          "bucket_name": "mobile-moallem-media-production"
+        }
+      ]
+    }
+  }
 }
