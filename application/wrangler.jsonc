@@ -33,13 +33,14 @@
   ],
   // PRODUCTION. Deployed only from the `production` branch with `npx wrangler deploy --env production`.
   // Bindings and vars are not inherited from staging; every value below is production-only.
-  // It starts on next.mobilemoallem.com for testing; mobilemoallem.com is added only at cutover.
+  // Serves mobilemoallem.com (cutover 2026-11-05; rollback steps in docs/CUTOVER-ROLLBACK.md) and next.mobilemoallem.com.
   "env": {
     "production": {
       "name": "mobile-moallem",
       "workers_dev": false,
       "routes": [
-        { "pattern": "next.mobilemoallem.com", "custom_domain": true }
+        { "pattern": "next.mobilemoallem.com", "custom_domain": true },
+        { "pattern": "mobilemoallem.com", "custom_domain": true }
       ],
       "vars": {
         "ACCESS_TEAM_DOMAIN": "https://weathered-frog-a300.cloudflareaccess.com",
