@@ -1746,6 +1746,7 @@ async function start() {
     try { sessionData = sessionResponse?.ok ? await sessionResponse.json() : null; } catch {}
     canEdit = Boolean(sessionData?.canEdit) || Boolean(projectsResponse?.ok);
     $("projectsLink").hidden = !canEdit;
+    $("signOutLink").hidden = !canEdit;
     $("libraryTools").hidden = !canEdit;
     $("timingBtn").hidden = !canEdit;
     globalThis.UpdateLog?.init(canEdit);
