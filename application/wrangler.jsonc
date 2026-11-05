@@ -1,8 +1,13 @@
 {
-  "name": "mobile-moallem",
+  // STAGING. Pushes to main auto-deploy this to staging.mobilemoallem.com via Cloudflare Builds.
+  // Production gets its own Worker, D1, R2 and Access app later (see cloudflare/SETUP.md step 9).
+  "name": "mobile-moallem-staging",
   "main": "cloudflare/worker.mjs",
   "compatibility_date": "2026-10-15",
-  "workers_dev": false,
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "staging.mobilemoallem.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "dist/client",
     "binding": "ASSETS",
@@ -15,15 +20,15 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "mobile-moallem",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_name": "mobile-moallem-staging",
+      "database_id": "07f41135-03e3-4f36-b346-f67b73e7e830",
       "migrations_dir": "drizzle"
     }
   ],
   "r2_buckets": [
     {
       "binding": "BUCKET",
-      "bucket_name": "mobile-moallem-media"
+      "bucket_name": "mobile-moallem-staging-media"
     }
   ]
 }
