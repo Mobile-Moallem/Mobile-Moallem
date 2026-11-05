@@ -43,7 +43,7 @@
       ],
       "vars": {
         "ACCESS_TEAM_DOMAIN": "https://weathered-frog-a300.cloudflareaccess.com",
-        "ACCESS_AUD": "REPLACE_WITH_PRODUCTION_ACCESS_AUD"
+        "ACCESS_AUD": "4503b8a54726b56b138885cf2ecbc388a181eb2646b95b327083f82edb08de9a"
       },
       "d1_databases": [
         {
