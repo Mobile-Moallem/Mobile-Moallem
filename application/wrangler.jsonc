@@ -14,8 +14,8 @@
     "run_worker_first": true
   },
   "vars": {
-    "ACCESS_TEAM_DOMAIN": "https://REPLACE.cloudflareaccess.com",
-    "ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUD"
+    "ACCESS_TEAM_DOMAIN": "https://weathered-frog-a300.cloudflareaccess.com",
+    "ACCESS_AUD": "c59445e64ef30f28944e95b83bcee468dfe312a274ae40d72eb01009d427cc07"
   },
   "d1_databases": [
     {
