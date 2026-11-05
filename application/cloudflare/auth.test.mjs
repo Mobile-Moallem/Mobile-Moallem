@@ -8,7 +8,7 @@ const now=Math.floor(Date.now()/1000);
 const claims={iss:env.ACCESS_TEAM_DOMAIN,aud:[env.ACCESS_AUD],type:'app',iat:now,nbf:now,exp:now+3600,email:'mikailzaki48@gmail.com'};
 const b64=value=>Buffer.from(JSON.stringify(value)).toString('base64url');
 async function sign(payload,header={alg:'RS256',kid:'test-key'}){const input=b64(header)+'.'+b64(payload);return input+'.'+Buffer.from(await crypto.subtle.sign('RSASSA-PKCS1-v1_5',pair.privateKey,new TextEncoder().encode(input))).toString('base64url');}
-const fetchKeys=async url=>{assert.equal(url,env.ACCESS_TEAM_DOMAIN+'/cdn-cgi/access/certs');return Response.json({keys:[jwk]});};
+const fetchKeys=async(url,init)=>{assert.equal(url,env.ACCESS_TEAM_DOMAIN+'/cdn-cgi/access/certs');assert.ok(['follow','manual'].includes(init?.redirect),'Workers rejects other redirect modes');return Response.json({keys:[jwk]});};
 test('Cloudflare identities require valid signature, issuer, audience and active human session',async()=>{
  assert.equal((await verifyAccess(await sign(claims),env,fetchKeys)).email,claims.email);
  for(const override of [{iss:'https://evil.test'},{aud:['another']},{exp:now-1},{nbf:now+300},{iat:now+300},{type:'org'},{email:null},{exp:'tomorrow'}])assert.equal(await verifyAccess(await sign({...claims,...override}),env,fetchKeys),null);

@@ -19,7 +19,8 @@ export async function verifyAccess(token,env,fetchKeys=fetch,now=Date.now()/1000
  if(typeof claims.email!=='string'||!claims.email.includes('@')||claims.email.length>320)return null;
  let keys=cache.get(issuer);
  if(!keys||keys.until<now||!keys.value.some(k=>k.kid===header.kid)){
-  const response=await fetchKeys(issuer+'/cdn-cgi/access/certs',{redirect:'error'});
+  // Workers only supports redirect 'follow' or 'manual'; 'manual' plus the ok check below rejects any redirect.
+  const response=await fetchKeys(issuer+'/cdn-cgi/access/certs',{redirect:'manual'});
   if(!response.ok)return null;
   const body=await response.json();if(!Array.isArray(body.keys))return null;
   keys={value:body.keys,until:now+300};cache.set(issuer,keys);
