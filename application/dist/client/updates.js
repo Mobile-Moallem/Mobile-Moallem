@@ -51,7 +51,7 @@
     if (latest) {
       const extra = latest.notes.length - HOME_NOTES;
       card.append(
-        el("div", { className: "update-card-head" }, el("p", { className: "eyebrow", text: "What's new" }), el("a", { className: "update-link", href: "#/updates", text: "All updates →" })),
+        el("div", { className: "update-card-head" }, el("p", { className: "eyebrow", text: "What's new" }), el("button", { className: "update-link top-button", type: "button", text: "Update Log →", onclick: () => void openLog() })),
         Object.assign(updateHeading("h2", latest), { id: "updateHomeTitle" }),
         el("span", { className: "update-date", text: formatDate(latest.approvedAt) }),
         notesList(latest.notes, HOME_NOTES)
@@ -175,7 +175,39 @@
     return item;
   }
 
+  // Update Log popup: every published update as a row that unrolls to show its notes.
+  let lastFocus = null;
+  const logDialog = () => $("updateLogDialog");
+  async function openLog() {
+    const dialog = logDialog(), body = $("updateLogBody");
+    if (!dialog) return;
+    lastFocus = document.activeElement;
+    dialog.hidden = false;
+    document.body.classList.add("dialog-open");
+    $("updateLogClose").focus();
+    body.replaceChildren(el("p", { className: "update-empty", text: "Loading updates…" }));
+    try {
+      const { updates } = await getJson("/api/updates?limit=200");
+      if (!updates.length) { body.replaceChildren(el("p", { className: "update-empty", text: "No updates yet. Check back soon." })); return; }
+      body.replaceChildren(...updates.map((update, i) => el("details", { className: "log-entry", open: i === 0 },
+        el("summary", {}, el("span", { className: "log-version", text: "Update " + update.version }), el("span", { className: "log-date", text: formatDate(update.approvedAt) })),
+        notesList(update.notes))));
+    } catch (error) { body.replaceChildren(el("p", { className: "update-empty", text: error.message })); }
+  }
+  function closeLog() {
+    const dialog = logDialog();
+    if (!dialog || dialog.hidden) return;
+    dialog.hidden = true;
+    document.body.classList.remove("dialog-open");
+    lastFocus?.focus?.();
+  }
+  $("updateLogBtn")?.addEventListener("click", () => void openLog());
+  $("updateLogClose")?.addEventListener("click", closeLog);
+  logDialog()?.addEventListener("click", event => { if (event.target === logDialog()) closeLog(); });
+  document.addEventListener("keydown", event => { if (event.key === "Escape") closeLog(); });
+
   globalThis.UpdateLog = {
+    open: () => void openLog(),
     init(canEdit) { editor = Boolean(canEdit); },
     refreshHome() { void renderHome(); },
     async show(pending) {

@@ -10,6 +10,10 @@
   .top-link{white-space:nowrap;font-size:.85rem}
   .language-toggle,.theme-toggle{white-space:nowrap;flex:none;min-height:32px;padding:6px 11px;font-size:.78rem}
   .top-actions .theme-toggle{margin-inline-start:auto}
+  /* Editors have more links: keep links on one row and the two toggles together on the next. */
+  .top-actions:has(#projectsLink:not([hidden])) .top-link{order:1}
+  .top-actions:has(#projectsLink:not([hidden]))::after{content:"";order:2;flex-basis:100%;height:0;margin-top:-8px}
+  .top-actions:has(#projectsLink:not([hidden])) .language-toggle,.top-actions:has(#projectsLink:not([hidden])) .theme-toggle{order:3}
   /* "Alignment coming soon" seasons: readable name, label underneath instead of on top. */
   .season-unavailable>strong,.season-unavailable>span:not(.alignment-coming-soon){opacity:.5;filter:none}
   .season-unavailable>span.alignment-coming-soon{position:static;display:block;padding:0;margin-top:auto;background:none;color:#8a6a35;font-size:.78rem;font-weight:700;text-align:start}
