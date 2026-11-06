@@ -6,7 +6,7 @@
     document.documentElement.dataset.theme = dark ? "dark" : "light";
     const button = document.getElementById("themeToggle");
     if (button) {
-      button.textContent = dark ? "Light mode" : "Dark mode";
+      button.textContent = dark ? "Light Mode" : "Dark Mode";
       button.setAttribute("aria-pressed", String(dark));
       button.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
     }
