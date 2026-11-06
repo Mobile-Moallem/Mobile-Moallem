@@ -46,7 +46,7 @@
     try { latest = (await getJson("/api/updates?limit=1")).updates?.[0] || null; } catch {}
     if (editor) { try { pendingCount = (await getJson("/api/updates/pending")).entries.length; } catch {} }
     host.replaceChildren();
-    if (!latest && !pendingCount) { host.hidden = true; return; }
+    if (!latest && !editor) { host.hidden = true; return; }
     const card = el("section", { className: "update-card", "aria-labelledby": "updateHomeTitle" });
     if (latest) {
       const extra = latest.notes.length - HOME_NOTES;
@@ -60,9 +60,10 @@
     } else {
       card.append(el("div", { className: "update-card-head" }, el("p", { className: "eyebrow", id: "updateHomeTitle", text: "What's new" })), el("p", { className: "update-empty", text: "No updates published yet." }));
     }
-    if (pendingCount) {
+    if (editor) {
+      // Editors always get a way in, even before anything is pending.
       card.append(el("div", { className: "update-pending-banner" },
-        el("span", { text: pendingCount === 1 ? "1 pending change waiting for approval" : pendingCount + " pending changes waiting for approval" }),
+        el("span", { text: !pendingCount ? "No pending changes yet. Edits show up here for approval." : pendingCount === 1 ? "1 pending change waiting for approval" : pendingCount + " pending changes waiting for approval" }),
         el("a", { className: "update-link", href: "#/updates/pending", text: "Review & approve →" })));
     }
     host.append(card);

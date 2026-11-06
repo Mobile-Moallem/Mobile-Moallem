@@ -21,11 +21,12 @@
   <link rel="stylesheet" href="./layout.css?v=78">
   <link rel="stylesheet" href="./dark-mode.css">
   <link rel="stylesheet" href="./language.css">
-  <link rel="stylesheet" href="./updates.css?v=1">
+  <link rel="stylesheet" href="./updates.css?v=2">
+  <link rel="stylesheet" href="./library-dialog.css?v=1">
   <script src="./theme.js" defer></script>
-  <script src="./language.js?v=3" defer></script>
-  <script src="./updates.js?v=1" defer></script>
-  <script src="./site.js?v=80" defer></script>
+  <script src="./language.js?v=4" defer></script>
+  <script src="./updates.js?v=2" defer></script>
+  <script src="./site.js?v=81" defer></script>
   <script type="module" src="./reference-alignment.js"></script>
   <link rel="stylesheet" href="./reference-alignment.css">
   <link rel="stylesheet" href="./recording-slider.css">
@@ -34,12 +35,12 @@
   <div class="app-shell">
     <header class="topbar">
       <a class="brand" href="#/seasons"><img class="brand-mark brand-logo" src="/assets/mobile-moallem-logo.png?v=mm1" width="39" height="39" alt="" aria-hidden="true"><span>Mobile Moallem</span><span class="beta-badge">BETA</span></a>
-      <div class="top-actions"><a id="projectsLink" class="top-link" href="#/projects" hidden>My projects</a><a id="signOutLink" class="top-link" href="/signout-with-chatgpt" hidden>Sign out</a><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch site language to Arabic" title="Switch site language to Arabic">العربية</button><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button><span class="edition">Coptic hymn library</span></div>
+      <div class="top-actions"><a id="projectsLink" class="top-link" href="#/projects" hidden>My projects</a><a id="signOutLink" class="top-link" href="/signout" hidden>Sign out</a><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch site language to Arabic" title="Switch site language to Arabic">العربية</button><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button><span class="edition">Coptic Hymn Library</span></div>
     </header>
 
     <main class="workspace">
       <section id="seasonsView" class="screen catalog-screen" aria-labelledby="seasonsTitle">
-        <div class="catalog-heading"><div><p class="eyebrow">Coptic hymn library</p><h1 id="seasonsTitle">Seasons</h1><p>Choose a season to see its hymns.</p></div><div class="season-heading-details"><p class="church-attribution" lang="en" dir="ltr">Product of Virgin Mary &amp; Saint Pachomius Coptic Orthodox Church, Stony Point, NY.</p><span id="seasonCount" class="catalog-count"></span></div></div>
+        <div class="catalog-heading"><div><p class="eyebrow">Coptic Hymn Library</p><h1 id="seasonsTitle">Seasons</h1><p>Choose a season to see its hymns.</p></div><div class="season-heading-details"><p class="church-attribution" lang="en" dir="ltr">Product of Virgin Mary &amp; Saint Pachomius Coptic Orthodox Church, Stony Point, NY.</p><span id="seasonCount" class="catalog-count"></span></div></div>
         <div id="updateHome" class="update-home" hidden></div>
         <div class="home-report-actions"><button id="homeReportsBtn" class="button button-outline" type="button" hidden>See all reports</button></div>
         <label class="search-wrap catalog-search"><span class="sr-only">Search seasons</span><span aria-hidden="true">⌕</span><input id="seasonSearch" type="search" placeholder="Search seasons"></label>
@@ -174,15 +175,20 @@
   <div id="libraryDialog" class="dialog-backdrop" hidden>
     <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="libraryDialogTitle">
       <div class="dialog-head"><div><p class="eyebrow">Private editor</p><h2 id="libraryDialogTitle">Add to your library</h2></div><button id="libraryDialogClose" class="icon-button" type="button" aria-label="Close">×</button></div>
-      <form id="libraryForm">
-        <label> Name <input id="libraryName" type="text" required maxlength="240" placeholder="e.g. Feast of Saint Mark"></label>
-        <label id="librarySeasonField" hidden> Season <select id="librarySeasonSelect"></select></label>
-        <label id="libraryCategoryField" hidden> Category <select id="libraryCategorySelect"></select></label>
-        <label id="libraryEnglishField" hidden> English text <textarea id="libraryEnglishText" rows="4" placeholder="Optional English text"></textarea></label>
-        <label id="libraryCopticField" hidden> Coptic text <textarea id="libraryCopticText" rows="4" placeholder="Optional Coptic text"></textarea></label>
-        <label id="libraryHazzatField" hidden> Hazzat text or HTML <textarea id="libraryHazzatText" rows="4" placeholder="Optional Hazzat notation"></textarea></label>
-        <p id="libraryFormNote" class="form-note"></p>
-        <div class="form-actions"><button id="libraryDialogCancel" class="button button-outline" type="button">Cancel</button><button class="button button-gold" type="submit">Create</button></div>
+      <form id="libraryForm" novalidate>
+        <p id="libraryStepLabel" class="dialog-step" hidden></p>
+        <div id="libraryStep1" class="dialog-fields">
+          <div id="librarySeasonField" class="field" hidden><label for="librarySeasonSelect">Season</label><select id="librarySeasonSelect"></select></div>
+          <div id="libraryCategoryField" class="field" hidden><label for="libraryCategorySelect">Category</label><select id="libraryCategorySelect"></select></div>
+          <div class="field"><label id="libraryNameLabel" for="libraryName">Name</label><input id="libraryName" type="text" maxlength="240" autocomplete="off" placeholder="e.g. Feast of Saint Mark"><span id="libraryNameHint" class="field-hint"></span></div>
+        </div>
+        <div id="libraryStep2" class="dialog-fields" hidden>
+          <div id="libraryEnglishField" class="field"><label for="libraryEnglishText">English text <span class="field-optional">Optional</span></label><textarea id="libraryEnglishText" rows="6" placeholder="Paste the English words"></textarea></div>
+          <div id="libraryCopticField" class="field"><label for="libraryCopticText">Coptic text <span class="field-optional">Optional</span></label><textarea id="libraryCopticText" rows="6" placeholder="Paste the Coptic words"></textarea></div>
+          <div id="libraryHazzatField" class="field"><label for="libraryHazzatText">Hazzat <span class="field-optional">Optional</span></label><textarea id="libraryHazzatText" rows="6" placeholder="Paste Hazzat as plain text or HTML"></textarea><span class="field-hint">You can also upload Hazzat pages later from the hymn editor.</span></div>
+        </div>
+        <p id="libraryFormNote" class="form-note" role="status" aria-live="polite"></p>
+        <div class="form-actions"><button id="libraryDialogCancel" class="button button-outline" type="button">Cancel</button><button id="libraryStepBack" class="button button-outline" type="button" hidden>Back</button><button id="librarySubmit" class="button button-gold" type="submit">Create</button></div>
       </form>
     </section>
   </div>

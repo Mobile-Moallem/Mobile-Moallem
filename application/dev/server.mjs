@@ -33,7 +33,7 @@ function signedIn(request) {
   try{return JSON.parse(Buffer.from(p,'base64url')).exp>Date.now();}catch{return false;}
 }
 const html=content=>new Response(content,{headers:{'content-type':'text/html; charset=utf-8','cache-control':'no-store','content-security-policy':"default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"}});
-const signInPage=error=>html('<!doctype html><meta charset="utf-8"><title>Mobile Moallem local editor</title><main style="font:18px system-ui;max-width:32rem;margin:10vh auto;padding:1rem"><h1>Local editor preview</h1><p>This preview uses a local password. The live site still uses ChatGPT sign-in.</p>'+ (error?'<p>Sign-in failed.</p>':'') +'<form method="post" action="/signin-with-chatgpt"><label>Local editor password <input name="password" type="password" required autocomplete="current-password"></label><p><button>Sign in</button></p></form><a href="/">Open public reader</a></main>');
+const signInPage=error=>html('<!doctype html><meta charset="utf-8"><title>Mobile Moallem local editor</title><main style="font:18px system-ui;max-width:32rem;margin:10vh auto;padding:1rem"><h1>Local editor preview</h1><p>This preview uses a local password. The live site still uses ChatGPT sign-in.</p>'+ (error?'<p>Sign-in failed.</p>':'') +'<form method="post" action="/signin"><label>Local editor password <input name="password" type="password" required autocomplete="current-password"></label><p><button>Sign in</button></p></form><a href="/">Open public reader</a></main>');
 const failures=new Map();
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.ttf':'font/ttf','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.ico':'image/x-icon','.webp':'image/webp','.xml':'application/xml','.txt':'text/plain; charset=utf-8'};
 const ASSETS={async fetch(request){
@@ -47,7 +47,7 @@ const ASSETS={async fetch(request){
 async function route(request) {
   const url=new URL(request.url);
   if(url.origin!==origin)return new Response('Invalid host',{status:400});
-  if(url.pathname==='/signin-with-chatgpt') {
+  if(url.pathname==='/signin'||url.pathname==='/signin-with-chatgpt') {
     if(!password)return html('<h1>Local editor disabled</h1><p>Set LOCAL_EDITOR_PASSWORD in .env.local to preview editor access. Use / for the reader.</p>');
     if(request.method==='GET')return signInPage(false);
     if(request.method!=='POST')return new Response('Method not allowed',{status:405});
@@ -60,7 +60,7 @@ async function route(request) {
     failures.delete('local');
     return new Response(null,{status:303,headers:{location:'/#/projects','set-cookie':'mm_local='+sessionToken()+'; HttpOnly; SameSite=Strict; Path=/; Max-Age=28800','cache-control':'no-store'}});
   }
-  if(url.pathname==='/signout-with-chatgpt')return new Response(null,{status:303,headers:{location:'/', 'set-cookie':'mm_local=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0','cache-control':'no-store'}});
+  if(url.pathname==='/signout'||url.pathname==='/signout-with-chatgpt')return new Response(null,{status:303,headers:{location:'/', 'set-cookie':'mm_local=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0','cache-control':'no-store'}});
   const headers=new Headers(request.headers);
   for(const key of [...headers.keys()])if(key.startsWith('oai-authenticated-'))headers.delete(key);
   if(signedIn(request))headers.set('oai-authenticated-user-email','mikailzaki48@gmail.com');

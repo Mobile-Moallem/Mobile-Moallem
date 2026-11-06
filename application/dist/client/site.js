@@ -2094,10 +2094,41 @@ for (const [kind, player] of Object.entries(players)) {
 }
 
 let libraryDialogMode = "";
+let libraryStep = 1;
+const LIBRARY_NOTES = {
+  season: "A new season stays private until it has a completed hymn.",
+  category: "A new category stays private until it has a completed hymn.",
+  hymn: "The hymn stays a private draft. You'll add recordings and sync it in the hymn editor next."
+};
 function closeLibraryDialog() {
   $("libraryDialog").hidden = true;
   $("libraryForm").reset();
   libraryDialogMode = "";
+  libraryStep = 1;
+}
+function setLibraryNote(message, error = false) {
+  $("libraryFormNote").textContent = message || "";
+  $("libraryFormNote").classList.toggle("error", Boolean(error));
+}
+function showLibraryStep(step) {
+  const hymn = libraryDialogMode === "hymn";
+  libraryStep = hymn ? step : 1;
+  $("libraryStep1").hidden = libraryStep !== 1;
+  $("libraryStep2").hidden = libraryStep !== 2;
+  $("libraryStepLabel").hidden = !hymn;
+  $("libraryStepLabel").textContent = libraryStep === 1 ? "Step 1 of 2 · Where it goes" : "Step 2 of 2 · Words and Hazzat";
+  $("libraryStepBack").hidden = libraryStep !== 2;
+  $("librarySubmit").textContent = hymn && libraryStep === 1 ? "Next" : "Create";
+  setLibraryNote(libraryStep === 2 || !hymn ? LIBRARY_NOTES[libraryDialogMode] : "");
+  for (const id of ["librarySeasonField", "libraryCategoryField", "libraryName"]) $(id).closest(".field").classList.remove("field-error");
+  (libraryStep === 1 ? (libraryDialogMode === "season" ? $("libraryName") : $("librarySeasonSelect")) : $("libraryEnglishText")).focus();
+}
+function libraryStepOneProblem() {
+  const field = id => $(id).closest(".field");
+  if (libraryDialogMode !== "season" && !$("librarySeasonSelect").value) return [field("librarySeasonField"), "Choose a season."];
+  if (libraryDialogMode === "hymn" && !$("libraryCategorySelect").value) return [field("libraryCategoryField"), "Choose a category."];
+  if (!$("libraryName").value.trim()) return [field("libraryName"), "Enter a name."];
+  return null;
 }
 function refreshLibrarySeasonOptions() {
   const select = $("librarySeasonSelect");
@@ -2129,41 +2160,45 @@ async function refreshLibraryCategoryOptions() {
 function openLibraryDialog(mode) {
   if (!canEdit) return;
   libraryDialogMode = mode;
+  $("libraryForm").reset();
   $("libraryDialogTitle").textContent = mode === "season" ? "Add a season" : mode === "category" ? "Add a category" : "Add a hymn";
   $("librarySeasonField").hidden = mode === "season";
   $("libraryCategoryField").hidden = mode !== "hymn";
-  $("libraryEnglishField").hidden = mode !== "hymn";
-  $("libraryCopticField").hidden = mode !== "hymn";
-  $("libraryHazzatField").hidden = mode !== "hymn";
-  $("libraryFormNote").textContent = mode === "hymn" ? "You can add recordings and finish the alignment from the hymn editor after it is created." : "This stays private while you build it. Save and complete a hymn to make it available to listeners.";
+  $("libraryNameLabel").textContent = mode === "season" ? "Season name" : mode === "category" ? "Category name" : "Hymn name";
+  $("libraryName").placeholder = mode === "season" ? "e.g. Feast of Saint Mark" : mode === "category" ? "e.g. Vespers" : "e.g. Tenen";
+  $("libraryNameHint").textContent = mode === "hymn" ? "Use the name people search for, e.g. its Coptic title." : "";
   refreshLibrarySeasonOptions();
   if (mode === "category" || mode === "hymn") {
     $("librarySeasonSelect").value = selectedSeason || "";
     void refreshLibraryCategoryOptions();
   }
   $("libraryDialog").hidden = false;
-  $("libraryName").focus();
+  showLibraryStep(1);
 }
 async function createLibraryItem(event) {
   event.preventDefault();
   if (!canEdit || !libraryDialogMode) return;
   const mode = libraryDialogMode;
+  if (libraryStep === 1) {
+    const problem = libraryStepOneProblem();
+    if (problem) { problem[0].classList.add("field-error"); setLibraryNote(problem[1], true); problem[0].querySelector("input,select")?.focus(); return; }
+    if (mode === "hymn") { showLibraryStep(2); return; }
+  }
   const name = $("libraryName").value.trim();
   const seasonId = $("librarySeasonSelect").value;
   const categoryId = $("libraryCategorySelect").value;
-  if (!name || ((libraryDialogMode !== "season") && !seasonId) || (libraryDialogMode === "hymn" && !categoryId)) return;
   const body = { name };
-  if (libraryDialogMode !== "season") body.seasonId = seasonId;
-  if (libraryDialogMode === "hymn") {
+  if (mode !== "season") body.seasonId = seasonId;
+  if (mode === "hymn") {
     body.categoryId = categoryId;
     body.textContent = $("libraryEnglishText").value;
     body.copticText = $("libraryCopticText").value;
     body.notationHtml = notationFromEditor($("libraryHazzatText").value);
   }
-  const button = $("libraryForm").querySelector("button[type='submit']");
+  const button = $("librarySubmit");
   button.disabled = true;
   try {
-    const response = await fetch("/api/library/" + libraryDialogMode, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+    const response = await fetch("/api/library/" + mode, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "Could not add this item.");
     if (mode === "season") customLibrary.seasons.push({ ...data.node, id: data.node.id, name: data.node.name });
@@ -2176,13 +2211,15 @@ async function createLibraryItem(event) {
     closeLibraryDialog();
     if (mode === "hymn") { selectedSeason = seasonId; location.hash = "#/hymn/" + data.node.id; }
   } catch (error) {
-    $("libraryFormNote").textContent = error.message || "Could not add this item. Try again.";
+    setLibraryNote(error.message || "Could not add this item. Try again.", true);
   } finally { button.disabled = false; }
 }
 $("addSeasonBtn").addEventListener("click", () => openLibraryDialog("season"));
 $("addCategoryBtn").addEventListener("click", () => openLibraryDialog("category"));
 $("addHymnBtn").addEventListener("click", () => openLibraryDialog("hymn"));
 $("librarySeasonSelect").addEventListener("change", () => void refreshLibraryCategoryOptions());
+$("libraryStepBack").addEventListener("click", () => showLibraryStep(1));
+for (const id of ["librarySeasonSelect", "libraryCategorySelect", "libraryName"]) $(id).addEventListener("input", () => { $(id).closest(".field").classList.remove("field-error"); if ($("libraryFormNote").classList.contains("error")) setLibraryNote(""); });
 $("libraryDialogClose").addEventListener("click", closeLibraryDialog);
 $("libraryDialogCancel").addEventListener("click", closeLibraryDialog);
 $("libraryForm").addEventListener("submit", createLibraryItem);

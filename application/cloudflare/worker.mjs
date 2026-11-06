@@ -47,8 +47,11 @@ export async function authenticatedRequest(request,env,fetchKeys=fetch){
 export default {
  async fetch(request,env,ctx){
   const url=new URL(request.url);
-  if(url.pathname==='/signout-with-chatgpt')return Response.redirect(new URL('/cdn-cgi/access/logout',url).href,303);
-  if(url.pathname==='/signin-with-chatgpt'){
+  // Old ChatGPT-era links keep working by forwarding to the clean paths.
+  if(url.pathname==='/signin-with-chatgpt')return Response.redirect(new URL('/signin',url).href,302);
+  if(url.pathname==='/signout-with-chatgpt')return Response.redirect(new URL('/signout',url).href,302);
+  if(url.pathname==='/signout')return Response.redirect(new URL('/cdn-cgi/access/logout',url).href,303);
+  if(url.pathname==='/signin'){
    try{config(env);}catch{return new Response('Team sign-in is not configured. Ask the site owner to complete the Cloudflare Access setup.',{status:503});}
    const auth=await authenticatedRequest(request,env);
    if(!auth.claims)return new Response('Team sign-in requires the Cloudflare Access policy for this path.',{status:403});

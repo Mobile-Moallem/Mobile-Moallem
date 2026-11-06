@@ -25,3 +25,13 @@ test('standalone adapter strips forged Sites identity, accepts verified header/c
  }
  result=await authenticatedRequest(new Request('https://example.com/api/projects',{headers:forged}),{},fetchKeys);assert.equal(result.claims,null);
 });
+
+test('clean /signin and /signout paths; old ChatGPT-era paths forward to them',async()=>{
+ const {default:worker}=await import('./worker.mjs');
+ const env={ACCESS_TEAM_DOMAIN:'https://team.cloudflareaccess.com',ACCESS_AUD:'aud'};
+ const go=async path=>(await worker.fetch(new Request('https://example.com'+path,{redirect:'manual'}),env,{}));
+ assert.equal((await go('/signin-with-chatgpt')).headers.get('location'),'https://example.com/signin');
+ assert.equal((await go('/signout-with-chatgpt')).headers.get('location'),'https://example.com/signout');
+ assert.equal((await go('/signout')).headers.get('location'),'https://example.com/cdn-cgi/access/logout');
+ assert.equal((await go('/signin')).status,403); // no Access token: refused, never a session
+});
