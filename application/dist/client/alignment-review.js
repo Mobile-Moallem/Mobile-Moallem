@@ -11,8 +11,8 @@
       const html=hazzatHtml(h);
       if(!html)return [];
       return [...safeHazzat(html,{...h}).querySelectorAll('.hazza-mark')].map((mark,i)=>({
-        label:'Piece '+(i+1), glyph:mark.textContent.trim().slice(0,1900),
-        font:mark.querySelector('.HazzatVFont')?'HazzatVFont':'HazzatFont',
+        label:'Piece '+(i+1), glyph:(mark.dataset.glyph??mark.textContent.trim()).slice(0,1900),
+        font:mark.dataset.font||(mark.querySelector('.HazzatVFont')?'HazzatVFont':'HazzatFont'),
         stack:Number(mark.closest('.hazzat-stack').dataset.position),
         weight:Math.max(1,Array.from(mark.textContent.trim()).length),
       }));
