@@ -1,0 +1,19 @@
+/* Phone polish (loads last; desktop unaffected). */
+@media (max-width: 700px) {
+  /* Top bar: brand on one line, actions on their own row, nothing wraps mid-word. */
+  .topbar{height:auto;min-height:0;flex-wrap:wrap;align-items:center;row-gap:10px;padding:12px 16px}
+  .brand{flex-wrap:nowrap;gap:8px;font-size:1.05rem;min-width:0}
+  .brand>span:not(.beta-badge){white-space:nowrap}
+  .brand .brand-logo{width:30px;height:30px}
+  .brand .beta-badge{padding:4px 8px;font-size:11px;border-radius:5px}
+  .top-actions{width:100%;flex-wrap:wrap;justify-content:flex-start;gap:8px 14px}
+  .top-link{white-space:nowrap;font-size:.85rem}
+  .language-toggle,.theme-toggle{white-space:nowrap;flex:none;min-height:32px;padding:6px 11px;font-size:.78rem}
+  .top-actions .theme-toggle{margin-inline-start:auto}
+  /* "Alignment coming soon" seasons: readable name, label underneath instead of on top. */
+  .season-unavailable>strong,.season-unavailable>span:not(.alignment-coming-soon){opacity:.5;filter:none}
+  .season-unavailable>span.alignment-coming-soon{position:static;display:block;padding:0;margin-top:auto;background:none;color:#8a6a35;font-size:.78rem;font-weight:700;text-align:start}
+  html[data-theme="dark"] .season-unavailable>span.alignment-coming-soon{background:none;color:#d9b46f}
+  /* Season page: the count already appears as "44 hymns" under the title. */
+  #hymnsView .catalog-actions .catalog-count{display:none}
+}
