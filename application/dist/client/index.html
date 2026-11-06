@@ -21,10 +21,10 @@
   <link rel="stylesheet" href="./layout.css?v=78">
   <link rel="stylesheet" href="./dark-mode.css">
   <link rel="stylesheet" href="./language.css">
-  <link rel="stylesheet" href="./updates.css?v=2">
+  <link rel="stylesheet" href="./updates.css?v=3">
   <link rel="stylesheet" href="./library-dialog.css?v=1">
   <script src="./theme.js?v=2" defer></script>
-  <script src="./language.js?v=5" defer></script>
+  <script src="./language.js?v=6" defer></script>
   <script src="./updates.js?v=2" defer></script>
   <script src="./site.js?v=81" defer></script>
   <script type="module" src="./reference-alignment.js"></script>
@@ -35,14 +35,14 @@
   <div class="app-shell">
     <header class="topbar">
       <a class="brand" href="#/seasons"><img class="brand-mark brand-logo" src="/assets/mobile-moallem-logo.png?v=mm1" width="39" height="39" alt="" aria-hidden="true"><span>Mobile Moallem</span><span class="beta-badge">BETA</span></a>
-      <div class="top-actions"><a id="projectsLink" class="top-link" href="#/projects" hidden>My Projects</a><a id="signOutLink" class="top-link" href="/signout" hidden>Sign out</a><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch site language to Arabic" title="Switch site language to Arabic">العربية</button><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark Mode</button><span class="edition">Coptic Hymn Library</span></div>
+      <div class="top-actions"><a id="projectsLink" class="top-link" href="#/projects" hidden>My Projects</a><a id="signOutLink" class="top-link" href="/signout" hidden>Sign Out</a><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch site language to Arabic" title="Switch site language to Arabic">العربية</button><button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark Mode</button><span class="edition">Coptic Hymn Library</span></div>
     </header>
 
     <main class="workspace">
       <section id="seasonsView" class="screen catalog-screen" aria-labelledby="seasonsTitle">
         <div class="catalog-heading"><div><p class="eyebrow">Coptic Hymn Library</p><h1 id="seasonsTitle">Seasons</h1><p>Choose a season to see its hymns.</p></div><div class="season-heading-details"><p class="church-attribution" lang="en" dir="ltr">Product of Virgin Mary &amp; Saint Pachomius Coptic Orthodox Church, Stony Point, NY.</p><span id="seasonCount" class="catalog-count"></span></div></div>
         <div id="updateHome" class="update-home" hidden></div>
-        <div class="home-report-actions"><button id="homeReportsBtn" class="button button-outline" type="button" hidden>See all reports</button></div>
+        <div class="home-report-actions"><button id="homeReportsBtn" class="button button-outline" type="button" hidden>See All Reports</button></div>
         <label class="search-wrap catalog-search"><span class="sr-only">Search seasons</span><span aria-hidden="true">⌕</span><input id="seasonSearch" type="search" placeholder="Search seasons"></label>
         <nav id="seasonNav" class="season-grid" aria-label="Seasons"></nav>
         <section id="libraryTools" class="library-tools" hidden aria-label="Editor library tools">
@@ -54,8 +54,10 @@
       <section id="projectsView" class="screen catalog-screen" aria-labelledby="projectsTitle" hidden>
         <a class="back-link" href="#/seasons">← All seasons</a>
         <div class="catalog-heading"><div><p class="eyebrow">Editor workspace</p><h1 id="projectsTitle">My Projects</h1><p>Saved alignments and uploads are kept online.</p></div></div>
-        <button id="projectReportsBtn" class="button button-outline" type="button" hidden>See all reports</button>
-        <label class="search-wrap catalog-search"><span class="sr-only">Search projects</span><span aria-hidden="true">⌕</span><input id="projectSearch" type="search" placeholder="Search saved projects"></label>
+        <div class="projects-toolbar">
+          <label class="search-wrap catalog-search"><span class="sr-only">Search projects</span><span aria-hidden="true">⌕</span><input id="projectSearch" type="search" placeholder="Search saved projects"></label>
+          <button id="projectReportsBtn" class="button button-outline" type="button" hidden>See All Reports</button>
+        </div>
         <div id="projectList" class="hymn-grid"></div>
       </section>
 
