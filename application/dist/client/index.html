@@ -23,11 +23,13 @@
   <link rel="stylesheet" href="./language.css">
   <link rel="stylesheet" href="./updates.css?v=3">
   <link rel="stylesheet" href="./library-dialog.css?v=1">
+  <link rel="stylesheet" href="./search.css?v=1">
   <link rel="stylesheet" href="./mobile.css?v=1">
   <script src="./theme.js?v=2" defer></script>
-  <script src="./language.js?v=6" defer></script>
+  <script src="./language.js?v=7" defer></script>
   <script src="./updates.js?v=2" defer></script>
-  <script src="./site.js?v=81" defer></script>
+  <script src="./site.js?v=82" defer></script>
+  <script src="./search.js?v=1" defer></script>
   <script type="module" src="./reference-alignment.js"></script>
   <link rel="stylesheet" href="./reference-alignment.css">
   <link rel="stylesheet" href="./recording-slider.css">
@@ -44,7 +46,8 @@
         <div class="catalog-heading"><div><p class="eyebrow">Coptic Hymn Library</p><h1 id="seasonsTitle">Seasons</h1><p>Choose a season to see its hymns.</p></div><div class="season-heading-details"><p class="church-attribution" lang="en" dir="ltr">Product of Virgin Mary &amp; Saint Pachomius Coptic Orthodox Church, Stony Point, NY.</p><span id="seasonCount" class="catalog-count"></span></div></div>
         <div id="updateHome" class="update-home" hidden></div>
         <div class="home-report-actions"><button id="homeReportsBtn" class="button button-outline" type="button" hidden>See all reports</button></div>
-        <label class="search-wrap catalog-search"><span class="sr-only">Search seasons</span><span aria-hidden="true">⌕</span><input id="seasonSearch" type="search" placeholder="Search seasons"></label>
+        <label class="search-wrap catalog-search home-search"><span class="sr-only">Search seasons, categories and hymns</span><span aria-hidden="true">⌕</span><input id="seasonSearch" type="search" autocomplete="off" placeholder="Search seasons, categories and hymns" aria-controls="globalSearchResults"></label>
+        <div id="globalSearchResults" class="global-search" role="region" aria-label="Search results" aria-live="polite" hidden></div>
         <nav id="seasonNav" class="season-grid" aria-label="Seasons"></nav>
         <section id="libraryTools" class="library-tools" hidden aria-label="Editor library tools">
           <div><p class="eyebrow">Private editor</p><h2>Build your library</h2><p>Add your own seasons, categories, and hymns. New items stay in your drafts until you complete them.</p></div>

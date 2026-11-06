@@ -491,7 +491,7 @@ function renderSeasons() {
     if (!available) {
       const notice = document.createElement("span");
       notice.className = "alignment-coming-soon";
-      notice.textContent = "Alignment coming soon";
+      notice.textContent = "Alignment Coming Soon!";
       card.append(notice);
     }
     (available ? readyGrid : upcomingGrid).append(card);
