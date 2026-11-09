@@ -1,0 +1,14 @@
+.paste-timings{margin:12px 0;border:1px solid #d3dde3;border-radius:10px;padding:8px 12px;background:rgba(255,255,255,.55)}
+.paste-timings summary{cursor:pointer;font-weight:700;color:#14263d;padding:2px 0}
+.paste-timings[open] summary{margin-bottom:6px}
+.paste-timings select,.paste-timings textarea{width:100%;box-sizing:border-box;margin-top:4px}
+.paste-timings textarea{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem}
+.paste-timings-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.paste-timings-actions .button{flex:1 1 140px}
+#pasteTimingsStatus{min-height:1.4em}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .paste-timings{background:rgba(255,255,255,.04);border-color:#34404a}
+  :root:not([data-theme="light"]) .paste-timings summary{color:inherit}
+}
+:root[data-theme="dark"] .paste-timings{background:rgba(255,255,255,.04);border-color:#34404a}
+:root[data-theme="dark"] .paste-timings summary{color:inherit}
