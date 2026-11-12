@@ -53,6 +53,20 @@ with a speech model, and compares it with the timings already saved.
    For a hymn that is already good, apply only sure fixes: add `--only-agreed --min-change 0.3`.
    Check: share of times where loudness rises over the next 80 ms (new should beat saved; random ≈ 45–50%).
    Older fallback: `merge-sure-timings.py` keeps only sure words from a forced-align.py run.
+
+   **Very melismatic hymns (Lobsh etc., several seconds per word) whose highlight jumps to the
+   next word too early:** the singer stretches the LAST syllable of a word (often with a breath in
+   it); hand-tapped times mark the next word where that stretch begins, so each saved time is
+   1–10 s early and the real start of word k lies between saved[k] and saved[k+2].
+   `$PY $SK/melisma-align.py WORK/tt.json WORK/tt.wav WORK/tt-mel.json --after 3.0`
+   aligns each word only inside that window, with the next word as context. Whole-hymn alignment
+   is wrong here (the model hears held vowels as silence and drifts 15–30 s at line starts).
+   Check: share of words whose first consonant is heard within 1.2 s of the start
+   (1st Lobsh: saved 22% → fixed 60%; the rest mostly start with a sung "e"/"ou"). The user
+   confirmed by ear on 2026-11-12 that this sounds right. Needs saved times as a rough guide —
+   for a melismatic hymn with no timings, ask the user to tap rough times first (or use the
+   whole-hymn result only as a rough guide and check by ear).
+   Don't use blanket nudges (`snap-melisma.py`, `fix-melisma-starts.py`): tried and rejected.
 5. **Let the user check it by ear:**
    `python3 $SK/karaoke-view.py WORK/tt.json WORK/tt-forced.json WORK/view.html --audio-src tt.audio --font-src coptic.ttf`
    and/or `timing-review.py` (old vs new table). Serve WORK with a small local server and open it in the
