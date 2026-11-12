@@ -102,6 +102,7 @@ def main() -> None:
         print(f"warning: {len(words)} words but {len(timings)} saved timings; padding with null", file=sys.stderr)
         timings = (timings + [None] * len(words))[: len(words)]
 
+    a.out_dir = os.path.abspath(a.out_dir)  # wrangler runs in the app folder, so paths must be absolute
     os.makedirs(a.out_dir, exist_ok=True)
     name = a.name or a.hymn_id.rsplit("/", 1)[-1]
     base = os.path.join(a.out_dir, name)

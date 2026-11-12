@@ -80,6 +80,16 @@ with a speech model, and compares it with the timings already saved.
 7. **Same hymn in several seasons:** if the text and recording are identical, the same list applies;
    otherwise fetch and align each one.
 
+## Finding which words are wrong (use before changing a hymn that already has timings)
+
+`$PY $SK/check-timings.py WORK/tt.json WORK/tt.wav WORK/tt-v2.json WORK/tt-mel.json --per-word`
+scores each list: share of words whose first consonant is heard within 1.2 s of the start.
+If the saved list already scores well (e.g. Kiahk Doxologies 80–89%), don't replace the hymn —
+change only words where the saved time fails, forced-align-lines and melisma-align agree within
+0.3 s, and the new time passes. Typical wrong words: the last word of a half-verse (ends in "@"
+or "."), switched to while the previous held note is still sounding.
+Skip recordings that hold far more than the hymn (e.g. 25-min tracks) or only part of it.
+
 ## Coptic text notes
 
 Text uses the CS Avva Shenouda font encoding; `forced-align.py` romanises it (`LETTERS`,
