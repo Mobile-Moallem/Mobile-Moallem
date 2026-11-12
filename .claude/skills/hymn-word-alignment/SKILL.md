@@ -45,10 +45,14 @@ with a speech model, and compares it with the timings already saved.
      pass `--start-at SECONDS` and/or `--first-word N`.
    - Each word gets `forced` (seconds), `end`, and `score` (0–1 confidence).
 4. **Judge quality.** Good runs: most scores ≥ 0.3 and forced times close to saved ones.
-   If whole stretches drift by >1 s (common in long, melismatic hymns like the 2nd/3rd canticles),
-   keep only the sure words:
-   `python3 $SK/merge-sure-timings.py WORK/tt-forced.json WORK/tt-mixed.json`
-   (takes forced time only where score ≥ 0.3, shift < 1 s, away from drift; keeps order).
+   **Long, drawn-out hymns (e.g. 2nd/3rd Canticles) — preferred method:**
+   `$PY $SK/forced-align-lines.py WORK/tt.json WORK/tt.wav WORK/tt-v2.json`
+   (whole-hymn pass with a `<star>` before each line to soak up held notes/repeats, plus a per-line
+   windowed pass; reports how many words both agree on — 77–83% on the 2nd/3rd, 98–99% on 1st/4th), then
+   `python3 $SK/build-final.py WORK/tt-v2.json WORK/tt-final.json` → strictly increasing `timings`.
+   For a hymn that is already good, apply only sure fixes: add `--only-agreed --min-change 0.3`.
+   Check: share of times where loudness rises over the next 80 ms (new should beat saved; random ≈ 45–50%).
+   Older fallback: `merge-sure-timings.py` keeps only sure words from a forced-align.py run.
 5. **Let the user check it by ear:**
    `python3 $SK/karaoke-view.py WORK/tt.json WORK/tt-forced.json WORK/view.html --audio-src tt.audio --font-src coptic.ttf`
    and/or `timing-review.py` (old vs new table). Serve WORK with a small local server and open it in the
