@@ -191,3 +191,11 @@ html[data-theme="dark"] .hazzat-attribution{color:#b3c5cf}
 .reader-content .hazza-mark.practice-start{border-radius:4px;animation:practice-flash 1.6s ease-out forwards}
 @keyframes practice-flash{0%,35%{outline:2px solid #d7ad61;outline-offset:2px}100%{outline:2px solid #d7ad6100;outline-offset:2px}}
 .workspace:not(.editing) .reader-content .hazza-letter{cursor:pointer;border-radius:4px}.workspace:not(.editing) .reader-content .hazza-letter:hover{background:#f0c77533}
+#seasonsView .credits-link{background:none;border:0;padding:0;font:700 .75rem/1.5 Arial,sans-serif;color:#30546f;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+html[data-theme="dark"] #seasonsView .credits-link{color:#b9d6e5}
+.credits-body h3{margin:12px 0 10px;font:700 1rem Arial,sans-serif}
+.credits-churches{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.credits-churches li{display:grid;gap:2px;padding:12px 14px;border:1px solid rgba(0,0,0,.12);border-radius:10px}
+.credits-churches span{font:400 .85rem Arial,sans-serif;color:#777}
+html[data-theme="dark"] .credits-churches li{border-color:rgba(255,255,255,.18)}
+html[data-theme="dark"] .credits-churches span{color:#aaa}
