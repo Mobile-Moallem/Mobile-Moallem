@@ -1144,6 +1144,19 @@ function tagHazzatLetters(score) {
         letter.classList.add("hazza-letter");
         letter.dataset.firstMark = String(first);
         letter.dataset.lastMark = String(last);
+        // tapping a syllable does what tapping its first hazza does: select it and play from there
+        letter.setAttribute("role", "button");
+        letter.tabIndex = 0;
+        const useMark = event => {
+          if (aligning) return;
+          const mark = score.querySelector('.hazza-mark[data-position="' + first + '"]');
+          if (!mark) return;
+          event.stopPropagation();
+          event.preventDefault();
+          mark.click();
+        };
+        letter.addEventListener("click", useMark);
+        letter.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") useMark(event); });
       }
     }
   }

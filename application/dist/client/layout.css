@@ -179,13 +179,14 @@ html[data-theme="dark"] .hazzat-attribution{color:#b3c5cf}
 @media(max-width:700px){.brand{flex-wrap:wrap;column-gap:9px;row-gap:5px}.brand .beta-badge{padding:7px 11px;font-size:14px}.topbar{height:auto;min-height:68px;padding-top:10px;padding-bottom:10px}}
 .reader-content .hazzat-line.karaoke-line-active{background:#fff7df;border-radius:6px;box-shadow:0 0 0 2px #d7ad6155}
 .workspace:not(.editing) .reader-content.completed-hymn .hazzat-line.karaoke-line-active{background:#f0f6f9;box-shadow:0 0 0 2px #91b7ca66}
-.reader-content .hazza-letter.karaoke-active{color:#b8860b}
-.workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{color:#b8860b;background:transparent;box-shadow:none}
+.reader-content .hazza-letter.karaoke-active{color:#c98a00;-webkit-text-stroke:.6px #c98a00;text-shadow:0 0 6px #ffcc33aa}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{color:#c98a00;-webkit-text-stroke:.6px #c98a00;text-shadow:0 0 6px #ffcc33aa;background:transparent;box-shadow:none}
 .reader-content .hazza-mark.karaoke-mark-active{background:transparent}
-.reader-content .hazza-note.karaoke-active{color:#b8860b;text-shadow:0 0 .5px #b8860b,0 0 6px #f0c77599}
+.reader-content .hazza-note.karaoke-active{color:#c98a00;-webkit-text-stroke:.6px #c98a00;text-shadow:0 0 1px #c98a00,0 0 7px #ffcc33aa}
 .workspace:not(.editing) .reader-content.completed-hymn .hazza-mark.karaoke-mark-active{background:transparent;box-shadow:none}
-.workspace:not(.editing) .reader-content.completed-hymn .hazza-note.karaoke-active{color:#b8860b;text-shadow:0 0 .5px #b8860b,0 0 6px #f0c77599}
-.reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont).karaoke-active{color:#b8860b;text-shadow:0 0 .5px #b8860b,0 0 6px #f0c77599}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-note.karaoke-active{color:#c98a00;-webkit-text-stroke:.6px #c98a00;text-shadow:0 0 1px #c98a00,0 0 7px #ffcc33aa}
+.reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont).karaoke-active{color:#c98a00;-webkit-text-stroke:.6px #c98a00;text-shadow:0 0 1px #c98a00,0 0 7px #ffcc33aa}
 .reader-content .hazza-mark .HazzatFont{position:relative}
-.reader-content .hazza-mark .HazzatFont.karaoke-ink::after{content:attr(data-ink);position:absolute;left:0;top:0;line-height:normal;white-space:pre;color:#b8860b;pointer-events:none;clip-path:var(--ink-clip)}
+.reader-content .hazza-mark .HazzatFont.karaoke-ink::after{content:attr(data-ink);position:absolute;left:0;top:0;line-height:normal;white-space:pre;color:#c98a00;-webkit-text-stroke:.7px #c98a00;pointer-events:none;clip-path:var(--ink-clip)}
 .reader-content .hazza-mark.practice-start{outline:2px solid #d7ad61;outline-offset:2px;border-radius:4px}
+.workspace:not(.editing) .reader-content .hazza-letter{cursor:pointer;border-radius:4px}.workspace:not(.editing) .reader-content .hazza-letter:hover{background:#f0c77533}
