@@ -474,22 +474,22 @@ function hazzatRuns(token) {
   }
   return runs.sort((a, b) => a.x0 - b.x0 || a.level - b.level);
 }
-// Which line of the lit mark is being sung. Timings are per mark, so a reading position sweeps the mark
-// from its left edge to its right edge, from the mark's time to the next mark's (capped so a breath does
-// not stretch it). The line under that position lights up; where the notation steps up, the newer
-// (higher) line takes over. A long line therefore stays lit for its whole length.
+// Which line of the lit mark is being sung. Timings are per mark, so the mark's time (up to the next
+// mark, capped so a breath does not stretch it) is shared among its lines in reading order, each line
+// getting time in proportion to its own length: a long held line stays lit for most of the mark and
+// every short step still gets its turn (never a flash).
 function hazzatNoteIndex(runs, filled, passage, time) {
   if (!Array.isArray(runs) || runs.length < 2) return 0;
-  const left = Math.min(...runs.map(r => r.x0)), right = Math.max(...runs.map(r => r.x1));
+  const lengths = runs.map(r => r.x1 - r.x0), total = lengths.reduce((sum, l) => sum + l, 0);
   const start = filled[passage];
-  let end = start + (right - left) / 1100 * 1.2;
+  let end = start + total / 1100 * 0.6;
   for (let i = passage + 1; i < filled.length; i++) {
     if (Number.isFinite(filled[i]) && filled[i] > start) { end = Math.min(end, filled[i]); break; }
   }
-  const x = left + Math.max(0, Math.min(1, (time - start) / (end - start))) * (right - left);
-  let best = 0;
-  for (let i = 0; i < runs.length; i++) if (runs[i].x0 <= x) best = i;
-  return best;
+  const reached = Math.max(0, (time - start) / (end - start)) * total;
+  let sum = 0;
+  for (let i = 0; i < runs.length; i++) { sum += lengths[i]; if (reached < sum) return i; }
+  return runs.length - 1;
 }
 // Paint one line of a mark red: a red copy of the mark's text, clipped to that line.
 function inkHazzatRun(glyphs, run) {
@@ -1044,10 +1044,12 @@ function safeHazzat(html, h) {
         glyphs.textContent = token;
         if (className === "HazzatFont") noteRuns[position] = hazzatRuns(token);
         mark.append(glyphs);
+        if (practiceMark?.hymnId === h.id && practiceMark.position === position) mark.classList.add("practice-start");
         mark.addEventListener("click", () => {
+          if (!aligning && Number.isFinite(h.hazzatTimings?.[position])) practiceFrom(h, position, h.hazzatTimings[position]);
           if (!aligning && !Number.isFinite(h.hazzatTimings?.[position])) {
             const filled = fillTimingGaps(h.hazzatTimings || [], h.hazzatMarkSizes)[position];
-            if (Number.isFinite(filled)) { playFrom(filled, "hazzat"); return; }
+            if (Number.isFinite(filled)) { practiceFrom(h, position, filled); playFrom(filled, "hazzat"); return; }
             showPlayer("hazzat");
             setHelp("This passage has no timing yet. You can play the recording from the controls.");
             return;
@@ -1155,7 +1157,20 @@ function playFrom(start, kind = "hazzat", unavailable = "This part has no timing
   const range = recordingRange(current(), kind);
   playAtTime(kind, Math.max(range.start, Math.min(start, range.end || start)));
 }
+// The hazza a reader tapped while practising: it stays selected, and "Replay from hazza" goes back to it.
+let practiceMark = null;
+function practiceFrom(h, position, start) {
+  practiceMark = { hymnId: h.id, position, start };
+  for (const mark of $("readerContent").querySelectorAll(".hazza-mark.practice-start")) mark.classList.remove("practice-start");
+  $("readerContent").querySelector('.hazza-mark[data-position="' + position + '"]')?.classList.add("practice-start");
+  updatePracticeControl();
+}
+function updatePracticeControl() {
+  const button = $("replayFromBtn");
+  if (button) button.hidden = !(practiceMark && !aligning && view === "hazzat" && practiceMark.hymnId === current()?.id);
+}
 function renderReader() {
+  updatePracticeControl();
   const h = current();
   const content = $("readerContent");
   content.replaceChildren();
@@ -2226,6 +2241,10 @@ $("clearTimesBtn").addEventListener("click", () => {
 });
 $("exportBtn").addEventListener("click", copyTiming);
 for (const [kind, player] of Object.entries(players)) {
+  if (kind === "hazzat") $("replayFromBtn")?.addEventListener("click", () => {
+    primeOutputLatency();
+    if (practiceMark && practiceMark.hymnId === current()?.id) playFrom(practiceMark.start, "hazzat");
+  });
   playerElement(kind, "RepeatBtn").addEventListener("click", () => {
     if (!current() || !player.src) { setHelp("Add a recording to this section before setting a repeat.", kind); return; }
     if (repeatSelection?.kind === kind || repeatLoop?.kind === kind) {
