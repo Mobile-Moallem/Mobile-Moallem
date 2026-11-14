@@ -3,6 +3,54 @@ const audio = $("audio");
 const players = { hazzat: audio, english: $("englishAudio"), coptic: $("copticAudio") };
 const playerPrefix = { hazzat: "", english: "english", coptic: "coptic" };
 const playerElement = (kind, suffix) => $(kind === "hazzat" ? suffix[0].toLowerCase() + suffix.slice(1) : playerPrefix[kind] + suffix);
+// The moment the listener actually hears. Browsers report currentTime only a few times a second,
+// so glide between reports, and step back by the speaker/Bluetooth output delay.
+let latencyContext = null;
+function outputLatency() {
+  try {
+    if (!latencyContext) latencyContext = new (window.AudioContext || window.webkitAudioContext)();
+    return Math.min(0.5, Math.max(0, (latencyContext.outputLatency || 0) + (latencyContext.baseLatency || 0)));
+  } catch { return 0; }
+}
+function primeOutputLatency() { // from a tap, so the browser lets the context run and report its real delay
+  outputLatency();
+  try { if (latencyContext?.state === "suspended") latencyContext.resume().catch(() => {}); } catch {}
+}
+const playbackClocks = new WeakMap();
+function heardTime(player, now = performance.now()) {
+  const raw = player.currentTime;
+  if (!Number.isFinite(raw)) return raw;
+  let clock = playbackClocks.get(player);
+  if (!clock) playbackClocks.set(player, clock = { raw: NaN, at: now, shown: raw, floor: raw });
+  if (player.paused || player.seeking) {
+    clock.raw = raw; clock.at = now; clock.shown = raw; clock.floor = raw;
+    return raw;
+  }
+  const rate = player.playbackRate || 1;
+  if (raw !== clock.raw) {
+    const expected = clock.raw + (now - clock.at) / 1000 * rate;
+    if (!Number.isFinite(clock.raw) || Math.abs(raw - expected) > 0.4) clock.floor = raw; // a seek or loop, not a normal report
+    clock.raw = raw; clock.at = now;
+  }
+  let time = raw + Math.min(0.5, (now - clock.at) / 1000) * rate;
+  if (time < clock.shown && clock.shown - time < 0.25) time = clock.shown; // a late report never pulls the highlight back
+  clock.shown = time;
+  // Never show the part before where playback was started from.
+  return Math.max(clock.floor, time - outputLatency());
+}
+let karaokeFrame = 0;
+let karaokeShown = "";
+function runKaraokeFrames() {
+  if (karaokeFrame) return;
+  const frame = () => {
+    karaokeFrame = 0;
+    const player = activePlaybackKind ? players[activePlaybackKind] : null;
+    if (!player || player.paused) return;
+    updateKaraoke(true);
+    karaokeFrame = requestAnimationFrame(frame);
+  };
+  karaokeFrame = requestAnimationFrame(frame);
+}
 function syncSeekProgress(slider) {
   const fraction = Math.max(0, Math.min(1, Number(slider.value) / Number(slider.max)));
   slider.style.setProperty("--seek-fraction", String(fraction));
@@ -308,6 +356,7 @@ function stopRepeatAlignment() {
 }
 function playAtTime(kind, target, failureMessage = "Playback could not start.") {
   const player = players[kind];
+  primeOutputLatency();
   const seekAndPlay = () => {
     const range = recordingRange(current(), kind);
     player.currentTime = Math.max(range.start, Math.min(target, range.end || target));
@@ -378,7 +427,22 @@ function lastTimedIndex(values, time) {
   });
   return index;
 }
-function updateKaraoke() {
+function karaokePosition() {
+  const h = current();
+  if (!h || (view !== "words" && view !== "hazzat")) return "";
+  const kind = view === "hazzat" ? "hazzat" : textLanguage;
+  if (activePlaybackKind !== kind) return "";
+  const time = heardTime(players[kind]);
+  const keys = kind === "hazzat" ? ["hazzatTimings", "hazzatLineTimings"] : [kind === "coptic" ? "copticTimings" : "timings"];
+  return kind + ":" + keys.map(key => lastTimedIndex(playbackTimings(h, key, time), time)).join(":");
+}
+// Called every animation frame while playing (onlyIfMoved) and on player events.
+function updateKaraoke(onlyIfMoved = false) {
+  if (onlyIfMoved === true) { // event listeners pass an Event here; those always redraw
+    const position = karaokePosition();
+    if (position === karaokeShown) return;
+    karaokeShown = position;
+  } else karaokeShown = karaokePosition();
   highlightRepeatRange();
   const content = $("readerContent");
   for (const element of content.querySelectorAll(".karaoke-active, .karaoke-line-active")) {
@@ -389,7 +453,7 @@ function updateKaraoke() {
   if (view !== "words" && view !== "hazzat") return;
   const kind = view === "hazzat" ? "hazzat" : textLanguage;
   if (!h || activePlaybackKind !== kind) return;
-  const time = players[kind].currentTime;
+  const time = heardTime(players[kind]);
   const badge = $("repeatProgress");
   const sections = (h.repeatSections || []).filter(s => kind === "hazzat" ? s.key.startsWith("hazzat") : s.key === (kind === "coptic" ? "copticTimings" : "timings"));
   badge.hidden = !workspace.classList.contains("editing") || !sections.length;
@@ -1142,7 +1206,7 @@ function activateTiming(h, key, index) {
     if (wasHidden || player.paused) { setHelp("Play this recording, then tap the part again when it begins.", kind); return; }
     h[key] ||= [];
     if (repeatPass && key !== repeatPass.key) { setHelp("Mark the selected repeat parts only.", kind); return; }
-    markTiming(h, key, index, player.currentTime);
+    markTiming(h, key, index, heardTime(player));
     alignmentScope = view === "words" ? textLanguage : "hazzat";
     alignmentKey = key;
     alignmentCursor = index + 1;
@@ -1869,7 +1933,7 @@ document.addEventListener("keydown", event => {
   if (!player.src || player.paused) { setHelp("Play this section’s recording, then press Space as the selected part begins.", kind); return; }
   const marked = alignmentCursor;
   h[key] ||= [];
-  markTiming(h, key, marked, player.currentTime);
+  markTiming(h, key, marked, heardTime(player));
   alignmentCursor++;
   markUnsaved();
   renderReader();
@@ -2038,6 +2102,7 @@ for (const [kind, player] of Object.entries(players)) {
     setHelp("Tap a timed word or Hazzat part to choose where the repeat begins.", kind);
   });
   playerElement(kind, "PlayBtn").addEventListener("click", () => {
+    primeOutputLatency();
     if (!player.src) { setHelp("No recording is attached to this section yet.", kind); return; }
     clipEnd = null;
     const range = recordingRange(current(), kind);
@@ -2059,6 +2124,7 @@ for (const [kind, player] of Object.entries(players)) {
     activePlaybackKind = kind;
     playerElement(kind, "PlayBtn").textContent = "Ⅱ";
     updateKaraoke();
+    runKaraokeFrames();
   });
   player.addEventListener("pause", () => { playerElement(kind, "PlayBtn").textContent = "▶"; updateKaraoke(); });
   player.addEventListener("loadedmetadata", () => {
