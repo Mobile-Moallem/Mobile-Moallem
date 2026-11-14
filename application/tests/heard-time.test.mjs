@@ -79,3 +79,24 @@ test('untimed marks between two timed ones get a time, so none is skipped', () =
   assert.deepEqual([...c.fillTimingGaps(saved)], [null, 1, 2, 3, null]);
   assert.deepEqual(saved, [null, 1, null, 3, null]);
 });
+
+const noteSource = source.slice(source.indexOf('function hazzatNoteIndex('), source.indexOf('function karaokePosition('));
+test('each dash of a mark lights in turn, sharing the mark\'s time by dash length', () => {
+  const c = {Array, Number, Math};
+  runInNewContext(noteSource, c);
+  const filled = [10, 12, 20];
+  // "zqw": a full dash, then two half dashes, over 10 s..12 s
+  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 10.0), 0);
+  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 10.9), 0);
+  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 11.1), 1);
+  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 11.6), 2);
+  // a single dash is always dash 0
+  assert.equal(c.hazzatNoteIndex([2], filled, 1, 15), 0);
+  // a long breath before the next mark doesn't stretch the last dash: 2 dashes cap at 2.4 s
+  assert.equal(c.hazzatNoteIndex([2, 2], filled, 1, 13.0), 0);
+  assert.equal(c.hazzatNoteIndex([2, 2], filled, 1, 13.3), 1);
+  assert.equal(c.hazzatNoteIndex([2, 2], filled, 1, 19.0), 1);
+  // the last mark of the hymn still steps through its dashes
+  assert.equal(c.hazzatNoteIndex([2, 2], filled, 2, 20.5), 0);
+  assert.equal(c.hazzatNoteIndex([2, 2], filled, 2, 21.5), 1);
+});

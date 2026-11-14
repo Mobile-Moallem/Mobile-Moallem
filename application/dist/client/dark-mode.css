@@ -24,3 +24,4 @@ html[data-theme="dark"] .repeat-button{background:#1b2b38;border-color:#526a78;c
 html[data-theme="dark"] .repeat-alignment-help{color:#bdcdd6}
 html[data-theme="dark"] .reader-content .hazzat-line.karaoke-line-active{background:#294653!important;box-shadow:0 0 0 2px #78a9b6aa!important;border-radius:6px}
 html[data-theme="dark"] .reader-content .hazza-letter.karaoke-active,html[data-theme="dark"] .workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{background:#c79b54!important;color:#10202a!important;box-shadow:0 0 0 3px #c79b5480!important;border-radius:4px}
+html[data-theme="dark"] .reader-content .hazza-mark.karaoke-mark-active{background:#c79b5433!important;border-radius:4px}html[data-theme="dark"] .reader-content .hazza-note.karaoke-active{background:transparent!important;color:#ffcf6e!important;text-shadow:0 0 1px #ffcf6e,0 0 8px #e0a640!important}

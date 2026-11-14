@@ -181,3 +181,7 @@ html[data-theme="dark"] .hazzat-attribution{color:#b3c5cf}
 .workspace:not(.editing) .reader-content.completed-hymn .hazzat-line.karaoke-line-active{background:#f0f6f9;box-shadow:0 0 0 2px #91b7ca66}
 .reader-content .hazza-letter.karaoke-active{background:#f0c775;color:#17283b;border-radius:4px;box-shadow:0 0 0 3px #f0c77580}
 .workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{background:#d8e9f2;color:#14263d;box-shadow:0 0 0 3px #a8cadc80}
+.reader-content .hazza-mark.karaoke-mark-active{background:#f0c77533;border-radius:4px}
+.reader-content .hazza-note.karaoke-active{color:#c06400;text-shadow:0 0 1px #c06400,0 0 7px #f0b44c}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-mark.karaoke-mark-active{background:#d8e9f255}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-note.karaoke-active{color:#0f6aa3;text-shadow:0 0 1px #0f6aa3,0 0 7px #7fb8dc}

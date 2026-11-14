@@ -451,6 +451,22 @@ function hazzatPlaybackTimings(h, time) {
   const values = playbackTimings(h, "hazzatTimings", time);
   return aligning ? values : fillTimingGaps(values, h.hazzatMarkSizes);
 }
+// Which dash of the lit mark is being sung. Timings are per mark, so the mark's time (up to the
+// next mark) is shared among its dashes by length; capped so a breath after the mark does not
+// stretch its last dash. An estimate inside the mark; the mark's own start stays exact.
+function hazzatNoteIndex(weights, filled, passage, time) {
+  if (!Array.isArray(weights) || weights.length < 2) return 0;
+  const start = filled[passage];
+  const total = weights.reduce((sum, w) => sum + w, 0);
+  let end = start + total * 0.6;
+  for (let i = passage + 1; i < filled.length; i++) {
+    if (Number.isFinite(filled[i]) && filled[i] > start) { end = Math.min(end, filled[i]); break; }
+  }
+  const reached = (time - start) / (end - start) * total;
+  let sum = 0;
+  for (let i = 0; i < weights.length; i++) { sum += weights[i]; if (reached < sum) return i; }
+  return weights.length - 1;
+}
 function karaokePosition() {
   const h = current();
   if (!h || (view !== "words" && view !== "hazzat")) return "";
@@ -458,7 +474,12 @@ function karaokePosition() {
   if (activePlaybackKind !== kind) return "";
   const time = heardTime(players[kind]);
   const keys = kind === "hazzat" ? ["hazzatTimings", "hazzatLineTimings"] : [kind === "coptic" ? "copticTimings" : "timings"];
-  return kind + ":" + keys.map(key => lastTimedIndex(key === "hazzatTimings" ? hazzatPlaybackTimings(h, time) : playbackTimings(h, key, time), time)).join(":");
+  if (kind === "hazzat") {
+    const filled = hazzatPlaybackTimings(h, time), passage = lastTimedIndex(filled, time);
+    const note = passage < 0 ? 0 : hazzatNoteIndex(h.hazzatNoteWeights?.[passage], filled, passage, time);
+    return "hazzat:" + passage + "." + note + ":" + lastTimedIndex(playbackTimings(h, "hazzatLineTimings", time), time);
+  }
+  return kind + ":" + keys.map(key => lastTimedIndex(playbackTimings(h, key, time), time)).join(":");
 }
 // Called every animation frame while playing (onlyIfMoved) and on player events.
 function updateKaraoke(onlyIfMoved = false) {
@@ -469,8 +490,8 @@ function updateKaraoke(onlyIfMoved = false) {
   } else karaokeShown = karaokePosition();
   highlightRepeatRange();
   const content = $("readerContent");
-  for (const element of content.querySelectorAll(".karaoke-active, .karaoke-line-active")) {
-    element.classList.remove("karaoke-active", "karaoke-line-active");
+  for (const element of content.querySelectorAll(".karaoke-active, .karaoke-line-active, .karaoke-mark-active")) {
+    element.classList.remove("karaoke-active", "karaoke-line-active", "karaoke-mark-active");
     element.removeAttribute("aria-current");
   }
   const h = current();
@@ -483,14 +504,22 @@ function updateKaraoke(onlyIfMoved = false) {
   badge.hidden = !workspace.classList.contains("editing") || !sections.length;
   if (sections.length) { const section = sections[0]; const start = h[section.key]?.[section.startIndex]; const end = h[section.key]?.[section.endIndex + 1] ?? recordingRange(h, kind).end; badge.textContent = "Sing " + (section.passes.length + 1) + " times" + (Number.isFinite(start) && time >= start && time < end ? " · 1 of " + (section.passes.length + 1) : ""); }
   if (kind === "hazzat") {
-    const passage = lastTimedIndex(hazzatPlaybackTimings(h, time), time);
+    const filled = hazzatPlaybackTimings(h, time);
+    const passage = lastTimedIndex(filled, time);
     const stack = lastTimedIndex(playbackTimings(h, "hazzatLineTimings", time), time);
     const mark = passage < 0 ? null : content.querySelector('.hazza-mark[data-position="' + passage + '"]');
     // the line being sung lights up, not its whole stack
     const box = mark?.closest(".hazzat-line") || mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
     if (box) box.classList.add("karaoke-line-active");
     if (mark) {
-      mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true");
+      mark.setAttribute("aria-current", "true");
+      // light the single dash being sung (the whole mark while editors mark timings)
+      const notes = mark.querySelectorAll(".hazza-note");
+      if (aligning || !notes.length) mark.classList.add("karaoke-active");
+      else {
+        mark.classList.add("karaoke-mark-active");
+        notes[Math.min(notes.length - 1, hazzatNoteIndex(h.hazzatNoteWeights?.[passage], filled, passage, time))].classList.add("karaoke-active");
+      }
       // the syllable being sung on this mark
       for (const letter of content.querySelectorAll(".hazza-letter")) {
         if (passage >= Number(letter.dataset.firstMark) && passage <= Number(letter.dataset.lastMark)) letter.classList.add("karaoke-active");
@@ -935,6 +964,7 @@ function safeHazzat(html, h) {
   output.className = "hazzat-score";
   let index = 0;
   const markSizes = [];
+  const noteWeights = [];
   let line = document.createElement("div");
   line.className = "hazzat-line";
   output.append(line);
@@ -974,7 +1004,18 @@ function safeHazzat(html, h) {
         mark.setAttribute("aria-label", "Hazzat passage " + (position + 1) + (Number.isFinite(h.hazzatTimings?.[position]) ? ", " + stamp(h.hazzatTimings[position]) : ""));
         const glyphs = document.createElement("span");
         glyphs.className = className;
-        glyphs.textContent = token;
+        // Each Hazzat letter draws one dash: one note, lit on its own during playback.
+        // The font has no ligatures or kerning between these letters, so splitting them looks the same.
+        const weights = [];
+        for (const ch of token) {
+          if (!/[a-z]/iu.test(ch)) { glyphs.append(document.createTextNode(ch)); continue; }
+          const note = document.createElement("span");
+          note.className = "hazza-note";
+          note.textContent = ch;
+          glyphs.append(note);
+          weights.push(/[qw]/u.test(ch) ? 1 : 2); // q and w are half-length dashes
+        }
+        noteWeights[position] = weights;
         mark.append(glyphs);
         mark.addEventListener("click", () => {
           if (!aligning && !Number.isFinite(h.hazzatTimings?.[position])) {
@@ -992,6 +1033,7 @@ function safeHazzat(html, h) {
   };
   for (const child of source.childNodes) walk(child, output);
   h.hazzatMarkSizes = markSizes;
+  h.hazzatNoteWeights = noteWeights;
   const rows = [...output.children];
   output.replaceChildren();
   const stacks = [];
