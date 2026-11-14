@@ -30,9 +30,9 @@
   <script src="./updates.js?v=3" defer></script>
   <script src="./site.js?v=91" defer></script>
   <script src="./search.js?v=1" defer></script>
-  <script type="module" src="./reference-alignment.js"></script>
-  <link rel="stylesheet" href="./reference-alignment.css">
   <link rel="stylesheet" href="./recording-slider.css">
+  <link rel="stylesheet" href="./paste-timings.css?v=1">
+  <script src="./paste-timings.js?v=1" defer></script>
 </head>
 <body>
   <div class="app-shell">
@@ -124,24 +124,29 @@
         <h3 class="editor-subheading">Timing</h3>
         <p class="panel-copy">Choose Words or Hazzat above, then select its recording below. Start aligning and use ← and → with Space, or tap a part directly to mark its time.</p>
         <button id="alignBtn" class="button button-navy full" type="button">Start aligning</button>
+        <details id="pasteTimings" class="paste-timings">
+          <summary>Paste timings</summary>
+          <p class="panel-copy">Already have the times? Paste one start time per part, in order: seconds or m:ss, separated by commas, spaces or new lines. Use “-” for a part with no time. JSON lists work too.</p>
+          <label class="editor-field" for="pasteTimingsTarget">Apply to
+            <select id="pasteTimingsTarget" class="recording-picker">
+              <option value="copticTimings">Coptic words</option>
+              <option value="timings">English words</option>
+              <option value="hazzatTimings">Hazzat pieces</option>
+              <option value="hazzatLineTimings">Hazzat lines</option>
+            </select>
+          </label>
+          <label class="editor-field" for="pasteTimingsInput">Timings<textarea id="pasteTimingsInput" rows="4" spellcheck="false" placeholder="10.21, 12.33, 14.23, …"></textarea></label>
+          <p id="pasteTimingsStatus" class="panel-copy" role="status" aria-live="polite">Paste timings to check them.</p>
+          <div class="paste-timings-actions">
+            <button id="pasteTimingsApply" class="button button-navy" type="button" disabled>Apply timings</button>
+            <button id="pasteTimingsCopy" class="button button-outline" type="button">Copy current</button>
+          </div>
+        </details>
         <button id="repeatAlignmentBtn" class="button button-outline full repeat-alignment-button" type="button" aria-pressed="false">↻ Repeat alignment</button>
         <p id="repeatAlignmentHelp" class="repeat-alignment-help" role="status" aria-live="polite">Choose two aligned parts to loop that recording range and redo only their timings.</p>
         <button id="addSectionRepeat" class="button button-outline full" type="button">↻ Mark a section sung twice</button>
         <p id="sectionRepeatHelp" role="status">Reuse the same words or Hazzat for each pass, with separate recording timings.</p>
         <div id="sectionRepeatList"></div>
-        <section id="referenceAlignment" class="reference-alignment" aria-label="Reference hymn alignment">
-          <h3>Auto hymn alignment</h3>
-          <p>Automatically choose a reviewed reference and find candidate phrases in this recording. Review exact starts before saving your private draft.</p>
-          <label for="referenceSection">What to align<select id="referenceSection"><option value="hazzat">Hazzat note starts</option><option value="coptic">Coptic word starts</option><option value="english">English word starts</option></select></label>
-          <label for="referencePicker">Reviewed reference<select id="referencePicker"><option value="">Choose a reference</option></select></label>
-          <label class="upload-label">Import a reviewed reference<input id="referenceImport" type="file" accept=".json,application/json"></label>
-          <details><summary>Keep my manual timings as a reference</summary><p>Check the sung phrases and each start first. English words need an English recording; a translation cannot supply word starts from Coptic audio.</p><label class="reference-check"><input id="referenceAttestation" type="checkbox">I checked the sung phrases and exact starts in this recording.</label><button id="referenceExport" class="button button-outline full" type="button">Download reviewed reference</button></details>
-          <details id="referencePhraseSetup"><summary>Optional: guide a phrase match</summary><p>Automatic search runs without these ranges. To guide a difficult match, choose the same beginning and ending in both recordings, excluding the spoken intro. Split at changed repeats or omitted sections. Each range can be up to 90 seconds.</p><audio id="referenceListen" controls preload="none" aria-label="Reviewed reference recording"></audio><div class="reference-bounds"><label>Reference start<input id="referenceStart" type="text" placeholder="0:08.20" inputmode="decimal"></label><label>Reference end<input id="referenceEnd" type="text" placeholder="0:35.40" inputmode="decimal"></label><label>Current start<input id="referenceTargetStart" type="text" placeholder="0:09.00" inputmode="decimal"></label><label>Current end<input id="referenceTargetEnd" type="text" placeholder="0:37.10" inputmode="decimal"></label></div><button id="referenceAddPhrase" class="button button-outline full" type="button">Add phrase</button><div id="referencePhrases"></div></details>
-          <button id="referencePrepare" class="button button-navy full" type="button">Auto align · prepare review</button>
-          <p id="referenceStatus" role="status" aria-live="polite">Choose a reviewed reference. Unfamiliar melodies need a compatible reference before they can be aligned.</p>
-          <audio id="referenceReviewAudio" controls preload="none" aria-label="Current recording for timing review" hidden></audio>
-          <div id="referenceReview"></div>
-        </section>
         <h3 class="editor-subheading">Hazzat recording</h3>
         <label class="recording-label" for="recordingPicker">Choose an existing recording</label>
         <select id="recordingPicker" class="recording-picker"><option value="">Choose a recording</option></select>
