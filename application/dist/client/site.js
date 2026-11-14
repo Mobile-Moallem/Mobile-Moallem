@@ -489,7 +489,13 @@ function updateKaraoke(onlyIfMoved = false) {
     // the line being sung lights up, not its whole stack
     const box = mark?.closest(".hazzat-line") || mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
     if (box) box.classList.add("karaoke-line-active");
-    if (mark) { mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true"); }
+    if (mark) {
+      mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true");
+      // the syllable being sung on this mark
+      for (const letter of content.querySelectorAll(".hazza-letter")) {
+        if (passage >= Number(letter.dataset.firstMark) && passage <= Number(letter.dataset.lastMark)) letter.classList.add("karaoke-active");
+      }
+    }
   } else {
     const key = kind === "coptic" ? "copticTimings" : "timings";
     const index = lastTimedIndex(playbackTimings(h, key, time), time);
@@ -1028,9 +1034,48 @@ function safeHazzat(html, h) {
       useStack();
     });
   });
+  tagHazzatLetters(output);
   h.hazzatGroupCount = index;
   h.hazzatLineCount = stacks.length;
   return output;
+}
+// In Hazzat notation a syllable is written just before the marks it is sung on ({vio}[cd.xx]{m}[.]),
+// so each run of letters lights up with the marks that follow it. Marks that open a line before any
+// letter are the previous syllable carried over the line break. Letters after a line's last mark
+// (with no marks of their own) go with that last mark.
+function tagHazzatLetters(score) {
+  for (const stack of score.querySelectorAll(".hazzat-stack")) {
+    const groups = [];
+    let group = null;
+    for (const line of stack.querySelectorAll(".hazzat-line")) {
+      let lineLast;
+      const lineGroups = [];
+      for (const node of line.querySelectorAll(".hazza-mark, .CopticFont")) {
+        if (node.classList.contains("hazza-mark")) {
+          const position = Number(node.dataset.position);
+          if (group) { group.first ??= position; group.last = position; }
+          lineLast = position;
+          continue;
+        }
+        if (node.closest(".hazza-mark") || !node.textContent.trim()) continue;
+        if (!group || group.first !== undefined) { groups.push(group = { letters: [] }); lineGroups.push(group); }
+        group.letters.push(node);
+      }
+      for (const trailing of lineGroups) {
+        if (trailing.first !== undefined || lineLast === undefined) continue;
+        trailing.first = trailing.last = lineLast;
+        if (trailing === group) group = null; // finished; the next line's marks are not its
+      }
+    }
+    for (const { letters, first, last } of groups) {
+      if (first === undefined) continue;
+      for (const letter of letters) {
+        letter.classList.add("hazza-letter");
+        letter.dataset.firstMark = String(first);
+        letter.dataset.lastMark = String(last);
+      }
+    }
+  }
 }
 function playFrom(start, kind = "hazzat", unavailable = "This part has no timing yet.") {
   showPlayer(kind);

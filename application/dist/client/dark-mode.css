@@ -23,3 +23,4 @@ html[data-theme="dark"] .hazzat-image-page,html[data-theme="dark"] .hazzat-impor
 html[data-theme="dark"] .repeat-button{background:#1b2b38;border-color:#526a78;color:#e6eef2}html[data-theme="dark"] .repeat-button:hover,html[data-theme="dark"] .repeat-button:focus-visible{background:#263c49;border-color:#819aa7}html[data-theme="dark"] .repeat-button.is-active{background:#4a3a24;border-color:#bd9454;color:#f4d69d}
 html[data-theme="dark"] .repeat-alignment-help{color:#bdcdd6}
 html[data-theme="dark"] .reader-content .hazzat-line.karaoke-line-active{background:#294653!important;box-shadow:0 0 0 2px #78a9b6aa!important;border-radius:6px}
+html[data-theme="dark"] .reader-content .hazza-letter.karaoke-active,html[data-theme="dark"] .workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{background:#c79b54!important;color:#10202a!important;box-shadow:0 0 0 3px #c79b5480!important;border-radius:4px}
