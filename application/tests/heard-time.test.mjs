@@ -80,23 +80,31 @@ test('untimed marks between two timed ones get a time, so none is skipped', () =
   assert.deepEqual(saved, [null, 1, null, 3, null]);
 });
 
-const noteSource = source.slice(source.indexOf('function hazzatNoteIndex('), source.indexOf('function karaokePosition('));
-test('each dash of a mark lights in turn, sharing the mark\'s time by dash length', () => {
-  const c = {Array, Number, Math};
-  runInNewContext(noteSource, c);
-  const filled = [10, 12, 20];
-  // "zqw": a full dash, then two half dashes, over 10 s..12 s
-  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 10.0), 0);
-  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 10.9), 0);
-  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 11.1), 1);
-  assert.equal(c.hazzatNoteIndex([2, 1, 1], filled, 0, 11.6), 2);
-  // a single dash is always dash 0
-  assert.equal(c.hazzatNoteIndex([2], filled, 1, 15), 0);
-  // a long breath before the next mark doesn't stretch the last dash: 2 dashes cap at 2.4 s
-  assert.equal(c.hazzatNoteIndex([2, 2], filled, 1, 13.0), 0);
-  assert.equal(c.hazzatNoteIndex([2, 2], filled, 1, 13.3), 1);
-  assert.equal(c.hazzatNoteIndex([2, 2], filled, 1, 19.0), 1);
-  // the last mark of the hymn still steps through its dashes
-  assert.equal(c.hazzatNoteIndex([2, 2], filled, 2, 20.5), 0);
-  assert.equal(c.hazzatNoteIndex([2, 2], filled, 2, 21.5), 1);
+const noteSource = source.slice(source.indexOf('const HAZZAT_GLYPHS'), source.indexOf('function inkHazzatRun('));
+function notes() { const c = {Array, Number, Math, Object}; runInNewContext(noteSource, c); return c; }
+
+test('a long held note drawn with several letters is one note', () => {
+  const c = notes();
+  assert.equal(c.hazzatRuns('zz').length, 1);       // one long bottom line
+  assert.equal(c.hazzatRuns('xx').length, 2);       // two long lines, the upper one stepped
+  const zqw = c.hazzatRuns('zqw');                   // a long bottom line, then a short step up at the end
+  assert.equal(zqw.length, 2);
+  assert.deepEqual(JSON.stringify([zqw[0].level, zqw[1].level]), '[0,1]');
+  assert.ok(zqw[0].x1 - zqw[0].x0 > 2000);
+  assert.equal(JSON.stringify(c.hazzatRuns('c').map(r => r.level)), '[0,1,2]'); // a three-step staircase
+  assert.equal(c.hazzatRuns('x.x').length, 4);      // a dot breaks the lines
+});
+
+test('the reading position sweeps the mark: a long line stays lit, a step up takes over', () => {
+  const c = notes();
+  const zqw = c.hazzatRuns('zqw'), filled = [10, 13, 30];
+  // the bottom line holds for most of the mark, the step lights only at the end
+  for (const t of [10, 10.8, 11.6]) assert.equal(c.hazzatNoteIndex(zqw, filled, 0, t), 0);
+  assert.equal(c.hazzatNoteIndex(zqw, filled, 0, 12.3), 1);
+  // a single line never changes
+  assert.equal(c.hazzatNoteIndex(c.hazzatRuns('zz'), filled, 1, 14), 0);
+  // a breath after the mark does not stretch it: the sweep is capped, and holds on the last line
+  const cc = c.hazzatRuns('c');
+  assert.equal(c.hazzatNoteIndex(cc, filled, 1, 13.05), 0);
+  assert.equal(c.hazzatNoteIndex(cc, filled, 1, 25), 2);
 });

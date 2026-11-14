@@ -26,3 +26,4 @@ html[data-theme="dark"] .reader-content .hazzat-line.karaoke-line-active{backgro
 html[data-theme="dark"] .reader-content .hazza-letter.karaoke-active,html[data-theme="dark"] .workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{background:transparent!important;color:#ff4d4a!important;box-shadow:none!important}
 html[data-theme="dark"] .reader-content .hazza-mark.karaoke-mark-active{background:transparent!important}html[data-theme="dark"] .reader-content .hazza-note.karaoke-active{background:transparent!important;color:#ff4d4a!important;text-shadow:0 0 .5px #ff4d4a!important}
 html[data-theme="dark"] .reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont).karaoke-active{color:#ff4d4a!important;text-shadow:0 0 .5px #ff4d4a!important}
+html[data-theme="dark"] .reader-content .hazza-mark .HazzatFont.karaoke-ink::after{color:#ff4d4a}

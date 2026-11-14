@@ -186,3 +186,5 @@ html[data-theme="dark"] .hazzat-attribution{color:#b3c5cf}
 .workspace:not(.editing) .reader-content.completed-hymn .hazza-mark.karaoke-mark-active{background:transparent;box-shadow:none}
 .workspace:not(.editing) .reader-content.completed-hymn .hazza-note.karaoke-active{color:#e5302f;text-shadow:0 0 .5px #e5302f}
 .reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont).karaoke-active{color:#e5302f;text-shadow:0 0 .5px #e5302f}
+.reader-content .hazza-mark .HazzatFont{position:relative}
+.reader-content .hazza-mark .HazzatFont.karaoke-ink::after{content:attr(data-ink);position:absolute;left:0;top:0;line-height:normal;white-space:pre;color:#e5302f;pointer-events:none;clip-path:var(--ink-clip)}
