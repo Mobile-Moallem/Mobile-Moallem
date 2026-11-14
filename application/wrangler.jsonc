@@ -31,6 +31,26 @@
       "bucket_name": "mobile-moallem-staging-media"
     }
   ],
+  // PR PREVIEWS. Non-main branches build with `npx wrangler preview`, which needs this block.
+  // Previews share the STAGING database and media (never production), so treat them like staging.
+  "previews": {
+    "vars": {
+      "ACCESS_TEAM_DOMAIN": "https://weathered-frog-a300.cloudflareaccess.com",
+      "ACCESS_AUD": "c59445e64ef30f28944e95b83bcee468dfe312a274ae40d72eb01009d427cc07"
+    },
+    "d1_databases": [
+      {
+        "binding": "DB",
+        "database_id": "07f41135-03e3-4f36-b346-f67b73e7e830"
+      }
+    ],
+    "r2_buckets": [
+      {
+        "binding": "BUCKET",
+        "bucket_name": "mobile-moallem-staging-media"
+      }
+    ]
+  },
   // PRODUCTION. Deployed only from the `production` branch with `npx wrangler deploy --env production`.
   // Bindings and vars are not inherited from staging; every value below is production-only.
   // Serves mobilemoallem.com (cutover 2026-11-05; rollback steps in docs/CUTOVER-ROLLBACK.md) and next.mobilemoallem.com.

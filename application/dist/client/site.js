@@ -3,6 +3,54 @@ const audio = $("audio");
 const players = { hazzat: audio, english: $("englishAudio"), coptic: $("copticAudio") };
 const playerPrefix = { hazzat: "", english: "english", coptic: "coptic" };
 const playerElement = (kind, suffix) => $(kind === "hazzat" ? suffix[0].toLowerCase() + suffix.slice(1) : playerPrefix[kind] + suffix);
+// The moment the listener actually hears. Browsers report currentTime only a few times a second,
+// so glide between reports, and step back by the speaker/Bluetooth output delay.
+let latencyContext = null;
+function outputLatency() {
+  try {
+    if (!latencyContext) latencyContext = new (window.AudioContext || window.webkitAudioContext)();
+    return Math.min(0.5, Math.max(0, (latencyContext.outputLatency || 0) + (latencyContext.baseLatency || 0)));
+  } catch { return 0; }
+}
+function primeOutputLatency() { // from a tap, so the browser lets the context run and report its real delay
+  outputLatency();
+  try { if (latencyContext?.state === "suspended") latencyContext.resume().catch(() => {}); } catch {}
+}
+const playbackClocks = new WeakMap();
+function heardTime(player, now = performance.now()) {
+  const raw = player.currentTime;
+  if (!Number.isFinite(raw)) return raw;
+  let clock = playbackClocks.get(player);
+  if (!clock) playbackClocks.set(player, clock = { raw: NaN, at: now, shown: raw, floor: raw });
+  if (player.paused || player.seeking) {
+    clock.raw = raw; clock.at = now; clock.shown = raw; clock.floor = raw;
+    return raw;
+  }
+  const rate = player.playbackRate || 1;
+  if (raw !== clock.raw) {
+    const expected = clock.raw + (now - clock.at) / 1000 * rate;
+    if (!Number.isFinite(clock.raw) || Math.abs(raw - expected) > 0.4) clock.floor = raw; // a seek or loop, not a normal report
+    clock.raw = raw; clock.at = now;
+  }
+  let time = raw + Math.min(0.5, (now - clock.at) / 1000) * rate;
+  if (time < clock.shown && clock.shown - time < 0.25) time = clock.shown; // a late report never pulls the highlight back
+  clock.shown = time;
+  // Never show the part before where playback was started from.
+  return Math.max(clock.floor, time - outputLatency());
+}
+let karaokeFrame = 0;
+let karaokeShown = "";
+function runKaraokeFrames() {
+  if (karaokeFrame) return;
+  const frame = () => {
+    karaokeFrame = 0;
+    const player = activePlaybackKind ? players[activePlaybackKind] : null;
+    if (!player || player.paused) return;
+    updateKaraoke(true);
+    karaokeFrame = requestAnimationFrame(frame);
+  };
+  karaokeFrame = requestAnimationFrame(frame);
+}
 function syncSeekProgress(slider) {
   const fraction = Math.max(0, Math.min(1, Number(slider.value) / Number(slider.max)));
   slider.style.setProperty("--seek-fraction", String(fraction));
@@ -308,6 +356,7 @@ function stopRepeatAlignment() {
 }
 function playAtTime(kind, target, failureMessage = "Playback could not start.") {
   const player = players[kind];
+  primeOutputLatency();
   const seekAndPlay = () => {
     const range = recordingRange(current(), kind);
     player.currentTime = Math.max(range.start, Math.min(target, range.end || target));
@@ -378,29 +427,142 @@ function lastTimedIndex(values, time) {
   });
   return index;
 }
-function updateKaraoke() {
+// Marks between two timed marks with no time of their own (e.g. split from a word timed as one)
+// get a time spread between their neighbours by mark length, so playback never jumps over them.
+// Display only: nothing here is saved.
+function fillTimingGaps(values, sizes = []) {
+  if (!Array.isArray(values)) return values;
+  const out = values.slice();
+  let last = -1;
+  for (let i = 0; i < out.length; i++) {
+    if (!Number.isFinite(out[i])) continue;
+    if (last >= 0 && i - last > 1 && out[i] > out[last]) {
+      const weight = k => Math.max(1, Number(sizes[k]) || 1);
+      let total = 0;
+      for (let k = last; k < i; k++) total += weight(k);
+      let sum = weight(last);
+      for (let k = last + 1; k < i; k++) { out[k] = Math.round((out[last] + (out[i] - out[last]) * sum / total) * 100) / 100; sum += weight(k); }
+    }
+    last = i;
+  }
+  return out;
+}
+function hazzatPlaybackTimings(h, time) {
+  const values = playbackTimings(h, "hazzatTimings", time);
+  return aligning ? values : fillTimingGaps(values, h.hazzatMarkSizes);
+}
+// The lines each Hazzat letter draws, read from fonts/hazzat.ttf: [advance, [[x0, x1, level], ...]] in font
+// units (2048 per em; level 0 is the bottom line, each level 300 units higher). Each line is a little longer
+// than its letter, so lines at one level in neighbouring letters join: zz or the bottom of zqw is ONE note.
+const HAZZAT_GLYPHS = {"z":[1062,[[10,1153,0]]],"x":[1062,[[10,1153,0],[210,1353,1]]],".":[1200],"c":[1062,[[10,1153,0],[410,1553,2],[210,1353,1]]],"d":[1004,[[284,1485,2]]],"s":[1004,[[84,1285,1]]],"b":[1062,[[10,1211,0],[810,2011,4],[610,1811,3],[410,1611,2],[209,1410,1]]],"n":[1062,[[10,1211,0],[1010,2211,5],[810,2011,4],[610,1811,3],[410,1611,2],[210,1411,1]]],"w":[500,[[10,612,0],[210,812,1]]],"&":[1140],"p":[1139],";":[569],"v":[1062,[[10,1153,0],[610,1753,3],[410,1553,2],[210,1353,1]]],"e":[500,[[10,612,0],[210,812,1],[408,1010,2]]],"+":[700],"q":[500,[[10,612,0]]],"-":[812],"a":[1542],"f":[1004,[[484,1685,3]]],"A":[0],"r":[500,[[10,612,0],[610,1212,3],[410,1012,2],[210,812,1]]],")":[682],"2":[1139],"(":[682],"g":[1004,[[684,1885,4]]],"S":[0],"\\":[569],"h":[1004,[[884,2085,5]]],"y":[500,[[10,612,0],[1008,1610,5],[810,1412,4],[610,1212,3],[410,1012,2],[210,812,1]]],"t":[500,[[10,612,0],[810,1412,4],[610,1212,3],[410,1012,2],[210,812,1]]],"[":[682],"]":[682],"4":[1139],"3":[1139],"!":[1158],"m":[1062,[[10,1211,0],[1010,2211,5],[810,2011,4],[610,1811,3],[410,1611,2],[210,1411,1],[1210,2411,6]]],"6":[1139],"D":[0],",":[1200],"`":[682]};
+const HAZZAT_EM = 2048, HAZZAT_ASCENT = 1854;
+// The notes of a mark: its continuous lines, left to right.
+function hazzatRuns(token) {
+  const pieces = [];
+  let x = 0;
+  for (const ch of token) {
+    const [advance = 1062, lines = []] = HAZZAT_GLYPHS[ch] || [];
+    for (const [x0, x1, level] of lines) pieces.push({ x0: x + x0, x1: x + x1, level });
+    x += advance;
+  }
+  pieces.sort((a, b) => a.level - b.level || a.x0 - b.x0);
+  const runs = [];
+  for (const piece of pieces) {
+    const last = runs.at(-1);
+    if (last && last.level === piece.level && piece.x0 <= last.x1 + 60) last.x1 = Math.max(last.x1, piece.x1);
+    else runs.push({ ...piece });
+  }
+  return runs.sort((a, b) => a.x0 - b.x0 || a.level - b.level);
+}
+// Which line of the lit mark is being sung. Timings are per mark, so the mark's time (up to the next
+// mark, capped so a breath does not stretch it) is shared among its lines in reading order, each line
+// getting time in proportion to its own length: a long held line stays lit for most of the mark and
+// every short step still gets its turn (never a flash).
+function hazzatNoteIndex(runs, filled, passage, time) {
+  if (!Array.isArray(runs) || runs.length < 2) return 0;
+  const lengths = runs.map(r => r.x1 - r.x0), total = lengths.reduce((sum, l) => sum + l, 0);
+  const start = filled[passage];
+  let end = start + total / 1100 * 0.6;
+  for (let i = passage + 1; i < filled.length; i++) {
+    if (Number.isFinite(filled[i]) && filled[i] > start) { end = Math.min(end, filled[i]); break; }
+  }
+  const reached = Math.max(0, (time - start) / (end - start)) * total;
+  let sum = 0;
+  for (let i = 0; i < runs.length; i++) { sum += lengths[i]; if (reached < sum) return i; }
+  return runs.length - 1;
+}
+// Light one line of a mark: Hazzat lines are plain bars in the font, so a gold bar is laid exactly
+// over the line (a little thicker, with a glow) by the glyphs' ::after.
+function inkHazzatRun(glyphs, run) {
+  const size = parseFloat(getComputedStyle(glyphs).fontSize) || 18, px = v => v / HAZZAT_EM * size;
+  const bottom = -100 + run.level * 300, top = bottom + 139;
+  glyphs.style.setProperty("--ink-x", px(run.x0) + "px");
+  glyphs.style.setProperty("--ink-y", px(HAZZAT_ASCENT - top) + "px");
+  glyphs.style.setProperty("--ink-w", px(run.x1 - run.x0) + "px");
+  glyphs.style.setProperty("--ink-h", px(top - bottom) + "px");
+  glyphs.classList.add("karaoke-ink");
+}
+function karaokePosition() {
+  const h = current();
+  if (!h || (view !== "words" && view !== "hazzat")) return "";
+  const kind = view === "hazzat" ? "hazzat" : textLanguage;
+  if (activePlaybackKind !== kind) return "";
+  const time = heardTime(players[kind]);
+  const keys = kind === "hazzat" ? ["hazzatTimings", "hazzatLineTimings"] : [kind === "coptic" ? "copticTimings" : "timings"];
+  if (kind === "hazzat") {
+    const filled = hazzatPlaybackTimings(h, time), passage = lastTimedIndex(filled, time);
+    const note = passage < 0 ? 0 : hazzatNoteIndex(h.hazzatNoteRuns?.[passage], filled, passage, time);
+    return "hazzat:" + passage + "." + note + ":" + lastTimedIndex(playbackTimings(h, "hazzatLineTimings", time), time);
+  }
+  return kind + ":" + keys.map(key => lastTimedIndex(playbackTimings(h, key, time), time)).join(":");
+}
+// Called every animation frame while playing (onlyIfMoved) and on player events.
+function updateKaraoke(onlyIfMoved = false) {
+  if (onlyIfMoved === true) { // event listeners pass an Event here; those always redraw
+    const position = karaokePosition();
+    if (position === karaokeShown) return;
+    karaokeShown = position;
+  } else karaokeShown = karaokePosition();
   highlightRepeatRange();
   const content = $("readerContent");
-  for (const element of content.querySelectorAll(".karaoke-active, .karaoke-line-active")) {
-    element.classList.remove("karaoke-active", "karaoke-line-active");
+  for (const element of content.querySelectorAll(".karaoke-active, .karaoke-line-active, .karaoke-mark-active, .karaoke-ink")) {
+    element.classList.remove("karaoke-active", "karaoke-line-active", "karaoke-mark-active", "karaoke-ink");
     element.removeAttribute("aria-current");
   }
   const h = current();
   if (view !== "words" && view !== "hazzat") return;
   const kind = view === "hazzat" ? "hazzat" : textLanguage;
   if (!h || activePlaybackKind !== kind) return;
-  const time = players[kind].currentTime;
+  const time = heardTime(players[kind]);
   const badge = $("repeatProgress");
   const sections = (h.repeatSections || []).filter(s => kind === "hazzat" ? s.key.startsWith("hazzat") : s.key === (kind === "coptic" ? "copticTimings" : "timings"));
   badge.hidden = !workspace.classList.contains("editing") || !sections.length;
   if (sections.length) { const section = sections[0]; const start = h[section.key]?.[section.startIndex]; const end = h[section.key]?.[section.endIndex + 1] ?? recordingRange(h, kind).end; badge.textContent = "Sing " + (section.passes.length + 1) + " times" + (Number.isFinite(start) && time >= start && time < end ? " · 1 of " + (section.passes.length + 1) : ""); }
   if (kind === "hazzat") {
-    const passage = lastTimedIndex(playbackTimings(h, "hazzatTimings", time), time);
+    const filled = hazzatPlaybackTimings(h, time);
+    const passage = lastTimedIndex(filled, time);
     const stack = lastTimedIndex(playbackTimings(h, "hazzatLineTimings", time), time);
     const mark = passage < 0 ? null : content.querySelector('.hazza-mark[data-position="' + passage + '"]');
-    const box = mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
+    // the line being sung lights up, not its whole stack
+    const box = mark?.closest(".hazzat-line") || mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
     if (box) box.classList.add("karaoke-line-active");
-    if (mark) { mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true"); }
+    if (mark) {
+      mark.setAttribute("aria-current", "true");
+      // light the single dash being sung (the whole mark while editors mark timings)
+      const glyphs = mark.querySelector(".HazzatFont, .HazzatVFont");
+      const runs = h.hazzatNoteRuns?.[passage];
+      if (aligning) mark.classList.add("karaoke-active");
+      else {
+        mark.classList.add("karaoke-mark-active");
+        // the one line being sung turns red; a mark with no lines (a dot) or vertical Hazzat turns red whole
+        if (glyphs && runs?.length) inkHazzatRun(glyphs, runs[hazzatNoteIndex(runs, filled, passage, time)]);
+        else glyphs?.classList.add("karaoke-active");
+      }
+      // the syllable being sung on this mark
+      for (const letter of content.querySelectorAll(".hazza-letter")) {
+        if (passage >= Number(letter.dataset.firstMark) && passage <= Number(letter.dataset.lastMark)) letter.classList.add("karaoke-active");
+      }
+    }
   } else {
     const key = kind === "coptic" ? "copticTimings" : "timings";
     const index = lastTimedIndex(playbackTimings(h, key, time), time);
@@ -839,6 +1001,8 @@ function safeHazzat(html, h) {
   const output = document.createElement("div");
   output.className = "hazzat-score";
   let index = 0;
+  const markSizes = [];
+  const noteRuns = [];
   let line = document.createElement("div");
   line.className = "hazzat-line";
   output.append(line);
@@ -871,6 +1035,7 @@ function safeHazzat(html, h) {
         if (/^\s+$/u.test(token)) { target.append(document.createTextNode(token)); continue; }
         const mark = document.createElement("button");
         const position = index++;
+        markSizes[position] = token.replace(/[.\s]/gu, "").length || 1;
         mark.type = "button";
         mark.dataset.position = String(position);
         mark.className = "hazza-mark" + (Number.isFinite(h.hazzatTimings?.[position]) ? " timed" : "") + (aligning ? " marking" : "");
@@ -878,9 +1043,13 @@ function safeHazzat(html, h) {
         const glyphs = document.createElement("span");
         glyphs.className = className;
         glyphs.textContent = token;
+        if (className === "HazzatFont") noteRuns[position] = hazzatRuns(token);
         mark.append(glyphs);
         mark.addEventListener("click", () => {
+          if (!aligning && Number.isFinite(h.hazzatTimings?.[position])) practiceFrom(h, position, h.hazzatTimings[position]);
           if (!aligning && !Number.isFinite(h.hazzatTimings?.[position])) {
+            const filled = fillTimingGaps(h.hazzatTimings || [], h.hazzatMarkSizes)[position];
+            if (Number.isFinite(filled)) { practiceFrom(h, position, filled); playFrom(filled, "hazzat"); return; }
             showPlayer("hazzat");
             setHelp("This passage has no timing yet. You can play the recording from the controls.");
             return;
@@ -892,6 +1061,8 @@ function safeHazzat(html, h) {
     } else target.append(element);
   };
   for (const child of source.childNodes) walk(child, output);
+  h.hazzatMarkSizes = markSizes;
+  h.hazzatNoteRuns = noteRuns;
   const rows = [...output.children];
   output.replaceChildren();
   const stacks = [];
@@ -934,9 +1105,61 @@ function safeHazzat(html, h) {
       useStack();
     });
   });
+  tagHazzatLetters(output);
   h.hazzatGroupCount = index;
   h.hazzatLineCount = stacks.length;
   return output;
+}
+// In Hazzat notation a syllable is written just before the marks it is sung on ({vio}[cd.xx]{m}[.]),
+// so each run of letters lights up with the marks that follow it. Marks that open a line before any
+// letter are the previous syllable carried over the line break. Letters after a line's last mark
+// (with no marks of their own) go with that last mark.
+function tagHazzatLetters(score) {
+  for (const stack of score.querySelectorAll(".hazzat-stack")) {
+    const groups = [];
+    let group = null;
+    for (const line of stack.querySelectorAll(".hazzat-line")) {
+      let lineLast;
+      const lineGroups = [];
+      for (const node of line.querySelectorAll(".hazza-mark, .CopticFont")) {
+        if (node.classList.contains("hazza-mark")) {
+          const position = Number(node.dataset.position);
+          if (group) { group.first ??= position; group.last = position; }
+          lineLast = position;
+          continue;
+        }
+        if (node.closest(".hazza-mark") || !node.textContent.trim()) continue;
+        if (!group || group.first !== undefined) { groups.push(group = { letters: [] }); lineGroups.push(group); }
+        group.letters.push(node);
+      }
+      for (const trailing of lineGroups) {
+        if (trailing.first !== undefined || lineLast === undefined) continue;
+        trailing.first = trailing.last = lineLast;
+        if (trailing === group) group = null; // finished; the next line's marks are not its
+      }
+    }
+    for (const { letters, first, last } of groups) {
+      if (first === undefined) continue;
+      for (const letter of letters) {
+        letter.classList.add("hazza-letter");
+        letter.dataset.firstMark = String(first);
+        letter.dataset.lastMark = String(last);
+        // tapping a syllable does what tapping its first hazza does: select it and play from there
+        letter.setAttribute("role", "button");
+        letter.tabIndex = 0;
+        const useMark = event => {
+          if (aligning) return;
+          const mark = score.querySelector('.hazza-mark[data-position="' + first + '"]');
+          if (!mark) return;
+          event.stopPropagation();
+          event.preventDefault();
+          mark.click();
+        };
+        letter.addEventListener("click", useMark);
+        letter.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") useMark(event); });
+      }
+    }
+  }
 }
 function playFrom(start, kind = "hazzat", unavailable = "This part has no timing yet.") {
   showPlayer(kind);
@@ -947,7 +1170,27 @@ function playFrom(start, kind = "hazzat", unavailable = "This part has no timing
   const range = recordingRange(current(), kind);
   playAtTime(kind, Math.max(range.start, Math.min(start, range.end || start)));
 }
+// The hazza a reader tapped while practising: it stays selected, and "Replay from hazza" goes back to it.
+let practiceMark = null;
+function practiceFrom(h, position, start) {
+  practiceMark = { hymnId: h.id, position, start };
+  flashPracticeMark();
+  updatePracticeControl();
+}
+// The chosen hazza flashes a gold outline that fades out, so it never stays in the way.
+function flashPracticeMark() {
+  for (const mark of $("readerContent").querySelectorAll(".hazza-mark.practice-start")) mark.classList.remove("practice-start");
+  const mark = practiceMark && $("readerContent").querySelector('.hazza-mark[data-position="' + practiceMark.position + '"]');
+  if (!mark) return;
+  void mark.offsetWidth; // restart the fade
+  mark.classList.add("practice-start");
+}
+function updatePracticeControl() {
+  const button = $("replayFromBtn");
+  if (button) button.hidden = !(practiceMark && !aligning && view === "hazzat" && practiceMark.hymnId === current()?.id);
+}
 function renderReader() {
+  updatePracticeControl();
   const h = current();
   const content = $("readerContent");
   content.replaceChildren();
@@ -1142,7 +1385,7 @@ function activateTiming(h, key, index) {
     if (wasHidden || player.paused) { setHelp("Play this recording, then tap the part again when it begins.", kind); return; }
     h[key] ||= [];
     if (repeatPass && key !== repeatPass.key) { setHelp("Mark the selected repeat parts only.", kind); return; }
-    markTiming(h, key, index, player.currentTime);
+    markTiming(h, key, index, heardTime(player));
     alignmentScope = view === "words" ? textLanguage : "hazzat";
     alignmentKey = key;
     alignmentCursor = index + 1;
@@ -1869,7 +2112,7 @@ document.addEventListener("keydown", event => {
   if (!player.src || player.paused) { setHelp("Play this section’s recording, then press Space as the selected part begins.", kind); return; }
   const marked = alignmentCursor;
   h[key] ||= [];
-  markTiming(h, key, marked, player.currentTime);
+  markTiming(h, key, marked, heardTime(player));
   alignmentCursor++;
   markUnsaved();
   renderReader();
@@ -2018,6 +2261,10 @@ $("clearTimesBtn").addEventListener("click", () => {
 });
 $("exportBtn").addEventListener("click", copyTiming);
 for (const [kind, player] of Object.entries(players)) {
+  if (kind === "hazzat") $("replayFromBtn")?.addEventListener("click", () => {
+    primeOutputLatency();
+    if (practiceMark && practiceMark.hymnId === current()?.id) { flashPracticeMark(); playFrom(practiceMark.start, "hazzat"); }
+  });
   playerElement(kind, "RepeatBtn").addEventListener("click", () => {
     if (!current() || !player.src) { setHelp("Add a recording to this section before setting a repeat.", kind); return; }
     if (repeatSelection?.kind === kind || repeatLoop?.kind === kind) {
@@ -2038,6 +2285,7 @@ for (const [kind, player] of Object.entries(players)) {
     setHelp("Tap a timed word or Hazzat part to choose where the repeat begins.", kind);
   });
   playerElement(kind, "PlayBtn").addEventListener("click", () => {
+    primeOutputLatency();
     if (!player.src) { setHelp("No recording is attached to this section yet.", kind); return; }
     clipEnd = null;
     const range = recordingRange(current(), kind);
@@ -2059,6 +2307,7 @@ for (const [kind, player] of Object.entries(players)) {
     activePlaybackKind = kind;
     playerElement(kind, "PlayBtn").textContent = "Ⅱ";
     updateKaraoke();
+    runKaraokeFrames();
   });
   player.addEventListener("pause", () => { playerElement(kind, "PlayBtn").textContent = "▶"; updateKaraoke(); });
   player.addEventListener("loadedmetadata", () => {
