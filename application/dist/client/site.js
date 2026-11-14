@@ -491,14 +491,15 @@ function hazzatNoteIndex(runs, filled, passage, time) {
   for (let i = 0; i < runs.length; i++) { sum += lengths[i]; if (reached < sum) return i; }
   return runs.length - 1;
 }
-// Paint one line of a mark red: a red copy of the mark's text, clipped to that line.
+// Light one line of a mark: Hazzat lines are plain bars in the font, so a gold bar is laid exactly
+// over the line (a little thicker, with a glow) by the glyphs' ::after.
 function inkHazzatRun(glyphs, run) {
   const size = parseFloat(getComputedStyle(glyphs).fontSize) || 18, px = v => v / HAZZAT_EM * size;
   const bottom = -100 + run.level * 300, top = bottom + 139;
-  const x0 = px(run.x0) - 0.5, x1 = px(run.x1) + 0.5;
-  const y0 = px(HAZZAT_ASCENT - top) - 0.6, y1 = px(HAZZAT_ASCENT - bottom) + 0.6;
-  glyphs.dataset.ink = glyphs.textContent;
-  glyphs.style.setProperty("--ink-clip", `polygon(${x0}px ${y0}px, ${x1}px ${y0}px, ${x1}px ${y1}px, ${x0}px ${y1}px)`);
+  glyphs.style.setProperty("--ink-x", px(run.x0) + "px");
+  glyphs.style.setProperty("--ink-y", px(HAZZAT_ASCENT - top) + "px");
+  glyphs.style.setProperty("--ink-w", px(run.x1 - run.x0) + "px");
+  glyphs.style.setProperty("--ink-h", px(top - bottom) + "px");
   glyphs.classList.add("karaoke-ink");
 }
 function karaokePosition() {
@@ -1044,7 +1045,6 @@ function safeHazzat(html, h) {
         glyphs.textContent = token;
         if (className === "HazzatFont") noteRuns[position] = hazzatRuns(token);
         mark.append(glyphs);
-        if (practiceMark?.hymnId === h.id && practiceMark.position === position) mark.classList.add("practice-start");
         mark.addEventListener("click", () => {
           if (!aligning && Number.isFinite(h.hazzatTimings?.[position])) practiceFrom(h, position, h.hazzatTimings[position]);
           if (!aligning && !Number.isFinite(h.hazzatTimings?.[position])) {
@@ -1174,9 +1174,16 @@ function playFrom(start, kind = "hazzat", unavailable = "This part has no timing
 let practiceMark = null;
 function practiceFrom(h, position, start) {
   practiceMark = { hymnId: h.id, position, start };
-  for (const mark of $("readerContent").querySelectorAll(".hazza-mark.practice-start")) mark.classList.remove("practice-start");
-  $("readerContent").querySelector('.hazza-mark[data-position="' + position + '"]')?.classList.add("practice-start");
+  flashPracticeMark();
   updatePracticeControl();
+}
+// The chosen hazza flashes a gold outline that fades out, so it never stays in the way.
+function flashPracticeMark() {
+  for (const mark of $("readerContent").querySelectorAll(".hazza-mark.practice-start")) mark.classList.remove("practice-start");
+  const mark = practiceMark && $("readerContent").querySelector('.hazza-mark[data-position="' + practiceMark.position + '"]');
+  if (!mark) return;
+  void mark.offsetWidth; // restart the fade
+  mark.classList.add("practice-start");
 }
 function updatePracticeControl() {
   const button = $("replayFromBtn");
@@ -2256,7 +2263,7 @@ $("exportBtn").addEventListener("click", copyTiming);
 for (const [kind, player] of Object.entries(players)) {
   if (kind === "hazzat") $("replayFromBtn")?.addEventListener("click", () => {
     primeOutputLatency();
-    if (practiceMark && practiceMark.hymnId === current()?.id) playFrom(practiceMark.start, "hazzat");
+    if (practiceMark && practiceMark.hymnId === current()?.id) { flashPracticeMark(); playFrom(practiceMark.start, "hazzat"); }
   });
   playerElement(kind, "RepeatBtn").addEventListener("click", () => {
     if (!current() || !player.src) { setHelp("Add a recording to this section before setting a repeat.", kind); return; }

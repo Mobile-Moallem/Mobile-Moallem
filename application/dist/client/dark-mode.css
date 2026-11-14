@@ -26,6 +26,6 @@ html[data-theme="dark"] .reader-content .hazzat-line.karaoke-line-active{backgro
 html[data-theme="dark"] .reader-content .hazza-letter.karaoke-active,html[data-theme="dark"] .workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{background:transparent!important;color:#ffc21a!important;-webkit-text-stroke:.6px #ffc21a;text-shadow:0 0 7px #ffb000aa;box-shadow:none!important}
 html[data-theme="dark"] .reader-content .hazza-mark.karaoke-mark-active{background:transparent!important}html[data-theme="dark"] .reader-content .hazza-note.karaoke-active{background:transparent!important;color:#ffc21a!important;-webkit-text-stroke:.6px #ffc21a;text-shadow:0 0 1px #ffc21a,0 0 8px #ffb000aa!important}
 html[data-theme="dark"] .reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont).karaoke-active{color:#ffc21a!important;-webkit-text-stroke:.6px #ffc21a;text-shadow:0 0 1px #ffc21a,0 0 8px #ffb000aa!important}
-html[data-theme="dark"] .reader-content .hazza-mark .HazzatFont.karaoke-ink::after{color:#ffc21a;-webkit-text-stroke:.7px #ffc21a}
-html[data-theme="dark"] .reader-content .hazza-mark.practice-start{outline:2px solid #c79b54!important;outline-offset:2px;border-radius:4px}
+html[data-theme="dark"] .reader-content .hazza-mark .HazzatFont.karaoke-ink::after{background:#ffc21a;box-shadow:0 0 1px #ffc21a,0 0 8px #ffb000aa}
+
 html[data-theme="dark"] .workspace:not(.editing) .reader-content .hazza-letter:hover{background:#c79b5433}
