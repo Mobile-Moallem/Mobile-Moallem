@@ -179,9 +179,10 @@ html[data-theme="dark"] .hazzat-attribution{color:#b3c5cf}
 @media(max-width:700px){.brand{flex-wrap:wrap;column-gap:9px;row-gap:5px}.brand .beta-badge{padding:7px 11px;font-size:14px}.topbar{height:auto;min-height:68px;padding-top:10px;padding-bottom:10px}}
 .reader-content .hazzat-line.karaoke-line-active{background:#fff7df;border-radius:6px;box-shadow:0 0 0 2px #d7ad6155}
 .workspace:not(.editing) .reader-content.completed-hymn .hazzat-line.karaoke-line-active{background:#f0f6f9;box-shadow:0 0 0 2px #91b7ca66}
-.reader-content .hazza-letter.karaoke-active{background:#f0c775;color:#17283b;border-radius:4px;box-shadow:0 0 0 3px #f0c77580}
-.workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{background:#d8e9f2;color:#14263d;box-shadow:0 0 0 3px #a8cadc80}
-.reader-content .hazza-mark.karaoke-mark-active{background:#f0c77533;border-radius:4px}
-.reader-content .hazza-note.karaoke-active{color:#c06400;text-shadow:0 0 1px #c06400,0 0 7px #f0b44c}
-.workspace:not(.editing) .reader-content.completed-hymn .hazza-mark.karaoke-mark-active{background:#d8e9f255}
-.workspace:not(.editing) .reader-content.completed-hymn .hazza-note.karaoke-active{color:#0f6aa3;text-shadow:0 0 1px #0f6aa3,0 0 7px #7fb8dc}
+.reader-content .hazza-letter.karaoke-active{color:#e5302f}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-letter.karaoke-active{color:#e5302f;background:transparent;box-shadow:none}
+.reader-content .hazza-mark.karaoke-mark-active{background:transparent}
+.reader-content .hazza-note.karaoke-active{color:#e5302f;text-shadow:0 0 .5px #e5302f}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-mark.karaoke-mark-active{background:transparent;box-shadow:none}
+.workspace:not(.editing) .reader-content.completed-hymn .hazza-note.karaoke-active{color:#e5302f;text-shadow:0 0 .5px #e5302f}
+.reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont).karaoke-active{color:#e5302f;text-shadow:0 0 .5px #e5302f}

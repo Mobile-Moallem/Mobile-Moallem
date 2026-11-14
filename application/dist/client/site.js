@@ -515,10 +515,13 @@ function updateKaraoke(onlyIfMoved = false) {
       mark.setAttribute("aria-current", "true");
       // light the single dash being sung (the whole mark while editors mark timings)
       const notes = mark.querySelectorAll(".hazza-note");
-      if (aligning || !notes.length) mark.classList.add("karaoke-active");
+      if (aligning) mark.classList.add("karaoke-active");
       else {
         mark.classList.add("karaoke-mark-active");
-        notes[Math.min(notes.length - 1, hazzatNoteIndex(h.hazzatNoteWeights?.[passage], filled, passage, time))].classList.add("karaoke-active");
+        // a mark with no dashes (a closing dot) lights as a whole, in the same red
+        const lit = notes.length ? notes[Math.min(notes.length - 1, hazzatNoteIndex(h.hazzatNoteWeights?.[passage], filled, passage, time))]
+          : mark.querySelector(".HazzatFont, .HazzatVFont");
+        lit?.classList.add("karaoke-active");
       }
       // the syllable being sung on this mark
       for (const letter of content.querySelectorAll(".hazza-letter")) {
