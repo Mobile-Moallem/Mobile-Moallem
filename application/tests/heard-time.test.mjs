@@ -95,16 +95,18 @@ test('a long held note drawn with several letters is one note', () => {
   assert.equal(c.hazzatRuns('x.x').length, 4);      // a dot breaks the lines
 });
 
-test('the reading position sweeps the mark: a long line stays lit, a step up takes over', () => {
+test('each line of a mark gets time by its own length: a held line stays lit, every step gets its turn', () => {
   const c = notes();
   const zqw = c.hazzatRuns('zqw'), filled = [10, 13, 30];
-  // the bottom line holds for most of the mark, the step lights only at the end
-  for (const t of [10, 10.8, 11.6]) assert.equal(c.hazzatNoteIndex(zqw, filled, 0, t), 0);
-  assert.equal(c.hazzatNoteIndex(zqw, filled, 0, 12.3), 1);
+  // the long bottom line holds for ~78% of the mark, then the short step up
+  for (const t of [10, 10.5, 11.1]) assert.equal(c.hazzatNoteIndex(zqw, filled, 0, t), 0);
+  assert.equal(c.hazzatNoteIndex(zqw, filled, 0, 11.3), 1);
   // a single line never changes
   assert.equal(c.hazzatNoteIndex(c.hazzatRuns('zz'), filled, 1, 14), 0);
-  // a breath after the mark does not stretch it: the sweep is capped, and holds on the last line
+  // a three-step staircase: equal thirds, so no step is a flash; a breath after it does not stretch it
   const cc = c.hazzatRuns('c');
-  assert.equal(c.hazzatNoteIndex(cc, filled, 1, 13.05), 0);
+  assert.equal(c.hazzatNoteIndex(cc, filled, 1, 13.3), 0);
+  assert.equal(c.hazzatNoteIndex(cc, filled, 1, 13.9), 1);
+  assert.equal(c.hazzatNoteIndex(cc, filled, 1, 14.5), 2);
   assert.equal(c.hazzatNoteIndex(cc, filled, 1, 25), 2);
 });
