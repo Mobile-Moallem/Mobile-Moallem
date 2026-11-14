@@ -177,3 +177,5 @@ html[data-theme="dark"] .hazzat-attribution{color:#b3c5cf}
 
 .brand .beta-badge{display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;border:1px solid #f0cf8c;border-radius:7px;background:#dfbd7c;color:#14263d;font:800 16px/1.2 Arial,sans-serif;letter-spacing:.08em;white-space:nowrap}
 @media(max-width:700px){.brand{flex-wrap:wrap;column-gap:9px;row-gap:5px}.brand .beta-badge{padding:7px 11px;font-size:14px}.topbar{height:auto;min-height:68px;padding-top:10px;padding-bottom:10px}}
+.reader-content .hazzat-line.karaoke-line-active{background:#fff7df;border-radius:6px;box-shadow:0 0 0 2px #d7ad6155}
+.workspace:not(.editing) .reader-content.completed-hymn .hazzat-line.karaoke-line-active{background:#f0f6f9;box-shadow:0 0 0 2px #91b7ca66}

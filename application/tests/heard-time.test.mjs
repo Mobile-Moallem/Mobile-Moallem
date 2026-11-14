@@ -65,3 +65,17 @@ test('no audio context means no delay correction', () => {
   c.heardTime(p, 0);
   assert.equal(c.heardTime(p, 0), 8);
 });
+
+const fillSource = source.slice(source.indexOf('function fillTimingGaps('), source.indexOf('function hazzatPlaybackTimings('));
+test('untimed marks between two timed ones get a time, so none is skipped', () => {
+  const c = {Math, Number, Array};
+  runInNewContext(fillSource, c);
+  // equal sizes: evenly spaced
+  assert.deepEqual([...c.fillTimingGaps([2, null, 4, null, null, 7])], [2, 3, 4, 5, 6, 7]);
+  // a longer mark gets more of the time
+  assert.deepEqual([...c.fillTimingGaps([0, null, 4], [3, 1, 1])], [0, 3, 4]);
+  // leading and trailing untimed marks stay untimed; the saved array is not changed
+  const saved = [null, 1, null, 3, null];
+  assert.deepEqual([...c.fillTimingGaps(saved)], [null, 1, 2, 3, null]);
+  assert.deepEqual(saved, [null, 1, null, 3, null]);
+});

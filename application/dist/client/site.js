@@ -427,6 +427,30 @@ function lastTimedIndex(values, time) {
   });
   return index;
 }
+// Marks between two timed marks with no time of their own (e.g. split from a word timed as one)
+// get a time spread between their neighbours by mark length, so playback never jumps over them.
+// Display only: nothing here is saved.
+function fillTimingGaps(values, sizes = []) {
+  if (!Array.isArray(values)) return values;
+  const out = values.slice();
+  let last = -1;
+  for (let i = 0; i < out.length; i++) {
+    if (!Number.isFinite(out[i])) continue;
+    if (last >= 0 && i - last > 1 && out[i] > out[last]) {
+      const weight = k => Math.max(1, Number(sizes[k]) || 1);
+      let total = 0;
+      for (let k = last; k < i; k++) total += weight(k);
+      let sum = weight(last);
+      for (let k = last + 1; k < i; k++) { out[k] = Math.round((out[last] + (out[i] - out[last]) * sum / total) * 100) / 100; sum += weight(k); }
+    }
+    last = i;
+  }
+  return out;
+}
+function hazzatPlaybackTimings(h, time) {
+  const values = playbackTimings(h, "hazzatTimings", time);
+  return aligning ? values : fillTimingGaps(values, h.hazzatMarkSizes);
+}
 function karaokePosition() {
   const h = current();
   if (!h || (view !== "words" && view !== "hazzat")) return "";
@@ -434,7 +458,7 @@ function karaokePosition() {
   if (activePlaybackKind !== kind) return "";
   const time = heardTime(players[kind]);
   const keys = kind === "hazzat" ? ["hazzatTimings", "hazzatLineTimings"] : [kind === "coptic" ? "copticTimings" : "timings"];
-  return kind + ":" + keys.map(key => lastTimedIndex(playbackTimings(h, key, time), time)).join(":");
+  return kind + ":" + keys.map(key => lastTimedIndex(key === "hazzatTimings" ? hazzatPlaybackTimings(h, time) : playbackTimings(h, key, time), time)).join(":");
 }
 // Called every animation frame while playing (onlyIfMoved) and on player events.
 function updateKaraoke(onlyIfMoved = false) {
@@ -459,10 +483,11 @@ function updateKaraoke(onlyIfMoved = false) {
   badge.hidden = !workspace.classList.contains("editing") || !sections.length;
   if (sections.length) { const section = sections[0]; const start = h[section.key]?.[section.startIndex]; const end = h[section.key]?.[section.endIndex + 1] ?? recordingRange(h, kind).end; badge.textContent = "Sing " + (section.passes.length + 1) + " times" + (Number.isFinite(start) && time >= start && time < end ? " · 1 of " + (section.passes.length + 1) : ""); }
   if (kind === "hazzat") {
-    const passage = lastTimedIndex(playbackTimings(h, "hazzatTimings", time), time);
+    const passage = lastTimedIndex(hazzatPlaybackTimings(h, time), time);
     const stack = lastTimedIndex(playbackTimings(h, "hazzatLineTimings", time), time);
     const mark = passage < 0 ? null : content.querySelector('.hazza-mark[data-position="' + passage + '"]');
-    const box = mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
+    // the line being sung lights up, not its whole stack
+    const box = mark?.closest(".hazzat-line") || mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
     if (box) box.classList.add("karaoke-line-active");
     if (mark) { mark.classList.add("karaoke-active"); mark.setAttribute("aria-current", "true"); }
   } else {
@@ -903,6 +928,7 @@ function safeHazzat(html, h) {
   const output = document.createElement("div");
   output.className = "hazzat-score";
   let index = 0;
+  const markSizes = [];
   let line = document.createElement("div");
   line.className = "hazzat-line";
   output.append(line);
@@ -935,6 +961,7 @@ function safeHazzat(html, h) {
         if (/^\s+$/u.test(token)) { target.append(document.createTextNode(token)); continue; }
         const mark = document.createElement("button");
         const position = index++;
+        markSizes[position] = token.replace(/[.\s]/gu, "").length || 1;
         mark.type = "button";
         mark.dataset.position = String(position);
         mark.className = "hazza-mark" + (Number.isFinite(h.hazzatTimings?.[position]) ? " timed" : "") + (aligning ? " marking" : "");
@@ -945,6 +972,8 @@ function safeHazzat(html, h) {
         mark.append(glyphs);
         mark.addEventListener("click", () => {
           if (!aligning && !Number.isFinite(h.hazzatTimings?.[position])) {
+            const filled = fillTimingGaps(h.hazzatTimings || [], h.hazzatMarkSizes)[position];
+            if (Number.isFinite(filled)) { playFrom(filled, "hazzat"); return; }
             showPlayer("hazzat");
             setHelp("This passage has no timing yet. You can play the recording from the controls.");
             return;
@@ -956,6 +985,7 @@ function safeHazzat(html, h) {
     } else target.append(element);
   };
   for (const child of source.childNodes) walk(child, output);
+  h.hazzatMarkSizes = markSizes;
   const rows = [...output.children];
   output.replaceChildren();
   const stacks = [];
