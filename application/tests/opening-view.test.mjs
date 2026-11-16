@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
+const source=readFileSync(new URL('../dist/client/site.js',import.meta.url),'utf8');
+const start=source.indexOf('function openingView(');
+const c={};runInNewContext(source.slice(start,source.indexOf('\nfunction hazzatHtml(',start)),c);
+test('opening a hymn shows Hazzat first when it has Hazzat',()=>{assert.deepEqual({...c.openingView(true,'ⲁⲗⲗⲏⲗⲟⲩⲓⲁ','Alleluia')},{view:'hazzat',textLanguage:null});});
+test('without Hazzat, opening a hymn shows the Coptic words',()=>{assert.deepEqual({...c.openingView(false,'ⲁⲗⲗⲏⲗⲟⲩⲓⲁ','Alleluia')},{view:'words',textLanguage:'coptic'});});
+test('without Hazzat or Coptic, opening a hymn shows the English words',()=>{assert.deepEqual({...c.openingView(false,'  ','Alleluia')},{view:'words',textLanguage:'english'});});
+test('a hymn with nothing to read opens on the recording',()=>{assert.deepEqual({...c.openingView(false,'','')},{view:'recording',textLanguage:null});});
