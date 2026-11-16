@@ -84,6 +84,7 @@ let hazzatImportPages = [];
 let selectedId = null;
 let view = "words";
 let textLanguage = "coptic";
+let openingViewPending = false;
 let activePlaybackKind = null;
 let aligning = false;
 let alignmentScope = null;
@@ -180,6 +181,12 @@ function hymnText(h) {
 }
 function hymnCopticText(h) {
   return h.copticTextOverride || catalogText(h, "coptic");
+}
+function openingView(hasHazzat, copticText, englishText) {
+  if (hasHazzat) return { view: "hazzat", textLanguage: null };
+  if ((copticText || "").trim()) return { view: "words", textLanguage: "coptic" };
+  if ((englishText || "").trim()) return { view: "words", textLanguage: "english" };
+  return { view: "recording", textLanguage: null };
 }
 function hazzatHtml(h) {
   if (h.notationHtml) return h.notationHtml;
@@ -1217,6 +1224,11 @@ function renderReader() {
   const hasHazzat = Boolean(h.hazzatPages?.length || (notation || "").replace(/<[^>]*>/gu, "").replace(/&nbsp;/giu, " ").trim() || (typeof h.hazzat === "string" && h.hazzat.trim()));
   const hasRecording = Object.keys(players).some(kind => audioFor(h, kind));
   const editing = canEdit && workspace.classList.contains("editing");
+  if (openingViewPending) {
+    const opening = openingView(hasHazzat, copticText, englishText);
+    view = opening.view;
+    if (opening.textLanguage) textLanguage = opening.textLanguage;
+  }
   if (view === "words" && !hasWords) view = hasHazzat ? "hazzat" : "recording";
   else if (view === "hazzat" && !hasHazzat) view = hasWords ? "words" : "recording";
   else if (view === "recording" && (hasWords || hasHazzat)) view = hasWords ? "words" : "hazzat";
@@ -1465,6 +1477,7 @@ function selectHymn(id) {
   globalThis.AlignmentReview?.leave();
   resetRepeat();
   selectedId = id;
+  openingViewPending = true;
   aligning = false;
   clipEnd = null;
   hidePlayer();
@@ -1615,9 +1628,10 @@ async function loadProject(h) {
     const data = await response.json();
     if (data.project && !h.dirty) applyProject(h, data.project);
     else if (h.id === selectedId) $("projectState").textContent = "Not saved yet";
+    if (h.id === selectedId) openingViewPending = false;
     if (canEdit) void globalThis.AlignmentReview?.load(h);
   } catch {
-    if (h.id === selectedId) $("projectState").textContent = "Could not check cloud storage";
+    if (h.id === selectedId) { openingViewPending = false; $("projectState").textContent = "Could not check cloud storage"; }
   }
 }
 async function readProjectResponse(response) {
@@ -2038,10 +2052,11 @@ $("timingBtn").addEventListener("click", () => {
   if (!workspace.classList.contains("editing")) { stopRepeatAlignment(); hidePlayer(); }
   renderReader();
 });
-$("wordsTab").addEventListener("click", () => { if (view !== "words") { if (repeatPass || repeatAlignment || repeatAlignmentLoop) stopRepeatAlignment(); hidePlayer(); globalThis.AlignmentReview?.stopPreview(); } view = "words"; renderReader(); });
-$("hazzatTab").addEventListener("click", () => { if (view !== "hazzat") { if (repeatPass || repeatAlignment || repeatAlignmentLoop) stopRepeatAlignment(); hidePlayer(); globalThis.AlignmentReview?.stopPreview(); } view = "hazzat"; renderReader(); });
+$("wordsTab").addEventListener("click", () => { if (view !== "words") { if (repeatPass || repeatAlignment || repeatAlignmentLoop) stopRepeatAlignment(); hidePlayer(); globalThis.AlignmentReview?.stopPreview(); } openingViewPending = false; view = "words"; renderReader(); });
+$("hazzatTab").addEventListener("click", () => { if (view !== "hazzat") { if (repeatPass || repeatAlignment || repeatAlignmentLoop) stopRepeatAlignment(); hidePlayer(); globalThis.AlignmentReview?.stopPreview(); } openingViewPending = false; view = "hazzat"; renderReader(); });
 for (const language of ["coptic", "english"]) $(language + "LanguageBtn").addEventListener("click", () => {
   if (textLanguage !== language) { if (repeatPass || repeatAlignment || repeatAlignmentLoop) stopRepeatAlignment(); hidePlayer(); globalThis.AlignmentReview?.stopPreview(); }
+  openingViewPending = false;
   textLanguage = language;
   renderReader();
 });
