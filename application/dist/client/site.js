@@ -553,6 +553,12 @@ function updateKaraoke(onlyIfMoved = false) {
     // the line being sung lights up, not its whole stack
     const box = mark?.closest(".hazzat-line") || mark?.closest(".hazzat-stack") || (stack < 0 ? null : content.querySelector('.hazzat-stack[data-position="' + stack + '"]'));
     if (box) box.classList.add("karaoke-line-active");
+    // follow the recording into whichever Hazzat tab is being sung
+    const panel = (mark || box)?.closest(".hazzat-tab-panel");
+    if (panel?.hidden) {
+      hazzatTabChoice.set(h.id, Number(panel.dataset.tab));
+      showHazzatTab(panel.closest(".hazzat-score"), Number(panel.dataset.tab));
+    }
     if (mark) {
       mark.setAttribute("aria-current", "true");
       // light the single dash being sung (the whole mark while editors mark timings)
@@ -614,6 +620,11 @@ function refreshAlignmentTarget() {
   const selector = alignmentKey === "hazzatLineTimings" ? ".hazzat-stack" : alignmentKey === "hazzatTimings" ? ".hazza-mark" : ".word";
   const target = content.querySelector(selector + '[data-position="' + alignmentCursor + '"]');
   target?.classList.add("next-to-mark");
+  const targetPanel = target?.closest(".hazzat-tab-panel");
+  if (targetPanel?.hidden) {
+    hazzatTabChoice.set(current()?.id, Number(targetPanel.dataset.tab));
+    showHazzatTab(targetPanel.closest(".hazzat-score"), Number(targetPanel.dataset.tab));
+  }
   const targetId = scope + ":" + alignmentKey + ":" + alignmentCursor;
   if (target && targetId !== lastAlignmentTarget) {
     lastAlignmentTarget = targetId;
@@ -1010,9 +1021,17 @@ function safeHazzat(html, h) {
   let index = 0;
   const markSizes = [];
   const noteRuns = [];
-  let line = document.createElement("div");
-  line.className = "hazzat-line";
-  output.append(line);
+  // <div class="hazzat-tab" data-title="…"> splits one notation into tabs; hit boxes stay numbered straight through
+  const tabTitles = [];
+  let tab = -1;
+  let line;
+  const newLine = () => {
+    line = document.createElement("div");
+    line.className = "hazzat-line";
+    line.dataset.tab = String(tab);
+    output.append(line);
+  };
+  newLine();
   const walk = (node, parent) => {
     const target = parent === output ? line : parent;
     if (node.nodeType === Node.TEXT_NODE) {
@@ -1022,9 +1041,15 @@ function safeHazzat(html, h) {
     if (node.nodeType !== Node.ELEMENT_NODE) return;
     const name = node.tagName.toLowerCase();
     if (name === "br") {
-      line = document.createElement("div");
-      line.className = "hazzat-line";
-      output.append(line);
+      newLine();
+      return;
+    }
+    if (parent === output && node.classList.contains("hazzat-tab")) {
+      tab = tabTitles.length;
+      tabTitles.push((node.dataset.title || "").trim() || "Part " + (tab + 1));
+      newLine();
+      for (const child of node.childNodes) walk(child, output);
+      newLine();
       return;
     }
     const className = node.classList.contains("HazzatFont") ? "HazzatFont"
@@ -1076,14 +1101,17 @@ function safeHazzat(html, h) {
   let stack = null;
   for (const row of rows) {
     if (!row.textContent.trim()) { stack = null; continue; }
+    if (stack && stack.dataset.tab !== row.dataset.tab) stack = null;
     if (!stack) {
       stack = document.createElement("div");
       stack.className = "hazzat-stack";
+      stack.dataset.tab = row.dataset.tab;
       output.append(stack);
       stacks.push(stack);
     }
     stack.append(row);
   }
+  if (tabTitles.length) buildHazzatTabs(output, stacks, tabTitles, h);
   stacks.forEach((box, stackIndex) => {
     box.dataset.position = String(stackIndex);
     box.classList.toggle("timed", Number.isFinite(h.hazzatLineTimings?.[stackIndex]));
@@ -1121,6 +1149,54 @@ function safeHazzat(html, h) {
 // so each run of letters lights up with the marks that follow it. Marks that open a line before any
 // letter are the previous syllable carried over the line break. Letters after a line's last mark
 // (with no marks of their own) go with that last mark.
+const hazzatTabChoice = new Map();
+function buildHazzatTabs(score, stacks, titles, h) {
+  const chosen = Math.min(hazzatTabChoice.get(h.id) ?? 0, titles.length - 1);
+  const bar = document.createElement("div");
+  bar.className = "hazzat-tabs";
+  bar.setAttribute("role", "tablist");
+  bar.setAttribute("aria-label", "Hazzat parts");
+  const panels = titles.map((title, tabIndex) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "hazzat-tab-button";
+    button.id = "hazzatTab" + tabIndex;
+    button.dataset.tab = String(tabIndex);
+    button.setAttribute("role", "tab");
+    button.textContent = title;
+    button.addEventListener("click", () => { hazzatTabChoice.set(h.id, tabIndex); showHazzatTab(score, tabIndex); });
+    button.addEventListener("keydown", event => {
+      const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+      if (!step) return;
+      event.preventDefault();
+      const next = (tabIndex + step + titles.length) % titles.length;
+      hazzatTabChoice.set(h.id, next);
+      showHazzatTab(score, next);
+      bar.children[next].focus();
+    });
+    bar.append(button);
+    const panel = document.createElement("div");
+    panel.className = "hazzat-tab-panel";
+    panel.dataset.tab = String(tabIndex);
+    panel.setAttribute("role", "tabpanel");
+    panel.setAttribute("aria-labelledby", button.id);
+    return panel;
+  });
+  // anything written before the first tab stays above the tabs, shared by all of them
+  const shared = stacks.filter(stack => stack.dataset.tab === "-1");
+  score.replaceChildren(...shared, bar, ...panels);
+  for (const stack of stacks) if (stack.dataset.tab !== "-1") panels[Number(stack.dataset.tab)].append(stack);
+  showHazzatTab(score, chosen);
+}
+function showHazzatTab(score, tabIndex) {
+  for (const button of score.querySelectorAll(".hazzat-tab-button")) {
+    const active = Number(button.dataset.tab) === tabIndex;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-selected", String(active));
+    button.tabIndex = active ? 0 : -1;
+  }
+  for (const panel of score.querySelectorAll(".hazzat-tab-panel")) panel.hidden = Number(panel.dataset.tab) !== tabIndex;
+}
 function tagHazzatLetters(score) {
   for (const stack of score.querySelectorAll(".hazzat-stack")) {
     const groups = [];

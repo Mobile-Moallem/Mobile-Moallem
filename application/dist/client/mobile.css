@@ -20,4 +20,7 @@
   html[data-theme="dark"] .season-unavailable>span.alignment-coming-soon{background:none;color:#d9b46f}
   /* Season page: the count already appears as "44 hymns" under the title. */
   #hymnsView .catalog-actions .catalog-count{display:none}
+  /* Hazzat part tabs: three fit side by side on a phone; long names wrap */
+  .hazzat-score .hazzat-tabs{gap:4px;padding:4px;margin-bottom:12px}
+  .hazzat-score .hazzat-tab-button{padding:6px 4px;font-size:.85rem;line-height:1.2;white-space:normal}
 }

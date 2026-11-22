@@ -29,3 +29,7 @@ html[data-theme="dark"] .reader-content .hazza-mark :is(.HazzatFont,.HazzatVFont
 html[data-theme="dark"] .reader-content .hazza-mark .HazzatFont.karaoke-ink::after{background:#ffc21a;box-shadow:0 0 1px #ffc21a,0 0 8px #ffb000aa}
 
 html[data-theme="dark"] .workspace:not(.editing) .reader-content .hazza-letter:hover{background:#c79b5433}
+html[data-theme="dark"] .hazzat-score .hazzat-tabs{background:#172631;border-color:#405766}
+html[data-theme="dark"] .hazzat-score .hazzat-tab-button{color:#b4c8d2}
+html[data-theme="dark"] .hazzat-score .hazzat-tab-button:hover{background:#233845}
+html[data-theme="dark"] .hazzat-score .hazzat-tab-button.active{background:#294653;border-color:#d0a35c;color:#f1d49a}
