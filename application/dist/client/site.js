@@ -1011,11 +1011,29 @@ function migrateHazzatHitBoxes(h, html, counts) {
   // Persist the index format with the notation on the next ordinary editor save.
   h.notationHtml = html + marker;
 }
+// hazzat.com often writes line breaks inside a Hazzat run (<span class="HazzatFont">x.<br>w</span>).
+// Lift every <br> up to the top level (or to its tab) by splitting the elements around it, so each
+// hazzat.com line is its own row and blank lines split the blocks the way hazzat.com shows them.
+// Splitting only moves where rows end: the hit boxes and their numbering stay exactly the same.
+function hoistHazzatBreaks(root) {
+  const isTop = node => node === root || (node.parentNode === root && node.classList?.contains("hazzat-tab"));
+  for (const br of [...root.querySelectorAll("br")]) {
+    while (!isTop(br.parentNode)) {
+      const parent = br.parentNode;
+      const after = parent.cloneNode(false);
+      while (br.nextSibling) after.append(br.nextSibling);
+      parent.after(br, after);
+      if (!parent.childNodes.length) parent.remove();
+      if (!after.childNodes.length) after.remove();
+    }
+  }
+}
 function safeHazzat(html, h) {
   const source = new DOMParser().parseFromString("<div>" + html + "</div>", "text/html").body.firstElementChild;
   const counts = [...source.querySelectorAll(".HazzatFont, .HazzatVFont")].flatMap(span =>
     (span.textContent || "").split(/\s+/u).filter(Boolean).map(token => hazzatHitTokens(token).filter(Boolean).length));
   migrateHazzatHitBoxes(h, html, counts);
+  hoistHazzatBreaks(source);
   const output = document.createElement("div");
   output.className = "hazzat-score";
   let index = 0;
